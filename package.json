@@ -1,0 +1,21 @@
+{
+  "name": "jeremenichelli",
+  "title": "Jekyll build for jeremenichelli.github.io",
+  "url": "http://jeremenichelli.github.io",
+  "author": "Jeremias Menichelli",
+  "copyright": "2014",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jeremenichelli/jeremenichelli.github.io.git"
+  },
+  "devDependencies": {
+    "gulp": "^3.6.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-uglify": "^0.2.1",
+    "gulp-less": "^1.2.3",
+    "gulp-autoprefixer": "0.0.7"
+  }
+}

@@ -1,0 +1,9 @@
+title: Jeremias Menichelli | Web Developer
+author: Jeremias Menichelli
+
+port: 4000
+auto: true
+safe: true
+server: true
+pygments: true
+permalink: /:year/:month/:title

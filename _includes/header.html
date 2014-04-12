@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/css/styles.min.css">
+</head>
+<body {% if page.class %}class="{{ page.class }}"{% endif %}>
+	<header>
+		<div class="container clearfix">
+			<!-- <img src="/assets/img/avatar.jpg" class="avatar" alt=""> -->
+			<div class="logo">&lt;jm&gt;</div>
+			<div class="brand">
+				<h1 class="name">Jeremias Menichelli</h1>
+				<p class="job">Web Developer</p>
+			</div>
+
+			{% include nav.html %}
+
+		</div>
+	</header>

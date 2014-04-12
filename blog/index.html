@@ -1,0 +1,28 @@
+---
+layout: default
+title: Blog
+class: blog
+---
+
+<h2>{{ page.title }}</h2>
+
+{% if site.posts.size > 0 %}
+	<ul>
+	<li>
+		<h2><a href="{{ site.posts[0].url }}">1 - {{ site.posts[0].title }}</a></h2>
+		{% if site.posts[0].resume %}
+			<span>{{ site.posts[0].resume }}</span>
+		{% endif %}
+	</li>	
+	{% for post in site.posts offset:1 %}
+		<li>
+		<a href="{{ post.url }}">{{ forloop.index | plus:1 }} - {{ post.title }}</a>
+		{% if post.resume %}
+			<span>{{ post.resume }}</span>
+		{% endif %}
+		</li>		
+	{% endfor %}
+	</ul>
+{% else %}
+	<h2>There are no post published for the moment.</h2>
+{% endif %}
