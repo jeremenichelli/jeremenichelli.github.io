@@ -68,11 +68,15 @@ table {
 }
 
 /* --- VARIABLES --- */
-@mainColor : #333333;
+@mainColor: #333333;
+@helloColor: #92E4C9;
+@blogColor: #FFC94E;
+@thirdColor: #85D6E4;
+@mainBackgroundColor: #FFFFFF;
 @headerElementsHeight : 90px;
 /* --- STYLES --- */   
 body { 
-    background-color: #FFFFFF;
+    background-color: @mainBackgroundColor;
     color: @mainColor;
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
     font-size: 16px;
@@ -80,8 +84,62 @@ body {
     line-height: 1;
 }
 
+a {
+    color: @mainColor;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+h2 {
+    font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+    font-size: 2.5em; /* 40px */
+    letter-spacing: -.01em;
+    font-weight: 400;
+    margin: 0 0 20px;
+}
+
+h3 {
+    font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+    font-size: 1.75em; /* 28px */
+    letter-spacing: -.01em;
+    font-weight: 400;
+    margin: 0 0 20px;
+}
+
+p {
+    line-height: 1.5em;
+    margin: 0 0 20px;
+}
+
+p:last-child {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* HEADER  */
+.line {
+    float: left;
+    height: 5px;
+    width: 33.33%;
+}
+
+.hello-line {
+    background: @helloColor;
+}
+
+.blog-line {
+    background: @blogColor;
+}
+
+.third-line {
+    background: @thirdColor;
+}
+
 header {
-    background-color: #F9F9F9;
+    background: @mainBackgroundColor;
 }
 
 nav {
@@ -90,90 +148,19 @@ nav {
     a {
         border-bottom: solid 2px transparent;
         color: #333333;
-        font-size: 1.25em; /* 20px */
-        font-weight: 400;
+        font-size: 1em;
         line-height: 90px;
         margin-left: 18px;
         padding: 3px 0;
-        text-decoration: none;
+        text-transform: uppercase;
     }
-}
-
-img {
-    max-width: 100%;
-}
-
-.container {
-    margin: 0 auto;
-    max-width: 870px;
-    padding: 30px;
-}
-
-h2 {
-    font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
-    font-size: 2.25em; /* 36px */
-    letter-spacing: -.01em;
-    font-weight: 400;
-    margin: 0 0 15px;
-}
-
-h3 {
-    font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
-    font-size: 1.75em; /* 28px */
-    letter-spacing: -.01em;
-    font-weight: 400;
-    margin: 0 0 15px;
-}
-
-p {
-    line-height: 1.5em;
-    margin: 0 0 30px;
-}
-
-.card {
-    margin: 0 0 80px;
-}
-
-.card-blog-post {
-    border-left: solid 3px @mainColor;
-    padding: 0 0 0 20px;
-}
-
-.card-blog-post-date {
-    font-size: .875em; /* 14px */
-    font-weight: 700;
-    margin: 0 0 4px;
-    text-transform: uppercase;
-
-    .last-post {
-        color: #666666;
-    }
-}
-
-.card-project {
-    border-left: solid 3px @mainColor;
-    padding: 0 0 0 20px;
-    margin: 35px 0 0;
-}
-
-.card-project:first-child {
-    margin: 0;
-}
-
-.cta-btn {
-    background-color: @mainColor;
-    border-radius: 3px;
-    color: #EEEEEE;
-    display: inline-block;
-    padding: 7px;
-    text-decoration: none;
-    text-transform: uppercase;
 }
 
 .avatar {
     border-radius: 60px;
     float: left;
     height: @headerElementsHeight;
+    width: @headerElementsHeight;
 }
 
 .logo {
@@ -211,9 +198,104 @@ p {
     }
 }
 
+/* CONTENT */
+
+section {
+    background: #FFFFFF;
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .container {
+        padding: 50px 30px;
+    }
+}
+
+section.hello {
+    background: @mainBackgroundColor;
+
+    h2 {
+        padding: 0 0 11px;
+
+        span {
+            border-bottom: solid 4px @helloColor;
+        }
+    }
+}
+
+section.hello-blog {
+    background: @blogColor;
+}
+
+section.blog-main {
+    background: @mainBackgroundColor;
+
+    h2 {
+        padding: 0 0 11px;
+
+        span {
+            border-bottom: solid 4px @blogColor;
+        }
+    }
+}
+
+section.main {
+    background: @mainBackgroundColor;
+
+    h2 {
+        padding: 0 0 11px;
+
+        span {
+            border-bottom: solid 4px @thirdColor;
+        }
+    }
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 870px;
+    padding: 30px;
+}
+
+.card {
+    margin: 25px 0 0;
+}
+
+.card:first-child {
+    margin: 0;
+}
+
+.card-highlight {
+    border-left: solid 3px @mainColor;
+    padding: 0 0 0 20px;
+    margin: 35px 0 0;
+}
+
+.card-highlight-date {
+    font-size: .875em; /* 14px */
+    font-weight: 700;
+    margin: 0 0 4px;
+    text-transform: uppercase;
+
+    .last-post {
+        color: #666666;
+    }
+}
+
+.cta-btn {
+    background-color: @mainColor;
+    border-radius: 3px;
+    color: #FFFFFF;
+    display: inline-block;
+    padding: 7px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
 /* FOOTER */
 footer {
-    background-color: #F9F9F9;
+    background-color: @mainBackgroundColor;
     
     .rights {
         margin: 0;

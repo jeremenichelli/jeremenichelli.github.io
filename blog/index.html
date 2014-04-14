@@ -1,28 +1,44 @@
 ---
 layout: default
 title: Blog
-class: blog
 ---
 
-<h2>{{ page.title }}</h2>
+<section class="blog-main">
+	<div class="container">
+		<div class="card">
+			<h2><span>{{ page.title }}</span></h2>
+			{% if site.posts.size > 0 %}
+				<div class="card-highlight">
+					<div class="card-highlight-date">
+						<span class="last-post">Last Post</span>
+						<span>{{ site.posts[0].date | date : '%d %b %Y' }}</span>
+					</div>
+					<h3><a href="{{ site.post[0].url }}">{{ site.posts[0].title }}</a></h3>
+					{% if site.posts[0].resume.size > 0 %}
+						<p class="resume">{{ site.posts[0].resume }}</p>
+					{% endif %}
+					<a class="cta-btn" href="{{ site.posts[0].url }}">Go to the post</a>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</section>
 
-{% if site.posts.size > 0 %}
-	<ul>
-	<li>
-		<h2><a href="{{ site.posts[0].url }}">1 - {{ site.posts[0].title }}</a></h2>
-		{% if site.posts[0].resume %}
-			<span>{{ site.posts[0].resume }}</span>
+<section class="main">
+	<div class="container">
+		{% if site.posts.size > 1 %}
+			{% for post in site.posts offset:1 %}
+			<div class="card">
+				<div class="card-highlight-date">
+					<span>{{ post.date | date: '%d %b %Y'}}</span>
+				</div>
+				<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+			</div>
+			{% endfor %}
+		{% else %}
+			<div class="card">
+				<h2>More posts coming...</h2>
+			</div>
 		{% endif %}
-	</li>	
-	{% for post in site.posts offset:1 %}
-		<li>
-		<a href="{{ post.url }}">{{ forloop.index | plus:1 }} - {{ post.title }}</a>
-		{% if post.resume %}
-			<span>{{ post.resume }}</span>
-		{% endif %}
-		</li>		
-	{% endfor %}
-	</ul>
-{% else %}
-	<h2>There are no post published for the moment.</h2>
-{% endif %}
+	</div>
+</section>

@@ -1,0 +1,15 @@
+{% include header.html %}
+
+<section class="blog-main">
+	<div class="container">
+		<span class="card-highlight-date">
+			<span class="last-post">Blog</span>
+			{{ page.date | date: '%d %b %Y'}}
+		</span>
+
+		<h2><span>{{ page.title }}</span></h2>
+		{{ content }}
+	</div>
+</section>
+
+{% include footer.html %}

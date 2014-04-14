@@ -4,6 +4,7 @@ var gulp = require('gulp'),
 	minifycss = require('gulp-minify-css'),
 	autoprefixer = require('gulp-autoprefixer');
 
+// less task
 gulp.task('less', function(){
 	return gulp.src('assets/**/*.less')
 		.pipe(less())
@@ -13,4 +14,9 @@ gulp.task('less', function(){
 			suffix : '.min'
 		}))
 		.pipe(gulp.dest('assets/'));
+});
+
+// watching
+gulp.task('watch', function(){
+	gulp.watch('assets/**/*.less', ['less']);
 });

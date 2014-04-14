@@ -1,16 +1,23 @@
 ---
 layout: default
-class: homepage
 ---
-<div class="card">
-	<h2>Hello...</h2>
-	<p>My name is Jeremias Menichelli! I'm a twenty seven year old web developer from San Lorenzo, Argentina. I spend most of the time coding something cool to make the web a better way. If you think I can help you, <a href="#contact">contact me</a>.</p>
-	{% if site.posts.size > 0 %}
-	<div class="card-blog">
-		<h3>BLOG</h3>
+<section class="hello">
+	<div class="container">
+		<h2><span>Hello</span></h2>
+		<p>My name is Jeremias Menichelli and I am a twenty seven year old web developer from San Lorenzo, Argentina.
+			I like to spend most of the time coding and building cool stuff with other developers to make the web a better place.
+		</p>
+		<p>If you think I can help you in your projects, <a href="mailto:jmenichelli@gmail.com">just let me know</a>!</p>
+		</div>
+</section>
+
+{% if site.posts.size > 0 %}
+<section class="hello-blog">
+	<div class="container">
+		<h2>Blog</h2>
 		<p>I also write about some thoughts I have, most of them about coding.</p>
-		<div class="card-blog-post">
-			<div class="card-blog-post-date">
+		<div class="card-highlight">
+			<div class="card-highlight-date">
 				<span class="last-post">Last Post</span>
 				<span>{{ site.posts[0].date | date : '%d %b %Y' }}</span>
 			</div>
@@ -21,34 +28,32 @@ class: homepage
 			<a class="cta-btn" href="{{ site.posts[0].url }}">Go to the post</a>
 		</div>
 	</div>
-	{% endif %}
-</div>
+</section>
+{% endif %}
 
-<div class="card">
-	<h2>Portfolio</h2>
-	<p>I've worked in some cool important projects in <a href="http://www.globant.com" target="_blank">Globant</a> for the last years, with brands like Razorfish, StateFarm and Microsoft. Now I'm currently working in <a href="http://www.velocitypartners.net/" target="_blank">Velocity Partners</a>.</p>
-	<p>Also I've done some freelance jobs, here are some of then...</p>
-	<div class="card-project">
-		<h3>AFE Salud SRL</h3>
-		<p>HTML5 / jQuery / RWD</p>
-		<p>Designed and developed using jQuery library for collapsing menues and costum form validation. HTML5 tags. Responsive Web Design used, costumized version for mobile and tablet mode.</p>
-		<a href="http://www.afesalud.com.ar" target="_blank" class="cta-btn">Go to the project</a>
-	</div>
-	<div class="card-project">
-		<h3>Alma Eventos</h3>
-		<p>CSS3 / jQuery</p>
-		<p>Desktop site and brand design for an important ballroom from my city. Lightbox plug-in and CSS3 transitions were used for photo galleries. Responsive site in progress.</p>
-		<a href="http://www.almaeventos.com" target="_blank" class="cta-btn">Go to the project</a>
-	</div>
-	<div class="card-project">
-		<h3>Ribera del Paraná</h3>
-		<p>HTML5 / RWD / Vanilla JS / AJAX / Google Maps API</p>
-		<p>Full responsive web site for desktop, tablets and smartphones. Includes form validation and lightbox developed from scratch and a Google Maps instance with costumized controls, all developed using Vanilla JavaScript.</p>
-		<a href="http://www.riberadelparana.com" target="_blank" class="cta-btn">Go to the project</a>
-	</div>
-</div>
-
-<div class="card">
-	
-</div>
+<section class="main">
+	<div class="container">
+		<h2><span>Experience</span></h2>
+		<p>I've worked in some cool important projects in <a href="http://www.globant.com" target="_blank">Globant</a> for the last years, with brands like Razorfish, StateFarm and Microsoft. Now I'm currently working in <a href="http://www.velocitypartners.net/" target="_blank">Velocity Partners</a>.</p>
+		<p>Also I've done some freelance jobs, here are some of then...</p>
+		<div class="card-highlight">
+			<h3>AFE Salud SRL</h3>
+			<p>HTML5 / jQuery / RWD</p>
+			<p>Designed and developed using jQuery library for collapsing menues and costum form validation. HTML5 tags. Responsive Web Design used, costumized version for mobile and tablet mode.</p>
+			<a href="http://www.afesalud.com.ar" target="_blank" class="cta-btn">Go to the project</a>
+		</div>
+		<div class="card-highlight">
+			<h3>Alma Eventos</h3>
+			<p>CSS3 / jQuery</p>
+			<p>Desktop site and brand design for an important ballroom from my city. Lightbox plug-in and CSS3 transitions were used for photo galleries. Responsive site in progress.</p>
+			<a href="http://www.almaeventos.com" target="_blank" class="cta-btn">Go to the project</a>
+		</div>
+		<div class="card-highlight">
+			<h3>Ribera del Paraná</h3>
+			<p>HTML5 / RWD / Vanilla JS / AJAX / Google Maps API</p>
+			<p>Full responsive web site for desktop, tablets and smartphones. Includes form validation and lightbox developed from scratch and a Google Maps instance with costumized controls, all developed using Vanilla JavaScript.</p>
+			<a href="http://www.riberadelparana.com" target="_blank" class="cta-btn">Go to the project</a>
+		</div>
+	</div>	
+</section>
 	
