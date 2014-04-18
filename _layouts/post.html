@@ -8,6 +8,10 @@
 		</span>
 
 		<h2><span>{{ page.title }}</span></h2>
+		{% if page.resume %}
+			<p>{{ page.resume }}</p>
+		{% endif %}
+		
 		{{ content }}
 	</div>
 </section>

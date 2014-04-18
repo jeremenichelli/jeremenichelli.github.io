@@ -156,13 +156,6 @@ nav {
     }
 }
 
-.avatar {
-    border-radius: 60px;
-    float: left;
-    height: @headerElementsHeight;
-    width: @headerElementsHeight;
-}
-
 .logo {
     background-color: @mainColor;
     border-radius: 45px;
@@ -199,9 +192,8 @@ nav {
 }
 
 /* CONTENT */
-
 section {
-    background: #FFFFFF;
+    background: @mainBackgroundColor;
 
     a:hover {
         text-decoration: underline;
@@ -213,7 +205,6 @@ section {
 }
 
 section.hello {
-    background: @mainBackgroundColor;
 
     h2 {
         padding: 0 0 11px;
@@ -229,7 +220,6 @@ section.hello-blog {
 }
 
 section.blog-main {
-    background: @mainBackgroundColor;
 
     h2 {
         padding: 0 0 11px;
@@ -241,7 +231,10 @@ section.blog-main {
 }
 
 section.main {
-    background: @mainBackgroundColor;
+
+    .container + .container {
+        padding-top: 0;
+    }
 
     h2 {
         padding: 0 0 11px;
@@ -252,18 +245,19 @@ section.main {
     }
 }
 
+section.about {
+
+    background: @thirdColor;
+
+    h3 {
+        margin: 0;
+    }
+}
+
 .container {
     margin: 0 auto;
     max-width: 870px;
     padding: 30px;
-}
-
-.card {
-    margin: 25px 0 0;
-}
-
-.card:first-child {
-    margin: 0;
 }
 
 .card-highlight {
@@ -288,17 +282,32 @@ section.main {
     border-radius: 3px;
     color: #FFFFFF;
     display: inline-block;
-    padding: 7px;
+    padding: 10px;
     text-decoration: none;
     text-transform: uppercase;
 }
 
+.cta-btn:hover {
+    text-decoration: none;
+}
+
 /* FOOTER */
+.avatar {
+    border-radius: 60px;
+    float: left;
+    height: @headerElementsHeight;
+    width: @headerElementsHeight;
+}
+
 footer {
-    background-color: @mainBackgroundColor;
+    background: @mainBackgroundColor;
     
     .rights {
         margin: 0;
+
+        a {
+            font-weight: 300;
+        }
     }
 }
 
