@@ -40,6 +40,36 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+/* --- FONTS --- */
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?40291221');
+  src: url('../font/fontello.eot?40291221#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff?40291221') format('woff'),
+       url('../font/fontello.ttf?40291221') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin: 0 4px 0 0;
+}
+ 
+.icon-mail:before { content: '\e800'; } /* '' */
+.icon-github:before { content: '\e802'; } /* '' */
+.icon-twitter:before { content: '\e801'; } /* '' */
+
 /* --- BOX-SIZING --- */
 *,
 *:before,
