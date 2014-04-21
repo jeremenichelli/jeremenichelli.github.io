@@ -43,10 +43,10 @@ table {
 /* --- FONTS --- */
 @font-face {
   font-family: 'fontello';
-  src: url('../font/fontello.eot?40291221');
-  src: url('../font/fontello.eot?40291221#iefix') format('embedded-opentype'),
-       url('../font/fontello.woff?40291221') format('woff'),
-       url('../font/fontello.ttf?40291221') format('truetype');
+  src: url('../font/fontello.eot?23883811');
+  src: url('../font/fontello.eot?23883811#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff?23883811') format('woff'),
+       url('../font/fontello.ttf?23883811') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -62,11 +62,11 @@ table {
   text-align: center;
   font-variant: normal;
   text-transform: none;
-  line-height: 1em;
   margin: 0 4px 0 0;
 }
  
 .icon-mail:before { content: '\e800'; } /* '' */
+.icon-menu:before { content: '\e803'; } /* '' */
 .icon-github:before { content: '\e802'; } /* '' */
 .icon-twitter:before { content: '\e801'; } /* '' */
 
@@ -104,6 +104,7 @@ table {
 @thirdColor: #85D6E4;
 @mainBackgroundColor: #FFFFFF;
 @headerElementsHeight : 90px;
+@headerElementsHeightMobile : 70px;
 /* --- STYLES --- */   
 body { 
     background-color: @mainBackgroundColor;
@@ -170,6 +171,7 @@ img {
 
 header {
     background: @mainBackgroundColor;
+    position: relative;
 }
 
 nav {
@@ -218,6 +220,58 @@ nav {
         letter-spacing: -.01em;
         margin: 0;
         text-transform: uppercase;
+    }
+}
+
+/* MOBILE MENU */
+.mobile-menu-button {
+    display: none;
+    font-size: 2em;
+    height: @headerElementsHeight;
+    left: 0;
+    line-height: @headerElementsHeight;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -6px;
+    top: 15px;
+    width: 90px;
+}
+
+#page-wrap {
+    position: relative;
+    transition: transform .35s ease-in-out;
+}
+
+#page-wrap-overlay {
+    background-color: #FFFFFF;
+    display: none;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.mobile-menu {
+    background: #EEEEEE;
+    box-shadow: inset -2px 0 5px 0 #CCC;
+    height: 100%;
+    font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+    position: fixed;
+    width: 250px;
+
+    .container {
+        border-top: solid 5px #CCCCCC;
+    }
+
+    a {
+        display: block;
+        margin: 15px 0 25px;
+    }
+
+    .close-menu {
+        border-bottom: solid 2px #CCCCCC;
+        padding: 0 0 15px;
     }
 }
 
@@ -338,6 +392,70 @@ footer {
         a {
             font-weight: 300;
         }
+    }
+}
+
+@media (max-width: 601px) {
+
+    section {
+        .container {
+            padding: 30px 15px;
+        }
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .mobile-menu-open {
+
+        .mobile-menu-button {
+            text-indent: -8px;
+        }
+
+        #page-wrap {
+            transform: translateX(250px);
+
+            #page-wrap-overlay {
+                display: block;
+                opacity: .65;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+
+    body {
+        font-size: 14px;
+    }
+
+     .mobile-menu-button {
+        height: @headerElementsHeightMobile;
+        line-height: @headerElementsHeightMobile;
+        text-indent: -5px;
+    }
+    
+    .logo {
+        border-radius: 35px;
+        height: @headerElementsHeightMobile;
+        line-height: 66px;
+        width: @headerElementsHeightMobile;
+    }
+
+    .brand {
+        height: @headerElementsHeightMobile;
+        padding-top: 18px;
+        margin-left: 6px;
     }
 }
 

@@ -3,25 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+	<meta name="author" content="Jeremias Menichelli">
+	<meta name="description" content="Hi there! I'm Jeremias Menichelli, a web developer from Argentina and this is my personal site.">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="/assets/css/styles.min.css">
 </head>
 <body {% if page.class %}class="{{ page.class }}"{% endif %}>
-	<div class="header-lines clearfix">
-		<div class="line hello-line"></div>
-		<div class="line blog-line"></div>
-		<div class="line third-line"></div>
-	</div>
-	<header>
-		<div class="container clearfix">
-			<div class="logo">&lt;jm&gt;</div>
-			<div class="brand">
-				<h1 class="name">Jeremias Menichelli</h1>
-				<p class="job">Web Developer</p>
-			</div>
+	
+	{% include mobile-nav.html %}
 
-			{% include nav.html %}
+	<div id="page-wrap">
+		<a href="#" id="page-wrap-overlay"></a>
 
+		<div class="header-lines clearfix">
+			<div class="line hello-line"></div>
+			<div class="line blog-line"></div>
+			<div class="line third-line"></div>
 		</div>
-	</header>
+
+		<header>
+			<div class="container clearfix">
+				<a href="#" id="mobile-menu-button" class="mobile-menu-button"><i class="icon-menu"></i></a>
+				<div class="logo">&lt;jm&gt;</div>
+				<div class="brand">
+					<h1 class="name">Jeremias Menichelli</h1>
+					<p class="job">Web Developer</p>
+				</div>
+
+				{% include nav.html %}
+
+			</div>
+		</header>
+	
