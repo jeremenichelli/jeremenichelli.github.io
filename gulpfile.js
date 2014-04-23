@@ -19,7 +19,7 @@ gulp.task('less', function(){
 
 // js task
 gulp.task('js', function(){
-	return gulp.src('assets/**/*.js')
+	return gulp.src('assets/**/main.js')
 		.pipe(uglify())
 		.pipe(rename({
 			suffix : '.min'
@@ -29,5 +29,5 @@ gulp.task('js', function(){
 
 // watching
 gulp.task('watch', function(){
-	gulp.watch('assets/**/*.less', ['less']);
+	gulp.watch('assets/**/*', ['less', 'js']);
 });
