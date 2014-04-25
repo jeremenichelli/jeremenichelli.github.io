@@ -9,10 +9,11 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="/assets/css/styles.min.css">
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 </head>
 <body {% if page.class %}class="{{ page.class }}"{% endif %}>
-	
-	{% include mobile-nav.html %}
 
 	<div id="page-wrap">
 		<a href="#" id="page-wrap-overlay"></a>
@@ -26,7 +27,7 @@
 		<header>
 			<div class="container clearfix">
 				<a href="#" id="mobile-menu-button" class="mobile-menu-button"><i class="icon-menu"></i></a>
-				<div class="logo">&lt;jm&gt;</div>
+				<div class="logo"><img src="/assets/img/logo.gif" alt="&lt;jm"></div>
 				<div class="brand">
 					<h1 class="name">Jeremias Menichelli</h1>
 					<p class="job">Web Developer</p>

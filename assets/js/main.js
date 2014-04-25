@@ -95,15 +95,11 @@ Site.mobileMenu = (function(document){
 
 	var _openMenu = function(){
 		body.addClass('mobile-menu-open');
-		body.addClass('overflow-prevent');
 		isOpen = true;
 	};
 
 	var _closeMenu = function(){
 		body.removeClass('mobile-menu-open');
-		setTimeout(function(){
-			body.removeClass('overflow-prevent');
-		}, 350);
 		isOpen = false;
 	};
 
