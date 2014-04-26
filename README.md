@@ -5,5 +5,4 @@ Hey there, this is the repository of my personal site. Feel free to check out th
 
 Cheers!
 
-Jeremias Menichelli
-Web developer
+Jeremias Menichelli | Web developer
