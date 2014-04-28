@@ -28,15 +28,18 @@ title: Blog
 	<div class="container">
 		{% if site.posts.size > 1 %}
 			{% for post in site.posts offset:1 %}
-			<div class="card">
+			<div class="post">
 				<div class="card-highlight-date">
 					<span>{{ post.date | date: '%d %b %Y'}}</span>
 				</div>
 				<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+				{% if post.resume %}
+					<p>{{ post.resume }}</p>
+				{% endif %}
 			</div>
 			{% endfor %}
 		{% else %}
-			<div class="card">
+			<div class="post">
 				<h2>More posts coming...</h2>
 			</div>
 		{% endif %}

@@ -127,8 +127,9 @@ h2 {
     font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
     font-size: 2.5em; /* 40px */
     letter-spacing: -.01em;
+    line-height: 1.5em;
     font-weight: 400;
-    margin: 0 0 20px;
+    margin: -15px 0 20px;
 }
 
 h3 {
@@ -139,6 +140,35 @@ h3 {
     margin: 0 0 20px;
 }
 
+h4 {
+    font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+    font-size: 1.5em; /* 24px */
+    font-weight: 400;
+    letter-spacing: -.01em;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+}
+
+h5 {
+    color: #555555;
+    font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+    font-size: 1.25em; /* 20px */
+    font-weight: 400;
+    letter-spacing: -.01em;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+
+h6 {
+    color: #555555;
+    font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+    font-size: 1.125em; /* 18px */
+    font-weight: 400;
+    letter-spacing: -.01em;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+
 p {
     line-height: 1.5em;
     margin: 0 0 20px;
@@ -146,6 +176,48 @@ p {
 
 p:last-child {
     margin: 0;
+}
+
+strong {
+    font-weight: 700;
+}
+
+em {
+    background: #E0E0E0;
+    border-radius: 4px;
+    font-weight: 400;
+    padding: 2px 4px;
+}
+
+pre {
+    background: #EEEEEE;
+    border: solid 1px #E0E0E0;
+    border-radius: 4px;
+    display: block;
+    font-family: Menlo, Monaco, monospace;
+    font-size: .875em;
+    font-weight: 300;
+    overflow-x: scroll;
+    padding: 10px;
+    white-space: nowrap;
+
+    span {
+        display: block;
+        margin: 0 0 5px;
+    }
+
+    .commented-code {
+        color: #666666;
+        font-style: italic;
+    }
+
+    .indented-code {
+        margin-left: 15px;
+    }
+
+    .new-line {
+        margin-top: 15px;
+    }
 }
 
 img {
@@ -307,7 +379,6 @@ section {
 section.hello {
 
     h2 {
-        padding: 0 0 11px;
 
         span {
             border-bottom: solid 4px @helloColor;
@@ -322,10 +393,19 @@ section.hello-blog {
 section.blog-main {
 
     h2 {
-        padding: 0 0 11px;
 
         span {
             border-bottom: solid 4px @blogColor;
+        }
+    }
+
+    ul {
+        list-style: disc;
+        list-style-position: inside;
+        margin: 0 0 20px;
+
+        li {
+            line-height: 1.5em;
         }
     }
 }
@@ -337,7 +417,6 @@ section.main {
     }
 
     h2 {
-        padding: 0 0 11px;
 
         span {
             border-bottom: solid 4px @thirdColor;
@@ -358,6 +437,18 @@ section.about {
     margin: 0 auto;
     max-width: 870px;
     padding: 30px;
+}
+
+.post {
+    margin: 35px 0 0;
+
+    h3 {
+        margin: 0 0 15px;
+    }
+}
+
+.post:first-child {
+    margin: 0;
 }
 
 .card-highlight {
