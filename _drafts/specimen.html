@@ -23,7 +23,13 @@ resume: List of objects used on blog composition for this website.
 		<span class="commented-code">// this is a commented line</span>
 		<span>if (typeof something == "undefined") {</span>
 		<span class="indented-code commented-code">// line that's indented and commented</span>
-		<span class="indented-code">console.log(something);</span>
+		<span class="indented-code">
+			if (something.length > 0){
+			<span class="indented-code">
+				console.log(something);
+			</span>
+			}
+		</span>
 		<span>}</span>
 		<span class="new-line">Module.init();</span>
 	</code>	
