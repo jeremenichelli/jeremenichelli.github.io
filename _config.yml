@@ -7,3 +7,5 @@ safe: true
 server: true
 pygments: true
 permalink: /:year/:month/:title
+gems:
+  - jekyll-sitemap
