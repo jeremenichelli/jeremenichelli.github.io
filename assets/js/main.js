@@ -12,12 +12,7 @@
 	}
 	// Given an array, returns a string
 	var _arrayToClass = function(cs){
-		var nc = "";
-		for (var i = 0; i < cs.length; i++) {
-			nc += cs[i];
-			if (i != cs.length-1) nc += " ";
-		};
-		return nc
+		return cs.join(" ")
 	}
 	// Checks if an element has a class
 	var _hasClass = function(el, c){
