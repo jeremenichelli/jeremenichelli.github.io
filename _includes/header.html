@@ -21,6 +21,12 @@
 	<![endif]-->
 </head>
 <body {% if page.class %}class="{{ page.class }}"{% endif %}>
+	<div id="loader-wrap" style="background:#FFF;position:fixed;left:0px;top:0px;width:100%;height:100%;z-index:100;">
+		<div class="loader" 
+			style="width:64px;position:absolute;top:0px;right:0px;bottom:0px;margin:auto;height:64px;left:0px;opacity:0.8;">
+			<img alt="" src="/assets/img/preloader.gif">
+		</div>
+	</div>
 
 	<div id="page-wrap">
 		<a href="#" id="page-wrap-overlay"></a>

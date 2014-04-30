@@ -116,6 +116,14 @@ body {
     overflow-x: hidden;
 }
 
+body.loaded {
+
+    #loader-wrap {
+        opacity: 0;
+        transition: opacity .25s ease-in-out;
+    }
+}
+
 a {
     color: @mainColor;
     font-weight: 400;
