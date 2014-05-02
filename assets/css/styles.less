@@ -182,10 +182,6 @@ p {
     margin: 0 0 20px;
 }
 
-p:last-child {
-    margin: 0;
-}
-
 strong {
     font-weight: 400;
 }
@@ -446,6 +442,10 @@ section.about {
     margin: 0 auto;
     max-width: 870px;
     padding: 30px;
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .post {
