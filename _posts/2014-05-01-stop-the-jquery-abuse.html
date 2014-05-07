@@ -14,7 +14,7 @@ resume: I've spent most of my time as a front-end developer building web pages t
 
 <h3>What parts of jQuery are you going to use?</h3>
 <p>Every architech, tech lead and freelance developers have to make themselves this question with every framework or library that's going to be included in the project. It's a must.</p>
-<p>Class manipulation is one of the most used features in jQuery, but don't browsers already know how to lead with classes in HTML Elements? <strong>The answer is yes</strong>. Of course one of the problem is that <a href="http://caniuse.com/classlist">classList is not supported in some browsers</a>, but then another question arises: Are you covering these browsers?</p>
+<p>Class manipulation is one of the most used features in jQuery, but don't browsers already know how to lead with classes in HTML Elements? <strong>The answer is yes</strong>. Of course one of the problems is that <a href="http://caniuse.com/classlist">classList is not supported in som browsers</a>, but then another question arises: Are you covering these browsers?</p>
 <p>If your answer is no then you can use classList. If the answer is yes then, why not build a specific shim to cover this instead of adding a library that does a lot of things that you're not going to use? Doing this will decrease the page load time and if the browser can use classList you'll see that <a href="http://jsperf.com/classlistvsjquery">performance also improves</a>.</p>
 <p>Going back to StateFarm project we had to cover Web ARIA features and that involves modifing attributes a lot, so using <em>.attr()</em> jQuery function was very common. The thing is that <strong>browsers already know how to handle this</strong> with this two functions:</p>
 <pre>
