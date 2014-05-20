@@ -118,7 +118,7 @@ Site.preloader = (function(document){
 	var _remove = function(elem){
 		body.addClass('loaded');
 		setTimeout(function(){
-			elem.remove();
+			elem.parentNode.removeChild(elem);
 		}, 250);
 	}
 
@@ -145,8 +145,8 @@ if (document.documentElement && document.documentElement.addEventListener) {
 }
 
 window.onload = function(){
-	var loading = document.getElementById('loader-wrap');
-	Site.preloader.remove(loading);
+	var loaderWrap = document.getElementById('loader-wrap');
+	Site.preloader.remove(loaderWrap);
 }
 
 
