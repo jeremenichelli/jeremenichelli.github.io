@@ -13,7 +13,7 @@ title: Blog
 						<span class="last-post">Last Post</span>
 						<span>{{ site.posts[0].date | date : '%d %b %Y' }}</span>
 					</div>
-					<h3><a href="{{ site.post[0].url }}">{{ site.posts[0].title }}</a></h3>
+					<h3><a href="{{ site.posts[0].url }}">{{ site.posts[0].title }}</a></h3>
 					{% if site.posts[0].resume.size > 0 %}
 						<p class="resume">{{ site.posts[0].resume }}</p>
 					{% endif %}
