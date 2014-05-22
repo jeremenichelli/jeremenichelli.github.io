@@ -25,7 +25,7 @@ layout: default
 			{% if site.posts[0].resume.size > 0 %}
 				<p class="resume">{{ site.posts[0].resume }}</p>
 			{% endif %}
-			<a class="cta-btn" href="{{ site.posts[0].url }}">Go to the post</a>
+			<a class="cta-btn" href="{{ site.posts[0].url }}" target="_blank">Go to the post</a>
 		</div>
 	</div>
 </section>
@@ -40,21 +40,13 @@ layout: default
 	<div class="container">
 		<h2><span>Stuff on GitHub</span></h2>
 		<p>In my spare time I put on GitHub some solutions I've crafted myself for common problems on front end development. Here are some of them...</p>
-		<div class="card-highlight">
-			<h3>classing</h3>
-			<p>Modern browsers include the classList API that has a great performance, but in some projects you can't take advantage of that boost because you need to cover old browsers (I'm looking at you IE). So this prototypes a function on HTML elements new class functions and if classList is available the API is used, if it's not then fallback functions are triggered.</p>
-			<a href="https://github.com/jeremenichelli/classing" class="cta-btn" target="_blank">Go to the repo</a>
-		</div>
-		<div class="card-highlight">
-			<h3>twelvegrid</h3>
-			<p>This is a CSS twelve column grid I use on my projects. Also, it's mobile first.</p>
-			<a href="https://github.com/jeremenichelli/twelvegrid" class="cta-btn" target="_blank">Go to the repo</a>
-		</div>
-		<div class="card-highlight">
-			<h3>eventually</h3>
-			<p>This script allows you to add and remove events using a new function that implements the attach and detach event function if addEventLIstener and removeEventListener are not available, with fallbacks for stopPropagation and preventDefault.</p>
-			<a href="https://github.com/jeremenichelli/eventually" class="cta-btn" target="_blank">Go to the repo</a>
-		</div>
+		{% for r in site.data.repositories %}
+			<div class="card-highlight">
+				<h3>{{ r.name }}</h3>
+				<p>{{ r.description}}</p>
+				<a href="https://github.com/jeremenichelli/{{ r.slug }}" class="cta-btn" target="_blank">Go to the repo</a>
+			</div>
+		{% endfor %}
 	</div>
 </section>
 	

@@ -1,0 +1,12 @@
+- name: classing
+  slug: classing
+  description: Modern browsers include the classList API that has a great performance, but in some projects you can't take advantage of that boost because you need to cover old browsers (I'm looking at you IE). So this prototypes a function on HTML elements new class functions and if classList is available the API is used, if it's not then fallback functions are triggered.
+- name: scrollProgress
+  slug: scrollprogress
+  description: A library to add an horizontal bar showing the scroll progress. Great for article and blog posts. It's all written in vanilla JavaScript and you can configure its look before you initialize it.
+- name: twelvegrid
+  slug: twelvegrid
+  description: This is a CSS twelve column grid I use on my projects. Also, it's mobile first.
+- name: eventually
+  slug: eventually
+  description: This script allows you to add and remove events using a new function that implements the attach and detach event function if addEventLIstener and removeEventListener are not available, with fallbacks for stopPropagation and preventDefault.
