@@ -1,11 +1,11 @@
 /* Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/) */
 /* http://cssreset.com */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
+html, body, div, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote,
+a, abbr, acronym, address, big, cite,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
+b, u, i, center, pre, code, span,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
@@ -204,26 +204,32 @@ pre {
     font-weight: 300;
     line-height: 1em;
     margin: 0 0 20px;
-    overflow-x: scroll;
+    overflow-x: auto;
     padding: 5px 10px;
     white-space: nowrap;
+    word-wrap: break-word;
 
-    span {
+    code {
         display: block;
-        margin: 5px 0;
-    }
+        font: inherit;
+        
+        span {
+            display: block;
+            margin: 5px 0;
+        }
 
-    .commented-code {
-        color: #666666;
-        font-style: italic;
-    }
+        .commented-code {
+            color: #666666;
+            font-style: italic;
+        }
 
-    .indented-code {
-        margin-left: 15px;
-    }
+        .indented-code {
+            margin-left: 15px;
+        }
 
-    .new-line {
-        margin-top: 15px;
+        .new-line {
+            margin-top: 15px;
+        }
     }
 }
 
