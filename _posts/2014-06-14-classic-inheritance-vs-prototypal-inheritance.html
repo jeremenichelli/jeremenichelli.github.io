@@ -1,0 +1,111 @@
+---
+layout: post
+title: Classic inheritance vs. prototypal inheritance
+resume: There's one thing that can be confusing if you are a programmer that comes from other Object-Oriented language and switched to JavaScript now&#58; inheritance. 
+---
+<p>Don't be scared, even if JavaScript is your first programming language <strong>inheritance</strong> is confusing. The main reason is that JavaScript is a prototypal language and it's not THAT common. Either way you can mimic classic inheritance, so let's dig into that.</p>
+<h3>Classic inheritance</h3>
+<p>As I mentioned in my <a href="/2014/05/primitive-values-and-objects/">last post</a>, here in JavaScript functions are also constructors that allow you to create new objects using the magic and confusing word <em>this</em>, which points to the new instance so you can assign general properties to it. Let's bring that back:</p>
+<pre>
+	<code>
+		<span class="commented-code">// Person object constructor</span>
+		<span>var Person = function(name, age, city, state, country){</span>
+	    <span class="indented-code">this.name = name;</span>
+	    <span class="indented-code">this.age = age;</span>
+	    <span class="indented-code">this.city = city;</span>
+	    <span class="indented-code">this.state = state;</span>
+	    <span class="indented-code">this.country = country;</span>
+		<span>};</span>
+		<span class="new-line">Person.prototype.salutation = function(){</span>
+    	<span class="indented-code">return "Hi! My name is " + this.name + " and I am " + this.age + " years old.";</span>
+		<span>};</span>
+		<span class="new-line">Person.prototype.getLocation = function(){</span>
+		<span class="indented-code">return "I live in " + this.city + ", " + this.state + ", " + this.country + ".";</span>
+		<span>};</span>
+		<span class="new-line">var me = new Person('Jeremias', 27, 'San Lorenzo', 'Santa Fe', 'Argentina');</span>
+	</code>
+</pre>
+<p>What we've done here is create a function that acts as a constructor for the Person object. We also defined two methods using <em>prototype</em>. Now everytime we want a new <em>Person</em> we just need to this:</p>
+<pre>
+	<code>
+		<span>var you = new Person();</span>
+	</code>
+</pre>
+<p>Obviously you need to pass the correct arguments to the function or they will be either in conflict with some methods you prototyped or just be <em>undefined</em>.</p>
+<p>This is the most clear and easy way to achieve classic inheritance in JavaScript in my opinion.</p>
+<p>The best thing of this approach is that the code is very clear and readable for new developers that start working in the project you're in, and believe me that's a big thing. One of the most common (and best) things about being a developer is that you'll be working with a lot of different people, with a different set of skills. Having a code that's pretty straight foward is a great advantage.</p>
+<h4>Prototype</h4>
+<p>You may notice that I used <em>prototype</em> to declare a new method for the Person object, so why do that when you could just add a function as any other property, right?</p>
+<pre>
+	<code>
+		<span class="commented-code">// Person object constructor</span>
+		<span>var Person = function(name, age, city, state, country){</span>
+	    <span class="indented-code">this.name = name;</span>
+	    <span class="indented-code">this.age = age;</span>
+	    <span class="indented-code">this.city = city;</span>
+	    <span class="indented-code">this.state = state;</span>
+	    <span class="indented-code">this.country = country;</span>
+		<span class="new-line indented-code">this.salutation = function(){
+    		<span class="indented-code">return "Hi! My name is " + this.name + " and I am " + this.age + " years old.";</span>
+		</span>
+		<span class="indented-code">};</span>
+		<span>};</span>
+	</code>
+</pre>
+<p>This actually works, why shouldn't? The problem with this is that every time you create a new <em>Person</em> instance, JavaScript will create a new anonymous function for every method you declare inside the constructor. If you have two objects you'll have two copies of the <em>salutation</em> method, but imagine and object with a lot of methods and lots of copies of it.</p>
+<p>So, using <em>prototype</em> solves this problem because it keeps only one copy of that function that can be called by any Person object you create avoiding problems regarding memory usage. Talking about memory efficiency, let's start talking about the other contestant.</p>
+
+<h3>Prototypal inheritance</h3>
+<p>One of the greatest things about JavaScript is all the possibilities it offers to solve the same problems, each one with its advantages and drawbacks. Inheritance is a nice example of this statement. The best way to understand prototypal inheritance is to totally forgot what you've read so far, and start all over again.</p>
+<p>We are going to begin with a plain object that will contain properties and methods, let's use the <em>Person</em> model again, but this time as an object instead of a function:</p>
+<pre>
+	<code>
+		<span class="commented-code">// Person object</span>
+		<span>var Person = {</span>
+		<span class="indented-code">name : undefined,</span>
+		<span class="indented-code">age : undefined,</span>
+		<span class="indented-code">city : undefined,</span>
+		<span class="indented-code">state : undefined,</span>
+		<span class="indented-code">country : undefined,</span>
+		<span class="indented-code">salutation : function(){
+			<span class="indented-code">return "Hi! My name is " + this.name + " and I am " + this.age + " years old.";</span>
+		</span>
+		<span class="indented-code">},</span>
+		<span class="indented-code">getLocation : function(){
+			<span class="indented-code">return "I live in " + city + ", " + state + ", " + country + ".";</span>
+		</span>
+		<span class="indented-code">}</span>
+		<span>}</span>
+	</code>
+</pre>
+<p>So far so good, we have an object with a clear structure, the thing is how do we create an instance of this object? One option is creating a <em>clone</em> function that takes a base object and returns a prototyped copy of it that you can assign to a variable.</p>
+<pre>
+	<code>
+		<span class="commented-code">// clone function</span>
+		<span>function clone(obj){</span>
+		<span class="indented-code">function F(){}</span>
+		<span class="indented-code">F.prototype = obj;</span>
+		<span class="indented-code">return new F</span>
+		<span>}</span>
+	</code>
+</pre>
+<p>What's happening inside <em>clone</em>? We are creating a new function that will act as the constructor and we are prototyping the properties and methods from the object we are passing as a parameter.</p>
+<pre>
+	<code>
+		<span>var me = clone(Person);</span>
+	</code>
+</pre>
+<p>And that's how we obtain an instance of <em>Person</em>.</p>
+
+<h3>Memory efficiency and other concerns</h3>
+<p>We mentioned the power of using <em>prototype</em>, and it's one of the main characters in this inheritance story. In the classic inheritance approach we are using it for methods to prevent JavaScript from creating anonymous functions every time the constructor is called. That's pretty good, but if we choose prototypal inheritance we are prototyping the whole object. That sounded pretty redundant, but it's actually the great thing about it.</p>
+<p>When you are creating a new instance using classic inheritance you're creating a whole new copy in memory of the base object with every property even if you're not assigning anything to it, while in prototypal inheritance each property and method makes reference to the ones present in the base object until you assign each one a new value.</p>
+<p>If your code creates lots of objects with lots of properties <strong>the impact in memory could be huge</strong> and choosing a prototypal approach would be a great solution to it.</p>
+<p>The memory profile tool from Chrome DevTools gives us a picture of this. Let's create five instances of our <em>Person</em> object and only assign values to one of them to see what's the memory use for each approach.</p>
+<p>In the <strong>classic inheritance</strong> approach, each object is taking 68 bytes of space in memory. As you see it doesn't matter if you assign values to it or not, each object weights the same and that gives us 340 bytes used in memory on instances of the <em>Person</em> object.</p>
+<p>On the other hand, using <strong>prototypal inheritance</strong> shows us a whole different picture. The first object which has values assigned to its properties takes 52 bytes while the empty objects only 12 bytes giving us a total of 100 bytes. That's <strong>less than a third</strong> of what we are using in the classic inheritance approach.</p>
+<p>Other concerns about using one over the other are about legibility and flexibility. As I said previously, classic inheritance is easier to understand, read and apply. If you're going to need classes and subclasses, prototypal inheritance gets even more complicated to understand.</p>
+
+<h3>Wrap up</h3>
+<p>As I always say, picking one approach over another is a matter of choice, both of them have advantages and drawbacks over its counter part. It's up to you, or your team, to decide in which case is better to use the classic or prototypal approach.</p>
+<p>Have fun and happy inheriting (?)</p>
