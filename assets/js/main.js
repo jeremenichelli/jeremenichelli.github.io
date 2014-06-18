@@ -83,9 +83,8 @@
 })();
 
 var Site = Site || {};
-var body = document.body;
 
-Site.mobileMenu = (function(document){
+Site.mobileMenu = (function(body){
 	var isOpen = false;
 
 	var _openMenu = function(){
@@ -106,15 +105,32 @@ Site.mobileMenu = (function(document){
 		}
 	}
 
+	var _bindEvents = function(){
+		document.getElementById('mobile-menu-button').addEventListener('click', function(e){
+			e.preventDefault();
+			_openMenu();
+		}, false);
+
+		document.getElementById('page-wrap-overlay').addEventListener('click', function(e){
+			e.preventDefault();
+			_closeMenu();
+		}, false);
+
+		document.getElementById('close-mobile-menu').addEventListener('click', function(e){
+			e.preventDefault();
+			_closeMenu();
+		}, false);
+	}
+
 	return {
 		open : _openMenu,
 		close : _closeMenu,
-		toggle : _toggleMenu
+		toggle : _toggleMenu,
+		bindEvents : _bindEvents
 	}
-})(document);
+})(document.body);
 
-Site.preloader = (function(document){
-	
+Site.preloader = (function(body){
 	var _remove = function(elem){
 		body.addClass('loaded');
 		setTimeout(function(){
@@ -125,29 +141,14 @@ Site.preloader = (function(document){
 	return {
 		remove : _remove
 	}
-})(document);
+})(document.body);
 
-if (document.documentElement && document.documentElement.addEventListener) {
-	document.getElementById('mobile-menu-button').addEventListener('click', function(e){
-		e.preventDefault();
-		Site.mobileMenu.open();
-	}, false);
-
-	document.getElementById('page-wrap-overlay').addEventListener('click', function(e){
-		e.preventDefault();
-		Site.mobileMenu.close();
-	}, false);
-
-	document.getElementById('close-mobile-menu').addEventListener('click', function(e){
-		e.preventDefault();
-		Site.mobileMenu.close();
-	}, false);
-}
-
+// Remove preloader when site is loaded
 window.onload = function(){
 	var loaderWrap = document.getElementById('loader-wrap');
 	Site.preloader.remove(loaderWrap);
-}
-
-
-
+};
+// Bind mobile menu events
+if(document.documentElement && document.documentElement.addEventListener){
+	Site.mobileMenu.bindEvents()
+};
