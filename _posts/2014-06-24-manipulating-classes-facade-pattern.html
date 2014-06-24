@@ -4,10 +4,10 @@ title: Manipulating classes on DOM elements and the Facade pattern
 resume: One of the things that we do very often in a web project is change the class attribute on HTML elements. There are millons of ways of doing this. Here is the one I developed using the Facade pattern as a start point.
 ---
 <p>It's known that there are a lot of libraries like jQuery that simplify this task, <a href="/2014/05/stop-the-jquery-abuse">but as I said in a previous post</a> sometimes adding a whole library that does a lot of things when you only need assistance in a couple of them does not make sense.</p>
-<p>Manipulating classes is one of those things. We do it and very often. Why do we ussually add a library to do this? Does not the browser already provide us of ways to achieve this? The answer is yes.</p>
+<p>Why do we ussually add a library to do this? Does not the browser already provide us of ways to achieve this? The answer is yes.</p>
 
 <h3>classList</h3>
-<p>Modern browsers include an API and has that we need regarding classes, its name is <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element.classList" target="_blank">classList</a>. If you don't know it yet, it provides us of this methods: <em>add()</em>, <em>remove()</em>, <em>contains()</em> and <em>toggle()</em>, and it has a great performance.</p>
+<p>Modern browsers include an API that allows us to do all we need regarding classes, its name is <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element.classList" target="_blank">classList</a>. If you don't know it yet, it provides us of this methods: <em>add()</em>, <em>remove()</em>, <em>contains()</em> and <em>toggle()</em>, and it has a great performance.</p>
 <pre>
     <code>
         <span>var nav = document.getElementById('navigation');</span>
@@ -21,10 +21,10 @@ resume: One of the things that we do very often in a web project is change the c
         <span>nav.classList.toggle('hidden');</span>
     </code>
 </pre>
-<p>The only problem in the last paragraph I wrote is one word: modern. Before you even think of it, let's just say it, the problem is Internet Explorer and its old versions that some users still use. In fact, <a href="http://caniuse.com/classlist" target="_blank">classList has a nice support</a>, but if your site must work properly in version 8 and 9 of Internet Explorer you won't be able to use it. Well, maybe you can.</p>
+<p>The only problem in the last paragraph I wrote is one word: modern. Before you even think of it, let's just say it, the problem is Internet Explorer and its old versions that some users still use. In fact, <a href="http://caniuse.com/classlist" target="_blank">classList has a nice support</a>, but if your code must work properly in version 8 and 9 of Internet Explorer then you won't be able to use it. Well, maybe you will.</p>
 
 <h3>The Facade pattern</h3>
-<p>You've may never heard of it before, but I'm pretty sure you've seen it or even used it. The facade pattern is very common in web development. It simplifies some complex stuff from your code in an elegant way.</p>
+<p>You've may never heard of it before, but I'm pretty sure you've seen it or even used it. The facade pattern is very common in web development since it simplifies some complex stuff from your code in an elegant way.</p>
 <p>In order to show how a facade pattern implementation works, let's use it to create a function that detects if <strong>classList</strong> is available for use in case we want to add a class.</p>
 <pre>
     <code>
@@ -32,15 +32,15 @@ resume: One of the things that we do very often in a web project is change the c
         <span class="indented-code">if(document.documentElement.classList){
             <span class="indented-code">el.classList.add(cl);</span>
             } else {
-            <span class="indented-code">el.className = el.className + ' ' + cl;</span>
+            <span class="indented-code">el.className += ' ' + cl;</span>
             }
         </span>
         <span>}</span>
     </code>
 </pre>
-<p>We've created a function that takes an element and a string for the class we want to add, if the <strong>classList API</strong> is supported the <em>add()</em> method is called, in case it's not we've provided a fallback that works too.</p>
+<p>We've created a function that takes an element and a string for the class we want to add as arguments. If the <strong>classList API</strong> is supported the <em>add()</em> method is called, if it's not then a fallback that works too is provided.</p>
 <p>This fallback is way slower, but using this pattern allows us to take advantage of <strong>classList</strong> and its great performance whenever it's possible.</p>
-<p>Now, you don't have to check if a feature is available for use every time, you just call a function. The result is a cleaner and more readable code.</p>
+<p>Now, you don't have to check if a feature is available for use every time, you just call a function and the result is a cleaner and more readable code.</p>
 <pre>
     <code>
         <span>var nav = document.getElementById('navigation');</span>
@@ -52,7 +52,7 @@ resume: One of the things that we do very often in a web project is change the c
 
 <h3>A workaround for facades</h3>
 <p>One of the things that I don't like about a facade implementation is that the feature existence will be consulted as many times as you call the method. This means that if you invoke our <em>addClass()</em> function ten times, our code will check ten times if <strong>classList</strong> is available for use.</p>
-<p>So why not just check it just once?</p>
+<p>So why don't just check it just once?</p>
 <pre>
     <code>
         <span>var addClass;</span>
@@ -65,14 +65,14 @@ resume: One of the things that we do very often in a web project is change the c
         <span>} else {</span>
         <span class="commented-code indented-code">// fallback for classList.add</span>
         <span class="indented-code">addClass = function(el, cl){
-            <span class="indented-code">el.className = el.className + ' ' + cl;</span>
+            <span class="indented-code">el.className += ' ' + cl;</span>
         };
         </span>
         <span>}</span>
     </code>
 </pre>
-<p>As you see we only do the checking part once. You will still call <em>addClass(nav, 'hidden')</em> as you did before, the only difference that it will perform better now.</p>
-<p>This code works on Internet Explorer 7, and even in older versions, but if your support starts from version 8 you could even <em>prototype</em> this method and even improve the performance of this. Remember that <em>prototype</em> method is not supported in Internet Explorer 7... <strong>yeah, buuuh!</strong></p>
+<p>As you see we only do the checking part once. You still call <em>addClass(nav, 'hidden')</em> as you did before, the only difference is that it will perform better now.</p>
+<p>This code works on Internet Explorer 7, and even in older versions, but if your support starts from version 8 you could even <em>prototype</em> this method and improve more the performance. Remember that <em>prototype</em> method is not supported in Internet Explorer 7... <strong>yeah, buuuh!</strong></p>
 <pre>
     <code>
         <span>var els = HTMLElement || Element,</span>
@@ -84,7 +84,7 @@ resume: One of the things that we do very often in a web project is change the c
         </span>
         <span>} else {</span>
         <span class="indented-code">els.prototype.addClass = function(cl){
-            <span class="indented-code">this.className = this.className + ' ' + cl;</span>
+            <span class="indented-code">this.className += ' ' + cl;</span>
         };
         </span>
         <span>}</span>
@@ -93,7 +93,7 @@ resume: One of the things that we do very often in a web project is change the c
         <span>nav.addClass('hidden');</span>
     </code>
 </pre>
-<p><strong>Is it just me or that looks pretty?</strong> Since some versions of Internet Explorer have the <em>Element</em> word to make reference to nodes we have to make that assignment in the first line to make sure we are prototyping the correct object. The variable <em>els</em> will make reference to <em>HTMLElement</em> unless is <strong>undefined</strong>, falling back to <em>Element</em>.</p>
+<p><strong>Is it just me or that looks prettier?</strong> Since some versions of Internet Explorer have the <em>Element</em> word to make reference to the DOM element object we have to make that assignment in the first line to make sure we are prototyping the correct one. The variable <em>els</em> will make reference to <em>HTMLElement</em> unless is <strong>undefined</strong>, falling back to <em>Element</em>.</p>
 
 <h3>Wrap up</h3>
 <p>The result of this exploration was <a href="https://github.com/jeremenichelli/classing">classing</a>. It checks only once if <strong>classList</strong> exists and it has fallback for adding, removing, toggling and a hasClass method to check if the class is contained. It has a lot of place for improvement so feel free to check it out and suggest changes.</p>
