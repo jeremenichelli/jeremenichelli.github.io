@@ -40,8 +40,6 @@ b,
 u,
 i,
 center,
-pre,
-code,
 span,
 dl,
 dt,
@@ -272,34 +270,24 @@ pre {
   border: solid 1px #E0E0E0;
   -webkit-border-radius: 4px;
   border-radius: 4px;
-  display: block;
   font-family: Menlo, Monaco, monospace;
   font-size: .875em;
   font-weight: 300;
-  line-height: 1em;
+  line-height: 1.35714286em;
+  /* 19px */
   margin: 0 0 20px;
   overflow-x: auto;
-  padding: 5px 10px;
-  white-space: nowrap;
-  word-wrap: break-word;
+  padding: 10px 12px;
+  white-space: pre;
+  word-wrap: normal;
 }
-pre code {
-  display: block;
-  font: inherit;
-}
-pre code span {
-  display: block;
-  margin: 5px 0;
-}
-pre code .commented-code {
+pre .commented-code {
   color: #666666;
   font-style: italic;
 }
-pre code .indented-code {
-  margin-left: 34px;
-}
-pre code .new-line {
-  margin-top: 15px;
+pre .new-line {
+  display: inline-block;
+  margin-top: 5px;
 }
 img {
   max-width: 100%;

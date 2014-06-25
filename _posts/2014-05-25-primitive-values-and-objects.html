@@ -7,18 +7,18 @@ resume: One of the main differences that Javascript has with other languages is 
 <p>Though you can assign any value to any variable across all the scope, JavaScript has something similar as types in other languages. The difference is that you don't have to specify its type when you declare a new variable. These are the reasons why it is considered a dynamically typed language.</p>
 <p>For JavaScript everything is an object, except for: <strong>booleans</strong>, <strong>numbers</strong>, <strong>strings</strong>, <strong>null</strong> and <strong>undefined</strong>.</p>
 <p>This group of variable types are called <strong>primitive values</strong>, and its main difference from objects is that they are comparable...</p>
+
 <pre>
-	<code>
-		<span>primitive_one = 2;</span>
-		<span>primitive_two = 2;</span>
-		<span>(primitive_one == primitive_two)</span>
-		<span class="commented-code">// returns true</span>
-		<span class="new-line">object_one = {};</span>
-		<span>object_two = {};</span>
-		<span>(object_one == object_two)</span>
-		<span class="commented-code">// returns false</span>
-	</code>
+primitive_one = 2;
+primitive_two = 2;
+(primitive_one == primitive_two)
+<span class="commented-code">// returns true</span>
+<span class="new-line">object_one = {};</span>
+object_two = {};
+(object_one == object_two)
+<span class="commented-code">// returns false</span>
 </pre>
+
 <p>What the lines from above are clearly showing is that everytime you create something that JavaScript considers an object, is a stand-alone instance of some other object. Even if they are both empty or have the same keys with the same values, they will always be two different objects.</p>
 
 <h3>Reserved words</h3>
@@ -28,51 +28,49 @@ resume: One of the main differences that Javascript has with other languages is 
 <h3>Objects</h3>
 <p>Everything in JavaScript that is a nonprimitive variable, is an <strong>object</strong>, as I said previously, and they are a big thing.</p>
 <p>Let's use <em>typeof</em> and <em>instanceof</em> to investigate a little bit about how objects are defined. It's not that common, but let's declare a function using <em>new</em>.</p>
+
 <pre>
-	<code>
-		<span>var f = new Function();</span>
-		<span>typeof f</span>
-		<span class="commented-code">// returns "function"</span>
-	</code>
+var f = new Function();
+typeof f
+<span class="commented-code">// returns 'function'</span>
 </pre>
+
 <p>Well that's kind of something we would expect, right? Function is the constructor for functions. Now, let's try this...</p>
 <pre>
-	<code>
-		<span>f instanceof Object</span>
-		<span class="commented-code">// returns true</span>
-	</code>
+f instanceof Object
+<span class="commented-code">// returns true</span>
 </pre>
 <p>Hey, what's that? Well as I told, everything that's not a primitive is an object, so functions are objects. And a special branch of them because functions are also constructors, so any object has a constructor. That constructor is a function that initialize all keys and methods in a new object.</p>
 <p>I know it's a little bit confusing so let's make a quick example of this creating our own object.</p>
+
 <pre>
-	<code>
-		<span>var Person = function(string, n){</span>
-		<span class="indented-code">this.name = string;</span>
-		<span class="indented-code">this.age = n;</span>
-		<span>}</span>
-		<span class="new-line">var me = new Person("Jeremias", 27);</span>
-	</code>
+var Person = function(string, n){
+    this.name = string;
+    this.age = n;
+}
+<span class="new-line">var me = new Person('Jeremias', 27);</span>
 </pre>
+
 <p>Only declare function names with uppercase if they represent a constructor, it's like a convention here. Also you might have noticed the word <em>this</em>, its behaviour is very rare some times but this is not the case; here it makes reference to the object you're instantiating.</p>
 <p>So now we know that <strong>me</strong> is an object and instantiated by Person.</p>
+
 <pre>
-	<code>
-		<span>typeof me</span>
-		<span class="commented-code">// returns "object"</span>
-		<span class="new-line">me instanceof Person</span>
-		<span class="commented-code">// returns true</span>
-	</code>
+typeof me
+<span class="commented-code">// returns 'object'</span>
+<span class="new-line">me instanceof Person</span>
+<span class="commented-code">// returns true</span>
 </pre>
+
 <p>If you want to add a method to every Person object, the best way to do it is to use <em>prototype</em>.</p>
+
 <pre>
-	<code>
-		<span>Person.prototype.salutation = function(){</span>
-		<span class="indented-code">return "Hi! My name is " + this.name + " and I am " + this.age + " years old."</span>
-		<span>};</span>
-		<span class="new-line">me.salutation();</span>
-		<span class="commented-code">// returns "Hi! My name is Jeremias and I am 27 years old."</span>
-	</code>
+Person.prototype.salutation = function(){
+    return 'Hi! My name is ' + this.name + ' and I am ' + this.age + ' years old.';
+};
+<span class="new-line">me.salutation();</span>
+<span class="commented-code">// returns 'Hi! My name is Jeremias and I am 27 years old.'</span>
 </pre>
+
 <p>And that's how you create your own constructor. In fact, <strong>constructor</strong> is a key that all objects have, so if you go to the console and write <em>me.constructor</em> you should get a reference to the Person function we wrote earlier.</p>
 
 <h3>Wrap up</h3>

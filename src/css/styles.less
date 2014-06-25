@@ -5,7 +5,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote,
 a, abbr, acronym, address, big, cite,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-b, u, i, center, pre, code, span,
+b, u, i, center, span,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
@@ -196,38 +196,24 @@ pre {
     background: #EEEEEE;
     border: solid 1px #E0E0E0;
     border-radius: 4px;
-    display: block;
     font-family: Menlo, Monaco, monospace;
     font-size: .875em;
     font-weight: 300;
-    line-height: 1em;
+    line-height: 1.35714286em; /* 19px */
     margin: 0 0 20px;
     overflow-x: auto;
-    padding: 5px 10px;
-    white-space: nowrap;
-    word-wrap: break-word;
+    padding: 10px 12px;
+    white-space: pre;
+    word-wrap: normal;
 
-    code {
-        display: block;
-        font: inherit;
-        
-        span {
-            display: block;
-            margin: 5px 0;
-        }
+    .commented-code {
+        color: #666666;
+        font-style: italic;
+    }
 
-        .commented-code {
-            color: #666666;
-            font-style: italic;
-        }
-
-        .indented-code {
-            margin-left: 34px;
-        }
-
-        .new-line {
-            margin-top: 15px;
-        }
+    .new-line {
+        display: inline-block;
+        margin-top: 5px;
     }
 }
 

@@ -9,90 +9,81 @@ resume: One of the things that we do very often in a web project is change the c
 <h3>classList</h3>
 <p>Modern browsers include an API and has that we need regarding classes, its name is <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element.classList" target="_blank">classList</a>. If you don't know it yet, it provides us of this methods: <em>add()</em>, <em>remove()</em>, <em>contains()</em> and <em>toggle()</em>, and it has a great performance.</p>
 <pre>
-    <code>
-        <span>var nav = document.getElementById('navigation');</span>
-        <span class="new-line commented-code">// Adds a class</span>
-        <span>nav.classList.add('hidden');</span>
-        <span class="new-line commented-code">// Removes a class</span>
-        <span>nav.classList.remove('hidden');</span>
-        <span class="new-line commented-code">// Checks if an element has a class, in this case it'll return false</span>
-        <span>nav.classList.contains('hidden');</span>
-        <span class="new-line commented-code">// Toggles a class</span>
-        <span>nav.classList.toggle('hidden');</span>
-    </code>
+var nav = document.getElementById('navigation');
+<span class="new-line commented-code">// Adds a class</span>
+nav.classList.add('hidden');
+<span class="new-line commented-code">// Removes a class</span>
+nav.classList.remove('hidden');
+<span class="new-line commented-code">// Checks if an element has a class, in this case it'll return false</span>
+nav.classList.contains('hidden');
+<span class="new-line commented-code">// Toggles a class</span>
+nav.classList.toggle('hidden');
 </pre>
 <p>The only problem in the last paragraph I wrote is one word: modern. Before you even think of it, let's just say it, the problem is Internet Explorer and its old versions that some users still use. In fact, <a href="http://caniuse.com/classlist" target="_blank">classList has a nice support</a>, but if your site must work properly in version 8 and 9 of Internet Explorer you won't be able to use it. Well, maybe you can.</p>
 
 <h3>The Facade pattern</h3>
 <p>You've may never heard of it before, but I'm pretty sure you've seen it or even used it. The facade pattern is very common in web development. It simplifies some complex stuff from your code in an elegant way.</p>
 <p>In order to show how a facade pattern implementation works, let's use it to create a function that detects if <strong>classList</strong> is available for use in case we want to add a class.</p>
+
 <pre>
-    <code>
-        <span>var addClass = function(el, cl){</span>
-        <span class="indented-code">if(document.documentElement.classList){
-            <span class="indented-code">el.classList.add(cl);</span>
-            } else {
-            <span class="indented-code">el.className = el.className + ' ' + cl;</span>
-            }
-        </span>
-        <span>}</span>
-    </code>
+var addClass = function(el, cl){
+    if(document.documentElement.classList){
+        el.classList.add(cl);
+    } else {
+        el.className = el.className + ' ' + cl;
+    }
+}
 </pre>
+
 <p>We've created a function that takes an element and a string for the class we want to add, if the <strong>classList API</strong> is supported the <em>add()</em> method is called, in case it's not we've provided a fallback that works too.</p>
 <p>This fallback is way slower, but using this pattern allows us to take advantage of <strong>classList</strong> and its great performance whenever it's possible.</p>
 <p>Now, you don't have to check if a feature is available for use every time, you just call a function. The result is a cleaner and more readable code.</p>
+
 <pre>
-    <code>
-        <span>var nav = document.getElementById('navigation');</span>
-        <span class="new-line commented-code">// Add 'hidden' class to the nav element</span>
-        <span>addClass(nav, 'hidden');</span>
-    </code>
+var nav = document.getElementById('navigation');
+<span class="new-line commented-code">// Add 'hidden' class to the nav element</span>
+addClass(nav, 'hidden');
 </pre>
+
 <p>Another thing that's great about this approach is that as modern browsers improve <strong>classList</strong> performance your code itself will get better but still work on old browsers.</p>
 
 <h3>A workaround for facades</h3>
 <p>One of the things that I don't like about a facade implementation is that the feature existence will be consulted as many times as you call the method. This means that if you invoke our <em>addClass()</em> function ten times, our code will check ten times if <strong>classList</strong> is available for use.</p>
 <p>So why not just check it just once?</p>
 <pre>
-    <code>
-        <span>var addClass;</span>
-        <span class="new-line">if(document.documentElement.classList){</span>
-        <span class="commented-code indented-code">// call classList inside addClass method</span>
-        <span class="indented-code">addClass = function(el, cl){
-            <span class="indented-code">el.classList.add(cl);</span>
-        };
-        </span>
-        <span>} else {</span>
-        <span class="commented-code indented-code">// fallback for classList.add</span>
-        <span class="indented-code">addClass = function(el, cl){
-            <span class="indented-code">el.className = el.className + ' ' + cl;</span>
-        };
-        </span>
-        <span>}</span>
-    </code>
+var addClass;
+<span class="new-line">if(document.documentElement.classList){</span>
+<span class="commented-code">// call classList inside addClass method</span>
+    addClass = function(el, cl){
+        el.classList.add(cl);
+    };
+} else {
+    <span class="commented-code">// fallback for classList.add</span>
+    addClass = function(el, cl){
+        el.className = el.className + ' ' + cl;
+    };
+}
 </pre>
 <p>As you see we only do the checking part once. You will still call <em>addClass(nav, 'hidden')</em> as you did before, the only difference that it will perform better now.</p>
 <p>This code works on Internet Explorer 7, and even in older versions, but if your support starts from version 8 you could even <em>prototype</em> this method and even improve the performance of this. Remember that <em>prototype</em> method is not supported in Internet Explorer 7... <strong>yeah, buuuh!</strong></p>
+
 <pre>
-    <code>
-        <span>var els = HTMLElement || Element,</span>
-        <span class="indented-code">addClass;</span>
-        <span class="new-line">if(document.documentElement.classList){</span>
-        <span class="indented-code">els.prototype.addClass = function(cl){
-            <span class="indented-code">this.classList.add(cl);</span>
-        };
-        </span>
-        <span>} else {</span>
-        <span class="indented-code">els.prototype.addClass = function(cl){
-            <span class="indented-code">this.className = this.className + ' ' + cl;</span>
-        };
-        </span>
-        <span>}</span>
-        <span class=" new-line commented-code">// Add 'hidden' class to the nav element</span>
-        <span>var nav = document.getElementById('navigation');</span>
-        <span>nav.addClass('hidden');</span>
-    </code>
+var els = HTMLElement || Element,
+    addClass;
+<span class="new-line">if(document.documentElement.classList){</span>
+    els.prototype.addClass = function(cl){
+        this.classList.add(cl);
+    };
+} else {
+    els.prototype.addClass = function(cl){
+        this.className = this.className + ' ' + cl;
+    };
+};
+<span class=" new-line commented-code">// Add 'hidden' class to the nav element</span>
+var nav = document.getElementById('navigation');
+nav.addClass('hidden');
 </pre>
+
 <p><strong>Is it just me or that looks pretty?</strong> Since some versions of Internet Explorer have the <em>Element</em> word to make reference to nodes we have to make that assignment in the first line to make sure we are prototyping the correct object. The variable <em>els</em> will make reference to <em>HTMLElement</em> unless is <strong>undefined</strong>, falling back to <em>Element</em>.</p>
 
 <h3>Wrap up</h3>
