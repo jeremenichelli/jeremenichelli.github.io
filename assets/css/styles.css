@@ -488,6 +488,8 @@ section.about h3 {
   color: #666666;
 }
 .card-highlight-date + h3 {
+  line-height: 1.07142857em;
+  /* 30px */
   margin-top: 0;
 }
 .cta-btn {
@@ -504,13 +506,6 @@ section.about h3 {
   text-decoration: none;
 }
 /* FOOTER */
-.avatar {
-  -webkit-border-radius: 60px;
-  border-radius: 60px;
-  float: left;
-  height: 90px;
-  width: 90px;
-}
 footer {
   background: #ffffff;
 }

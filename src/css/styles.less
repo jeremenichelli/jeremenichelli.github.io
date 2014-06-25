@@ -424,7 +424,6 @@ section.main {
 }
 
 section.about {
-
     background: @thirdColor;
 
     h3 {
@@ -471,6 +470,7 @@ section.about {
     }
 
     + h3 {
+        line-height: 1.07142857em; /* 30px */
         margin-top: 0;
     }
 }
@@ -490,13 +490,6 @@ section.about {
 }
 
 /* FOOTER */
-.avatar {
-    border-radius: 60px;
-    float: left;
-    height: @headerElementsHeight;
-    width: @headerElementsHeight;
-}
-
 footer {
     background: @mainBackgroundColor;
     
@@ -574,9 +567,7 @@ footer {
     }
     
     .logo {
-        // border-radius: 35px;
         height: @headerElementsHeightMobile;
-        // line-height: 66px;
         width: @headerElementsHeightMobile;
     }
 

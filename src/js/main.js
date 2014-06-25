@@ -14,7 +14,7 @@
     // Adds a class (if there's not already there)
     var _addClass = function(el, c){
         if(!_hasClass(el, c)){
-            el.className = el.className + ' ' + c;
+            el.className += ' ' + c;
         }
     };
     // Removes a class (if it's there)
@@ -71,7 +71,8 @@
 var Site = Site || {};
 
 Site.mobileMenu = (function(body){
-    var isOpen = false;
+    var isOpen = false,
+        menuEvent = 'touchstart';
 
     var _openMenu = function(){
         body.addClass('mobile-menu-open');
@@ -92,17 +93,17 @@ Site.mobileMenu = (function(body){
     };
 
     var _bindEvents = function(){
-        document.getElementById('mobile-menu-button').addEventListener('click', function(e){
+        document.getElementById('mobile-menu-button').addEventListener(menuEvent, function(e){
             e.preventDefault();
             _openMenu();
         }, false);
 
-        document.getElementById('page-wrap-overlay').addEventListener('click', function(e){
+        document.getElementById('page-wrap-overlay').addEventListener(menuEvent, function(e){
             e.preventDefault();
             _closeMenu();
         }, false);
 
-        document.getElementById('close-mobile-menu').addEventListener('click', function(e){
+        document.getElementById('close-mobile-menu').addEventListener(menuEvent, function(e){
             e.preventDefault();
             _closeMenu();
         }, false);
