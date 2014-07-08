@@ -320,16 +320,14 @@ nav {
     opacity: 1;
     overflow: hidden;
     transition: transform .35s ease-in-out;
-
-    > * {
-        transition: transform .35s ease-in-out;
-    }
 }
 
 #page-wrap-overlay {
     display: none;
     height: 100%;
-    position: absolute;
+    left: 0;
+    position: fixed;
+    top: 0;
     width: 100%;
 }
 
@@ -531,25 +529,14 @@ footer {
     .mobile-menu-open {
         overflow: hidden;
 
-        .mobile-menu-button {
-            transform: translateX(-6px);
-        }
-
         .mobile-menu {
             transform: translateX(0);
         }
 
-        #page-wrap {
+        #page-wrap-overlay {
+            background: #000000;
+            display: block;
             opacity: .65;
-
-            > * {
-                transform: translateX(250px);
-            }
-
-            #page-wrap-overlay {
-                display: block;
-                z-index: 1;
-            }
         }
     }
 }

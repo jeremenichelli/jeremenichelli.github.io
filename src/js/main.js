@@ -118,24 +118,6 @@ Site.mobileMenu = (function(body){
     };
 })(document.body);
 
-Site.preloader = (function(body){
-    var _remove = function(elem){
-        body.addClass('loaded');
-        setTimeout(function(){
-            elem.parentNode.removeChild(elem);
-        }, 250);
-    };
-
-    return {
-        remove : _remove
-    };
-})(document.body);
-
-// Remove preloader when site is loaded
-window.onload = function(){
-    var loaderWrap = document.getElementById('loader-wrap');
-    Site.preloader.remove(loaderWrap);
-};
 // Bind mobile menu events
 if(document.documentElement && document.documentElement.addEventListener){
     Site.mobileMenu.bindEvents();

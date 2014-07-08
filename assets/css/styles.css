@@ -374,14 +374,12 @@ nav a {
   -webkit-transition: -webkit-transform 0.35s ease-in-out;
   transition: transform 0.35s ease-in-out;
 }
-#page-wrap > * {
-  -webkit-transition: -webkit-transform 0.35s ease-in-out;
-  transition: transform 0.35s ease-in-out;
-}
 #page-wrap-overlay {
   display: none;
   height: 100%;
-  position: absolute;
+  left: 0;
+  position: fixed;
+  top: 0;
   width: 100%;
 }
 .mobile-menu {
@@ -537,27 +535,15 @@ footer .rights a {
   .mobile-menu-open {
     overflow: hidden;
   }
-  .mobile-menu-open .mobile-menu-button {
-    -webkit-transform: translateX(-6px);
-    -ms-transform: translateX(-6px);
-    transform: translateX(-6px);
-  }
   .mobile-menu-open .mobile-menu {
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
   }
-  .mobile-menu-open #page-wrap {
-    opacity: .65;
-  }
-  .mobile-menu-open #page-wrap > * {
-    -webkit-transform: translateX(250px);
-    -ms-transform: translateX(250px);
-    transform: translateX(250px);
-  }
-  .mobile-menu-open #page-wrap #page-wrap-overlay {
+  .mobile-menu-open #page-wrap-overlay {
+    background: #000000;
     display: block;
-    z-index: 1;
+    opacity: .65;
   }
 }
 @media (max-width: 360px) {
