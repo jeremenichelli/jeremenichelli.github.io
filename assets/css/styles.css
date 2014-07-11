@@ -192,11 +192,6 @@ body {
   line-height: 1;
   overflow-x: hidden;
 }
-body.loaded #loader-wrap {
-  opacity: 0;
-  -webkit-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
-}
 a {
   color: #333333;
   font-weight: 400;
@@ -369,10 +364,7 @@ nav a {
 }
 #page-wrap {
   position: relative;
-  opacity: 1;
-  overflow: hidden;
-  -webkit-transition: -webkit-transform 0.35s ease-in-out;
-  transition: transform 0.35s ease-in-out;
+  height: 100%;
 }
 #page-wrap-overlay {
   display: none;
@@ -396,8 +388,8 @@ nav a {
   -webkit-transform: translateX(-250px);
   -ms-transform: translateX(-250px);
   transform: translateX(-250px);
-  -webkit-transition: -webkit-transform 0.35s ease-in-out;
-  transition: transform 0.35s ease-in-out;
+  -webkit-transition: -webkit-transform .45s;
+  transition: transform .45s;
   width: 250px;
 }
 .mobile-menu .container {
@@ -513,7 +505,7 @@ footer .rights {
 footer .rights a {
   font-weight: 300;
 }
-@media (max-width: 601px) {
+@media (max-width: 769px) {
   section {
     margin-top: -1px;
   }
@@ -533,6 +525,9 @@ footer .rights a {
     display: block;
   }
   .mobile-menu-open {
+    overflow: hidden;
+  }
+  .mobile-menu-open #page-wrap {
     overflow: hidden;
   }
   .mobile-menu-open .mobile-menu {

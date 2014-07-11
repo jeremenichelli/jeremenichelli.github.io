@@ -20,6 +20,7 @@
     "eqnull": true,
     "laxcomma": true,
     "globals": {
+        "window": true,
         "document": true,
         "Element": true,
         "HTMLElement": true

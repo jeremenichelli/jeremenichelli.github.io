@@ -73,15 +73,19 @@ var Site = Site || {};
 
 Site.mobileMenu = (function(body){
     var isOpen = false,
-        menuEvent = 'touchstart';
+        menuEvent = 'touchstart',
+        viewportHeight = window.innerHeight,
+        wrap = document.getElementById('page-wrap');
 
     var _openMenu = function(){
         body.addClass('mobile-menu-open');
+        wrap.style.height = viewportHeight + 'px';
         isOpen = true;
     };
 
     var _closeMenu = function(){
         body.removeClass('mobile-menu-open');
+        wrap.style.height = 'auto';
         isOpen = false;
     };
 
@@ -90,6 +94,13 @@ Site.mobileMenu = (function(body){
             _closeMenu();
         } else {
             _openMenu();
+        }
+    };
+
+    var _updateViewportHeight = function(){
+        viewportHeight = window.innerHeight;
+        if (isOpen){
+            wrap.style.height = viewportHeight + 'px';
         }
     };
 
@@ -108,6 +119,8 @@ Site.mobileMenu = (function(body){
             e.preventDefault();
             _closeMenu();
         }, false);
+
+        window.onresize = _updateViewportHeight;
     };
 
     return {

@@ -114,14 +114,6 @@ body {
     overflow-x: hidden;
 }
 
-body.loaded {
-
-    #loader-wrap {
-        opacity: 0;
-        transition: opacity .25s ease-in-out;
-    }
-}
-
 a {
     color: @mainColor;
     font-weight: 400;
@@ -317,9 +309,7 @@ nav {
 
 #page-wrap {
     position: relative;
-    opacity: 1;
-    overflow: hidden;
-    transition: transform .35s ease-in-out;
+    height: 100%;
 }
 
 #page-wrap-overlay {
@@ -342,7 +332,7 @@ nav {
     position: fixed;
     top: 0;
     transform: translateX(-250px);
-    transition: transform .35s ease-in-out;
+    transition: transform .45s;
     width: 250px;
 
     .container {
@@ -500,7 +490,7 @@ footer {
     }
 }
 
-@media (max-width: 601px) {
+@media (max-width: 769px) {
 
     section {
         margin-top: -1px;
@@ -528,6 +518,10 @@ footer {
 
     .mobile-menu-open {
         overflow: hidden;
+
+        #page-wrap {
+            overflow: hidden;
+        }
 
         .mobile-menu {
             transform: translateX(0);
