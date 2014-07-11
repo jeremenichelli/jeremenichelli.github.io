@@ -3,14 +3,12 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     less = require('gulp-less'),
     minifycss = require('gulp-minify-css'),
-    autoprefixer = require('gulp-autoprefixer');
     jshint = require('gulp-jshint');
 
 // less task
 gulp.task('less', function(){
     return gulp.src('src/css/*.less')
         .pipe(less())
-        .pipe(autoprefixer('last 2 version', 'safari 6', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 2'))
         .pipe(gulp.dest('assets/css'))
         .pipe(minifycss())
         .pipe(rename({

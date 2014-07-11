@@ -74,6 +74,8 @@ table {
 *,
 *:before,
 *:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -111,7 +113,7 @@ body {
     font-size: 16px;
     font-weight: 300;
     line-height: 1;
-    overflow-x: hidden;
+    height: 100%;
 }
 
 a {
@@ -178,6 +180,7 @@ strong {
 
 em {
     background: #EEEEEE;
+    -webkit-border-radius: 4px;
     border-radius: 4px;
     font-weight: 400;
     margin: 0 1px 0 0;
@@ -187,6 +190,7 @@ em {
 pre {
     background: #EEEEEE;
     border: solid 1px #E0E0E0;
+    -webkit-border-radius: 4px;
     border-radius: 4px;
     font-family: Menlo, Monaco, monospace;
     font-size: .875em;
@@ -257,6 +261,7 @@ nav {
 
 .logo {
     // background-color: @mainColor;
+    // -webkit-border-radius: 45px;
     // border-radius: 45px;
     // color: #FFFFFF;
     float: left;
@@ -302,14 +307,20 @@ nav {
     overflow: hidden;
     position: absolute;
     text-indent: -6px;
-    transition: transform .35s ease-in-out;
     top: 15px;
     width: 90px;
 }
 
 #page-wrap {
+    position: absolute;
+    height: 100%;
+    overflow: hidden;
+}
+
+#page-wrap-content {
     position: relative;
     height: 100%;
+    overflow-y: scroll;
 }
 
 #page-wrap-overlay {
@@ -323,6 +334,8 @@ nav {
 
 .mobile-menu {
     background: #EEEEEE;
+    -moz-box-shadow: inset -2px 0 5px 0 #CCCCCC;
+    -webkit-box-shadow: inset -2px 0 5px 0 #CCCCCC;
     box-shadow: inset -2px 0 5px 0 #CCCCCC;
     display: none;
     height: 100%;
@@ -331,8 +344,15 @@ nav {
     left: 0;
     position: fixed;
     top: 0;
-    transform: translateX(-250px);
-    transition: transform .45s;
+    -moz-transform: translateX(-250px);
+    -ms-transform: translateX(-250px);
+    -o-transform: translateX(-250px);
+    -webkit-transform: translateX(-250px);
+    -moz-transition: -moz-transform .45s ease 0s;
+    -ms-transition: -ms-transform .45s ease 0s;
+    -o-transition: -o-transform .45s ease 0s;
+    -webkit-transition: -webkit-transform .45s ease 0s;
+    transition: transform .45s ease 0s;
     width: 250px;
 
     .container {
@@ -465,6 +485,7 @@ section.about {
 
 .cta-btn {
     background-color: @mainColor;
+    -webkit-border-radius: 3px;
     border-radius: 3px;
     color: #FFFFFF;
     display: inline-block;
@@ -519,11 +540,11 @@ footer {
     .mobile-menu-open {
         overflow: hidden;
 
-        #page-wrap {
-            overflow: hidden;
-        }
-
         .mobile-menu {
+            -moz-transform: translateX(0);
+            -ms-transform: translateX(0);
+            -o-transform: translateX(0);
+            -webkit-transform: translateX(0);
             transform: translateX(0);
         }
 

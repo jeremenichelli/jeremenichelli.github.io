@@ -28,24 +28,25 @@
 <body {% if page.class %}class="{{ page.class }}"{% endif %}>
 
 	<div id="page-wrap">
+		<div id="page-wrap-content">
 
-		<div class="header-lines clearfix">
-			<div class="line hello-line"></div>
-			<div class="line blog-line"></div>
-			<div class="line third-line"></div>
-		</div>
-
-		<header>
-			<div class="container clearfix">
-				<a href="#" id="mobile-menu-button" class="mobile-menu-button"><i class="icon-menu"></i></a>
-				<div class="logo"><img src="/assets/img/logo.gif" alt="&lt;jm"></div>
-				<div class="brand">
-					<p class="name">Jeremias Menichelli</p>
-					<p class="job">Web Developer</p>
-				</div>
-
-				{% include nav.html %}
-
+			<div class="header-lines clearfix">
+				<div class="line hello-line"></div>
+				<div class="line blog-line"></div>
+				<div class="line third-line"></div>
 			</div>
-		</header>
+
+			<header>
+				<div class="container clearfix">
+					<a href="#" id="mobile-menu-button" class="mobile-menu-button"><i class="icon-menu"></i></a>
+					<div class="logo"><img src="/assets/img/logo.gif" alt="&lt;jm"></div>
+					<div class="brand">
+						<p class="name">Jeremias Menichelli</p>
+						<p class="job">Web Developer</p>
+					</div>
+
+					{% include nav.html %}
+
+				</div>
+			</header>
 	
