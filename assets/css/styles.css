@@ -364,6 +364,7 @@ nav a {
   position: absolute;
   height: 100%;
   overflow: hidden;
+  width: 100%;
 }
 #page-wrap-content {
   position: relative;
