@@ -389,6 +389,7 @@ nav a {
   font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
   font-size: 1.5em;
   left: 0;
+  max-width: 280px;
   position: fixed;
   top: 0;
   -moz-transform: translateX(-250px);
@@ -400,7 +401,7 @@ nav a {
   -o-transition: -o-transform 0.45s ease 0s;
   -webkit-transition: -webkit-transform 0.45s ease 0s;
   transition: transform .45s ease 0s;
-  width: 250px;
+  width: 70%;
 }
 .mobile-menu .container {
   border-top: solid 5px #CCCCCC;
