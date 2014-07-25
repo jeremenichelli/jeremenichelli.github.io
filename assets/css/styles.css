@@ -192,6 +192,13 @@ body {
   line-height: 1;
   height: 100%;
 }
+.preload * {
+  -ms-transition: none !important;
+  -moz-transition: none !important;
+  -webkit-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
 a {
   color: #333333;
   font-weight: 400;

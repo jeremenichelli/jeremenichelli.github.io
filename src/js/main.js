@@ -73,9 +73,7 @@ var Site = Site || {};
 
 Site.mobileMenu = (function(body){
     var isOpen = false,
-        menuEvent = 'touchstart',
-        viewportHeight = window.innerHeight,
-        wrap = document.getElementById('page-wrap');
+        menuEvent = 'touchstart';
 
     var _openMenu = function(){
         body.addClass('mobile-menu-open');
@@ -124,3 +122,8 @@ Site.mobileMenu = (function(body){
 if(document.documentElement && document.documentElement.addEventListener){
     Site.mobileMenu.bindEvents();
 }
+
+window.onload = function(){
+    // hack to prevent transitions on load
+    document.body.removeClass('preload');
+};
