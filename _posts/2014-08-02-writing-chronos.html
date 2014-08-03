@@ -1,0 +1,98 @@
+---
+layout: post
+title: Writing Chronos
+resume: In the last post I explained how missing some oportunities for writing posts ended up in a script to measure lapses of times in your scripts. Chronos is almost finished and this is how it works.
+---
+<h3>The problem</h3>
+<p>Always the start point of something while you develop is solve an issue, a problem or improve something. Sometimes that problem is the lack of something, in this case <a href="/2014/07/im-taking-my-time/" target="_blank">time</a>.</p>
+<p>Sometimes problems are good, are oportunities to learn, to improve something, but let's leave the philosophy for a moment and think about how we would solve this. How much time has passed since this script started? If your web project makes lots of operations and you don't want the user to wait a long time while it gets the jobs done of course time is a good way to measure if your scripts are on the right path.</p>
+<p>I'm sure you've had a chronometer in your hand at least one in your life. This is my version of having one in your code.</p>
+
+<h3>Work in the shadows</h3>
+<p>Before you turn the lights off, that title is just a metaphor. There weren't a lot of ideas in my head but I did have that title as a premise. However it worked, <strong>Chronos</strong> shouldn't get in your code's way but the same time be counting how much has passed since the timer begun and the last checkpoint you requested. It seems hard when you read it but it isn't. Let me introduce you a friend you may know.</p>
+
+<h3>The Date object</h3>
+<p>Every time you call <em>new Date()</em> and assign it to a variable you'll get a good 'photograph' of the time at that moment. It's important to know that the source of this data comes from the user's device, this means that users can alter this 'photograph' intentionally if they want to so is not good to use it if part of the security of your web depends on this, but of course for some features is really useful.</p>
+<p>In this case I want to measure differences in time, so I don't care if the date is not well set. The only thing that could break this approach if it times stop but that would probably mean that universe has exploded.</p>
+<p>Going back to the <strong>Date object</strong>, once you have that 'photograph' you can extract a lot of information from it, here's a list of some of them. Let's supose that at the time we run the <em>new Date()</em> and assign it to <em>now</em> it's Saturday, 2nd August of this year, and it's 19 hours 35 minutes 34 seconds and 191 milliseconds as an example.</p>
+<pre>
+var now = new Date();
+now.getDate(); <span class="commented-code">// returns 2</span>
+now.getDay();
+<span class="commented-code">// returns a number depending on the day</span>
+<span class="commented-code">// 0 for Sunday, 1 for Monday and so on. In this case, 6 for Saturday</span>
+<span class="new-line">now.getFullYear(); <span class="commented-code">// returns 2014</span></span>
+now.getHours(); <span class="commented-code">// returns 19</span>
+now.getMinutes(); <span class="commented-code">// returns 35</span>
+now.getSeconds(); <span class="commented-code">// returns 34</span>
+now.getMilliseconds(); <span class="commented-code">// returns 191</span>
+now.getMonth();
+<span class="commented-code">// returns a number depending on the month starting with 0 for January</span>
+<span class="commented-code">// in this case, 7 for August</span>
+<span class="new-line">now.getTimezoneOffset();</span>
+<span class="commented-code">// returns minutes of difference between local time and the Greenwich Mean Time</span>
+<span class="commented-code">// in this case, 180 because I'm in Argentina, GMT -3hs. Note: It's always positive!</span>
+<span class="new-line">now.getYear(); <span class="commented-code">// returns 114, the number of years since 1900</span></span>
+</pre>
+<p>There are a lot of useful functions to set values to it and format the date, but in this case we are only interested in getting stuff from it.</p>
+<p>There is one method I didn't mention above because it's the one in which <strong>Chronos</strong> relays and it is <em>getTime()</em>. This particular function returns the number of milliseconds that has passed since the midnight of January 1st, 1970 and it's exactly what I need. This means that we can take two date objects, get the amount of millseconds and do a substraction to get how much time has passed since the two were set, of course in milliseconds.</p>
+
+<h3>The math</h3>
+<p>Once we have the difference in milliseconds we need break it into different units, every <strong>Chronos</strong> instance shows how much time has passed since you initialized it and how much time has passed since the last check in seconds and milliseconds. When you create a new instance you can indicate that you also need minutes, which is reasonable if you have a heavy web app and even hours, though that could probably mean that your code has serious problems.</p>
+<p>So every time you generate a new Chronos instance a few things happen, but the most important is that it gets the actual time and stores it as the first checkpoint.</p>
+<pre>
+var controllerTimer = new Chronos();
+controllerTimer.init({ label: 'Controller', showMinutes: true });
+</pre>
+<p>You may notice that I passed a string as an argument, this is very recommendable since you can have as many instances as you want measuring different components or modules of your code and having labels will help you identify the messages in the console. We've also set <em>showMinutes</em> to <strong>true</strong>.</p>
+<pre>
+function renderView(){
+    <span class="commented-code">// lots of lines of code</span>
+    controllerTimer.checkpoint('view rendered');
+};
+</pre>
+<p>Now we have created a checkpoint to know how many time it took the <em>renderView()</em> function to finish all the tasks. We alsoput a label here to help us know what specific thing in our code we are measuring. When the code gets to that checkpoint you'll see something like this in your console...</p>
+<pre>
+Controller view rendered // lapse: 0min 2s 712ms // interval: 0min 0s 484ms
+</pre>
+<p>Here is what is nice about this approach, when your code is being executed <strong>Chronos</strong> is doing <strong>ABSOLUTELY NOTHING</strong>. Everything happens when you set a checkpoint. What the script does is get a difference in milliseconds of the time between that checkpoint and the initial time.</p>
+<pre>
+var now = new Date();
+var diff = now.getTime() - this.initDate.getTime();
+</pre>
+<p>Now we have to take the value of <em>diff</em> and break it down in minutes, seconds and milliseconds. For that we take count that <strong>1000 milliseconds</strong> equals <strong>1 second</strong> and as a consequence <strong>60000 milliseconds</strong> equals <strong>1 minute</strong>. If we divide <em>diff</em> by <strong>60000</strong> and delete the decimal part will get how many minutes has passed.</p>
+<pre>
+var minutes = Math.floor(diff/60000);
+</pre>
+<p>The next step is to know the amount of seconds, but before that we need to substract the amount of minutes from <em>diff</em>. We already know how minutes has passed and not doing this will acumulate the value, then we can continue with the calculation and we also need to do that in milliseconds.</p>
+<pre>
+var minutes = Math.floor(diff/60000);
+diff - minutes*60000; <span class="commented-code">// substracting minutes in milliseconds</span>
+var seconds = Math.floor(diff/1000);
+diff - seconds*1000; <span class="commented-code">// substracting seconds in milliseconds</span>
+</pre>
+<p>You may notice that at the end I substracted the seconds, that means that <em>diff</em> now contains the milliseconds.</p>
+<pre>
+console.log(minutes + 'm ' + seconds + 's ' + diff + ' ms');
+<span class="commented-code">// 1m 10s 345ms</span>
+</pre>
+<p>And that's how is done. I've just imagine a number and put it there to show you how the output could be in a console. <strong>Chronos</strong> does that with the initialized time and the last checkpoint. Once this math is done the new checkpoint is added to the collection of that particular instance. You can also ask for a final report at the end of your code and label it.</p>
+<pre>
+controllerTimer.report('final');
+</pre>
+<p>Extending our previous example this is how a report could look like...</p>
+<pre>
+Controller final report:
+ - Controller requesting info // lapse: 0min 0s 12ms // interval: 0min 0s 12ms
+ - Controller received info // lapse: 0min 0s 612ms // interval: 0min 0s 600ms
+ - Controller starts parsing results // lapse: 0min 1s 492ms // interval: 0min 0s 880ms
+ - Controller parsing results finished // lapse: 0min 1s 910ms // interval: 0min 0s 418ms
+ - Controller rendering view // lapse: 0min 2s 228ms // interval: 0min 0s 318ms
+ - Controller view rendered // lapse: 0min 2s 712ms // interval: 0min 0s 484ms
+</pre>
+<p>You can also label the reports in case you need more than one for each instance. Beside the ones that do the calculation, the rest of the functions inside the script take care of the messages I've just showed to you.</p>
+
+<h3>Wrap up</h3>
+<p>I hope you've found this interesting and useful. If you think that there's something that <strong>Chronos</strong> should do and it's not doing or you have suggestions the code is here <a href="http://github.com/jeremenichelli/chronos">http://github.com/jeremenichelli/chronos</a>, feel free to throw some comments there.</p>
+<p>Happy timing!</p>
+
