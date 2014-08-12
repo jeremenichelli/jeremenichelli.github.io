@@ -1,0 +1,75 @@
+---
+layout: post
+title: Don't solve a problem, solve the problem
+resume: If you are a developer, you're going to code to solve problems and, as crazy as it may sound, you will have to look into the future while you're doing that.
+---
+<p>The code you write needs to accomplish just one thing to pass the first wall of acceptance and that is to <strong>solve the problem</strong>. The thing is that you will be working probably with a bunch of other people so that is not going to be enough. Other members of your team will read and probably try to modify that code so it also needs to follow some good practices, that may come from a style guide determined by you and your team, but will get on that later. First of all, your code needs to solve the problem.</p>
+<p>Even when your code is solving the problem, it may not be solving it.</p>
+
+<h3>Don't get explicit</h3>
+<p>Something <strong>hard</strong> is something that is not flexible, it doesn't adapt. Our code needs flexibility to stand the test of time as our project grows. In programming this means that our algorithms need to be <em>symbolic</em> and representative. The less explicit your code is the most future proof it will be.</p>
+<p>Doing maths is a common scenario where we make this mistakes because we usually have constant values. A few weeks ago I was <a href="/2014/08/writing-chronos/">writing Chronos</a> and I had to extract hours, minutes and seconds from a big number of milliseconds.</p>
+
+<pre>
+var minutes = Math.floor(milliseconds/60000);
+milliseconds - minutes*60000; <span class="commented-code">// subtracting minutes in milliseconds</span>
+var seconds = Math.floor(milliseconds/1000);
+milliseconds - seconds*1000; <span class="commented-code">// subtracting seconds in milliseconds</span>
+</pre>
+
+<p>This is not particularly bad, but as you may have noticed we're doing something twice. This happens because we have hard data, in this example the number of milliseconds inside a minute and the number of milliseconds inside a second. Hopefully I detect this pattern before even writing it.</p>
+<p>I knew I was going to do this a lot. My solution was to use an object literal that will store the coefficient for every unit I wanted to extract.</p>
+
+<pre>
+<span class="commented-code">// object storing units</span>
+var units = {
+    minutes: 60000,
+    seconds: 1000
+};
+<span class="commented-code new-line">// extracting values looping the units object</span>
+function getValues(){
+    var result = {};
+    for (var key in units) {
+        result[key] = Math.floor(milliseconds/units[key]);
+        milliseconds = result[key]*units[key];
+    };
+    return result;
+}
+</pre>
+
+<p>This looks way better, not only because we are not doing things twice. I we want to extract hours now there's no need to change the <em>getValues()</em> method, the only thing to do is to add hours and its coefficient to the units object.</p>
+
+<pre>
+var units = {
+    hours: 3600000,
+    minutes: 60000,
+    seconds: 1000
+}; 
+</pre>
+
+<p>The number of milliseconds inside a second will change, but there are other cases where this constant can change and having them in an object or a variable means that if it's necessary you will only need to change it in one place inside the scope making it easier to mantain.</p>
+
+<h3>Think of all the possibilities</h3>
+<p>As a front end developer, one of our most common task is to create visual elements. Building a slider can be an easy task or a very difficult one depending on the specifications, but for now let's assume our slide will only need to change some content after a certain period of time.</p>
+<p>You have a lot of decisions to make like how you're going to get the elements, how you're going to loop them, thumbnails, controls. Even in the simplest slider case, you're going to make a lot of decisions.</p>
+<p>Let's say you've answered all of these questions to yourself and transform them into code, like magic.</p>
+<p>What happens if the person that entries the data for the site you're building just loads one image for the slider you've built? If you didn't think of that, do of it because it could happen for sure. The good news if that we can do something about it.</p>
+<p>One day a professor said to me that the code needs to be as atomic as possible, that every function should take care of the tiniest task. That was a very good advice. If your code is as <strong>atomic</strong> as my professor said you can simply solve the case of the one image slider.</p>
+
+<pre>
+function startLoop(){
+    if (sliderElements.length > 1) {
+        slider.showNavigation(); <span class="commented-code">// show navigation buttons</span>
+        slider.showThumbnails(); <span class="commented-code">// show thumbnails</span>
+        slider.loop(); <span class="commented-code">// start looping the content inside the slider</span>
+    }
+};
+</pre>
+
+<p>If we have only one image we don't need navigation buttons or thumbnails. We don't even need to loop through anything so, why doing it? If we don't cover this special case, there's a great chance of this to be a bug. You can prevent an <strong>issue</strong> in the future by making good decisions today. If you don't do this you're building a slider that doesn't work with one element, in other words <strong>you may be solving a problem, but not the problem</strong>.</p>
+
+<h3>Wrap up</h3>
+<p>Look at the future and take care of all the possible use cases. Remember that other developers will working on your code so make it symbolic, atomic and easy to mantain.</p>
+<p>Happy coding!</p>
+
+

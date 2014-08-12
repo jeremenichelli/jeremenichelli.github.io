@@ -35,7 +35,7 @@ now.getMonth();
 <span class="new-line">now.getYear(); <span class="commented-code">// returns 114, the number of years since 1900</span></span>
 </pre>
 <p>There are a lot of useful functions to set values to it and formating, but in this case we are only interested in getting stuff from it.</p>
-<p>There is one method I didn't mention above because it's the one in which <strong>Chronos</strong> relays and it is <em>getTime()</em>. This particular function returns the number of milliseconds that has passed since the midnight of January 1st, 1970 and it's exactly what I need. This means that we can take two date objects, get the amount of milliseconds and do a substraction to get how much time has passed since the two were set, of course in milliseconds.</p>
+<p>There is one method I didn't mention above because it's the one in which <strong>Chronos</strong> relays and it is <em>getTime()</em>. This particular function returns the number of milliseconds that has passed since the midnight of January 1st, 1970 and it's exactly what I need. This means that we can take two date objects, get the amount of milliseconds and do a subtraction to get how much time has passed since the two were set, of course in milliseconds.</p>
 
 <h3>The math</h3>
 <p>Once we have the difference in milliseconds we need to break it into different units. Each <strong>Chronos</strong> instance shows how much time has passed since you initialized it and how much time has passed since the last check in seconds and milliseconds. When you create a new instance you can indicate that you also need minutes, which is reasonable if you have a heavy web app. Even showing hours is an option, though that could probably mean that your code has serious problems.</p>
@@ -64,14 +64,14 @@ var diff = now.getTime() - this.initDate.getTime();
 <pre>
 var minutes = Math.floor(diff/60000);
 </pre>
-<p>The next step is to know the amount of seconds, but before that we need to substract the amount of minutes from <em>diff</em>. We already got how many minutes have passed and not substracting them from <em>diff</em> will acumulate the value. Once we've done this we can continue with the calculation. We also need to do that in milliseconds.</p>
+<p>The next step is to know the amount of seconds, but before that we need to subtract the amount of minutes from <em>diff</em>. We already got how many minutes have passed and not subtracting them from <em>diff</em> will acumulate the value. Once we've done this we can continue with the calculation. We also need to do that in milliseconds.</p>
 <pre>
 var minutes = Math.floor(diff/60000);
-diff - minutes*60000; <span class="commented-code">// substracting minutes in milliseconds</span>
+diff - minutes*60000; <span class="commented-code">// subtracting minutes in milliseconds</span>
 var seconds = Math.floor(diff/1000);
-diff - seconds*1000; <span class="commented-code">// substracting seconds in milliseconds</span>
+diff - seconds*1000; <span class="commented-code">// subtracting seconds in milliseconds</span>
 </pre>
-<p>You may notice that at the end I substracted the seconds, that means that <em>diff</em> now contains just the milliseconds.</p>
+<p>You may notice that at the end I subtracted the seconds, that means that <em>diff</em> now contains just the milliseconds.</p>
 <pre>
 console.log(minutes + 'm ' + seconds + 's ' + diff + ' ms');
 <span class="commented-code">// 1m 10s 345ms</span>
