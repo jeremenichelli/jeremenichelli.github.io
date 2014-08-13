@@ -37,7 +37,7 @@ function getValues(){
 }
 </pre>
 
-<p>This looks way better, not only because we are not doing things twice. I we want to extract hours now there's no need to change the <em>getValues()</em> method, the only thing to do is to add hours and its coefficient to the units object.</p>
+<p>This looks way better, not only because we are not doing things twice. If we want to extract hours there's no need to change the <em>getValues()</em> method, the only thing to do is to add hours and its coefficient to the units object.</p>
 
 <pre>
 var units = {
@@ -47,7 +47,7 @@ var units = {
 }; 
 </pre>
 
-<p>The number of milliseconds inside a second will change, but there are other cases where this constant can change and having them in an object or a variable means that if it's necessary you will only need to change it in one place inside the scope making it easier to mantain.</p>
+<p>The number of milliseconds inside a second will never change, but there are other cases where this constant could be modified and having them in an object or a variable means that, if it's necessary, you will only need to change it in one place inside the scope making it easier to mantain.</p>
 
 <h3>Think of all the possibilities</h3>
 <p>As a front end developer, one of our most common task is to create visual elements. Building a slider can be an easy task or a very difficult one depending on the specifications, but for now let's assume our slide will only need to change some content after a certain period of time.</p>
