@@ -18,12 +18,11 @@ resume: I've spent most of my time as a front-end developer building web pages t
 <p>If your answer is no then you can use classList. If the answer is yes then, why not build a specific shim to cover this instead of adding a library that does a lot of things that you're not going to use? Doing this will decrease the page load time and if the browser can use classList you'll see that <a href="http://jsperf.com/classlistvsjquery">performance also improves</a>.</p>
 <p>Going back to StateFarm project we had to cover Web ARIA features and that involves modifing attributes a lot, so using <em>.attr()</em> jQuery function was very common. The thing is that <strong>browsers already know how to handle this</strong> with this two functions:</p>
 
-<pre>
-// get an attribute value
-var someValue = element.getAttribute("attribute_name"); 
-<span class="commented-code new-line">// set an attribute value</span>
-element.setAttribute("attribute_name", "new_value");    
-</pre>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// get an attribute value</span>
+<span class="kd">var</span> <span class="nx">someValue</span> <span class="o">=</span> <span class="nx">element</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"attribute_name"</span><span class="p">);</span> 
+<span class="c1">// set an attribute value</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">"attribute_name"</span><span class="p">,</span> <span class="s2">"new_value"</span><span class="p">);</span> 
+</code></pre></div>
 
 <p>These are only two examples of things that jQuery adds as a feature that most of the browsers already have.</p>
 

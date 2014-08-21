@@ -283,13 +283,12 @@ pre {
   white-space: pre;
   word-wrap: normal;
 }
-pre .commented-code {
+pre code {
+  font-family: inherit;
+}
+pre code .c1 {
   color: #666666;
   font-style: italic;
-}
-pre .new-line {
-  display: inline-block;
-  margin-top: 5px;
 }
 img {
   max-width: 100%;

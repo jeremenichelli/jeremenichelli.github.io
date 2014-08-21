@@ -7,84 +7,84 @@ resume: There's one thing that can be confusing if you are a programmer that com
 <h3>Classic inheritance</h3>
 <p>As I mentioned in my <a href="/2014/05/primitive-values-and-objects/">last post</a>, here in JavaScript functions are also constructors that allow you to create new objects using the magic and confusing word <em>this</em>, which points to the new instance so you can assign general properties to it. Let's bring that back:</p>
 
-<pre>
-<span class="commented-code">// Person object constructor</span>
-var Person = function(name, age, city, state, country){
-    this.name = name;
-    this.age = age;
-    this.city = city;
-    this.state = state;
-    this.country = country;
-};
-<span class="new-line">Person.prototype.salutation = function(){</span>
-    return 'Hi! My name is ' + this.name + ' and I am ' + this.age + ' years old.';
-};
-<span class="new-line">Person.prototype.getLocation = function(){</span>
-    return 'I live in ' + this.city + ', ' + this.state + ', ' + this.country + '.';
-};
-<span class="new-line">var me = new Person('Jeremias', 27, 'San Lorenzo', 'Santa Fe', 'Argentina');</span>
-</pre>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Person object constructor</span>
+<span class="kd">var</span> <span class="nx">Person</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">city</span><span class="p">,</span> <span class="nx">state</span><span class="p">,</span> <span class="nx">country</span><span class="p">){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">city</span> <span class="o">=</span> <span class="nx">city</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="nx">state</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">country</span> <span class="o">=</span> <span class="nx">country</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">salutation</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="s1">'Hi! My name is '</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">' and I am '</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">+</span> <span class="s1">' years old.'</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getLocation</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="s1">'I live in '</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">city</span> <span class="o">+</span> <span class="s1">', '</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">+</span> <span class="s1">', '</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">country</span> <span class="o">+</span> <span class="s1">'.'</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="kd">var</span> <span class="nx">me</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s1">'Jeremias'</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="s1">'San Lorenzo'</span><span class="p">,</span> <span class="s1">'Santa Fe'</span><span class="p">,</span> <span class="s1">'Argentina'</span><span class="p">);</span>
+</code></pre></div>
 
 <p>What we've done here is create a function that acts as a constructor for the Person object. We also defined two methods using <em>prototype</em>. Now everytime we want a new <em>Person</em> we just need to this:</p>
-<pre>
-var you = new Person();
-</pre>
+
+<div class="highlight"><pre><code data-lang="js" class="language-js"><span class="kd">var</span> <span class="nx">you</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">();</span>
+</code></pre></div>
+
 <p>Obviously you need to pass the correct arguments to the function or they will be either in conflict with some methods you prototyped or just be <em>undefined</em>.</p>
 <p>This is the most clear and easy way to achieve classic inheritance in JavaScript in my opinion.</p>
 <p>The best thing of this approach is that the code is very clear and readable for new developers that start working in the project you're in, and believe me that's a big thing. One of the most common (and best) things about being a developer is that you'll be working with a lot of different people, with a different set of skills. Having a code that's pretty straight foward is a great advantage.</p>
 <h4>Prototype</h4>
 <p>You may notice that I used <em>prototype</em> to declare a new method for the Person object, so why do that when you could just add a function as any other property, right?</p>
-<pre>
-<span class="commented-code">// Person object constructor</span>
-var Person = function(name, age, city, state, country){
-    this.name = name;
-    this.age = age;
-    this.city = city;
-    this.state = state;
-    this.country = country;
-    <span class="new-line">this.salutation = function(){</span>
-        return "Hi! My name is " + this.name + " and I am " + this.age + " years old.";
-    }
-}
-</pre>
+
+<div class="highlight"><pre><code data-lang="js" class="language-js"><span class="c1">// Person object constructor</span>
+<span class="kd">var</span> <span class="nx">Person</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">city</span><span class="p">,</span> <span class="nx">state</span><span class="p">,</span> <span class="nx">country</span><span class="p">){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">city</span> <span class="o">=</span> <span class="nx">city</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="nx">state</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">country</span> <span class="o">=</span> <span class="nx">country</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">salutation</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="s2">"Hi! My name is "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">" and I am "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">+</span> <span class="s2">" years old."</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <p>This actually works, why shouldn't? The problem with this is that every time you create a new <em>Person</em> instance, JavaScript will create a new anonymous function for every method you declare inside the constructor. If you have two objects you'll have two copies of the <em>salutation</em> method, but imagine and object with a lot of methods and lots of copies of it.</p>
 <p>So, using <em>prototype</em> solves this problem because it keeps only one copy of that function that can be called by any Person object you create avoiding problems regarding memory usage. Talking about memory efficiency, let's start talking about the other contestant.</p>
 
 <h3>Prototypal inheritance</h3>
 <p>One of the greatest things about JavaScript is all the possibilities it offers to solve the same problems, each one with its advantages and drawbacks. Inheritance is a nice example of this statement. The best way to understand prototypal inheritance is to totally forgot what you've read so far, and start all over again.</p>
 <p>We are going to begin with a plain object that will contain properties and methods, let's use the <em>Person</em> model again, but this time as an object instead of a function:</p>
-<pre>
-<span class="commented-code">// Person object</span>
-var Person = {
-    name : undefined,
-    age : undefined,
-    city : undefined,
-    state : undefined,
-    country : undefined,
-    salutation : function(){
-        return 'Hi! My name is ' + this.name + ' and I am ' + this.age + ' years old.';
-    },
-    getLocation : function(){
-        return 'I live in ' + this.city + ', ' + this.state + ', ' + this.country + '.';
-    }
-}
-</pre>
+
+<div class="highlight"><pre><code data-lang="js" class="language-js"><span class="c1">// Person object</span>
+<span class="kd">var</span> <span class="nx">Person</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">name</span> <span class="o">:</span> <span class="kc">undefined</span><span class="p">,</span>
+    <span class="nx">age</span> <span class="o">:</span> <span class="kc">undefined</span><span class="p">,</span>
+    <span class="nx">city</span> <span class="o">:</span> <span class="kc">undefined</span><span class="p">,</span>
+    <span class="nx">state</span> <span class="o">:</span> <span class="kc">undefined</span><span class="p">,</span>
+    <span class="nx">country</span> <span class="o">:</span> <span class="kc">undefined</span><span class="p">,</span>
+    <span class="nx">salutation</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="s1">'Hi! My name is '</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">' and I am '</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">+</span> <span class="s1">' years old.'</span><span class="p">;</span>
+    <span class="p">},</span>
+    <span class="nx">getLocation</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="s1">'I live in '</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">city</span> <span class="o">+</span> <span class="s1">', '</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">+</span> <span class="s1">', '</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">country</span> <span class="o">+</span> <span class="s1">'.'</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <p>So far so good, we have an object with a clear structure, the thing is how do we create an instance of this object? One option is creating a <em>clone</em> function that takes a base object and returns a prototyped copy of it that you can assign to a variable.</p>
 
-<pre>
-<span class="commented-code">// clone function</span>
-function clone(obj){
-    function F(){};
-    F.prototype = obj;
-    return new F;
-}
-</pre>
+<div class="highlight"><pre><code data-lang="js" class="language-js"><span class="c1">// clone function</span>
+<span class="kd">function</span> <span class="nx">clone</span><span class="p">(</span><span class="nx">obj</span><span class="p">){</span>
+    <span class="kd">function</span> <span class="nx">F</span><span class="p">(){};</span>
+    <span class="nx">F</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">;</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">F</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>What's happening inside <em>clone</em>? We are creating a new function that will act as the constructor and we are prototyping the properties and methods from the object we are passing as a parameter.</p>
 
-<pre>
-var me = clone(Person);
-</pre>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">me</span> <span class="o">=</span> <span class="nx">clone</span><span class="p">(</span><span class="nx">Person</span><span class="p">);</span>
+</code></pre></div>
 
 <p>And that's how we obtain an instance of <em>Person</em>.</p>
 

@@ -8,42 +8,41 @@ resume: One of the things that we do very often in a web project is change the c
 
 <h3>classList</h3>
 <p>Modern browsers include an API that allows us to do all we need regarding classes, its name is <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element.classList" target="_blank">classList</a>. If you don't know it yet, it provides us of this methods: <em>add()</em>, <em>remove()</em>, <em>contains()</em> and <em>toggle()</em>, and it has a great performance.</p>
-<pre>
-var nav = document.getElementById('navigation');
-<span class="new-line commented-code">// Adds a class</span>
-nav.classList.add('hidden');
-<span class="new-line commented-code">// Removes a class</span>
-nav.classList.remove('hidden');
-<span class="new-line commented-code">// Checks if an element has a class, in this case it'll return false</span>
-nav.classList.contains('hidden');
-<span class="new-line commented-code">// Toggles a class</span>
-nav.classList.toggle('hidden');
-</pre>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">nav</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'navigation'</span><span class="p">);</span>
+<span class="c1">// Adds a class</span>
+<span class="nx">nav</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'hidden'</span><span class="p">);</span>
+<span class="c1">// Removes a class</span>
+<span class="nx">nav</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">'hidden'</span><span class="p">);</span>
+<span class="c1">// Checks if an element has a class, in this case it'll return false</span>
+<span class="nx">nav</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">'hidden'</span><span class="p">);</span>
+<span class="c1">// Toggles a class</span>
+<span class="nx">nav</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">toggle</span><span class="p">(</span><span class="s1">'hidden'</span><span class="p">);</span>
+</code></pre></div>
+
 <p>The only problem in the last paragraph I wrote is one word: modern. Before you even think of it, let's just say it, the problem is Internet Explorer and its old versions that some users still use. In fact, <a href="http://caniuse.com/classlist" target="_blank">classList has a nice support</a>, but if your code must work properly in version 8 and 9 of Internet Explorer then you won't be able to use it. Well, maybe you will.</p>
 
 <h3>The Facade pattern</h3>
 <p>You've may never heard of it before, but I'm pretty sure you've seen it or even used it. The facade pattern is very common in web development since it simplifies some complex stuff from your code in an elegant way.</p>
 <p>In order to show how a facade pattern implementation works, let's use it to create a function that detects if <strong>classList</strong> is available for use in case we want to add a class.</p>
 
-<pre>
-var addClass = function(el, cl){
-    if(document.documentElement.classList){
-        el.classList.add(cl);
-    } else {
-        el.className = el.className + ' ' + cl;
-    }
-}
-</pre>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">addClass</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">cl</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">classList</span><span class="p">){</span>
+        <span class="nx">el</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">cl</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">el</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="nx">el</span><span class="p">.</span><span class="nx">className</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">cl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>We've created a function that takes an element and a string for the class we want to add as arguments. If the <strong>classList API</strong> is supported the <em>add()</em> method is called, if it's not then a fallback that works too is provided.</p>
 <p>This fallback is way slower, but using this pattern allows us to take advantage of <strong>classList</strong> and its great performance whenever it's possible.</p>
 <p>Now, you don't have to check if a feature is available for use every time, you just call a function and the result is a cleaner and more readable code.</p>
 
-<pre>
-var nav = document.getElementById('navigation');
-<span class="new-line commented-code">// Add 'hidden' class to the nav element</span>
-addClass(nav, 'hidden');
-</pre>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">nav</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'navigation'</span><span class="p">);</span>
+<span class="c1">// Add 'hidden' class to the nav element</span>
+<span class="nx">addClass</span><span class="p">(</span><span class="nx">nav</span><span class="p">,</span> <span class="s1">'hidden'</span><span class="p">);</span>
+</code></pre></div>
 
 <p>Another thing that's great about this approach is that as modern browsers improve <strong>classList</strong> performance your code itself will get better but still work on old browsers.</p>
 
@@ -51,40 +50,38 @@ addClass(nav, 'hidden');
 <p>One of the things that I don't like about a facade implementation is that the feature existence will be consulted as many times as you call the method. This means that if you invoke our <em>addClass()</em> function ten times, our code will check ten times if <strong>classList</strong> is available for use.</p>
 <p>So why don't just check it just once?</p>
 
-<pre>
-var addClass;
-<span class="new-line">if(document.documentElement.classList){</span>
-<span class="commented-code">// call classList inside addClass method</span>
-    addClass = function(el, cl){
-        el.classList.add(cl);
-    };
-} else {
-    <span class="commented-code">// fallback for classList.add</span>
-    addClass = function(el, cl){
-        el.className = el.className + ' ' + cl;
-    };
-}
-</pre>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">addClass</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">classList</span><span class="p">){</span>
+<span class="c1">// call classList inside addClass method</span>
+    <span class="nx">addClass</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">cl</span><span class="p">){</span>
+        <span class="nx">el</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">cl</span><span class="p">);</span>
+    <span class="p">};</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// fallback for classList.add</span>
+    <span class="nx">addClass</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">cl</span><span class="p">){</span>
+        <span class="nx">el</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="nx">el</span><span class="p">.</span><span class="nx">className</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">cl</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>As you see we only do the checking part once. You still call <em>addClass(nav, 'hidden')</em> as you did before, the only difference is that it will perform better now.</p>
 <p>This code works on Internet Explorer 7, and even in older versions, but if your support starts from version 8 you could even <em>prototype</em> this method and improve more the performance. Remember that <em>prototype</em> method is not supported in Internet Explorer 7... <strong>yeah, buuuh!</strong></p>
 
-<pre>
-var els = HTMLElement || Element,
-    addClass;
-<span class="new-line">if(document.documentElement.classList){</span>
-    els.prototype.addClass = function(cl){
-        this.classList.add(cl);
-    };
-} else {
-    els.prototype.addClass = function(cl){
-        this.className = this.className + ' ' + cl;
-    };
-};
-<span class=" new-line commented-code">// Add 'hidden' class to the nav element</span>
-var nav = document.getElementById('navigation');
-nav.addClass('hidden');
-</pre>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">els</span> <span class="o">=</span> <span class="nx">HTMLElement</span> <span class="o">||</span> <span class="nx">Element</span><span class="p">,</span>
+    <span class="nx">addClass</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">classList</span><span class="p">){</span>
+    <span class="nx">els</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">addClass</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cl</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">cl</span><span class="p">);</span>
+    <span class="p">};</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">els</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">addClass</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cl</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">className</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">cl</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+<span class="c1">// Add 'hidden' class to the nav element</span>
+<span class="kd">var</span> <span class="nx">nav</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'navigation'</span><span class="p">);</span>
+<span class="nx">nav</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">'hidden'</span><span class="p">);</span>
+</code></pre></div>
 
 <p><strong>Is it just me or that looks prettier?</strong> Since some versions of Internet Explorer have the <em>Element</em> word to make reference to the DOM element object we have to make that assignment in the first line to make sure we are prototyping the correct one. The variable <em>els</em> will make reference to <em>HTMLElement</em> unless is <strong>undefined</strong>, falling back to <em>Element</em>.</p>
 
