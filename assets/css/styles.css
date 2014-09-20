@@ -192,12 +192,13 @@ body {
   line-height: 1;
   height: 100%;
 }
-.preload * {
+body.preload * {
   -ms-transition: none !important;
   -moz-transition: none !important;
   -webkit-transition: none !important;
   -o-transition: none !important;
   transition: none !important;
+  font-family: Helvetica, Arial, sans-serif !important;
 }
 a {
   color: #333333;
@@ -267,26 +268,23 @@ em {
   margin: 0 1px 0 0;
   padding: 0 4px;
 }
-pre {
+.highlight pre {
   background: #E5E5E5;
   border: solid 1px #E0E0E0;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
-  font-family: Menlo, Monaco, monospace;
-  font-size: .875em;
-  font-weight: 300;
-  line-height: 1.35714286em;
-  /* 19px */
   margin: 0 0 20px;
   overflow-x: auto;
   padding: 10px 12px;
   white-space: pre;
-  word-wrap: normal;
 }
-pre code {
-  font-family: inherit;
+.highlight pre code {
+  line-height: 1.35714286em;
+  /* 19px */
+  font-family: Menlo, Monaco, monospace;
+  font-size: .875em;
+  font-weight: 300;
 }
-pre code .c1 {
+.highlight pre code .c1 {
   color: #666666;
   font-style: italic;
 }
