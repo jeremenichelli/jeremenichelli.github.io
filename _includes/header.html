@@ -7,11 +7,20 @@
 	<meta name="description" content="Hi there! I'm Jeremias Menichelli, a web developer from Argentina and this is my personal site.">
 	<meta name="keywords" content="developer, front end, Jeremias Menichelli ,html, css, javascript, blog">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 	<!--  FAVICON  -->
 	<link rel="shortcut icon" type="image/x-icon" href="/assets/ico/favicon-16.ico">
 	<meta name="msapplication-TileColor" content="#FFFFFF">
 	<meta name="msapplication-TileImage" content="/assets/ico/favicon-144.png">
 	<link rel="apple-touch-icon-precomposed" href="/assets/ico/favicon-152.png">
+
+	<!-- TWITTER CARD META -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@jeremenichelli" />
+	<meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}" />
+	<meta name="twitter:description" content="{% if page.resume %}{{ page.resume }}{% endif %}" />
+	<meta name="twitter:image" content="{{site.url}}/assets/img/logo.gif" />
+	<meta name="twitter:url" content="{{site.url}}{{page.url}}" />
 
 	<link rel="stylesheet" href="/assets/css/styles.min.css">
 	<!--[if lt IE 9]>
