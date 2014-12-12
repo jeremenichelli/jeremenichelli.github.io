@@ -43,7 +43,7 @@ Now that we have that number, we need to divide it by the number of columns to g
 FORMULA
 one_span_col = available_space / number_of_columns
 
-REPLACE YOUR VALUES
+REPLACE WITH YOUR VALUES
 one_span_col = 67 / 12
 one_span_col = 5.58333333
 ```
