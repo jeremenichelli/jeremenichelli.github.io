@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint');
 
 // less task
-gulp.task('less', function(){
+gulp.task('styles', function(){
     return gulp.src('src/css/*.less')
         .pipe(less())
         .pipe(gulp.dest('assets/css'))
@@ -18,7 +18,7 @@ gulp.task('less', function(){
 });
 
 // js task
-gulp.task('js', ['lint'], function(){
+gulp.task('scripts', ['lint'], function(){
     return gulp.src('src/js/*.js')
         .pipe(uglify())
         .pipe(rename({
@@ -32,9 +32,10 @@ gulp.task('lint', function(){
     return gulp.src('src/js/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'))
+        .pipe(jshint.reporter('fail'));
 });
 
 // watching
 gulp.task('watch', function(){
-    gulp.watch(['less', 'js']);
+    gulp.watch(['styles', 'scripts']);
 });
