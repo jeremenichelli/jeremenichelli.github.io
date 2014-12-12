@@ -9,7 +9,7 @@ What happened is something that might have happened to you too. The approach I t
 
 ### The so-hated carousel
 
-The fact that carousels don't have a lot of fans in the development world is not a secret. I don't hate them, but it's something I wouldn't recommend to implement. In terms of UX the user can miss content or just not explore it to see what's **'hidden'** there, it's also hard to make them accessible to people with sight problems and finally but not least, they are tricky to code.
+The fact that carousels don't have a lot of fans in the development world is not a secret. I don't hate them, but it's something I wouldn't recommend to implement. In terms of UX the user can miss content or just not explore it to see what's **hidden** there, it's also hard to make them accessible to people with sight problems and finally but not least, they are tricky to code.
 
 The thing that gave me goosebumps when I saw my old approach was how much I was interacting with the DOM, carousels are interface elements so obviously you'll have to but it was too much. Every time the carousel moved I was looking for the current active element, looking for its next sibling, adding and removing classes and a bunch of other stuff. That's a lot.
 
@@ -43,7 +43,7 @@ Interactions inside the same layers are always faster than the ones you do betwe
 
 ### Lesson learned
 
-When I looked at my new attemp I was very happy to see how I solved this problem in a very simpler way and avoiding this particular problem. This is a quick example of that script.
+When I looked at my new attemp I was very happy to see how I solved this problem in a very simpler way and avoiding this particular issue. This is a quick example of that script.
 
 ```js
 var carousel = function(DOMelement) {
@@ -68,11 +68,13 @@ carousel.prototype.moveForward = function () {
 
 Now the script is controlling all the logic and changes. There's one initial DOM interaction to get all the elements, which are stored in a property inside the carousel element and a little class manipulation when a new active element needs to be set. Of course carousels are more complex so this is just a simplified example of this case.
 
+It's good to see DOM manipulation as a initial point and a final state for UI elements. Not in between, not getting involved in programming decisions. Just a source to start and an output to reflect changes.
+
 Also, it is highly recommendable to use *classList* to manipulate class names of DOM elements if it's available, it's faster and you avoid re-painting. Also *getElementsByClassName* is way faster than *querySelectorAll* and there are polyfills for both in case you need to cover older browsers that don't support these methods.
 
 
 ### Wrap-up
 
-We are our biggest teachers, the person we are gonna to learn more from. If we are humble enough and open our eyes to see what could be done better we'll always be moving in the right direction. So if you have the time and opportunity to start a problem from scratch even when you've already done it, don't miss it, maybe you'll find out some concepts are not strongly set on you or that your better than before.
+We are our biggest teachers, the person we are gonna to learn more from. If we are humble enough and open our eyes to see what could be done better we'll always be moving in the right direction. So if you have the time and opportunity to start a problem from scratch even when you've already done it, don't miss it, maybe you'll find out some concepts are not strongly set on you or that you're better than before.
 
 Happy coding!
