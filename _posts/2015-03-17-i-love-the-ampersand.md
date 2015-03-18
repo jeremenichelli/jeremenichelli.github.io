@@ -1,12 +1,12 @@
 ---
 layout: post
 title: I love the ampersand
-resume: A good example on how small things can make a big difference. It costed me a lot to move from plain CSS to preprocessors languages, but somehow LESS convinced me and its little shorcuts are the way I enjoy the most.
+resume: Small things can make a big difference. It costed me a lot to move from plain CSS to preprocessors languages, but somehow LESS convinced me and its little shorcuts are the way I enjoy the most and the ampersand is one of those small things.
 ---
 
 ### &amp;
 
-For the ones that don't work with SASS or LESS and never heard about it, the ampersand is a selector that refers to the selector itself inside its curly braces declaration.
+For the ones that don't work with SASS or LESS or never heard about it, the ampersand when it's placed inside a common selector declaration refers to the selector itself.
 
 Examples are better, right?
 
@@ -27,7 +27,7 @@ Examples are better, right?
 }</code>
 </pre></div>
 
-Remember that new declarations inside curly braces in LESS indicates inner elements, but using an ampersand indicates that we are instead indicating a *.box* element with an additional class that can be **small** or **medium**.
+Remember that new declarations inside curly braces in LESS indicates inner elements, but using an ampersand changes everything and we are now indicating that a *.box* element with an additional class that can be **small** or **medium** needs extra styles. This is the result...
 
 <div class="highlight"><pre>
 <code>.box.small {
@@ -45,7 +45,7 @@ Remember that new declarations inside curly braces in LESS indicates inner eleme
 }</code>
 </pre></div>
 
-It's a nice touch, maybe not a big thing. To me this little guy it's great when working with elements that has pseudo-elements or different states like buttons or links. It's very useful inside mixins.
+It's a nice touch, maybe not a big thing. To me this little guy it's great when working with elements that have pseudo-elements or different states like buttons or links. It's also very useful inside mixins.
 
 <div class="highlight"><pre>
 <code>.clearfix() {
@@ -61,7 +61,7 @@ It's a nice touch, maybe not a big thing. To me this little guy it's great when 
 }</code>
 </pre></div>
 
-I love how the symbol eliminates the noise in the declaration. You now that everything inside that mixin takes totally care of the styling. Don't need to look for other style declaration for that, it's all there. It's simpler to read, ergo simpler to mantain.
+I love how the symbol eliminates the noise in the declaration. You know that everything inside that mixin takes care of one specific thing,. It's like a closure, you don't need to look for other style declaration for that, it's all there. Simpler to read, ergo simpler to mantain.
 
 
 ### Bringing mixins to the game
@@ -87,7 +87,7 @@ Now let's see what happens when you need to style buttons or links.
 }</code>
 </pre></div>
 
-That's really easy to understand and if you use variables inside the mixin you can build flavors of button in a really easy way.
+The code is pretty straight forward and if you use variables inside the mixin you can build flavors of button in a really easy way.
 
 <div class="highlight"><pre>
 <code>.button(@color) {
@@ -130,7 +130,7 @@ I don't know you but to me that's beautiful.
 
 ### Variable interpolation
 
-Last but not least, this simple feature is a beast if you know where you can use it. What it basically does is to put value inside strings. Again, examples are better.
+Well this has nothing to do with the ampersand selector, but this simple feature is a beast if you know where you can use it. What it basically does is to put value inside strings. Again, examples are better.
 
 <div class="highlight"><pre>
 <code>@base-img-url: '../img'
@@ -141,9 +141,9 @@ Last but not least, this simple feature is a beast if you know where you can use
 }</code>
 </pre></div>
 
-There's a higher chance you'll use the same base path for images so in case you need to change it for some reason, you only do it in one place.
+There's a higher chance you'll use the same base path for images so in case you need to change it for some reason, you only have to do it in one place.
 
-You can also apply some maths on it.
+Here's another place where I usually need this...
 
 <div class="highlight"><pre>
 <code>.opacity(@value) {
