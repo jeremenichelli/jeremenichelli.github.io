@@ -103,23 +103,25 @@ function shuffle(array) {
 }
 ```
 
-I've created a <a href="http://jsfiddle.net/jeremenichelli/7qLbpr1b/6/" target="_blank">fiddle</a> where you can see this working and it contains an iteration that gets executed a thousand times and show the results in the console. After running a few tests and making sure it worked well I started searching for alternatives and stepped out with what I think is an ugly solution to this.
+I've created a <a href="http://jsfiddle.net/jeremenichelli/7qLbpr1b/6/" target="_blank">fiddle</a> where you can see this working. It also contains an iteration that gets executed a thousand times with the results being shown in the console.
+
+After running a few tests and making sure it worked well I started searching for alternatives and stepped out with what I think is an ugly solution to this.
 
 
-### Using sort, the wrong way
+### Using sort, just don't do it
 
-Don't get me wrong, I think <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort" target="_blank">sort</a> is great, but the original purpose of is to establish a new known order in an array, you need a compare function and a criteria and random isn't a known order and has no criteria, but well, here's the little monster I found out there...
+Don't get me wrong, I think <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort" target="_blank">sort</a> is great, but the original purpose of is to establish a new known order for an array, you need a compare function and a criteria. Random isn't a known order and has no criteria, but well, here's the little monster I found out there...
 
 ```js
 array.sort(function() { return 0.5 - Math.random() });
 ```
 
-Beautiful, isn't it. Just one line, something that will want you to put it inside your code right away because, you know, it's just one line man! The problem with this is that is not taking in consideration how *sort* works. Every time the compare function is called, sort expects a negative number, a positive number or zero. In case the number is negative the second element in comparison will be moved before the first one, the opposite will happen if the number is positive and nothing will happen if the number returned is zero. That's pretty useful but since we want to create a random scenario half of the times the compare function is called there's a high chance that nothing will happen, leaving the elements in the position they are. We don't want that. If you send an array of two or three elements there's a high probability you will get the exact same array and after running this tests that's what actually happens. <a href="http://jsfiddle.net/jeremenichelli/vhn6nbfy/1/" target="_blank">Here's a proof of that</a>.
+Beautiful, isn't it? Just one line, something that will want you to put it inside your code right away because, you know, it's just one line man! The problem with this is that is not taking in consideration how *sort* works. Every time the compare function is called, sort expects a negative number, a positive number or zero. In case the number is negative the second element in comparison will be moved before the first one, the opposite will happen if the number is positive and nothing will happen if the number returned is zero. That's pretty useful but since we want to create a random scenario half of the times the compare function is called there's a high chance that nothing will happen, leaving the elements in the position they are. We don't want that. If you send an array of two or three elements there's a high probability you will get the exact same array and after running these tests <a href="http://jsfiddle.net/jeremenichelli/vhn6nbfy/1/" target="_blank">that's what actually happens</a>.
 
 
 ### The best solution out there
 
-I supposed that this problem wasn't new and that probably smarter people than me already had a solution for a well distributed and performant algorithm. Both things were true. The solution is very old and it's called <a href="http://en.wikipedia.org/wiki/Fisher–Yates_shuffle" target="_blank">Fisher-Yates shuffle</a> named after Ronald Fisher and Frank Yates and it's actually the one applied by underscore library. You can check that implementation on <a href="https://github.com/jashkenas/underscore/blob/master/underscore.js#L342" target="_blank">github</a> that has only some little adjustments to match underscore needs.
+I supposed that this problem wasn't new and that probably smarter people than me already had a solution for a well distributed and performant algorithm. Both things were true. The solution is very old and it's called <a href="http://en.wikipedia.org/wiki/Fisher–Yates_shuffle" target="_blank">Fisher-Yates shuffle</a> named after Ronald Fisher and Frank Yates. It basically asures you that any possible permutation is equally likely and it's the one applied by underscore library. You can check that implementation on <a href="https://github.com/jashkenas/underscore/blob/master/underscore.js#L342" target="_blank">github</a> that has only some little adjustments to match underscore needs.
 
 If you need this code without underscore dependencies here's a <a href="https://jsfiddle.net/jeremenichelli/4ze2buLa/2/" target="_blank">fiddle</a> with the method and some tests showing how well distributed are the frequencies. You can also check its performance <a href="http://jsperf.com/most-performant-shuffle-method-for-arrays" target="_blank">here</a>.
 
