@@ -123,9 +123,9 @@ That's pretty useful when you are actually sorting elements but since we want to
 
 ### The best solution out there
 
-I supposed that this problem wasn't new and that probably smarter people than me already had a solution for a well distributed and performant algorithm. Luckily that was true. The solution is very old and it's called <a href="http://en.wikipedia.org/wiki/Fisher–Yates_shuffle" target="_blank">Fisher-Yates shuffle</a> named after Ronald Fisher and Frank Yates and it assures that any possible permutation is equally likely and it's the one applied by underscore library in their **_.shuffle** method. You can check that implementation <a href="https://github.com/jashkenas/underscore/blob/master/underscore.js#L342" target="_blank">here</a>.
+I supposed that this problem wasn't new and that probably smarter people than me already had a solution for a well distributed and performant algorithm. Luckily that was true. The solution is very old and it's called <a href="http://en.wikipedia.org/wiki/Fisher–Yates_shuffle" target="_blank">Fisher-Yates shuffle</a> named after Ronald Fisher and Frank Yates and it assures that any possible permutation is equally likely. This algorithm is the one applied by underscore library in their **_.shuffle** method and you can see its implementation in <a href="https://github.com/jashkenas/underscore/blob/master/underscore.js#L342" target="_blank">github</a>.
 
-If you need this code without underscore dependencies here's a <a href="https://jsfiddle.net/jeremenichelli/4ze2buLa/2/" target="_blank">fiddle</a> with the method and some tests showing how well distributed are the frequencies. You can also check its performance in this <a href="http://jsperf.com/most-performant-shuffle-method-for-arrays" target="_blank">profile</a>.
+If you need this code without underscore dependencies here's a <a href="https://jsfiddle.net/jeremenichelli/4ze2buLa/2/" target="_blank">fiddle</a> I've created with the method and some tests showing how well distributed are the frequencies. You can also check its performance in this <a href="http://jsperf.com/most-performant-shuffle-method-for-arrays" target="_blank">profile</a>.
 
 
 ### Wrap-up
