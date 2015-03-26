@@ -63,7 +63,7 @@ Simple and beautiful... and useless, because it's still doing nothing.
 
 #### Return a new shuffled array
 
-We still need to extract the element in that position from *origArray* and store it in a new one. For that we can use *splice* which does the same thing as *slice* but it removes the result from the original. array.
+We still need to extract the element in that position from *origArray* and store it in a new one. For that we can use *splice* which does the same thing as *slice* but it removes the result from the original array.
 
 ```js
 function shuffle(array) {
