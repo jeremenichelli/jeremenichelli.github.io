@@ -11,7 +11,7 @@ Without overthinking too much about them I decided to quickly bring an algorithm
 
 ### From the scratch
 
-Trying to achieve equally probable results, I came up with this idea. First of all make a copy of the array. Get a random position *0 &lt; position &lt; array.length - 1*, take the item in that position out of the array and put it inside a new one. Then repeat that again considering that now the array length has decreased by one until the copied array is empty.
+Trying to achieve equally probable results, I came up with this idea. First of all make a copy of the array. Get a random position, take the item in that position out of the array and put it inside a new one. Then repeat that again considering that now the array length has decreased by one until the copied array is empty.
 
 The best thing of this approach is that every iteration is independent from the previous one, which it should be pretty obvious and not a big deal but I'll show you some code samples that are popular in forums that don't even cover this when they are asked for a solution to this problem, but let's stick with this for now.
 
@@ -110,7 +110,7 @@ After running those tests and making sure it worked well I started searching for
 
 ### Using sort, just don't
 
-Don't get me wrong, I think <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort" target="_blank">sort</a> is great, but when it's use for its original purpose which is to establish a new known order in an array. For that you need a criteria and a compare function that responds to it. Random isn't a known order and has no criteria, but well, here's the little monster I found out there...
+Don't get me wrong, I think <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort" target="_blank">sort</a> is great, but when it's used for its original purpose which is to establish a new known order in an array. For that you need a criteria and a compare function that responds to it. Random isn't a known order and has no criteria, but well, here's the little monster I found out there...
 
 ```js
 array.sort(function() { return 0.5 - Math.random() });
