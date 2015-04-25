@@ -84,7 +84,7 @@ var method = {
 // assuming getState returns a string
 var state = getState();
 
-method[state]; 
+method[state](); 
 ```
 
 Doing this is convenient because you avoid doing this not-so-good approach.
