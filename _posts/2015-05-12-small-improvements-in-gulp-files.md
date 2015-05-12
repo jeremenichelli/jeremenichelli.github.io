@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Small improvements in gulp files
-resume: I want to share some things I always do when I'm building my tasks in Gulp. Small patterns to solve simple situationsand improve the build process in my projects.
+resume: I want to share some things I always do when I'm building my tasks in Gulp. Small patterns to solve simple situations and improve the build process in my projects.
 ---
 
 ### Use the package.json file
@@ -54,7 +54,7 @@ gulp.task('build', function() {
 
 ### Organizing and naming tasks
 
-As I explained in ---- my previous post ----, Gulp has a great and simple way to tell a task that some other ones need to finish before it starts.
+As I explained in <a href="/2015/05/using-gulp/">my previous post</a>, Gulp has a great and simple way to tell a task that some other ones need to finish before it starts.
 
 ```js
 gulp.task('karma', [ 'lint' ], function() {
