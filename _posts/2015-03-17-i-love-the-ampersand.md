@@ -130,7 +130,7 @@ I don't know you but to me that's beautiful.
 
 ### Variable interpolation
 
-Well this has nothing to do with the ampersand selector, but this simple feature is a beast if you know where you can use it. What it basically does is to put value inside strings. Again, examples are better.
+Well this has nothing to do with the ampersand selector, but this simple feature is a beast if you know where you can use it. What it basically does is to put variables content inside strings. Again, examples are better.
 
 <div class="highlight"><pre>
 <code>@base-img-url: '../img'
@@ -169,6 +169,6 @@ Here's another place where I usually need this...
 
 ### Wrap-up
 
-Small things are usually more versatile, they can bend and adapt to different situations. That's why I love the ampersand and I use it a lot.
+Small patterns usually behave in a more flexible way, they can bend and adapt to different situations.
 
-If you are interested in more LESS awesomeness you can go to the <a href="http://lesscss.org/features/" target="_blank">official language features reference</a>. Happy coding!
+If you are interested in more LESS awesomeness you can go to the <a href="http://lesscss.org/features/" target="_blank">official language features reference</a>.
