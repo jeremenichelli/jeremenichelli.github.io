@@ -3,10 +3,10 @@
   description: Library for easy data binding.
 - name: classing
   slug: classing
-  description: Modern browsers include the classList API that has a great performance but in some projects you can't take advantage of that boost because you need to cover old browsers (I\'m looking at you IE). So this prototypes a function on HTML elements new class functions and if classList is available the API is used if it\'s not then fallback functions are triggered.
+  description: Modern browsers include the classList API that has a great performance but in some projects you can't take advantage of that boost because you need to cover old browsers (I'm looking at you IE). So this prototypes a function on HTML elements new class functions and if classList is available the API is used if it's not then fallback functions are triggered.
 - name: condense
   slug: condense
   description: Weather widget manager based on Open Weather API for current forecast.
 - name: scrollProgress
   slug: scrollProgress
-  description: Create a progress bar that indicates how much you\'ve scrolled on a website. It\'s very useful to show the reading progress in an article or a blog post. Just add the script and call scrollProgress.init() and a black bar on the upper part of your website to show the scrolling progress. The script supports IE9+ and all modern browsers.
+  description: Create a progress bar that indicates how much you've scrolled on a website. It's very useful to show the reading progress in an article or a blog post. Just add the script and call scrollProgress.init() and a black bar on the upper part of your website to show the scrolling progress. The script supports IE9+ and all modern browsers.
