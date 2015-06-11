@@ -40,14 +40,14 @@ But, wait I also need a border and keep the element **100px** wide. Now the widt
 <div class="box"></div>
 ```
 
-There you go, we did it! After some math we have an element that's 100px wide, with 20px of padding and a 2px border. Is this behavior correct? Why do I have to do all this math to set the width I want for an element?
+There you go, we did it! After some math we have an element that's 100px wide, with 20px of padding and a 2px border. Is this behavior correct? Do I have to do all this math to set the width I want for an element?
 
 Answer to the first question, you might not like it, I don't actually, but this is expected if you know about *box-sizing* and how it works. Answer to the second question, no you don't have to... if you know about *box-sizing* and how it works.
 
 
 #### content-box
 
-This is the default value of *box-sizing*. Every time you set the height and the weight of an element it won't consider other layout properties of the box model as padding and border, like in the example above.
+This is the default value of *box-sizing*. Every time you set the height and the width of an element it won't consider other layout properties of the box model as padding and border, like in the example above.
 
 
 #### padding-box
