@@ -11,7 +11,7 @@ First of all, let's define what they are exactly and what are the differences be
 
 ### Dynamic site
 
-In a server hosting a site driven by a dynamic generator, that page you've just request doesn't exactly exist as it is. When that happens the url gets resolved, content is searched inside a data base and a code potentially containing loops for multiple instances of data like categories, posts or comments and condition blocks to render different sections runs and resolves into a file which is retrieved and is what you finally see in the browser.
+In a server hosting a site driven by a dynamic generator, that page you've just request doesn't exactly exist as it is. When that happens the url gets resolved, content is searched inside a database and a code potentially containing loops for multiple instances of data like categories, posts or comments and condition blocks to render different sections runs and resolves into a file which is retrieved and is what you finally see in the browser.
 
 ### Static site
 
