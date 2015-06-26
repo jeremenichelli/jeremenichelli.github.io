@@ -444,7 +444,7 @@ section.blog-main h2 span {
 section.blog-main ul {
   list-style: disc;
   list-style-position: inside;
-  margin: 0 0 20px;
+  margin: 0 0 20px 20px;
 }
 section.blog-main ul li {
   line-height: 1.5em;

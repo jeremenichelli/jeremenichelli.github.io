@@ -3,11 +3,9 @@ author: Jeremias Menichelli
 url: https://jeremenichelli.github.io
 
 port: 4000
-auto: true
 safe: true
-server: true
 markdown: redcarpet
-pygments: true
+highlighter: pigments
 permalink: /:year/:month/:title
 gems:
   - jekyll-sitemap
