@@ -5,7 +5,7 @@ url: https://jeremenichelli.github.io
 port: 4000
 safe: true
 markdown: redcarpet
-highlighter: pigments
+highlighter: pygments
 permalink: /:year/:month/:title
 gems:
   - jekyll-sitemap
