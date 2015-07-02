@@ -22,7 +22,7 @@ Then do it locally in your project's folder.
 npm install --save-dev gulp
 ```
 
-For every package you want to use, run this command or just add the name of the module with its version to your *package.json* file. 
+For every package you want to use, run this command or just add the name of the module with its version to your *package.json* file and run `npm install` or do it on your terminal using the **--save-dev** flag.
 
 ```
 npm install --save-dev gulp-uglify
@@ -87,6 +87,7 @@ You can put both tasks into one but I rather keep them doing just one thing, bec
 Once you've finished writing your tasks, you write the command *gulp* followed by the name of the task, like *minify* and you're going to see something like this in your console.
 
 ```
+..
 [gulp] Using gulpfile /to/path/project/gulpfile.js
 [gulp] Starting 'hint'...
 [gulp] Finished 'hint' after 13 μs
@@ -104,6 +105,6 @@ gulp.task('default', [ 'minify' ]);
 
 Gulp is simple and powerful, you can do great things with a short amount of time spent in learning. Maybe one of its drawbacks is that it doesn't have a big community as Grunt has. That means less packages, less maintenance and more bugs probably. It's all about choices.
 
-I've created <a href="https://github.com/jeremenichelli/recipe" target="_blank">a repository with an initial structure of a JavaScript project with a Gulp work flow</a> ready to use so you can take it as a start point or just give it a stare to investigate and learn more about this tool.
+I've created <a href="https://github.com/jeremenichelli/recipe" target="_blank">a repository with an initial structure of a JavaScript project with a Gulp work flow</a> ready to use so you can take it as a start point or just take a look at it to investigate and learn more about this tool.
 
 Happy coding!
