@@ -4,7 +4,7 @@ title: The power of using object literals
 resume: For the last months I've found myself using this simple technic quite a lot. Here are some examples of what you can do with it and how I took advantage of its versatility.
 ---
 
-### Object notation
+## Object notation
 
 One of the main caracteristics of JavaScript is that **almost** everything is an object. As you may know, or if you don't, you have two ways to access to an object property, both to read from it and write on it.
 
@@ -13,9 +13,9 @@ One is the dot notation *person.age*, the other one is the brackets notation tha
 In the second one we are passing the property as a string and that's the main reason why object literals are so useful and clean since strings are primitive values in JavaScript; this means you can compare them to take some different paths on your code.
 
 
-### Use cases of object literals
+## Use cases of object literals
 
-#### Storing and overriding default options
+### Storing and overriding default options
 
 Sometimes functions and components need a lot of customization by the time they're called or when an instance of them is created and every customizable property or flag means an argument. When this number exceeds the number three I usually prefer an options object to handle this situation.
 
@@ -59,10 +59,10 @@ function setOptions (options) {
 
 Using the *for in* iterator you loop on every key of an object and I've sent *dflt*, but in this case I'm searching for its keys inside the custom one. If the custom options object contains that key I save its value in a new object, in case it's not present I go for the default one. This approach is great because if you accidentally send an object with unnecessary option keys not contained on the default one they will be ignored.
 
-This approach is used in <a href="https://github.com/jeremenichelli/vanish" target="_blank">vanish</a>, one of my repositories to handle carousels, in case you want to see how it works.
+This technic is used in <a href="https://github.com/jeremenichelli/vanish" target="_blank">vanish</a>, one of my repositories to handle carousels, in case you want to see how it works.
 
 
-#### Linking states to specific methods
+### Linking states to specific methods
 
 Flags are very usual to save the state of something in your code so you can take different paths later through conditional statements.
 
@@ -118,7 +118,7 @@ Not only the code is ugly, but is not future proof. If at some point another sta
 I use a similar structure in <a href="https://www.github.com/jeremenichelli/steer" target="_blank">steer</a>.
 
 
-#### Data binding 
+### Data binding 
 
 Injecting large amount of data into an HTML Document can be hard to do in a clean a simple way. A nice choice is to solve this using *data* attributes in the elements and object literals.
 
@@ -148,7 +148,7 @@ It's a pretty simple case but a good way to show how powerful is to have access 
 This approach is used in this weather widget I did call <a href="https://github.com/jeremenichelli/condense" target="_blank">condense</a>.
 
 
-#### Generating dynamic callbacks
+### Generating dynamic callbacks
 
 If your dealing with a web app that needs to do JSONP calls, using object literals could help you store the callback to obtain the data.
 
@@ -185,6 +185,6 @@ These lines belong to a simple script I developed to make JSONP calls that for s
 <a href="/2014/09/south-american-bird-cross-domain-calls/" target="_blank">I wrote a post</a> about it if you're interested on cross domain requests.
 
 
-### Wrap-up
+## Wrap-up
 
 That's it, I hope you find these approachs useful. Happy coding!

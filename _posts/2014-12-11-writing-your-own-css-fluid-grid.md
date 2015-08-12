@@ -9,16 +9,16 @@ One of the first things I discover when I started doing my own grids was that is
 A lot of developers told me they don't like doing their own grids because they hate maths. Well, maths is a big part of building a grid, probably the biggest. I love maths and I swear to you it's not that complicated.
 
 
-### Define your layout
+## Define your layout
 
 The first thing you need to define is how many combinations and number of columns you're going to use. Take count that using three columns in your grid doesn't mean you're going to use a three columns grid system, what if the three columns need different widths? Then you may need a ten columns one, or a twelve one. I usually go for a twelve but that's depends entirely on the project you're working on.
 
 
-### Let the maths begin
+## Let the maths begin
 
 This is the fun part to me, I hope I'm not alone. We are going to build a twelve columns grid system, that means that our number of columns is **12**. Next step, how much gap do we want between the columns? Since we're talking about a fluid grid it needs to be in percents, I will go for a gap of **3%**.
 
-#### The smallest part
+### The smallest part
 
 I always say that when solving a problem, we need to think **atomically**, if that's a word. First solve the smallest parts, the leaves of the tree and then go for the big ones.
 
@@ -83,7 +83,7 @@ column-12 = 100%
 This values were obtained by doing this calculations with javaScript. I've changed the name of our columns and added the percent symbol because now we have to think about the styles we need to make this work.
 
 
-### The styles
+## The styles
 
 Writing the styles is the simplest part in my opinion. We're going to use a class called *column* for the properties that all the columns have in common and then *column-1*, *column-2* ... *column-12* for the each specific one. This is personal, you can choose another name convention as long as it makes sense to you and your team.
 
@@ -143,7 +143,7 @@ We still need one more tweak to do, the first column of each row doesn't need a 
 For this to work we need to wrap every row within a *&lt;div&gt;* tag.
 
 
-### The markup
+## The markup
 
 So, we need a row class element and then fill it up with the group of columns we want.
 
@@ -158,7 +158,7 @@ So, we need a row class element and then fill it up with the group of columns we
 That's pretty simple and clean, isn't it? If we want vertical spacing my recommendation is to add a *margin-top* to the **row** class, but you can get the same effect by adding this property to the **column** class.
 
 
-### What about mobile?
+## What about mobile?
 
 In order to have a grid completely responsive we need to add a media query to our style sheet and make some changes to our columns. They need to cover the whole width, remove the float and the left margin and add a top margin or they will be have no vertical spacing between each other, I'll choose *20px* as an example.
 

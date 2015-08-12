@@ -1,0 +1,60 @@
+<head>
+
+    {% if page.title %}{% capture title %}{{ page.title }} | {{ site.author }}{% endcapture %}
+    {% else %}{% capture title %}{{ site.title }}{% endcapture %}
+    {% endif %}
+
+    {% if page.resume %}{% capture description %}{{ page.resume }}{% endcapture %}
+    {% else %}{% capture description %}{{ site.description }}{% endcapture %}
+    {% endif %}
+
+    {% capture url %}{{ site.url }}{{ page.url | prepend: site.baseurl }}{% endcapture %}
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{{ title }}</title>
+
+    <meta name="description" content="{{ description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="canonical" href="{{ url }}">
+
+    <!-- cover all apple devices -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-touch-icon-57x57.png?v=2bbQ36qWKR">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-touch-icon-60x60.png?v=2bbQ36qWKR">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-touch-icon-72x72.png?v=2bbQ36qWKR">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-touch-icon-76x76.png?v=2bbQ36qWKR">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-touch-icon-114x114.png?v=2bbQ36qWKR">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-touch-icon-120x120.png?v=2bbQ36qWKR">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-touch-icon-144x144.png?v=2bbQ36qWKR">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-touch-icon-152x152.png?v=2bbQ36qWKR">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon-180x180.png?v=2bbQ36qWKR">
+    
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico?v=2bbQ36qWKR">
+
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32.png?v=2bbQ36qWKR" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png?v=2bbQ36qWKR" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png?v=2bbQ36qWKR" sizes="16x16">
+    
+    <link rel="icon" type="image/png" href="/assets/favicon/android-chrome-192x192.png?v=2bbQ36qWKR" sizes="192x192">
+    {% if page.type == 'post' or page.type == 'blog' %}<meta name="theme-color" content="#ffb300">{% endif %}
+
+    {% if page.type == 'about' %}<meta name="theme-color" content="#37474f">{% endif %}
+
+    {% if page.type == 'home' %}<meta name="theme-color" content="#03a9f4">{% endif %}
+
+    {% if page.type == 'error' %}<meta name="theme-color" content="#e53935">{% endif %}
+    
+    <meta name="msapplication-TileColor" content="#fefefe">
+    <meta name="msapplication-TileImage" content="/assets/favicon/mstile-144x144.png?v=2bbQ36qWKR">
+
+    <!-- twitter card meta -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@jeremenichelli">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ description }}">
+    <meta name="twitter:url" content="{{ url }}">
+
+    {% include criticalCSS.html %}
+</head>

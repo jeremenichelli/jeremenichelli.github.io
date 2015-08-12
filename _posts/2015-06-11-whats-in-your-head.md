@@ -7,7 +7,7 @@ resume: Not singing a Cranberries song. Not saying you're crazy. I realized that
 Let's start building its content.
 
 
-### &lt;title&gt;
+## &lt;title&gt;
 
 The first thing you have to put inside the head tag is the title tag. It's the main sign to show the user which specific part of the site is being served and it's the first thing that search optimization engines will catch to see if what the user is looking up has something to do with that page from your site. That's why it's also important that the title varies through the different pages and sections.
 
@@ -21,27 +21,27 @@ Here is our head for the moment.
 </head>
 ```
 
-### &lt;meta&gt; tags
+## &lt;meta&gt; tags
 
 If you've been working in web sites for a long time you're gonna find meta tags very familiar. Each one has a **name** attribute indicating its type and a **content** attribute indicating its value.
 
-#### description
+### description
 
 The first one to mention is **description**, which is basically a short paragraph with a summary of the page. Google recommends the use of this meta tag, though it also claims that it will first track some real content from your site to see if there are good matches from the search the user is doing.
 
 The rules here are similars to the title's ones. Be brief, be accurate and change it from page to page.
 
-#### keywords
+### keywords
 
 The second is **keywords**. This was a really important one if you wanted your site to appear in search results, but now is deprecated. Why? In the past search engines relied a lot in the content of this meta tag so web developers started cheating to put it in some way. In the **keywords** meta tag you were able to list words that were related to the content inside the page separated by a comma.
 
 You were searching for an article about cars for example and the first three results had nothing to do with them, but if you opened some of those pages and inspect their head content you would probably find that they had the word cars in their **keyword** meta tag. Believe me this scenario was really really common so search engines, and mainly Google, started to not even look here at all.
 
-#### charset
+### charset
 
 This tag will indicate which group of characters will take the browser to parse the text content. Usually it's value is **utf-8**, but it can vary, mostly if you're serving a page with a language with special characters.
 
-#### Special meta tag for IE
+### Special meta tag for IE
 
 Yes, it's recommended to add a meta tag for Internet Explorer to indicate we want our page to be rendered with the hightest standard possible. Yes, you have to.
 
@@ -49,7 +49,7 @@ Yes, it's recommended to add a meta tag for Internet Explorer to indicate we wan
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 ```
 
-#### The world wide web is getting mobile
+### The world wide web is getting mobile
 
 This one is pretty new, the **viewport** tag indicates how a mobile device will render your site. Modern devices have a lot of pixels. To show visible and sharp content they take more pixels to form only one pixel from your page. Confusing? I suggest you <a href="https://developer.mozilla.org/en/docs/Mozilla/Mobile/Viewport_meta_tag" target="_blank">read the article the folks from Mozilla Developer Network wrote</a> that contains a pretty good explanation on how this works.
 
@@ -68,7 +68,7 @@ Now, let's update our head tag.
 </head>
 ```
 
-### Canonical
+## Canonical
 
 This link tag is used to specify which url the page is refering in case you have more than one that point to a single page. If you have only one url for a page or post, then is not really necessary, but it's a nice to add it if for example you have a different domain for mobile versions.
 
@@ -86,7 +86,7 @@ This link tag is used to specify which url the page is refering in case you have
 </head>
 ```
 
-### Favicons
+## Favicons
 
 If you've never heard of them, a **favicon** is that little icon you see in your browsers tab or location bar. They usually have a small size and are a really nice touh to personalize your project.
 
@@ -126,7 +126,7 @@ The problem here is fragmentation. Each browser expects a different size and not
 
 Yes, you need all of those icons. You can create them by yourself or let the tool I provided before to generate most of them. If you really want your favicon to reach all browsers, this will do the job.
 
-### Scripts
+## Scripts
 
 No. Don't put scripts here since they are going to block rendering. In cases where you need **HTML5** tags to work in legacy browsers you will need <a href="https://github.com/afarkas/html5shiv" target="_blank">html5shiv</a> in the head tag.
 
@@ -141,19 +141,19 @@ The thing is that if the request for the scripts takes some time and the DOM tre
 The correct form is to include the content of the script minified inside a script tag.
 
 
-### Styles
+## Styles
 
 Last year there was a move impulsed mostly by Google devs and their web standars to provide to the user the web site with a **content** first approach. This means that while adding a link tag with a stylesheet in the past was not wrong, it's now seen as a bad practice because your blocking content renderization.
 
 To solve this, put the most critical CSS rules in a style tag, also called **above the fold** styles, and load the rest of the rules by adding the stylesheet using Javascript. The incredible guys from Filament Group have a small script to achieve this called <a href="https://github.com/filamentgroup/loadCSS" target="_blank">loadCSS</a> which I suggest you dig in.
 
 
-#### Other content
+### Other content
 
 Of course, the web keeps changing and moving on and there is new content that can go inside here. For example if your project is a web app is recommended to add a **manifest.json** file reference, or you can change the look of Chrome mobile top bar by specifing a **theme-color**.
 
 
-### Wrap-up
+## Wrap-up
 
 Let's take a deep breath and see what a complete **head** tag looks like.
 

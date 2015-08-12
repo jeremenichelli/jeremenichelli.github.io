@@ -1,5 +1,18 @@
-{% include header.html %}
+<!DOCTYPE html>
+<html>
 
-{{ content }}
+    {% include head.html %}
 
-{% include footer.html %}
+    <body>
+
+        {% include header.html %}
+
+          {{ content }}
+
+        {% include footer.html %}
+
+        <link rel="stylesheet" href="/assets/styles/styles.min.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,400italic">
+        <script async src="/assets/scripts/site.min.js"></script>
+    </body>
+</html>

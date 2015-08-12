@@ -4,7 +4,7 @@ title: Building a blog using Jekyll. Install and quick setup
 resume: This static site generator has become popular between developers because of its simplicity and the fact that runs in GitHub pages, a place in the web we the developers feel confortable working in. In this first post, I'm going to explain really quick what you need to install it and the essential commands to start using it.
 ---
 
-### What's Jekyll?
+## What's Jekyll?
 
 It's a static site generator written in Ruby, the programming language that will take care of the build process in your site. In case you know nothing about it, don't worry, me neither. You don't need any Ruby knowledge to use it.
 
@@ -19,7 +19,7 @@ For your pages and posts you can just use HTML, but if you like them <a href="ht
 To sum up very quickly these last paragraphs, Jekyll is a static site generator written in Ruby that uses YAML files for configuration, Liquid for templating and gives you the option of Markdown and Textile to build pages.
 
 
-### Installation
+## Installation
 
 So, you want to build a site or just know what all the fuss is about, then this is what you have to install.
 
@@ -36,7 +36,7 @@ gem install jekyll
 You might need admin permission to complete this, in that case run it again with ```sudo``` before. If you're having some other issue regarding installation check the <a href="http://jekyllrb.com/docs/installation/" target="_blank">official documentation</a> about this particular stage.
 
 
-### Folder structure
+## Folder structure
 
 With everything set, we can start building our site, these are the basic folders and files inside a standard Jekyll site.
 
@@ -50,7 +50,7 @@ With everything set, we can start building our site, these are the basic folders
 Other folders that are not necessary but very useful are **_data** where you can create ```.yml``` files and store general content and information to make your templates more dynamic and **_drafts** where you can upload writings in work that Jekyll will ignore when listing posts.
 
 
-### Useful commands
+## Useful commands
 
 Maybe this whole thing is still a little confusing and you don't feel so confident to start from zero ground and build the whole site, then your terminal run the ```new``` command.
 
@@ -60,7 +60,7 @@ jekyll new my-new-site
 
 A new directory, **my-new-site** in this case, will be created with the basic folders and sample includes, layouts and posts will be there for you to explore or build your site above it.
 
-Remember that this is a static site so if some file was updated it won't be reflected inside the **_site** folder, for that you can use ```jekyll build``` and if you don't want to run it every five seconds just add the watch flag.
+Remember that this is a static site so if some file was updated it won't be reflected inside the **_site** folder, for that you can use ```build``` and if you don't want to run it every five seconds just add the watch flag.
 
 ```bash
 jekyll build --w
@@ -80,7 +80,7 @@ You can now test your work locally by typing **localhost:4000** in your browser.
 jekyll serve --w --drafts
 ```
 
-### Wrap-up
+## Wrap-up
 
 I hope this information was clear enough for you to have a quick and painless start using this great tool.
 

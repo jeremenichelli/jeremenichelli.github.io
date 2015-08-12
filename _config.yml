@@ -1,11 +1,15 @@
+# site settings
 title: Jeremias Menichelli | Web Developer
 author: Jeremias Menichelli
-url: https://jeremenichelli.github.io
+description: "My name is up there so you need me to tell you that. In case you don't know it I love spending my days building cool stuff on the web."
+url: "http://jeremenichelli.github.io"
+baseurl: ""
 
+# site theme colors
+themebackgroundcolor: "#ffffff"
+
+# build settings
 port: 4000
-safe: true
-markdown: redcarpet
 highlighter: pygments
+markdown: redcarpet
 permalink: /:year/:month/:title
-gems:
-  - jekyll-sitemap

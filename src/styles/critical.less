@@ -1,0 +1,404 @@
+// common resources
+@import '__mixins.less';
+@import '__variables.less';
+
+// normalize.css
+@import '_normalize.less';
+
+// critical less imports
+@import '_grid.less';
+
+// border-box reset
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+
+    // disable outline on focus
+    &:focus {
+        outline: 0;
+    }
+
+    // disable tap color in Chrome mobile
+    -webkit-tap-highlight-color: rgba(0,0,0, 0.0);
+}
+
+/* --- CRITICAL STYLES --- */
+body {
+    background-color: @background-color--light;
+    color: @text-color--dark;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+    -webkit-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern=1";
+
+    &.mobile--navigation-opened {
+        overflow: hidden;
+    }
+}
+
+/* --- HEADINGS STYLES --- */
+
+h1 {
+    font-size: 60px;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    line-height: 1em;
+    margin: 0 0 0 -2px;
+}
+
+h2 {
+    font-size: 42px;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    line-height: 1em;
+    margin: 45px 0 0 -2px;
+}
+
+.home--main,
+.about--main,
+.home--blog,
+.home--about {
+
+    h2 {
+        margin-top: 0;
+    }
+}
+
+h3 {
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1em;
+    margin: 45px 0 0 -2px;
+}
+
+h4, h5, h6 {
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1em;
+    margin: 38px 0 0 -2px;
+    text-transform: uppercase;
+}
+
+// mitigate margin top when a
+// paragraph is under a heading
+h3, h4, h5, h6 {
+
+    + p {
+        margin-top: 5px;
+    }
+}
+
+/* --- GENERAL STYLES --- */
+
+img {
+    max-width: 100%;
+}
+
+p {
+    line-height: 1.5em;
+    margin: 20px 0 0;
+}
+
+a {
+    color: @text-color--dark;
+    font-weight: 400;
+    text-decoration: none;
+    
+    &:visited {
+        color: @text-color--dark;
+    }
+}
+
+em {
+    font-weight: 400;
+    font-style: italic;
+}
+
+pre {
+    margin: 20px 0 0;
+}
+
+code {
+    font-size: 14px;
+}
+
+blockquote {
+    font-style: italic;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+/* --- LOGO STYLES --- */
+.logo {
+    color: @text-color--dark;
+    display: inline-block;
+    // general logo font size to
+    // rule all metrics inside
+    font-size: 40px;
+}
+
+.logo--name {
+    display: block;
+    line-height: 1em;
+    letter-spacing: -0.01em;
+    margin: -.25em 0 0 -.5em;
+    max-width: 8em;
+
+    &.error {
+        margin: 0;
+        width: auto;
+
+        + .logo--job {
+            margin: 0;
+        }
+    }
+}
+
+.logo--job {
+    display: block;
+    font-size: .45em;
+    font-weight: 300;
+    line-height: 1em;
+    margin: -.45em 0 0;
+    text-transform: lowercase;
+}
+
+/* --- HEADER STYLES --- */
+header {
+    border-style: solid;
+    border-width: 5px 0 0;
+    transition: border-color .25s ease;
+}
+
+/* --- NAV STYLES --- */
+nav {
+    padding: 8px 0 0;
+    text-align: right;
+}
+
+.nav--link {
+    color: @text-color--dark;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+    position: relative;
+    text-transform: uppercase;
+
+    + .nav--link {
+        margin: 0 0 0 16px;
+    }
+}
+
+.nav--link-text {
+    left: -99999em;
+    position: absolute;
+}
+
+.nav--link-icon {
+    display: inline-block;
+    fill: @text-color--dark;
+    vertical-align: bottom;
+    height: 20px;
+    width: 20px;
+}
+
+.mobile--navigation-button {
+    background: none;
+    border: none;
+    display: none;
+    float: right;
+    margin: 3px 0 0;
+    padding: 0;
+    position: relative;
+    transform: translateZ(0);
+    z-index: 300;
+
+    &:focus {
+        outline: 0;
+    }
+
+    div {
+        background: @text-color--dark;
+        border-radius: 1px;
+        height: 2px;
+        transition: all .4s ease;
+        width: 28px;
+
+        + div {
+            margin: 6px 0 0;
+        }
+    }
+
+    &.active {
+
+        div {
+            background-color: @text-color--light;
+        }
+        
+        .mobile--navigation-first-div {
+            transform: rotate(45deg) translate(3px, 8px);
+        }
+
+        .mobile--navigation-second-div {
+            opacity: 0;
+        }
+
+        .mobile--navigation-third-div {
+            transform: rotate(-45deg) translate(3px, -8px);
+        }
+    }
+}
+
+.mobile--navigation {
+    height: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    transform: translateZ(0);
+    transition: height .4s ease;
+    top: 0;
+    width: 100%;
+    z-index: 200;
+
+    &-inner {
+        background-color: black;
+        padding: 65px 25px;
+    }
+
+    &-link {
+        display: block;
+        color: @text-color--light;
+        font-size: 1.5em;
+        font-weight: 300;
+        margin: 20px 0 0;
+        text-align: center;
+        text-transform: uppercase;
+
+        &:first-child {
+            font-weight: 400;
+        }
+
+        &:visited {
+            color: @text-color--light; 
+        }
+    }
+
+    &-overlay {
+        display: none;
+        height: 100%;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+    }
+}
+
+/* --- ABOUT STYLES --- */
+.me {
+    border-radius: 50%;
+    float: left;
+    margin: 0 15px 15px 0;
+}
+
+/* --- FOOTER STYLES --- */
+.rights {
+    margin-top: 0;
+}
+
+/* --- BLOG STYLES --- */
+time {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.blog--lastpost-tag {
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.blog--post-title {
+    margin: 0;
+}
+
+.blog--post-resume {
+    margin: 0;
+}
+
+
+/* --- MOBILE STYLES --- */
+@media screen and (max-width: 769px) {
+
+    body, time,
+    .blog--lastpost-tag {
+        font-size: 16px;
+    }
+
+    code {
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .logo--job {
+        font-size: .5em;
+    }
+
+    header {
+
+        .column:last-child {
+            display: none;
+        }
+    }
+
+    .mobile--navigation-button {
+        display: block;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 30px;
+        margin-top: 40px;
+    }
+
+    h3 {
+        font-size: 24px;
+        margin-top: 40px;
+    }
+
+    h4, h5, h6 {
+        font-size: 20px;
+    }
+
+    ul {
+        padding: 0 0 0 20px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+
+    body {
+        overflow: visible !important;
+    }
+    
+    .mobile--navigation,
+    .mobile--navigation-overlay {
+        display: none !important;
+    }
+}
+

@@ -1,0 +1,183 @@
+// common resources
+@import '__mixins.less';
+@import '__variables.less';
+
+/* --- NON CRITICAL STYLES --- */
+strong {
+    font-weight: 400;
+}
+
+blockquote {
+    color: @blog-color--dark;
+    float: right;
+    font-size: 22px;
+    margin: 0 0 12px 20px;
+    width: 40%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+}
+
+h2 {
+
+    + h3 {
+        margin-top: 20px;
+    }
+}
+
+h3 {
+
+    + h4 {
+        margin-top: 20px;
+    }
+}
+
+/* --- MOBILE NAVIGATION --- */
+
+
+/* --- SYNTAX STYLES --- */
+code {
+    background-color: @background-color--medium;
+    border-radius: 5px;
+    font-family: Menlo, Monaco, Segoe UI, monospace;
+    font-weight: 300;
+    padding: 1px 5px;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+
+    .c, .c1 {
+        opacity: .65;
+    }
+}
+
+pre {
+    background-color: @background-color--medium;
+    border-radius: 5px;
+    padding: 10px 12px;
+
+    code {
+        background-color: transparent;
+        padding: 0;
+    }
+}
+
+.post--navigation-next {
+    float: right;
+    text-align: right;
+}
+
+.post--navigation-indicator {
+    text-transform: uppercase;
+
+    + h2 {
+        font-size: 36px;
+        margin: 10px 0 0;
+    }
+}
+
+.error--main-message {
+    margin: 0;
+}
+
+/* --- COLOR SPECIFIC PAGES --- */
+.blog--header,
+.post--header {
+    border-color: @blog-color;
+}
+
+.post--main {
+
+    a {
+        color: @blog-color--dark;
+    }
+}
+
+.home--header {
+    border-color: @main-color;
+}
+
+.home--main {
+
+    a {
+        color: @main-color--dark;
+    }
+}
+
+.home--blog,
+.post--navigation {
+    background-color: @blog-color;
+}
+
+.home--about {
+    background-color: @about-color;
+    color: @text-color--light;
+
+    a {
+        color: @text-color--light;
+    }
+}
+
+.about--header {
+    border-color: @about-color;
+}
+
+.about--main {
+
+    a {
+        color: @about-color;
+    }
+}
+
+.error--header {
+    border-color: @error-color;
+}
+
+.error--main {
+
+    a {
+        color: @error-color--dark;
+    }
+}
+
+.mobile--navigation-inner {
+
+    &-home {
+        background-color: @main-color;
+    }
+
+    &-blog,
+    &-post {
+        background-color: @blog-color;
+    }
+
+    &-about {
+        background-color: @about-color;
+    }
+
+    &-error {
+        background-color: @error-color;
+    }
+}
+
+/* --- NON CRITICAL MOBILE STYLES --- */
+@media screen and (max-width: 769px) {
+    
+    blockquote {
+        float: none;
+        font-size: 20px;
+        margin: 0;
+        width: 100%;
+    }
+
+    .post--navigation {
+        display: none;
+    }
+}

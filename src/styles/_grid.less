@@ -1,0 +1,64 @@
+/*
+ * metrics generated using gridbuilder | MIT License |
+ * jeremenichelli.github.io/gridbuilder | Jeremias Menichelli
+ */
+
+.column {
+    float: left;
+    min-height: 1px;
+
+    + .column {
+        margin: 0 0 0 8%;
+    }
+}
+
+.column-1 {
+    width: 10%;
+}
+
+.column-2 {
+    width: 28%;
+}
+
+.column-3 {
+    width: 46%;
+}
+
+.column-4 {
+    width: 64%;
+}
+
+.column-5 {
+    width: 82%;
+}
+
+.column-6 {
+    width: 100%;
+}
+
+.row {
+    .clearfix();
+    margin: 0 auto;
+    max-width: 1050px;
+    padding: @spacing;
+}
+
+.inner-row {
+    .clearfix();
+}
+
+@media screen and (max-width: 769px) {
+
+    .column {
+        float: none;
+        width: 100%;
+
+        + .column {
+            margin: @spacing--mobile*2 0 0;
+        }
+    }
+
+    .row {
+        padding: @spacing--mobile;
+    }
+}

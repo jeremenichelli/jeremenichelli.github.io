@@ -1,0 +1,14 @@
+- text: Hello
+  href: /
+- text: Blog
+  href: /blog
+- text: About
+  href: /about
+- text: Twitter
+  href: https://www.twitter.com/jeremenichelli
+  icon: twitter-icon
+  external: true
+- text: Github
+  href: https://www.github.com/jeremenichelli
+  icon: github-icon
+  external: true

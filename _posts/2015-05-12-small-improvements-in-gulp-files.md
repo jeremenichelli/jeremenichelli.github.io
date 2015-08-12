@@ -4,7 +4,7 @@ title: Small improvements in gulp files
 resume: I want to share some things I always do when I'm building my tasks in Gulp. Small patterns to solve simple situations and improve the build process in my projects.
 ---
 
-### Use the package.json file
+## Use the package.json file
 
 The original use of the package.json file is to provide necessary information for module manager scripts like <a href="https://www.npmjs.com" target="_blank">npm</a> to manage version and dependencies.
 
@@ -52,7 +52,7 @@ gulp.task('build', function() {
 });
 ```
 
-### Organizing and naming tasks
+## Organizing and naming tasks
 
 As I explained in <a href="/2015/05/using-gulp/">my previous post</a>, Gulp has a great and simple way to tell a task that some other ones need to finish before it starts.
 
@@ -72,6 +72,6 @@ gulp.task('hint', [ 'hint:spec', 'hint:src' ]);
 
 This gives you the option of just check the syntax in your spec files or in your source files only but also to call the *hint* task and run it on both directories.
 
-Wrap-up
+## Wrap-up
 
 These are just small personal decisions I make when building gulp files. I hope you found them interesting and if you have suggestions or other smart moves and patterns feel free to share them with me and the community.

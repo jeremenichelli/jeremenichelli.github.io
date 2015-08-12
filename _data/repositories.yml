@@ -1,12 +1,12 @@
 - name: mnster
-  slug: mnster
-  description: Light weight library for simple data binding.
+  description: A simple and expandable data binding library. Allows fast implementation and little CPU usage while being super light-weight.
+  url: https://github.com/jeremenichelli
+- name: smoothscroll
+  description: Polyfill for smooth scroll behavior API co-authored with Dustan Kasten.
+  url: https://github.com/iamdustan/smoothscroll
 - name: jabiru
-  slug: jabiru
-  description: Simple script to manage JSONP calls.
-- name: condense
-  slug: condense
-  description: Weather widget manager based on Open Weather API for current forecast.
-- name: scrollProgress
-  slug: scrollProgress
-  description: Small library that creates a progress bar that indicates how much you've scrolled on a website. It's very useful to show the reading progress in an article or a blog post.
+  description: Cross-browsing library to manage JSONP calls.
+  url: https://github.com/jeremenichelli/jabiru
+- name: scrollprogress
+  description: Library that creates a progress bar that indicates how much you've scrolled on a website. It's very useful to show the reading progress in an article or a blog post.
+  url: https://github.com/jeremenichelli/scrollProgress

@@ -4,7 +4,7 @@ title: I love the ampersand
 resume: Small things can make a big difference. It costed me a lot to move from plain CSS to preprocessors languages, but somehow LESS convinced me and its little shorcuts are the way I enjoy the most and the ampersand is one of those small things.
 ---
 
-### &amp;
+## &amp;
 
 For the ones that don't work with SASS or LESS or never heard about it, the ampersand when it's placed inside a common selector declaration refers to the selector itself.
 
@@ -64,7 +64,7 @@ It's a nice touch, maybe not a big thing. To me this little guy it's great when 
 I love how the symbol eliminates the noise in the declaration. You know that everything inside that mixin takes care of one specific thing,. It's like a closure, you don't need to look for other style declaration for that, it's all there. Simpler to read, ergo simpler to mantain.
 
 
-### Bringing mixins to the game
+## Bringing mixins to the game
 
 Now let's see what happens when you need to style buttons or links.
 
@@ -128,7 +128,7 @@ The code is pretty straight forward and if you use variables inside the mixin yo
 I don't know you but to me that's beautiful.
 
 
-### Variable interpolation
+## Variable interpolation
 
 Well this has nothing to do with the ampersand selector, but this simple feature is a beast if you know where you can use it. What it basically does is to put variables content inside strings. Again, examples are better.
 
@@ -167,7 +167,7 @@ Here's another place where I usually need this...
 </pre></div>
 
 
-### Wrap-up
+## Wrap-up
 
 Small patterns usually behave in a more flexible way, they can bend and adapt to different situations.
 

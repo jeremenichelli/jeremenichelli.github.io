@@ -1,47 +1,50 @@
 ---
-layout: default
+layout: page
 title: Blog
+type: blog
 ---
 
-<section class="blog-main">
-	<div class="container">
-		<div class="card">
-			<h1><span>{{ page.title }}</span></h1>
-			{% if site.posts.size > 0 %}
-				<div class="card-highlight">
-					<div class="card-highlight-date">
-						<span class="last-post">Last Post</span>
-						<span>{{ site.posts[0].date | date : '%d %b %Y' }}</span>
-					</div>
-					<h3><a href="{{ site.posts[0].url }}">{{ site.posts[0].title }}</a></h3>
-					{% if site.posts[0].resume.size > 0 %}
-						<p class="resume">{{ site.posts[0].resume }}</p>
-					{% endif %}
-					<a class="cta-btn" href="{{ site.posts[0].url }}">Go to the post</a>
-				</div>
-			{% endif %}
-		</div>
-	</div>
+<section class="blog--main">
+    
+    {% if site.posts.size > 0 %}
+        <!-- show some posts -->
+        <div class="row">
+            <div class="column column-6">
+                <span class="blog--post-tag blog--lastpost-tag">Last post</span>
+                <time class="blog--post-date blog--lastpost-date">{{ site.posts[0].date | date : '%-d %b %Y' }}</time>
+                <a href="{{ site.posts[0].url }}">
+                    <h2 class="blog--post-title blog--lastpost-title">{{ site.posts[0].title }}</h2>
+                </a>
+                {% if site.posts[0].resume %}
+                    <p class="blog--post-resume blog--lastpost-resume">{{ site.posts[0].resume }}</p>
+                {% endif %}
+            </div>
+        </div>
+        {% if site.posts.size > 0 %}
+            {% for post in site.posts offset: 1 %}
+                {% assign mod = forloop.index0 | modulo:2 %}
+                {% if mod == 0 %}
+                    <div class="row">
+                {% endif %}
+                        <div class="column column-3">
+                            <time class="blog--post-date">{{ post.date | date : '%-d %b %Y' }}</time>
+                            <a href="{{ post.url }}">
+                                <h2 class="blog--post-title">{{ post.title }}</h2>
+                            </a>
+                        </div>
+                {% if mod != 0 or forloop.last %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+    {% else %}
+        <div class="row">
+            <div class="column column-6">
+                <p>Sorry, I don't have posts to show yet.</p>
+            </div>
+        </div>
+    {% endif %}
+
 </section>
 
-<section class="main">
-	<div class="container">
-		{% if site.posts.size > 1 %}
-			{% for post in site.posts offset:1 %}
-			<div class="post">
-				<div class="card-highlight-date">
-					<span>{{ post.date | date: '%d %b %Y'}}</span>
-				</div>
-				<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-				{% if post.resume %}
-					<p>{{ post.resume }}</p>
-				{% endif %}
-			</div>
-			{% endfor %}
-		{% else %}
-			<div class="post">
-				<h2>More posts coming...</h2>
-			</div>
-		{% endif %}
-	</div>
-</section>

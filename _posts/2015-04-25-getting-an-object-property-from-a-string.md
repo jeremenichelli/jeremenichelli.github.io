@@ -6,7 +6,7 @@ resume: One of the puzzles I had to solve when writing a data binding script was
 
 The result was very good so I forgot to look at third party solutions. Later I did a little investigation and found some resources that provide solutions to this riddle. Here's my approach.
 
-### Getting the attribute of a node
+## Getting the attribute of a node
 
 The start point for this is a *node* object which has a property called *attributes*, an array-like list with all the attributes of the element. Pretty obvious so far.
 
@@ -52,7 +52,7 @@ Basically what we're doing is splitting the string to get an array of properties
 It's not hard to understand this since it's a simple loop and we are getting more deeply into the object with each iteration until there are no properties left to explore. If we pass to the function a path like *'user.name.middle'* the code will get an *undefined* value and return *null* breaking the iteration.
 
 
-### Modules and libraries
+## Modules and libraries
 
 It doesn't get mentioned a lot, but <a href="https://lodash.com/" target="_blank">lodash</a> is a really nice library that solves a lot of things for you in the operations with objects area. This library contains a method called *get* which solves the exact same thing and you can find it in its <a href="https://github.com/lodash/lodash/blob/master/lodash.js#L9386" target="_blank">github file</a>.
 
@@ -90,7 +90,7 @@ var middleName = getFromPath(model, 'user.name.middle', 'William');
 
 ```
 
-### Performance
+## Performance
 
 Looking for a brief code that solves this, **lodash** uses *while* to iterate the base object, and while *while* is shorter than using *for*, the speed difference is huge. Yes, I put while twice there.
 
@@ -103,7 +103,7 @@ If you look at **delve** code you'll notice that it also uses *while*. The reaso
 Obviously if you use this method just a couple of times it won't hurt a lot, but you can be sure that this functionality will be called **a lot of times** in a data binding library.
 
 
-### Wrap-up
+## Wrap-up
 
 Libraries are good (**lodash** is great in my opinion) it solves a lot of problems, but they also contain general private methods and no so performant choices that can slow down the execution of simple operations.
 

@@ -9,11 +9,11 @@ In the recent past years the more trending tools were dynamic site generators wi
 First of all, let's define what they are exactly and what are the differences between them and the simplest way to do that is to explain what happens when you request a web page to each one.
 
 
-### Dynamic site
+## Dynamic site
 
 In a server hosting a site driven by a dynamic generator, that page you've just request doesn't exactly exist as it is. When that happens the url gets resolved, content is searched inside a database and a code potentially containing loops for multiple instances of data like categories, posts or comments and condition blocks to render different sections runs and resolves into a file which is retrieved and is what you finally see in the browser.
 
-### Static site
+## Static site
 
 In this case, there's no code running on the server, no logic or processing. The server already contains the page to respond to your request.
 
@@ -24,7 +24,7 @@ Every time you change something in a server, the server itself of you will have 
 Both need a build process, the difference is the moment when that action is taken.
 
 
-### Advantages and drawbacks
+## Advantages and drawbacks
 
 In favor of the static ones, since the file you as a user are requesting is already generated in the server the response is way more faster than in the dynamic ones where the needs to be generated in that moment.
 
@@ -33,7 +33,7 @@ Now, a caveat from the static ones is that the fact that they can't generate a p
 Dynamic site generators also offer a control panel for more end users to edit content, add pages, create posts and even change settings related to the site layout while static ones are more aimed at developers because some skills are required to get them working.
 
 
-### Is there a winner?
+## Is there a winner?
 
 Well, there's no right answer to that question. They're both really nice solutions and they both have compromises. It's our job as developers to analyze the project and decide which one is more suitable.
 
@@ -44,7 +44,7 @@ Are you doing a simple blog? Then probably a static site generator is a better o
 While it's undeniable that Wordpress rules a big part of the web proving that dynamic site generators are not going anywhere, static site generators are part of big projects too like <a href="http://kylerush.net/blog/meet-the-obama-campaigns-250-million-fundraising-platform/" target="_blank">Obama's fundraising campaing</a>.
 
 
-### Wrap-up
+## Wrap-up
 
 Dynamic site generators are a great option for end users to keep the content changing in their sites, but static ones offer similar features and they allow faster responses from the server if you can deal with their limitations. 
 

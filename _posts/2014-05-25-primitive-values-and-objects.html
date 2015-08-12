@@ -3,7 +3,7 @@ layout: post
 title: Primitive values and objects
 resume: One of the main differences that Javascript has with other languages is that it's dynamically typed and based on prototypal inheritance while most of object-oriented languages have classical inheritance. This is a small resume on how JavaScript deals with variables and specially with objects.
 ---
-<h3>Primitives</h3>
+<h2>Primitives</h2>
 <p>Though you can assign any value to any variable across all the scope, JavaScript has something similar as types in other languages. The difference is that you don't have to specify its type when you declare a new variable. These are the reasons why it is considered a dynamically typed language.</p>
 <p>For JavaScript everything is an object, except for: <strong>booleans</strong>, <strong>numbers</strong>, <strong>strings</strong>, <strong>null</strong> and <strong>undefined</strong>.</p>
 <p>This group of variable types are called <strong>primitive values</strong>, and its main difference from objects is that they are comparable...</p>
@@ -20,11 +20,11 @@ resume: One of the main differences that Javascript has with other languages is 
 
 <p>What the lines from above are clearly showing is that everytime you create something that JavaScript considers an object, is a stand-alone instance of some other object. Even if they are both empty or have the same keys with the same values, they will always be two different objects.</p>
 
-<h3>Reserved words</h3>
+<h2>Reserved words</h2>
 <p>As every language JavaScript has words that you must avoid: <strong>arguments</strong>, <strong>breaks</strong>, <strong>case</strong>, <strong>catch</strong>, <strong>class</strong>, <strong>catch</strong>, <strong>delete</strong>, <strong>do</strong>, <strong>else</strong>, <strong>enum</strong>, <strong>export</strong>, <strong>extends</strong>, <strong>false</strong>, <strong>finally</strong>, <strong>for</strong>, <strong>function</strong>, <strong>if</strong>, <strong>implements</strong>, <strong>import</strong>, <strong>in</strong>, <strong>instanceof</strong>, <strong>interface</strong>, <strong>let</strong>, <strong>new</strong>, <strong>null</strong>, <strong>package</strong>, <strong>private</strong>, <strong>protected</strong>, <strong>public</strong>, <strong>return</strong>, <strong>static</strong>, <strong>super</strong>, <strong>switch</strong>, <strong>this</strong>, <strong>throw</strong>, <strong>true</strong>, <strong>try</strong>, <strong>typeof</strong>, <strong>var</strong>, <strong>void</strong> and <strong>while</strong>.</p>
 <p>There are also other words that are not reserved but it's recommended you treat them like they were: <strong>Infinity</strong>, <strong>Nan</strong> and <strong>undefined</strong>.</p>
 
-<h3>Objects</h3>
+<h2>Objects</h2>
 <p>Everything in JavaScript that is a nonprimitive variable, is an <strong>object</strong>, as I said previously, and they are a big thing.</p>
 <p>Let's use <em>typeof</em> and <em>instanceof</em> to investigate a little bit about how objects are defined. It's not that common, but let's declare a function using <em>new</em>.</p>
 
@@ -69,5 +69,5 @@ resume: One of the main differences that Javascript has with other languages is 
 
 <p>And that's how you create your own constructor. In fact, <strong>constructor</strong> is a key that all objects have, so if you go to the console and write <em>me.constructor</em> you should get a reference to the Person function we wrote earlier.</p>
 
-<h3>Wrap up</h3>
+<h2>Wrap up</h2>
 <p>This was a quick and very brief reference on how JavaScript handles variables and objects. There's a lot of things I want to write about, but I'm sure that one of the next posts will be about the differences between the protoypal and the classic inheritance on objects, so stay tune! Happy coding.</p>

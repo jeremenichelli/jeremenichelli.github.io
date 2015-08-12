@@ -37,7 +37,7 @@ wrapper({"id": "ebf4g38f0cf4", "properties": [ "a", "b", "c", "d", "e"]});
 In this case, our function will just log the result in the console, but you can do whatever you want with it.
 
 
-# A South American bird
+### A South American bird
 
 I've developed a simple script that can manage JSONP calls by generating dynamic callback identifiers, you only need to indicate the url that needs to be call and the function you want to be executed when the server responds to our request.
 

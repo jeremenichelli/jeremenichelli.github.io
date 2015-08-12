@@ -1,53 +1,36 @@
 ---
-layout: default
-resume: I am a twenty eight years old web developer from San Lorenzo, Argentina. I like to spend most of the time coding and building cool stuff with other developers to make the web a better place.
+layout: page
+title: Hello
+resume: As you might already know, my name is Jeremias Menichelli and I'm a developer from Argentina working everyday to make the web a better place using CSS, JavaScript and other stuff.
+type: home
 ---
-<section class="hello">
-	<div class="container">
-		<h1><span>Hello</span></h1>
-		<p>My name is Jeremias Menichelli and I am a twenty eight years old web developer from San Lorenzo, Argentina.
-			I like to spend most of the time coding and building cool stuff with other developers to make the web a better place.
-		</p>
-		<p>If you think I can help you in your projects, <a href="mailto:jmenichelli@gmail.com">just let me know</a>!</p>
-		</div>
+<section class="home--main">
+    <div class="row">
+        <div class="column column-6">
+            <h2>Experience</h2>
+            <p>After some time working on small sites for companies that were settled on my home town while studying, I decided to make some change and decided to dropped it since I felt I wasn't really learning and enjoying it as before.</p>
+            <p>But that doesn't mean I stopped studying, from early time in the morning and til evening came I read books and articles about web development trying to focus on becoming the best possible Front End developer I could be.</p>
+            <p>That same year, I was hired by <a href="www.globant.com" target="_blank">Globant</a> and started working for big clients like Microsoft, StateFarm and New York Stock Exchange between others building awesome responsive web sites.</p>
+            <p>Now, I'm currently working in <a href="www.ordergroove.com" target="_blank">OrderGroove</a> powering the subscription revolution using JavaScript.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column column-6">
+            <h2>Stuff on GitHub</h2>
+            <p>These are a few of the many projects I have shared with the community.</p>
+        </div>
+        {% for r in site.data.repositories %}
+            {% assign mod = forloop.index0 | modulo:2 %}
+            {% if mod == 0 %}
+                <div class="inner-row">
+            {% endif %}
+                    <div class="column column-3">
+                        <h3>{{ r.name }}</h3>
+                        <p>{{ r.description }} <a href="{{ r.url }}" target="_blank">Go&nbsp;to&nbsp;the&nbsp;project&nbsp;repository&nbsp;&raquo;</a></p>
+                    </div>
+            {% if mod != 0 or forloop.last %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
 </section>
-
-{% if site.posts.size > 0 %}
-<section class="hello-blog">
-	<div class="container">
-		<h2>Blog</h2>
-		<p>I also write about some thoughts I have, most of them about coding.</p>
-		<div class="card-highlight">
-			<div class="card-highlight-date">
-				<span class="last-post">Last Post</span>
-				<span>{{ site.posts[0].date | date : '%d %b %Y' }}</span>
-			</div>
-			<h3>{{ site.posts[0].title }}</h3>
-			{% if site.posts[0].resume.size > 0 %}
-				<p class="resume">{{ site.posts[0].resume }}</p>
-			{% endif %}
-			<a class="cta-btn" href="{{ site.posts[0].url }}">Go to the post</a>
-		</div>
-	</div>
-</section>
-{% endif %}
-
-<section class="main">
-	<div class="container">
-		<h2><span>Experience</span></h2>
-		<p>I started working as a web developer many years ago, helping small bussiness to jump on the web. Later I got the chance to work in some cool important projects in <a href="http://www.globant.com" target="_blank">Globant</a> with great clients like Razorfish, Microsoft, StateFarm, the New York Stock Exchange and many more.</p> 
-		<p>Now I'm currently in Rosario, Argentina working with the OrderGroove team in <a href="http://www.velocitypartners.net/" target="_blank">Velocity Partners</a> coding with vanilla JavaScript and having fun.</p>
-	</div>
-	<div class="container">
-		<h2><span>Stuff on GitHub</span></h2>
-		<p>In my spare time I put on GitHub some solutions I've crafted myself for common problems on front end development. Here are some of them...</p>
-		{% for r in site.data.repositories %}
-			<div class="card-highlight">
-				<h3>{{ r.name }}</h3>
-				<p>{{ r.description}}</p>
-				<a href="https://github.com/jeremenichelli/{{ r.slug }}" class="cta-btn" target="_blank">Go to the repo</a>
-			</div>
-		{% endfor %}
-	</div>
-</section>
-	

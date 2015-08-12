@@ -1,19 +1,39 @@
-{% include header.html %}
+---
+layout: default
+type: post
+---
+<section class="post--main">
+    <div class="row">
+        <div class="column column-6"> 
+            <time class="post--date">{{ page.date | date: '%-d %b %Y'}}</time>
+            <h1 class="post--title">{{ page.title }}</h1>
 
-<section class="blog-main">
-	<div class="container">
-		<span class="card-highlight-date">
-			<span class="last-post">Blog</span>
-			{{ page.date | date: '%d %b %Y'}}
-		</span>
+            {% if page.resume %}
+                <p class="post--resume">{{ page.resume }}</p>
+            {% endif %}
 
-		<h1><span>{{ page.title }}</span></h1>
-		{% if page.resume %}
-			<p>{{ page.resume }}</p>
-		{% endif %}
-		
-		{{ content }}
-	</div>
+            {{ content }}
+        </div>
+    </div>
 </section>
 
-{% include footer.html %}
+<section class="post--navigation">
+    <div class="row">
+        {% if page.previous %}
+        <div class="column column-3 post--navigation-prev">
+                <a href="{{ page.previous.url }}" class="post--navigation-link">
+                    <span class="post--navigation-indicator">&laquo; Previous post</span>
+                    <h2>{{ page.previous.title }}</h2>
+                </a>
+        </div>
+        {% endif %}
+        {% if page.next %}
+        <div class="column column-3 post--navigation-next">
+                <a href="{{ page.next.url }}" class="post--navigation-link">
+                    <span class="post--navigation-indicator">Next post &raquo;</span>
+                    <h2>{{ page.next.title }}</h2>
+                </a>
+        </div>
+        {% endif %}
+    </div>
+</section>

@@ -23,7 +23,7 @@ markdown: redcarpet
 permalink: pretty
 ```
 
-Some of the values here are default like the **port**, but the **markdown** engine is your choice, mine is <a href="https://github.com/vmg/redcarpet" target="_blank">redcarpet</a>.
+Some of the values here are default like the **port**, but the default **markdown** engine is karmdown. My choice is <a href="https://github.com/vmg/redcarpet" target="_blank">redcarpet</a>.
 
 Except for the build settings, the rest of the properties you declare here are going to be available in your layouts under the `site` namespace.
 
@@ -32,6 +32,8 @@ Except for the build settings, the rest of the properties you declare here are g
 The first thing that you need to do is separate parts that are going to be in every section, or at least in more than one, in your site. Then you put does small HTML parts inside the **_includes** folder.
 
 The most common parts are the head tag, the header and the footer of your site, but this depends on the design you're trying to achieve. You can have a side column, a **recent posts** section you can attach to every article or a badge with your information for example.
+
+> includes make maintainance much easier, something similar to what you have in php based generators
 
 Doing this will make maintainance much easier, something similar to what you have in php based generators like Wordpress. This time, they are just **.html** files and the only thing you're required to do is to include this parts inside the **_includes** folder and nothing more.
 
@@ -46,7 +48,7 @@ You can still play a little with Liquid here. For example inside the head tag yo
         {% else %} {{ site.title }}
         {% endif %}{% endraw %}
     </title>
-    <meta name="description" content="{{ site.description }}">
+    <meta name="description" content="{% raw %}{{ site.description }}{% endraw %}">
     <meta name="viewport" content="width=device-width">
 </head>
 ```
@@ -100,7 +102,7 @@ Pretty easy to understand. We're going to call this layout **default.html**, but
 </html>
 ```
 
-With small changes we can heavily alter the markup and structure of your templates, and the more you know Liquid blocks and built in filters the more powerful this layouts can become.
+With small changes you can heavily alter the markup and structure of your templates, and the more you know Liquid blocks and built in filters the more powerful this layouts can become.
 
 
 ## Create your index page

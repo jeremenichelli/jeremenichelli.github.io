@@ -6,7 +6,7 @@ resume: One of the things that we do very often in a web project is change the c
 <p>It's known that there are a lot of libraries like jQuery that simplify this task, <a href="/2014/05/stop-the-jquery-abuse">but as I said in a previous post</a> sometimes adding a whole library that does a lot of things when you only need assistance in a couple of them does not make sense.</p>
 <p>Why do we ussually add a library to do this? Does not the browser already provide us of ways to achieve this? The answer is yes.</p>
 
-<h3>classList</h3>
+<h2>classList</h2>
 <p>Modern browsers include an API that allows us to do all we need regarding classes, its name is <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element.classList" target="_blank">classList</a>. If you don't know it yet, it provides us of this methods: <em>add()</em>, <em>remove()</em>, <em>contains()</em> and <em>toggle()</em>, and it has a great performance.</p>
 
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">nav</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'navigation'</span><span class="p">);</span>
@@ -22,7 +22,7 @@ resume: One of the things that we do very often in a web project is change the c
 
 <p>The only problem in the last paragraph I wrote is one word: modern. Before you even think of it, let's just say it, the problem is Internet Explorer and its old versions that some users still use. In fact, <a href="http://caniuse.com/classlist" target="_blank">classList has a nice support</a>, but if your code must work properly in version 8 and 9 of Internet Explorer then you won't be able to use it. Well, maybe you will.</p>
 
-<h3>The Facade pattern</h3>
+<h2>The Facade pattern</h2>
 <p>You've may never heard of it before, but I'm pretty sure you've seen it or even used it. The facade pattern is very common in web development since it simplifies some complex stuff from your code in an elegant way.</p>
 <p>In order to show how a facade pattern implementation works, let's use it to create a function that detects if <strong>classList</strong> is available for use in case we want to add a class.</p>
 
@@ -46,7 +46,7 @@ resume: One of the things that we do very often in a web project is change the c
 
 <p>Another thing that's great about this approach is that as modern browsers improve <strong>classList</strong> performance your code itself will get better but still work on old browsers.</p>
 
-<h3>A workaround for facades</h3>
+<h2>A workaround for facades</h2>
 <p>One of the things that I don't like about a facade implementation is that the feature existence will be consulted as many times as you call the method. This means that if you invoke our <em>addClass()</em> function ten times, our code will check ten times if <strong>classList</strong> is available for use.</p>
 <p>So why don't just check it just once?</p>
 
@@ -85,6 +85,6 @@ resume: One of the things that we do very often in a web project is change the c
 
 <p><strong>Is it just me or that looks prettier?</strong> Since some versions of Internet Explorer have the <em>Element</em> word to make reference to the DOM element object we have to make that assignment in the first line to make sure we are prototyping the correct one. The variable <em>els</em> will make reference to <em>HTMLElement</em> unless is <strong>undefined</strong>, falling back to <em>Element</em>.</p>
 
-<h3>Wrap up</h3>
+<h2>Wrap up</h2>
 <p>The result of this exploration was <a href="https://github.com/jeremenichelli/classing">classing</a>. It checks only once if <strong>classList</strong> exists and it has fallback for adding, removing, toggling and a hasClass method to check if the class is contained. It has a lot of place for improvement so feel free to check it out and suggest changes.</p>
 <p>Happy coding!</p>
