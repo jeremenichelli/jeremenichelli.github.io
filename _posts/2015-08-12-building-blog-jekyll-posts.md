@@ -1,17 +1,17 @@
 ---
 layout: post
 title: Building a blog using Jekyll. Writing posts and presenting them
-resume: In this third and final post about Jekyll, we are going to exploit its power using the blog-aware that come with it.
+resume: In this third and final post about Jekyll, we are going to exploit its blog-aware features.
 ---
 
-This posts assumes you are familiar with this site generator, in case you're not you can read the two previous posts I've written where I explain how to set it up and create your first pages.
+This article assumes you are familiar with this static site generator, in case you're not you can read the two previous posts I've written where I explain how to set it up and create your first pages.
 
 
 ## Building a separate layout for posts
 
-In spite of being one of the reasons of its popularity, creating a blog section in your site with Jekyll is really simple and you're going to notice here because this post is not oging to take a long.
+In spite of being one of the reasons why it is very popular, creating a blog section in your site with Jekyll is really simple and you're going to notice that here because this tutorial is not going to take long time to read.
 
-First of all we're going to create a new file inside the *_layouts* folder and call it *post.html*. You could still use your default layout file for the post you create but it's common you need to display some extra information or make some changes on the design to improve the reading experience.
+First of all we're going to create a new file inside the *_layouts* folder and call it *post.html*. You could still use your default layout file for each post you create but it's highly probable you're going to display some extra information or make some changes on the design to improve the reading experience.
 
 Let's go with something simple.
 
@@ -32,14 +32,14 @@ Let's go with something simple.
 {% raw %}{% include footer.html %}{% endraw %}
 ```
 
-You might notice that the `page` word is used to make reference to the post information. As I said, we're going simple and just showing a title, an introduction or excerpt and the content. You might have also noticed that we're printing the date of the post but then adding some formatting. Jekyll and Liquid itself come with a lot of versatility on date filters, I suggest you to read their documentation if you really want the date attribute in a special format.
+The `page` word is used to make reference to the post information. As I said, we're going simple and just showing a title, an introduction or excerpt and the content. You might have also noticed that we're printing the date of the post and adding some configuration. Jekyll and Liquid itself come with a lot of versatility on date filters, I suggest you to read both docs if you really want the date attribute in a special format.
 
 
 ## Creating your first post
 
-There's no much wizardry here. You just need to start throwing Markdown or HTML files inside the *_posts* folder, the only condition is that you need to name it in a particular way: **year-month-day-title-separate-by-hyphens.md**, and that's it.
+There's no much wizardry here. You just need to start throwing Markdown or HTML files inside the *_posts* folder. the only condition is that you need to name them in a particular way: **year-month-day-title-separate-by-hyphens.md**, and that's it.
 
-Of course you still need to maintain the YAML configuration as it was seeing in my previous posts. Here, you're going to assign the value *post* to *layout* and then fill the title and introduction attributes too.
+Of course you still need to maintain the YAML configuration as it was shown in my previous posts. Here, you're going to assign the value *post* to *layout* and then fill the title and introduction attributes.
 
 ```html
 ---
@@ -50,7 +50,8 @@ introduction: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 Nam elit purus, tempus vel velit non, laoreet tempus ligula. Suspendisse eu condimentum urna.
 
-Aliquam magna magna, faucibus non orci a, ultrices pretium justo. Donec tincidunt tellus mauris, quis viverra orci elementum sit amet. Quisque vulputate diam tortor, quis accumsan velit volutpat mattis.
+Aliquam magna magna, faucibus non orci a, ultrices pretium justo. Donec tincidunt tellus mauris,
+quis viverra orci elementum sit amet. Quisque vulputate diam tortor, quis accumsan velit volutpat mattis.
 ```
 
 There you go, that's a post in Jekyll. Simple, right?
@@ -58,12 +59,12 @@ There you go, that's a post in Jekyll. Simple, right?
 
 ### Permalinks
 
-The url that your post will have can be change in the *_config.yml* file and Jekyll already has <a href="http://jekyllrb.com/docs/permalinks/" target="_blank">some nice formats ready to go</a> for you.
+The url that your post will have can be changed in the *_config.yml* file and Jekyll already has <a href="http://jekyllrb.com/docs/permalinks/" target="_blank">some nice formats ready to go</a> for you.
 
 
 ## Listing your posts
 
-It's time to brag about your writing skills, **posts** is an array accessible in any file through the `site` namespace. It's up to you to show them in your home or create a new page where you can list them. Whatever you're choice is, this will get the job done.
+It's time to brag about your writing skills, **posts** is an array accessible in any file through the `site` namespace. It's up to you to show them in your home or create a new page where you can list them. Whatever your choice is, this will get the job done.
 
 ```html
 {% raw %}
@@ -99,9 +100,9 @@ Not so hard, but what if you're launching your site and didn't wrote anything ye
 {% endraw %}
 ```
 
-A **for** loop and an **if** block, I'm guessing you're familiar with those in any other programming language, that's them in their Liquid form. Of course you have plenty of options to structure this view. You canshow there like some part of the content, the excerpt, the date. 
+A **for** loop and an **if** block, I'm guessing you're familiar with those in any other programming language, that's them in their Liquid form. Of course you have plenty of options to structure this view and show the date, the excerpt or any data related to posts. 
 
-As you get into the Liquid language the opportunities will multiply themselves.
+As you get into the Liquid language the opportunities will multiply.
 
 
 ## Wrap-up
