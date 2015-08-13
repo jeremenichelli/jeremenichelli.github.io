@@ -1,11 +1,11 @@
 {% if page.type != 'error' and page.type != 'post' and page.type != 'blog' and site.posts.size > 0 %}
-<section class="home--blog">
+<section class="blog--banner">
     <div class="row">
         <div class="column column-6">
             <h2>Blog</h2>
             <p>When I think something that happened or came to my mind is worth to tell others, I write a post about it.</p>
             <div class="inner-row">
-                <div class="column column-5">
+                <div class="column column-6">
                     <h3>{{ site.posts[0].title }}</h3>
                     <p>{{ site.posts[0].resume }} <a href="{{ site.posts[0].url }}">Go&nbsp;to&nbsp;the&nbsp;post&nbsp;&raquo;</a></p>
                 </div>
@@ -16,11 +16,11 @@
 {% endif %}
 
 {% if page.type != 'about' %}
-<section class="home--about">
+<section class="about--banner">
     <div class="row">
         <div class="column column-6">
-            <h2>About</h2>
-            <p>I've built this site using <a href="https://www.jekyllrb.com" target="_blank">Jekyll</a>, a static site generator and other tools like LESS and Gulp. <a href="/about">Find&nbsp;out&nbsp;more</a>.</p>
+            <h2>About this site</h2>
+            <p>Built with Jekyll and hosted by GitHub Pages. <a href="/about">Find&nbsp;out&nbsp;more</a>.</p>
             <p><a href="/feed.xml" target="_blank">Subscribe&nbsp;to&nbsp;the&nbsp;RSS&nbsp;feed&nbsp;&raquo;</a></p>
         </div>
     </div>
@@ -34,7 +34,3 @@
         </div>
     </div>
 </footer>
-
-{% if page.type == 'post' %}
-<script>window.SITE = { isPost: true };</script>
-{% endif %}

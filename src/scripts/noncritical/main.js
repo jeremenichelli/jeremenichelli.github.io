@@ -18,9 +18,22 @@
                 color: '#263238'
             });
 
-            // add listener for scroll progress bar
+            var progressBar = _doc.getElementById('progress-wrapper');
+
+            steer.set({
+                events: false,
+                up: function() {
+                    progressBar.classList.add('hidden');
+                },
+                down: function() {
+                    progressBar.classList.remove('hidden');
+                }
+            });
+
+            // add events for scroll progress bar
             _win.addEventListener('scroll', function() {
                 scrollProgress.trigger();
+                steer.trigger();
             }, false);
 
             _win.addEventListener('resize', function() {

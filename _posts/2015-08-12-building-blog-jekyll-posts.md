@@ -59,7 +59,7 @@ There you go, that's a post in Jekyll. Simple, right?
 
 ### Permalinks
 
-The url that your post will have can be changed in the *_config.yml* file and Jekyll already has <a href="http://jekyllrb.com/docs/permalinks/" target="_blank">some nice formats ready to go</a> for you.
+The url that your post will have can be changed in the *_config.yml* file and Jekyll already has <a href="http://jekyllrb.com/docs/permalinks/" target="_blank">pre-built date filters</a> for you.
 
 
 ## Listing your posts

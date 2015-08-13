@@ -75,6 +75,7 @@ pre {
 }
 
 .post--navigation-indicator {
+    color: @blog-color--dark;
     text-transform: uppercase;
 
     + h2 {
@@ -87,10 +88,62 @@ pre {
     margin: 0;
 }
 
+#progress-wrapper {
+    transition: opacity .4s linear;
+
+    &.hidden {
+        opacity: 0;
+    }
+}
+
 /* --- COLOR SPECIFIC PAGES --- */
 .blog--header,
 .post--header {
     border-color: @blog-color;
+
+    .nav--link:hover {
+        color: @blog-color--dark;
+
+        .nav--link-icon {
+            fill: @blog-color--dark
+        }
+    }
+}
+
+.home--header {
+    border-color: @main-color;
+
+    .nav--link:hover {
+        color: @main-color--dark;
+
+        .nav--link-icon {
+            fill: @main-color--dark
+        }
+    }
+}
+
+.error--header {
+    border-color: @error-color;
+
+    .nav--link:hover {
+        color: @error-color--dark;
+
+        .nav--link-icon {
+            fill: @error-color--dark
+        }
+    }
+}
+
+.about--header {
+    border-color: @about-color;
+
+    .nav--link:hover {
+        color: @about-color--dark;
+
+        .nav--link-icon {
+            fill: @about-color--dark
+        }
+    }
 }
 
 .post--main {
@@ -100,10 +153,6 @@ pre {
     }
 }
 
-.home--header {
-    border-color: @main-color;
-}
-
 .home--main {
 
     a {
@@ -111,12 +160,19 @@ pre {
     }
 }
 
-.home--blog,
-.post--navigation {
-    background-color: @blog-color;
+.blog--banner {
+    background-color: @background-color--medium;
+
+    a {
+        color: @blog-color--dark;
+    }
 }
 
-.home--about {
+.post--navigation {
+    background-color: @background-color--medium;
+}
+
+.about--banner {
     background-color: @about-color;
     color: @text-color--light;
 
@@ -125,19 +181,11 @@ pre {
     }
 }
 
-.about--header {
-    border-color: @about-color;
-}
-
 .about--main {
 
     a {
         color: @about-color;
     }
-}
-
-.error--header {
-    border-color: @error-color;
 }
 
 .error--main {
