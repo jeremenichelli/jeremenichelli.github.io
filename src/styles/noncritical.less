@@ -90,6 +90,8 @@ pre {
 
 #progress-wrapper {
     transition: opacity .4s linear;
+    // layer creation hack
+    transfrom: translateZ(0);
 
     &.hidden {
         opacity: 0;

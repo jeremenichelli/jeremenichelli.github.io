@@ -221,7 +221,6 @@ nav {
     margin: 3px 0 0;
     padding: 0;
     position: relative;
-    transform: translateZ(0);
     z-index: 300;
 
     &:focus {
@@ -234,6 +233,8 @@ nav {
         height: 2px;
         transition: all .4s ease;
         width: 28px;
+        // layer creation hack
+        transform: translate3d(0, 0, 0);
 
         + div {
             margin: 6px 0 0;
@@ -247,7 +248,7 @@ nav {
         }
         
         .mobile--navigation-first-div {
-            transform: rotate(45deg) translate(3px, 8px);
+            transform: rotate(45deg) translate3d(3px, 8px, 0);
         }
 
         .mobile--navigation-second-div {
@@ -255,7 +256,7 @@ nav {
         }
 
         .mobile--navigation-third-div {
-            transform: rotate(-45deg) translate(3px, -8px);
+            transform: rotate(-45deg) translate3d(3px, -8px, 0);
         }
     }
 }
@@ -265,11 +266,12 @@ nav {
     left: 0;
     overflow: hidden;
     position: absolute;
-    transform: translateZ(0);
     transition: height .4s ease;
     top: 0;
     width: 100%;
     z-index: 200;
+    // layer creation hack
+    transform: translateZ(0);
 
     &-inner {
         background-color: black;
