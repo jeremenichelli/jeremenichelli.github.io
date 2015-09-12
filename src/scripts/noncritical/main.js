@@ -10,7 +10,7 @@
     // attach event to mobile navigation button
     SITE.mobileNavigation.button.addEventListener('click', SITE.mobileNavigation.toggle, false);
 
-    // progress bar for posts
+    // progress bar only for posts
     if (SITE.isPost) {
         _win.addEventListener('load', function() {
             scrollProgress.set({

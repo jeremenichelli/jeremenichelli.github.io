@@ -7,6 +7,6 @@
 - name: jabiru
   description: Cross-browsing library to manage JSONP calls.
   url: https://github.com/jeremenichelli/jabiru
-- name: scrollprogress
+- name: scrollProgress
   description: Library that creates a progress bar that indicates how much you've scrolled on a website. It's very useful to show the reading progress in an article or a blog post.
   url: https://github.com/jeremenichelli/scrollProgress
