@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What is it to be the new IE?
-resume: In the last couple of months some blog posts emerged complaining about Safari and Chrome, and for some reason not Firefox. The first one was Nolan Lawson's post about Safari's lag to implement some features present in modern browsers, the title of that post was -Safari is the new IE-. Later, Benjamin De Cock said that Chrome was the new IE, but what does exactly mean to be the new IE?
+resume: In the last couple of months some blog posts emerged complaining about Safari and Chrome, and for some reason not Firefox. The first one was Nolan Lawson's post about Safari's lag to implement some features present in modern browsers, saying that Safari is the new IE. Later, Benjamin De Cock said that Chrome was the new IE, but what does exactly mean to be the new IE?
 ---
 
 If you are a web developer, a front end more specifically, you work with CSS to style your projects, JavaScript to add behavior and of course you use HTML to show content. I don't know you but I really like my job, I decided to do this every day and I don't regret it.
@@ -42,7 +42,7 @@ Depending on the type of project you're dealing with, the audience your client i
 
 Internet Explorer 7 is practically dead and its 8 version is going down the same path as its usage is decreasing, we aren't there yet but we are close.
 
-Now let's go back to those two posts I mentioned in the first paragraph of this post.
+Now let's go back to those two posts I mentioned in the first paragraph.
 
 
 ### Is it Safari the new IE?
