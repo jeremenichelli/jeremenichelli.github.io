@@ -71,6 +71,6 @@ We already know that Safari 9 is not going to give us IndexedDB this year while 
 
 ## Wrap-up
 
-Internet Explrer has been historically the one to get in the way when trying to deliver a decent experience to the user across all devices and browsers. To be the new IE, a browser would need to make you add polyfills and facade patterns and I feel that at least Chrome and Safari are not in that zone.
+Internet Explorer has been historically the one to get in the way when trying to deliver a decent experience to the user across all devices and browsers. To be the new IE, a browser would need to make you add polyfills and facade patterns and I feel that at least Chrome and Safari are not in that zone.
 
 Sorry folks but to me there is no such a thing as a new IE.
