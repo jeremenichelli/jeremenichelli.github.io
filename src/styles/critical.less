@@ -240,25 +240,6 @@ nav {
             margin: 6px 0 0;
         }
     }
-
-    &.active {
-
-        div {
-            background-color: @text-color--light;
-        }
-        
-        .mobile--navigation-first-div {
-            transform: rotate(45deg) translate3d(3px, 8px, 0);
-        }
-
-        .mobile--navigation-second-div {
-            opacity: 0;
-        }
-
-        .mobile--navigation-third-div {
-            transform: rotate(-45deg) translate3d(3px, -8px, 0);
-        }
-    }
 }
 
 .mobile--navigation {
@@ -382,18 +363,6 @@ time {
 
     ul {
         padding: 0 0 0 20px;
-    }
-}
-
-@media screen and (min-width: 769px) {
-
-    body {
-        overflow: visible !important;
-    }
-    
-    .mobile--navigation,
-    .mobile--navigation-overlay {
-        display: none !important;
     }
 }
 
