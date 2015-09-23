@@ -20,7 +20,7 @@ type: blog
                 {% endif %}
             </div>
         </div>
-        {% if site.posts.size > 0 %}
+        {% if site.posts.size > 1 %}
             {% for post in site.posts offset: 1 %}
                 {% assign mod = forloop.index0 | modulo:2 %}
                 {% if mod == 0 %}

@@ -1,0 +1,32 @@
+---
+layout: page
+title: Labs
+type: labs
+---
+
+<section class="labs--main">
+    {% if site.data.labs.size > 0 %}
+        {% for lab in site.data.labs %}
+            {% assign mod = forloop.index0 | modulo:2 %}
+            {% if mod == 0 %}
+                <div class="row">
+            {% endif %}
+                    <div class="column column-3">
+                        <h2 class="labs--lab-title">{{ lab.title }}</h2>
+                        <p class="labs--lab-resume">{{ lab.resume }} 
+                            <a href="https://jeremenichelli.github.io/{{ lab.slug }}">
+                                Go&nbsp;to&nbsp;the&nbsp;lab&nbsp;&raquo;</a></p>
+                    </div>
+            {% if mod != 0 or forloop.last %}
+                </div>
+            {% endif %}
+        {% endfor %}
+
+    {% else %}
+        <div class="row">
+            <div class="column column-6">
+                <p>Sorry, I don't have labs to show yet.</p>
+            </div>
+        </div>
+    {% endif %}
+</section>

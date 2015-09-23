@@ -124,6 +124,18 @@ pre {
     }
 }
 
+.labs--header {
+    border-color: @labs-color;
+
+    .nav--link:hover {
+        color: @labs-color--dark;
+
+        .nav--link-icon {
+            fill: @labs-color--dark
+        }
+    }
+}
+
 .error--header {
     border-color: @error-color;
 
@@ -159,6 +171,13 @@ pre {
 
     a {
         color: @main-color--dark;
+    }
+}
+
+.labs--main {
+
+    a {
+        color: @labs-color--dark;
     }
 }
 
@@ -232,6 +251,10 @@ pre {
 
     &-about {
         background-color: @about-color;
+    }
+
+    &-labs {
+        background-color: @labs-color;
     }
 
     &-error {
