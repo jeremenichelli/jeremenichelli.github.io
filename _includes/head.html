@@ -38,6 +38,9 @@
     <link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png?v=2bbQ36qWKR" sizes="16x16">
     
     <link rel="icon" type="image/png" href="/assets/favicon/android-chrome-192x192.png?v=2bbQ36qWKR" sizes="192x192">
+    
+    {% if page.type == 'labs' %}<meta name="theme-color" content="#673ab7">{% endif %}
+
     {% if page.type == 'post' or page.type == 'blog' %}<meta name="theme-color" content="#ffb300">{% endif %}
 
     {% if page.type == 'about' %}<meta name="theme-color" content="#37474f">{% endif %}
