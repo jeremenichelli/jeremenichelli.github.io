@@ -25,7 +25,7 @@ So, you want to build a site or just know what all the fuss is about, then this 
 
 **Jekyll** runs on **Ruby**, so this is the first basic requirement, here you can download the correct installation package depending on your operative system: <a href="https://www.ruby-lang.org/en/downloads/" target="_blank">https://www.ruby-lang.org/en/downloads/</a>. You're also going to need **RubyGems** which is a package manager framework for Ruby which you can download here: <a href="https://rubygems.org/pages/download" target="_blank">https://rubygems.org/pages/download</a>.
 
-<a href="www.nodejs.org" target="_blank">NodeJS</a> is required only if you want CoffeScript support out of the box.
+<a href="https://www.nodejs.org" target="_blank">NodeJS</a> is required only if you want CoffeScript support out of the box.
 
 Now we are ready to install this **gem** by simple running this in the terminal.
 
