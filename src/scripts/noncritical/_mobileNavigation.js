@@ -1,4 +1,4 @@
-(function(_win, _doc, SITE, undefined) {
+(function(_win, _doc, SITE) {
     'use strict';
 
     /*
@@ -18,7 +18,7 @@
     SITE.mobileNavigation = {};
 
     // open navigation method
-    function open() {
+    var open = function() {
         navOverlay.style.display = 'block';
         _doc.body.style.overflow = 'hidden';
         navButton.classList.add('active');
@@ -27,10 +27,10 @@
 
         // add close event on overlay for touch screens
         navOverlay.addEventListener('touchstart', close, false);
-    }
+    };
 
     // close navigation method
-    function close() {
+    var close = function() {
         navOverlay.style.display = 'none';
         _doc.body.style.overflow = 'visible';
         navButton.classList.remove('active');
@@ -39,7 +39,7 @@
 
         // remove close event on overlay
         navOverlay.removeEventListener('touchstart', close, false);
-    }
+    };
 
     // export through SITE global namespace
     SITE.mobileNavigation.toggle = function toggle() {

@@ -59,6 +59,20 @@
     <meta name="twitter:description" content="{{ description }}">
     <meta name="twitter:url" content="{{ url }}">
 
+    <noscript>
+        <style>
+            @media screen and (max-width: 769px) {
+                .mobile--navigation {
+                    height: auto !important;
+                    position: static !important;
+                }
+                .mobile--navigation-button {
+                    display: none !important;
+                }
+            }
+        </style>
+    </noscript>
+
     {% include criticalCSS.html %}
 
     {% include criticalJS.html %}

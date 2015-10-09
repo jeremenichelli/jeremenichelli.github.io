@@ -1,4 +1,4 @@
-(function(_win, _doc, SITE, undefined) {
+(function(_win, _doc, SITE) {
     'use strict';
 
     /*
@@ -15,7 +15,7 @@
         _win.addEventListener('load', function() {
             scrollProgress.set({
                 events: false,
-                color: '#263238'
+                color: '#ff8f00'
             });
 
             var progressBar = _doc.getElementById('progress-wrapper');

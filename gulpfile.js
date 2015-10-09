@@ -7,6 +7,7 @@
      * $: namespace for gulp plugins
      */
     var gulp = require('gulp'),
+        eslint = require('gulp-eslint'),
         $ = require('gulp-load-plugins')({
                 pattern: ['gulp-*', 'gulp.*'],
                 scope: [ 'devDependencies' ],
@@ -34,6 +35,7 @@
             scripts: {
                 noncritical: {
                     src: './src/scripts/noncritical/**/*.js',
+                    lint: './src/scripts/noncritical/main.js',
                     output: './assets/scripts'
                 },
                 critical: {
@@ -126,7 +128,7 @@
      * 
      * gulp scripts
      */
-    gulp.task('scripts:noncritical', function() {
+    gulp.task('scripts:noncritical', [ 'scripts:lint' ], function() {
         return gulp.src(paths.scripts.noncritical.src)
             .pipe($.concatUtil('noncriticalJS.js'))
             .pipe(uncompressed ? $.util.noop() : $.uglify())
@@ -138,12 +140,57 @@
     });
 
     /*
+     * check syntax for noncritical scripts
+     * 
+     * gulp scripts:lint
+     */
+    gulp.task('scripts:lint', function() {
+        return gulp.src(paths.scripts.noncritical.lint)
+            // eslint() attaches the lint output to the eslint property
+            // of the file object so it can be used by other modules.
+            .pipe(eslint())
+            // eslint.format() outputs the lint results to the console.
+            // Alternatively use eslint.formatEach() (see Docs).
+            .pipe(eslint.format())
+            // To have the process exit with an error code (1) on
+            // lint error, return the stream and pipe to failAfterError last.
+            .pipe(eslint.failAfterError());
+    });
+
+    /*
      * groups both styles tasks
      * 
      * gulp styles
      */
     gulp.task('scripts', [ 'scripts:critical', 'scripts:noncritical' ]);
 
+    /*
+     * watch for style changes
+     * 
+     * gulp watch:styles
+     */
+    gulp.task('watch:styles', function() {
+        gulp.watch([ paths.styles.critical.src ], [ 'styles:critical' ]);
+        gulp.watch([ paths.styles.noncritical.src ], [ 'styles:noncritical' ]);
+    });
+
+    /*
+     * watch for script changes
+     * 
+     * gulp watch:scripts
+     */
+    gulp.task('watch:scripts', function() {
+        gulp.watch([ paths.scripts.critical.src ], [ 'scripts:critical' ]);
+        gulp.watch([ paths.scripts.noncritical.src ], [ 'scripts:noncritical' ]);
+    });
+
+
+    /*
+     * watch for style and script changes
+     * 
+     * gulp watch:all
+     */
+    gulp.task('watch:all', [ 'watch:styles', 'watch:scripts' ]);
 
     /*
      * default gulp command task
