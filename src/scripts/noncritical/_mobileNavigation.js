@@ -20,7 +20,6 @@
     // open navigation method
     var open = function() {
         navOverlay.style.display = 'block';
-        _doc.body.style.overflow = 'hidden';
         navButton.classList.add('active');
         navContainer.style.height = navContainer.scrollHeight + 'px';
         isOpen = true;
@@ -32,7 +31,6 @@
     // close navigation method
     var close = function() {
         navOverlay.style.display = 'none';
-        _doc.body.style.overflow = 'visible';
         navButton.classList.remove('active');
         navContainer.style.height = '0px';
         isOpen = false;

@@ -32,6 +32,7 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 18px;
     font-weight: 300;
+    position: relative;
 
     text-rendering: optimizeLegibility;
     font-feature-settings: "kern" 1;
@@ -39,10 +40,6 @@ body {
     -webkit-font-feature-settings: "kern";
     -moz-font-feature-settings: "kern";
     -moz-font-feature-settings: "kern=1";
-
-    &.mobile--navigation-opened {
-        overflow: hidden;
-    }
 }
 
 /* --- HEADINGS STYLES --- */
@@ -280,7 +277,7 @@ nav {
     &-overlay {
         display: none;
         height: 100%;
-        position: fixed;
+        position: absolute;
         width: 100%;
         z-index: 100;
     }

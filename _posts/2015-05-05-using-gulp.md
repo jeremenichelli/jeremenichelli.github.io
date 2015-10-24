@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using Gulp
-resume: I'm just gonna use one word to describe it. Awesome.
+resume: How to quickly start improving your project tasks with this package.
 ---
 
 To be honest I don't have a lot of experience with Grunt or other task runners. The main reason is that when this automation fever started more than a year ago in the front end community, <a href="https://www.gulpjs.com" target="_blank">Gulp</a> was my first attemp at it and it was so simple that I've never needed or wanted to try anything else.
@@ -10,7 +10,7 @@ In a couple of minutes I was creating tasks, automating processes and making my 
 
 ## How to install it
 
-If you want to use **Gulp** the first thing you need to do is to install it globally. Your OS might require super user permission for this, in that case just add *sudo* at the beginning of it.
+If you want to use Gulp the first thing you need to do is to install it globally. Your OS might require super user permission for this, in that case just add `sudo` at the beginning of it.
 
 ```
 npm install -g gulp
@@ -22,7 +22,7 @@ Then do it locally in your project's folder.
 npm install --save-dev gulp
 ```
 
-For every package you want to use, run this command or just add the name of the module with its version to your *package.json* file and run `npm install` or do it on your terminal using the **--save-dev** flag.
+For every package you want to use, run this command or just add the name of the module with <a href="https://docs.npmjs.com/getting-started/installing-npm-packages-locally">its version to your package.json file</a> and run `npm install` or do it on your terminal using the `--save-dev` flag.
 
 ```
 npm install --save-dev gulp-uglify
@@ -60,7 +60,9 @@ What I've noticed when seeing a code similar to this for the first time was that
 
 Because we are working with streams you always need to *return* something that can be a file, a file system or another stream, if you don't do it **Gulp** won't work.
 
-You can also concatenate tasks. If you want to check your scripts' syntax before minifying them (which you should) then you can create another task for it and tell **'minify'** to make sure **'hint'** task is finished before starting to minify the files.
+### Conditional tasks
+
+If you want to check your scripts' syntax before minifying them (which you should) then you can create another task for it and tell *minify* to make sure *hint* task is finished before starting to minify the files.
 
 ```js
 gulp.task('hint', function() {
@@ -82,11 +84,12 @@ gulp.task('minify', [ 'hint' ], function() {
 You can put both tasks into one but I rather keep them doing just one thing, because you might need to check the style of your code without overriding files in production folder for example. More and shorter tasks adds more versatility to your work flow.
 
 
-## Running tasks
+### Running tasks
 
 Once you've finished writing your tasks, you write the command *gulp* followed by the name of the task, like *minify* and you're going to see something like this in your console.
 
-```
+```bash
+your-pc: to/path/project/ jeremenichelli$ gulp minify
 [gulp] Using gulpfile /to/path/project/gulpfile.js
 [gulp] Starting 'hint'...
 [gulp] Finished 'hint' after 13 μs

@@ -109,7 +109,9 @@
 
     ////////// Stylistic Issues //////////
 
+    "array-bracket-spacing": [2, "always"],
     "brace-style": 2,
+    "block-spacing": [2, "always"],
     "camelcase": 2,
     "comma-spacing": 2,
     "comma-style": 2,
@@ -132,6 +134,7 @@
     "no-trailing-spaces": 2,
     "no-underscore-dangle": 2,
     "no-extra-parens": 2,
+    "object-curly-spacing": [2, "always"],
     "one-var": 0,
     "operator-assignment": 2,
     "quotes": [2, "single"],
