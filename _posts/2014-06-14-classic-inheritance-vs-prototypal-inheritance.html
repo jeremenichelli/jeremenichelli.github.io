@@ -5,7 +5,7 @@ resume: There's one thing that can be confusing if you are a programmer that com
 ---
 <p>Don't be scared, even if JavaScript is your first programming language <strong>inheritance</strong> is confusing. The main reason is that JavaScript is a prototypal language and it's not THAT common. Either way you can mimic classic inheritance, so let's dig into that.</p>
 <h2>Classic inheritance</h2>
-<p>As I mentioned in my <a href="/2014/05/primitive-values-and-objects/">last post</a>, here in JavaScript functions are also constructors that allow you to create new objects using the magic and confusing word <em>this</em>, which points to the new instance so you can assign general properties to it. Let's bring that back:</p>
+<p>As I mentioned in my <a href="/2014/05/primitive-values-and-objects/">last post</a>, here in JavaScript functions are also constructors that allow you to create new objects using the magic and confusing word <em>this</em>, which points to the new instance so you can assign general properties to it.</p>
 
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Person object constructor</span>
 <span class="kd">var</span> <span class="nx">Person</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">city</span><span class="p">,</span> <span class="nx">state</span><span class="p">,</span> <span class="nx">country</span><span class="p">){</span>
@@ -32,7 +32,7 @@ resume: There's one thing that can be confusing if you are a programmer that com
 <p>Obviously you need to pass the correct arguments to the function or they will be either in conflict with some methods you prototyped or just be <em>undefined</em>.</p>
 <p>This is the most clear and easy way to achieve classic inheritance in JavaScript in my opinion.</p>
 <p>The best thing of this approach is that the code is very clear and readable for new developers that start working in the project you're in, and believe me that's a big thing. One of the most common (and best) things about being a developer is that you'll be working with a lot of different people, with a different set of skills. Having a code that's pretty straight foward is a great advantage.</p>
-<h4>Prototype</h4>
+<h3>Prototype</h3>
 <p>You may notice that I used <em>prototype</em> to declare a new method for the Person object, so why do that when you could just add a function as any other property, right?</p>
 
 <div class="highlight"><pre><code data-lang="js" class="language-js"><span class="c1">// Person object constructor</span>

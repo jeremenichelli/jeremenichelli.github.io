@@ -40,7 +40,8 @@
         <div class="column column-3">
             <nav>
                 {% for link in site.data.navigation %}
-                    <a href="{{ link.href }}" class="nav--link" {% if link.external %}target="_blank"{% endif %}>
+                    <a href="{{ link.href }}" class="nav--link {% if link.class %}{{ link.class }}{% endif %}"
+                        {% if link.external %}target="_blank"{% endif %}>
                         {% if link.icon %}
                             <span class="nav--link-text">{{ link.text }}</span>
                             <svg class="nav--link-icon" preserveAspectRatio="xMinYMin">
