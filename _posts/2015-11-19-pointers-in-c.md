@@ -10,7 +10,7 @@ I'll try to help my memory a little bit by writing a small article about them. T
 
 C is a powerful language and one of the reasons is that you can control how much space your program will take while running. It doesn't seem to be such a deal nowadays, but in times where computers have a limited amount of RAM this was an amazing feature.
 
-Every time you declare a new variable, any programming language takes a piece of the memory of the device to store it until the program dies or we make it available again somehow. In some languages these variables must be typed.
+Every time you declare a new variable, any programming language takes a piece of memory from the device to store it until the program dies or we make it available again somehow. In some languages these variables must be typed.
 
 JavaScript doesn't have types, though we could differentiate between primitives and objects, but C is a strongly typed language. This means that you have to indicate what information your variable will contain.
 
@@ -20,7 +20,7 @@ int n = 25;
 float f = 2.5
 ```
 
-When you declare variables, the language reserves an amount in memory that will depend on that type.
+That type will define the amount of memory that's being saved.
 
 
 ## Pointers
@@ -40,7 +40,7 @@ number = 5;
 // NOPE!!!
 ```
 
-What you need to do is to create the variable and the pointer that will hold the address in memory, to accomplish we're going to use the ampersand `&` operator. When we precede a variable with an ampersand in C we get the address in memory of that variable.
+What you need to do is to create the variable and the pointer that will hold the address in memory, to accomplish that we're going to use the ampersand `&` operator. When we precede a variable with an ampersand in C we get the address in memory of that variable.
 
 ```c
 int *pointer;
@@ -79,7 +79,7 @@ This minimizes memory leaks and becomes a great improvement when dealing with bi
 
 ## Parameter by value and by reference
 
-Similar to JavaScript, in C every time the program enters in a function a new scope is created. The parameters of that function can be used and be changed, but since these actions took place inside a scoped created for that function exclusively, when the execution returns to the global scope this variables remain the unaltered.
+Similar to JavaScript, in C every time a function is called a new scope is created. The parameters of that function can be used and modified, but since these actions took place inside a scoped created for that function exclusively, when the execution returns to the global scope the original parameters remain unaltered.
 
 ```c
 #include <stdio.h>
@@ -100,7 +100,7 @@ This didn't work as expected because we are not actually passing the variable, j
 
 Can we pass parameters by reference in C? **Yes!** How? **POINTERS!**
 
-The only difference is that for this particular case, we don't need to create a pointer, we only need to pass the function the address of the variable we want to modify using the ampersand `&` operator.
+The only difference is that for this particular case, we don't need to create a pointer, we only need to pass the address of the variable we want to modify using the ampersand `&` operator.
 
 ```c
 #include <stdio.h>
