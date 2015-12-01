@@ -23,9 +23,7 @@ Last year I <a href="https://github.com/jeremenichelli/mnster" target="_blank">w
 
 ### Using mnster
 
-Let's do a simple binding so that you get familiar with the library syntax. You can go to the <a href="https://github.com/jeremenichelli/mnster#readme" target="_blank">README</a> file and get a complete guide on how to use it.
-
-First you need an element that you want to alter depending on certain information present in your script scope. You can create that element with JavaScript or grab it from the DOM.
+Let's do a simple binding so that you get familiar with the library syntax. First you need an element that you want to alter depending on certain information present in your script scope. You can create that element with JavaScript or grab it from the DOM.
 
 ```js
 var element = document.createElement('p');
@@ -173,10 +171,8 @@ You can see this approach working in a <a href="https://jeremenichelli.github.io
 
 ## Wrap-up
 
-It's better to make something clear again, I'm not against using frameworks. If you think is the best option for your project, if loading times are not critical and you're aware of performance and good practices around your choice then you're good to go.
+Again, I'm not against using frameworks. If you think is the best option for your project, if loading times are not that critical and you're aware of performance and good practices around your choice then you'll be fine, but it's a nice habit to first go and check if you can use the amazing features the browsers bring today out of the box and give the user a better experience. 
 
-But they can also accidentally blind us, so it's a nice habit to first go and check if the web already has what we need. 
-
-There are tons of documentation around, examples and small libraries to fill some spots on our project.
+There are tons of documentation around, examples and small libraries to fill some spots on your project. The template tag and a custom data binding library are just a small example of this, but they are also a concept proof of the options we have to develop today.
 
 Happy coding!
