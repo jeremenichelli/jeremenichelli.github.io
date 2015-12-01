@@ -6,7 +6,7 @@ resume: Stylesheets can block the rendering process of your site not allowing th
 
 ## Critical rendering path
 
-Including styles and scripts on top of your site can give a very bad experience to the user. Each time a stylesheet is loaded in the browser the rendering tree needs to be updated and while this happens the user is not able to see content. 
+Including styles and scripts on top of your site can give a very bad experience to the user. Each time a stylesheet is found in your page the render-tree needs to be updated and while this happens the browser stops parsing content delaying the first view of the whole site. 
 
 A good solution is to inline the critical styles in the **&lt;head&gt;** tag and load the rest of them asynchronically. This way we deliver to the user a consumable site, partially loaded but avoiding a blocking experience.
 
@@ -187,6 +187,6 @@ After this small addition you can run `gulp watch` on your terminal and presto!
 
 ## Wrap-up
 
-If you decide to inline styles at the top of your site you need to find out which styles are *critical* and which aren't. There's not a right anwser because it depends on the design of your site, but most of the articles about authoring those critical rules recommend to focus on the portion of the page that is first seen by the user and leave probably nitpicky design styles for a later load.
+If you decide to inline styles at the top of your site you need to find out which styles are *critical* and which aren't. Which ones are critical and which aren't will depend on the design of your site, but most of the articles about authoring those critical rules recommend to focus on the portion of the page that is first seen by the user and leave probably nitpicky design styles for a later load.
 
 Hope you find this useful and, in case you give a try, that it really simplifies your work flow and improves your page loading times.
