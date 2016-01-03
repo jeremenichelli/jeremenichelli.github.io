@@ -121,14 +121,14 @@ var views = {
  * Clone template method
  */
 function clone(name) {
-    return document.importNode(templates[name], true);
+    return document.importNode(templates[name].content, true);
 }
 
 /*
  * Build view method
  */
 function build(name, data) {
-    var temp = cloneTemplate(name);
+    var temp = clone(name);
 
     mnster.view(temp, { context: name, model: data });
 
