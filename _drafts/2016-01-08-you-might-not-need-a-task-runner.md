@@ -1,46 +1,48 @@
 ---
 layout: post
 title: You might not need a task runner
-resume: Most front end developers agree that tooling is something we as a community need to figure out this year. The decisions and learning curves around technologies used to build big, and not so big, projects was a trend last year, so maybe it's time to slowly minimize dependencies and delete some middle men.
+resume: Most front end developers agree that tooling is something we as a community need to figure out this year. The fatigue around the deciding and learning technologies to build big, and not so big, projects was a trend last year, so maybe it's time to slowly minimize dependencies and delete some middle men.
 ---
 
 ## The middle men
 
 The last couple of years we saw the rise of task runners and it makes totally sense. Why? Well, because if you work on web projects you already have some JavaScript knowledge and being able to use the same language to run your build process is really cool. You learn it fast, it is familiar to you and when you're setting it up or making a modification you feel that you're still doing front end work. That's definitely cool.
 
-<a href="https://gruntjs.com" target="_blank">Grunt</a> gained popularity fast and packages started to emerge fast, behind them a big community supporting them, and that's a healthy sign when choosing a tool for your project. The problem with Grunt was the steep learning curve to understand the task configuration, myself included.
+<a href="https://gruntjs.com" target="_blank">Grunt</a> gained popularity fast and packages started emerging fast, behind them a big community supporting them, and that's a healthy sign when choosing a tool for your project. The problem with Grunt was the steep learning curve to understand the task configuration, myself included.
 
 That was the main reason why developers dwell to <a href="https://gulpjs.com" target="_blank">Gulp</a>. The stream/pipe pattern was really semantic and easy to work with. It's currently the choice of big companies like Google in their projects which boosted its development and improved its visibility around developers.
 
 
 ### The packages deviation
 
-To actually do stuff with them the way they are intended you need specific modules, which are in most cases wrappers of already existing npm packages. That's a problem, because you get inside an update cycle which might never occur, for example if you're using browserify to bundle your scripts and modules and it gets a fix then you need to wait to the Gulp or Grunt package owner to apply that improvement in that wrapper.
+To actually do stuff with them the way they are intended you need specific modules, which are in most cases wrappers of already existing npm packages. That's a problem, because you get inside an update cycle which might never occur, for example when a fix is applied to a package, but you're using its Gulp or Grunt flavor you need to wait to the owner or contributors to apply the improvement in that wrapper.
 
-And you know, someday you wake up and find out that actually <a href="https://www.npmjs.com/package/gulp-browserify" target="_blank">browserify wrapper for Gulp is no longer being maintained</a>. Beautiful. Yes, that was sarcasm.
+And you know, someday you might wake up and find out that actually <a href="https://www.npmjs.com/package/gulp-browserify" target="_blank">browserify wrapper for Gulp is no longer being maintained</a>. Beautiful. Yes, that was sarcasm.
 
-And that's when a whole bunch of recipes appear to deal with this, and you need to download one or a couple more dependencies like <a href="https://www.npmjs.com/package/vinyl-source-stream" target="_blank">vinyl source stream</a> to do just what browserify does on its own.
+That's when a whole bunch of recipes appear to deal with this, and you need to download one or a couple more dependencies like <a href="https://www.npmjs.com/package/vinyl-source-stream" target="_blank">vinyl source stream</a> to do just what browserify does on its own.
 
 
 ## Using npm scripts
 
 Instead of using a wrapped package we could just use the package itself, most of them provide a command line interface and documentation which is what you just need.
 
-You also need to know a little bit of bash and how commands in the terminal. In case you don't, you can check this <a href="https://gist.github.com/jeremenichelli/489973c73a00437a188c" target="_blank">bash&nbsp;reference&nbsp;gist</a> I've created for this post and then come back to this post.
+You also need to know a little bit of bash and how commands in the terminal. In case you don't, I've created a <a href="https://gist.github.com/jeremenichelli/489973c73a00437a188c" target="_blank">bash&nbsp;reference&nbsp;gist</a> you can check and then come back to this post.
 
-So now that we don't have middle men, if you need browserify, just install browserify.
+So now that we don't want middle men, if you need browserify, just install browserify.
 
 ```sh
 npm install --save-dev browserify
 ```
 
-Of course you can't just use the `browserify` command in your terminal, to actually be able to do that you would need to install it using the `-g` flag, but when you install it as a dev dependency and call it through scripts declared in the **package.json** file of your project npm itself acts as some kind of wrapper and binds the command to their corresponding local node modules.
+Of course you can't just use the `browserify` command in your terminal, to actually be able to do that you would need to install it using the `-g` flag, but when you install it as a dev dependency and call it through scripts declared in the **package.json** file of your project npm itself acts as some kind of wrapper and binds the command to their corresponding local reference.
 
 ```json
 {
     "name": 'sample',
+    "title": "npm sample project",
+    "description": "Sample project to show how npm scripts work",
     "copyright": "2015",
-    "version": "2.0.0",
+    "version": "1.0.0",
     "license": "MIT",
     "scripts": {
         "build": "browserify js/app.js -o main.js"
@@ -48,7 +50,7 @@ Of course you can't just use the `browserify` command in your terminal, to actua
 }
 ```
 
-To trigger the script, just run this command on the console `npm run build`, but let's take this example more close to a real case where we actually need a development build process for debugging and production build process with minifaction.
+To trigger the script, just run this command `npm run build` in your terminal, but let's take this example more close to a real case where we usually need a development build process for debugging and production minified file.
 
 First install the new package that is needed.
 
@@ -67,7 +69,7 @@ We can use the `|` operator to pass the output of browserify to uglify command.
 
 ### Group scripts
 
-Since we need build tasks for our styles too, we are going to rename the ones we've just created.
+Let's include styles in our build process. We better rename the script tasks we've just created to understand better what they do or things will get confusing.
 
 ```json
 "scripts": {
@@ -76,7 +78,7 @@ Since we need build tasks for our styles too, we are going to rename the ones we
 }
 ```
 
-For the styles tasks we will process a `.less` file and minify it. First, install the packages.
+For the styles tasks we will process a **less** file and minify it. First, install the packages.
 
 ```sh
 npm install --save-dev less cssmin
@@ -114,9 +116,9 @@ You can also specify a task that needs to finish successfully before a script ca
 }
 ```
 
-Of course, you would need to install <a href="https://eslint.org/">eslint</a> or the linting utility you prefer. You might also have noticed that I created a *lint* script and I'm calling it before development and production build tasks, so if I make some change on the lint command it affects both.
+Of course, you would need to install <a href="https://eslint.org/">eslint</a> or the linting utility you prefer. You might also have noticed that I created a *lint* script and I'm calling it before development and production build tasks, so if I make some change on the lint script it affects both.
 
-You can do the same with the **post** prefix and add script that should run after other one.
+You can do the same with the **post** prefix and add task that should run after a specific script.
 
 ### Watch
 
@@ -138,13 +140,13 @@ To avoid running the same script over and over again we can install the <a href=
 }
 ```
 
-Easy to understand, you first call the watch command, then pass the command you want to execute in a string and then which files should be watched.
+Easy to understand, you first write the watch command, then pass the command you want to execute in a string and finally which files should be watched.
 
 ## Benefits and drawbacks
 
-The bright side of this approach is we avoid package version problems and use node modules directly the way they are intended to be used. On the other hand, you might need to do complex stuff for your build process, if that's your case then a task runner is a better choice.
+The bright side of this approach is we avoid package versioning problems and use node modules directly the way they are intended to be used.
 
-With npm scripts you can't use custom command arguments and you can end up with really big chunk of strings in your **package.json** file making it confusing and hard to maintain, and that's a big deal in a shared project.
+On the other hand, you can't use custom command arguments and you can end up with really big chunk of strings in your **package.json** file making it confusing and hard to maintain, and that's a big deal in a shared project. If that's your case then a task runner is a better choice.
 
 ## Wrap up
 
