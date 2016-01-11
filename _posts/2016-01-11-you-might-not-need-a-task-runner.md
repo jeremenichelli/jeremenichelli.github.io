@@ -143,7 +143,7 @@ To avoid running the same script over and over again we can install a <a href="h
 
 Easy to understand, you first write the **onchange** command, then pass the path you want to watch in a string and finally the command you want to run.
 
-You can see all this workflow working on <a href="https://github.com/jeremenichelli/npm-scripts-sample" target="_blank">this repository</a>.
+You can see all this configuration working on <a href="https://github.com/jeremenichelli/npm-scripts-sample" target="_blank">this repository</a>.
 
 ## Benefits and drawbacks
 
