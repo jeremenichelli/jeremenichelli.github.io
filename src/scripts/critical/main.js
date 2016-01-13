@@ -4,7 +4,7 @@
     // Google Analytics
     require('./_ga')();
 
-    var loadCSS = require('./_loadCSS');
+    var loadCSS = require('fg-loadcss');
 
     loadCSS('/assets/styles/site.min.css');
 })();

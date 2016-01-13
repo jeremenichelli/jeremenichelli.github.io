@@ -16,6 +16,7 @@
     "cssmin": "^0.4.3",
     "eslint": "^1.10.3",
     "less": "^2.5.3",
+    "onchange": "^2.0.0",
     "postcss-cli": "^2.3.3",
     "uglify-js": "^2.6.1"
   },
@@ -33,6 +34,7 @@
     "preimg": "mkdir -p assets/img",
     "lint": "eslint src/scripts/critical/main.js src/scripts/noncritical/main.js src/scripts/noncritical/_mobileNavigation.js",
     "js:critical": "browserify src/scripts/critical/main.js | uglifyjs > _includes/criticalJS.html",
+    "js:critical:u": "browserify src/scripts/critical/main.js -o _includes/criticalJS.html",
     "js:noncritical": "browserify src/scripts/noncritical/main.js | uglifyjs > assets/scripts/site.min.js",
     "js:noncritical:u": "browserify src/scripts/noncritical/main.js -o assets/scripts/site.min.js --debug",
     "js": "npm run js:critical & npm run js:noncritical",
@@ -44,5 +46,8 @@
     "preless": "mkdir -p assets/styles",
     "watch:less": "onchange 'src/**/*.less' -- npm run less",
     "build": "npm run favicon & npm run img & npm run less & npm run js"
+  },
+  "dependencies": {
+    "fg-loadcss": "^0.2.4"
   }
 }
