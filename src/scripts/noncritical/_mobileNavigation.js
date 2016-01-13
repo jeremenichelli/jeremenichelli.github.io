@@ -1,4 +1,4 @@
-(function(_win, _doc, SITE) {
+(function(_win, _doc) {
     'use strict';
 
     /*
@@ -7,15 +7,10 @@
      * _doc: document object
      */
 
-    /*
-     * Mobile Menu Navigation Controller
-     */
     var navButton = _doc.getElementsByClassName('mobile--navigation-button')[0],
         navContainer = _doc.getElementsByClassName('mobile--navigation')[0],
         navOverlay = _doc.getElementsByClassName('mobile--navigation-overlay')[0],
-        isOpen;
-
-    SITE.mobileNavigation = {};
+        isOpen = false;
 
     // open navigation method
     var open = function() {
@@ -39,15 +34,14 @@
         navOverlay.removeEventListener('touchstart', close, false);
     };
 
-    // export through SITE global namespace
-    SITE.mobileNavigation.toggle = function toggle() {
-        if (isOpen) {
-            close();
-        } else {
-            open();
-        }
+    module.exports = {
+        toggle: function() {
+            if (isOpen) {
+                close();
+            } else {
+                open();
+            }
+        },
+        button: navButton
     };
-
-    SITE.mobileNavigation.button = navButton;
-
-})(window, document, window.SITE = window.SITE ? window.SITE : {});
+})(window, document);

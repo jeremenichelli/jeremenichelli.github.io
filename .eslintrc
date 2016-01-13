@@ -9,11 +9,8 @@
     "window": true,
     "document": true,
     "undefined": true,
-    // project global name
-    "SITE": true,
-    // libraries
-    "scrollProgress": true,
-    "steer": true
+    "module": true,
+    "exports": true
   },
 
   "rules": {

@@ -9,10 +9,6 @@ strong {
 
 blockquote {
     color: @blog-color--dark;
-    float: right;
-    font-size: 22px;
-    margin: 0 0 12px 20px;
-    width: 40%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -266,13 +262,11 @@ pre {
 }
 
 /* --- NON CRITICAL MOBILE STYLES --- */
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
     
     blockquote {
-        float: none;
         font-size: 18px;
-        margin: 0 auto;
-        width: 100%;
+        text-align: left;
     }
 
     .post--navigation {
