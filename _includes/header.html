@@ -37,7 +37,7 @@
             </{% if page.type == 'home' %}span{% else %}a{% endif %}>
         </div>
 
-        <div class="column column-3">
+        <div class="column column-3 nav--column">
             <nav>
                 {% for link in site.data.navigation %}
                     <a href="{{ link.href }}" class="nav--link {% if link.class %}{{ link.class }}{% endif %}"

@@ -21,7 +21,6 @@
         <div class="column column-6">
             <h2>About this site</h2>
             <p>Built with Jekyll and hosted by GitHub Pages. <a href="/about">Find&nbsp;out&nbsp;more</a>.</p>
-            <p><a href="/feed.xml" target="_blank">Subscribe&nbsp;to&nbsp;the&nbsp;RSS&nbsp;feed&nbsp;&raquo;</a></p>
         </div>
     </div>
 </section>
@@ -30,7 +29,8 @@
 <footer {% if page.type %}class="{{ page.type }}--footer"{% endif %}>
     <div class="row">
         <div class="column column-6">
-            <p class="rights">{{ site.url }} | {{ site.author }} &reg; All rights reserved.</p>
+            <a href="/feed.xml" target="_blank">Subscribe&nbsp;to&nbsp;the&nbsp;RSS&nbsp;feed&nbsp;&raquo;</a>
+            <p>{{ site.url }} | {{ site.author }} &reg; All rights reserved.</p>
         </div>
     </div>
 </footer>
