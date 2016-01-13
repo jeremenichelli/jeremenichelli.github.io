@@ -2,16 +2,11 @@
   // http://eslint.org/docs/rules/
 
   "env": {
-    "browser": true
+    "browser": true,
+    "commonjs": true
   },
 
-  "globals": {
-    "window": true,
-    "document": true,
-    "undefined": true,
-    "module": true,
-    "exports": true
-  },
+  "globals": {},
 
   "rules": {
     "comma-dangle": 2,
