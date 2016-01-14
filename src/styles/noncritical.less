@@ -3,6 +3,11 @@
 @import '__variables.less';
 
 /* --- NON CRITICAL STYLES --- */
+.home--contact {
+    background-color: @background-color--medium;
+    transition: background-color .35s ease;
+}
+
 strong {
     font-weight: 400;
 }
@@ -159,14 +164,8 @@ pre {
     }
 }
 
-.post--main {
-
-    a {
-        color: @blog-color--dark;
-    }
-}
-
-.home--main {
+.home--main,
+.home--contact {
 
     a {
         color: @main-color--dark;
@@ -177,6 +176,13 @@ pre {
 
     a {
         color: @labs-color--dark;
+    }
+}
+
+.post--main {
+
+    a {
+        color: @blog-color--dark;
     }
 }
 
