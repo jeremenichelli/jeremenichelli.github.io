@@ -1,12 +1,12 @@
-- name: mnster
-  description: A simple and expandable data binding library. Allows fast implementation and little CPU usage while being super light-weight.
-  url: https://github.com/jeremenichelli
-- name: smoothscroll
-  description: Polyfill for smooth scroll behavior API co-authored with Dustan Kasten.
-  url: https://github.com/iamdustan/smoothscroll
 - name: jabiru
   description: Cross-browsing library to manage JSONP calls.
   url: https://github.com/jeremenichelli/jabiru
-- name: scrollProgress
-  description: Library that creates a progress bar that indicates how much you've scrolled on a website. It's very useful to show the reading progress in an article or a blog post.
-  url: https://github.com/jeremenichelli/scrollProgress
+- name: smoothscroll
+  description: Polyfill for smooth scroll behavior API co-authored with Dustan Kasten.
+  url: https://github.com/iamdustan/smoothscroll
+- name: mnster
+  description: A simple and expandable data binding library. Allows fast implementation and little CPU usage while being super light-weight.
+  url: https://github.com/jeremenichelli
+- name: vigenere
+  description: ES2015 module to cipher and decipher strings using Vigenère encrypting method.
+  url: https://github.com/jeremenichelli/vigenere
