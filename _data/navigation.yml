@@ -4,13 +4,3 @@
   href: /blog
 - text: Labs
   href: /labs
-- text: Twitter
-  href: https://www.twitter.com/jeremenichelli
-  icon: twitter-icon
-  external: true
-  class: nav--link-twitter
-- text: Github
-  href: https://www.github.com/jeremenichelli
-  icon: github-icon
-  external: true
-  class: nav--link-github
