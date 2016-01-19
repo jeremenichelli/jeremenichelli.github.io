@@ -85,7 +85,7 @@ pre {
     text-transform: uppercase;
 
     + h2 {
-        font-size: 36px;
+        font-size: 38px;
         margin: 10px 0 0;
     }
 }
@@ -194,6 +194,13 @@ pre {
     }
 }
 
+.blog--lastpost-resume {
+
+    a {
+        color: @blog-color--dark;
+    }   
+}
+
 .post--navigation {
     background-color: @background-color--medium;
 }
@@ -267,21 +274,12 @@ pre {
     }
 }
 
-/* --- NON CRITICAL MOBILE STYLES --- */
-@media screen and (max-width: 768px) {
-    
-    blockquote {
-        font-size: 18px;
-        text-align: left;
-    }
-
-    .post--navigation {
-        display: none;
-    }
-}
-
-// forced hide of mobile menu in wide viewports
+/* --- NON CRITICAL DESKTOP STYLES --- */
 @media screen and (min-width: 769px) {
+
+    blockquote {
+        text-align: center;
+    }
 
     .mobile--navigation,
     .mobile--navigation-overlay {

@@ -22,7 +22,7 @@ html {
     }
 
     // disable tap color in Chrome mobile
-    -webkit-tap-highlight-color: rgba(0,0,0, 0.0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /* --- CRITICAL STYLES --- */
@@ -30,7 +30,7 @@ body {
     background-color: @background-color--light;
     color: @text-color--dark;
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 300;
     position: relative;
 
@@ -43,23 +43,22 @@ body {
 }
 
 /* --- HEADINGS STYLES --- */
-
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.1em;
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 38px;
     font-weight: 300;
     letter-spacing: -0.03em;
     margin: 0 0 0 -2px;
 }
 
 h2 {
-    font-size: 42px;
+    font-size: 30px;
     font-weight: 300;
     letter-spacing: -0.03em;
-    margin: 45px 0 0 -2px;
+    margin: 40px 0 0 -2px;
 }
 
 .home--main,
@@ -73,14 +72,14 @@ h2 {
 }
 
 h3 {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 400;
     letter-spacing: -0.03em;
-    margin: 45px 0 0 -2px;
+    margin: 40px 0 0 -2px;
 }
 
 h4, h5, h6 {
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 400;
     margin: 38px 0 0 -2px;
     text-transform: uppercase;
@@ -96,6 +95,9 @@ h3, h4, h5, h6 {
 }
 
 /* --- GENERAL STYLES --- */
+ul {
+    padding: 0 0 0 20px;
+}
 
 img {
     max-width: 100%;
@@ -130,7 +132,7 @@ code {
 }
 
 blockquote {
-    font-size: 24px;
+    font-size: 20px;
     font-style: italic;
     font-weight: 400;
     margin: 32px auto;
@@ -143,9 +145,7 @@ blockquote {
 .logo {
     color: @text-color--dark;
     display: inline-block;
-    // general logo font size to
-    // rule all metrics inside
-    font-size: 38px;
+    font-size: 30px;
 }
 
 .logo--name {
@@ -167,16 +167,16 @@ blockquote {
 
 .logo--job {
     display: block;
-    font-size: .45em;
+    font-size: .55em;
     font-weight: 300;
     line-height: 1em;
-    margin: -.45em 0 0;
+    margin: -.4em 0 0;
     text-transform: lowercase;
 }
 
 /* --- CONTACT MESSAGE --- */
 .home--contact-message {
-    font-size: 22px;
+    font-size: 18px;
     margin: 0px;
     text-align: center;
 }
@@ -190,8 +190,12 @@ header {
 
 /* --- NAV STYLES --- */
 nav {
-    padding: 20px 0 0;
+    padding: 18px 0 0;
     text-align: right;
+}
+
+.nav--column {
+    display: none;
 }
 
 .nav--link {
@@ -229,7 +233,6 @@ nav {
 .mobile--navigation-button {
     background: none;
     border: none;
-    display: none;
     float: right;
     margin: 11px -5px 0 0;
     padding: 0;
@@ -301,12 +304,10 @@ nav {
 
 /* --- BLOG STYLES --- */
 time {
-    font-size: 18px;
     text-transform: uppercase;
 }
 
 .blog--lastpost-tag {
-    font-size: 18px;
     font-weight: 400;
     text-transform: uppercase;
 }
@@ -315,8 +316,8 @@ time {
     margin: 0;
 }
 
-.blog--post-resume {
-    margin: 0;
+.post--navigation {
+    display: none;
 }
 
 /* --- LABS STYLES --- */
@@ -329,54 +330,61 @@ time {
 }
 
 
-/* --- MOBILE STYLES --- */
-@media screen and (max-width: 768px) {
+/* --- DESKTOP STYLES --- */
+@media screen and (min-width: 769px) {
 
-    body, time,
-    .blog--lastpost-tag {
-        font-size: 16px;
+    body {
+        font-size: 19px;
+    }
+
+    blockquote {
+        font-size: 24px;
     }
 
     .logo {
-        font-size: 30px;
-    }
-
-    .logo--job {
-        font-size: .5em;
-    }
-
-    .nav--column {
-        display: none;
-    }
-
-    .mobile--navigation-button {
-        display: block;
-    }
-
-    .home--contact-message {
-        font-size: 18px;
-    }
-
-    h1 {
         font-size: 38px;
     }
 
+    .logo--job {
+        font-size: .45em;
+    }
+
+    .nav--column {
+        display: block;
+    }
+
+    .mobile--navigation-button {
+        display: none;
+    }
+
+    .home--contact-message {
+        font-size: 22px;
+    }
+
+    .post--navigation {
+        display: block;
+    }
+
+    h1 {
+        font-size: 56px;
+    }
+
     h2 {
-        font-size: 30px;
-        margin-top: 40px;
+        font-size: 42px;
+        margin-top: 45px;
     }
 
     h3 {
-        font-size: 24px;
-        margin-top: 40px;
+        font-size: 32px;
+        margin-top: 45px;
     }
 
     h4, h5, h6 {
-        font-size: 20px;
+        font-size: 26px;
     }
 
     ul {
-        padding: 0 0 0 20px;
+        padding: 0;
     }
 }
 

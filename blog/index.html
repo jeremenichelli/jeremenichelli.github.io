@@ -16,7 +16,9 @@ type: blog
                     <h2 class="blog--post-title blog--lastpost-title">{{ site.posts[0].title }}</h2>
                 </a>
                 {% if site.posts[0].resume %}
-                    <p class="blog--post-resume blog--lastpost-resume">{{ site.posts[0].resume }}</p>
+                    <p class="blog--post-resume blog--lastpost-resume">{{ site.posts[0].resume }} 
+                        <a href="{{ site.posts[0].url }}">Go&nbsp;to&nbsp;post&nbsp;&raquo;</a>
+                    </p>
                 {% endif %}
             </div>
         </div>
