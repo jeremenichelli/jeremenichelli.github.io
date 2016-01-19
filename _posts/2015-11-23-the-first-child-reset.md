@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The :first-child reset
-resume: At some point in history, pseudo classes appear in scene to bring more power and versatility to our styles, but are we using them correctly? I feel like having this shortcuts available sometimes blind us and here's why.
+resume: At some point in history, pseudo classes appear in scene to bring more power and versatility to our styles, but are we using them correctly? I feel like having these shortcuts available sometimes blind us and here's why.
 ---
 
 To show a clear picture of this, let's start with a small example. Let's say we want to create a fluid three columns system with a gap in the middle.
@@ -14,7 +14,7 @@ To show a clear picture of this, let's start with a small example. Let's say we 
 }
 ```
 
-Pretty simple, but it won't work just yet because we have three columns with `30%` of with and `5%` of left margin which gives us `105%`, not good. So, how would you solve this? Again, that's easy.
+Pretty simple, but it won't work just yet because we have three columns with `30%` of width and `5%` for left margin which gives us `105%`, not good. So, how would you solve this?
 
 ```css
 .column {
