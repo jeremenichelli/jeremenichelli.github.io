@@ -1,0 +1,34 @@
+// import color variables
+@import '__variables.less';
+
+// import shared noncritical styles
+@import '_noncritical.less';
+
+/* --- LABS PAGE NON CRITICAL STYLES --- */
+
+.labs--header {
+    border-color: @labs-color;
+
+    .nav--link:hover {
+        color: @labs-color--dark;
+    }
+}
+
+.labs--main {
+
+    a {
+        color: @labs-color--dark;
+    }
+}
+
+.mobile--navigation-inner {
+
+    &-labs {
+        background-color: @labs-color;
+    }
+}
+
+// desktop styles
+@media screen and (min-width: 769px) {
+
+}

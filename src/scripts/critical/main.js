@@ -1,4 +1,4 @@
-(function() {
+(function(PAGE) {
     'use strict';
 
     // Google Analytics
@@ -6,5 +6,5 @@
 
     var loadCSS = require('fg-loadcss');
 
-    loadCSS('/assets/styles/site.min.css');
-})();
+    loadCSS('/assets/styles/' + PAGE + '.css');
+})(window.PAGE);

@@ -1,14 +1,9 @@
-// common resources
-@import '__mixins.less';
 @import '__variables.less';
+@import '__normalize.less';
+@import '__grid.less';
 
-// normalize.css
-@import '_normalize.less';
 
-// critical less imports
-@import '_grid.less';
-
-// border-box reset
+/* --- BOX SIZING RESET --- */
 html {
     box-sizing: border-box;
 }
@@ -25,7 +20,9 @@ html {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-/* --- CRITICAL STYLES --- */
+
+/* --- SHARED CRITICAL STYLES --- */
+
 body {
     background-color: @background-color--light;
     color: @text-color--dark;
@@ -42,8 +39,11 @@ body {
     -moz-font-feature-settings: "kern=1";
 }
 
+
 /* --- HEADINGS STYLES --- */
-h1, h2, h3, h4, h5, h6 {
+
+h1, h2 {
+    clear: both;
     line-height: 1.1em;
 }
 
@@ -61,43 +61,8 @@ h2 {
     margin: 40px 0 0 -2px;
 }
 
-.home--main,
-.about--main,
-.blog--banner,
-.about--banner {
-
-    h2 {
-        margin-top: 0;
-    }
-}
-
-h3 {
-    font-size: 24px;
-    font-weight: 400;
-    letter-spacing: -0.03em;
-    margin: 40px 0 0 -2px;
-}
-
-h4, h5, h6 {
-    font-size: 20px;
-    font-weight: 400;
-    margin: 38px 0 0 -2px;
-    text-transform: uppercase;
-}
-
-// mitigate margin top when a
-// paragraph is under a heading
-h3, h4, h5, h6 {
-
-    + p {
-        margin-top: 15px;
-    }
-}
 
 /* --- GENERAL STYLES --- */
-ul {
-    padding: 0 0 0 20px;
-}
 
 img {
     max-width: 100%;
@@ -109,7 +74,7 @@ p {
 }
 
 a {
-    color: @text-color--dark;
+    color: inherit;
     font-weight: 400;
     text-decoration: none;
     
@@ -120,30 +85,16 @@ a {
 
 em {
     font-weight: 400;
-    font-style: italic;
 }
 
-pre {
-    margin: 20px 0 0;
-}
-
-code {
-    font-size: 14px;
-}
-
-blockquote {
-    font-size: 20px;
-    font-style: italic;
-    font-weight: 400;
-    margin: 32px auto;
-    max-width: 512px;
-    text-align: center;
+time {
     text-transform: uppercase;
 }
 
+
 /* --- LOGO STYLES --- */
+
 .logo {
-    color: @text-color--dark;
     display: inline-block;
     font-size: 30px;
 }
@@ -174,21 +125,18 @@ blockquote {
     text-transform: lowercase;
 }
 
-/* --- CONTACT MESSAGE --- */
-.home--contact-message {
-    font-size: 20px;
-    margin: 0px;
-    text-align: center;
-}
 
 /* --- HEADER STYLES --- */
+
 header {
     border-style: solid;
     border-width: 5px 0 0;
     transition: border-color .25s ease;
 }
 
+
 /* --- NAV STYLES --- */
+
 nav {
     padding: 18px 0 0;
     text-align: right;
@@ -284,43 +232,12 @@ nav {
     }
 }
 
-/* --- BLOG STYLES --- */
-time {
-    text-transform: uppercase;
-}
 
-.blog--lastpost-tag {
-    font-weight: 400;
-    text-transform: uppercase;
-}
-
-.blog--post-title {
-    margin: 0;
-}
-
-.post--navigation {
-    display: none;
-}
-
-/* --- LABS STYLES --- */
-.labs--lab-title {
-    margin: 0;
-}
-
-.labs--lab-resume {
-    margin: 0;
-}
-
-
-/* --- DESKTOP STYLES --- */
+// desktop styles
 @media screen and (min-width: 769px) {
 
     body {
         font-size: 19px;
-    }
-
-    blockquote {
-        font-size: 24px;
     }
 
     .logo {
@@ -339,14 +256,6 @@ time {
         display: none;
     }
 
-    .home--contact-message {
-        font-size: 22px;
-    }
-
-    .post--navigation {
-        display: block;
-    }
-
     h1 {
         font-size: 56px;
     }
@@ -355,18 +264,4 @@ time {
         font-size: 42px;
         margin-top: 45px;
     }
-
-    h3 {
-        font-size: 32px;
-        margin-top: 45px;
-    }
-
-    h4, h5, h6 {
-        font-size: 26px;
-    }
-
-    ul {
-        padding: 0;
-    }
 }
-

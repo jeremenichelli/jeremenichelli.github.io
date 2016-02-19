@@ -55,7 +55,14 @@
     <meta name="twitter:description" content="{{ description }}">
     <meta name="twitter:url" content="{{ url }}">
 
+    <style>{% include critical--{{ page.type }}.html %}</style>
+
+    <script>window.PAGE = '{{ page.type }}';</script>
+    <script>{% include critical--js.html %}</script>
+
     <noscript>
+        <link rel="stylesheet" href="/assets/styles/{{ page.type }}.css">
+
         <style>
             @media screen and (max-width: 768px) {
                 .mobile--navigation { height: auto !important; position: static !important; }
@@ -63,7 +70,4 @@
             }
         </style>
     </noscript>
-
-    <style>{% include criticalCSS.html %}</style>
-    <script>{% include criticalJS.html %}</script>
 </head>

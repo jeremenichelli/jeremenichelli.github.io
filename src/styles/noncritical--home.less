@@ -1,0 +1,40 @@
+// import color variables
+@import '__variables.less';
+
+// import shared noncritical styles
+@import '_noncritical.less';
+
+/* --- HOME PAGE NON CRITICAL STYLES --- */
+
+.home--header {
+    border-color: @main-color;
+
+    .nav--link:hover {
+        color: @main-color--dark;
+    }
+}
+
+.home--main,
+.home--contact {
+
+    a {
+        color: @main-color--dark;
+    }
+}
+
+.home--contact {
+    background-color: @background-color--medium;
+    transition: background-color .35s ease;
+}
+
+.mobile--navigation-inner {
+
+    &-home {
+        background-color: @main-color;
+    }
+}
+
+// desktop styles
+@media screen and (min-width: 769px) {
+
+}
