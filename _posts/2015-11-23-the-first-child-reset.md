@@ -46,7 +46,7 @@ So, instead of applying a style and immediately reseting it we could just do thi
 }
 
 .column + .column {
-    margin-left: 0;
+    margin-left: 5px;
 }
 ```
 
