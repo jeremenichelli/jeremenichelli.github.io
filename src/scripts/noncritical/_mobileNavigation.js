@@ -14,7 +14,7 @@
 
     // open navigation method
     var open = function() {
-        navOverlay.style.display = 'block';
+        navOverlay.classList.add('active');
         navButton.classList.add('active');
         navContainer.style.height = navContainer.scrollHeight + 'px';
         isOpen = true;
@@ -25,7 +25,7 @@
 
     // close navigation method
     var close = function() {
-        navOverlay.style.display = 'none';
+        navOverlay.classList.remove('active');
         navButton.classList.remove('active');
         navContainer.style.height = '0px';
         isOpen = false;

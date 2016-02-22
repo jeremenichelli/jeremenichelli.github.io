@@ -4,7 +4,9 @@ layout: default
 <section class="{% if page.type %}{{ page.type }}{% else %}page{% endif %}--hero">
     <div class="row">
         <div class="column column-6"> 
-            <h1 class="{% if page.type %}{{ page.type }}{% else %}page{% endif %}--title">{{ page.title }}</h1>
+            <h1 class="{% if page.type %}{{ page.type }}{% else %}page{% endif %}--title">
+                {{ page.title }}&nbsp;<span>~</span>
+            </h1>
 
             {% if page.resume %}
                 <p class="{% if page.type %}{{ page.type }}{% else %}page{% endif %}--resume">{{ page.resume }}</p>

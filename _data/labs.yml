@@ -1,9 +1,9 @@
 - slug: gridbuilder
   title: Grid Builder
   resume: Tool to quickly calculate fluid grids which you can preview and download the styles to include in your project.
-- slug: weather
+- slug: weather-angular
   title: Weather
-  resume: Showcase for Condense, a weather widget generator, you can use to manage that type of information by HTML elements and attributes.
+  resume: Forecast app built using DarkSky API, Google Geocoder service and Angular.
 - slug: octosearch
   title: Octosearch
   resume: A search app for Github users built with light-weight data binding library mnster.

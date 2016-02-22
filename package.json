@@ -16,6 +16,7 @@
     "cssmin": "^0.4.3",
     "eslint": "^1.10.3",
     "less": "^2.5.3",
+    "ncp": "^2.0.0",
     "onchange": "^2.0.0",
     "postcss-cli": "^2.3.3",
     "uglify-js": "^2.6.1"
@@ -29,16 +30,16 @@
   "scripts": {
     "clean": "rm -rf assets",
     "prefavicon": "mkdir -p assets/favicon",
-    "favicon": "cp src/favicon/* assets/favicon/",
+    "favicon": "ncp src/favicon/* assets/favicon/",
     "preimg": "mkdir -p assets/img",
-    "img": "cp -r src/img/logo.png assets/img/logo.png",
+    "img": "ncp src/img/logo-1x.png assets/img/logo-1x.png & ncp src/img/logo-2x.png assets/img/logo-2x.png",
     "lint": "eslint src/scripts/critical/main.js src/scripts/noncritical/main.js src/scripts/noncritical/_mobileNavigation.js",
     "js:critical": "browserify src/scripts/critical/main.js | uglifyjs > _includes/critical--js.html",
     "js:critical:u": "browserify src/scripts/critical/main.js -o _includes/critical--js.html",
-    "js:noncritical": "browserify src/scripts/noncritical/main.js | uglifyjs > assets/scripts/site.min.js",
-    "js:noncritical:u": "browserify src/scripts/noncritical/main.js -o assets/scripts/site.min.js --debug",
-    "js": "npm run js:critical & npm run js:noncritical",
+    "js:noncritical": "browserify src/scripts/noncritical/main.js | uglifyjs > assets/scripts/site.js",
+    "js:noncritical:u": "browserify src/scripts/noncritical/main.js -o assets/scripts/site.js --debug",
     "prejs": "npm run lint && mkdir -p assets/scripts",
+    "js": "npm run js:critical & npm run js:noncritical",
     "watch:js": "onchange 'src/**/*.js' -- npm run js",
     "less:critical:about": "lessc src/styles/critical--about.less | postcss --use autoprefixer -b 'Firefox > 30, Chrome > 36, IE > 8, iOS > 6, Safari > 6' | cssmin > _includes/critical--about.html",
     "less:critical:blog": "lessc src/styles/critical--blog.less | postcss --use autoprefixer -b 'Firefox > 30, Chrome > 36, IE > 8, iOS > 6, Safari > 6' | cssmin > _includes/critical--blog.html",
@@ -57,9 +58,10 @@
     "preless": "mkdir -p assets/styles",
     "less": "npm run less:critical && npm run less:noncritical",
     "watch:less": "onchange 'src/**/*.less' -- npm run less",
-    "build": "npm run favicon & npm run img & npm run less & npm run js"
+    "build": "npm run less && npm run js"
   },
   "dependencies": {
-    "fg-loadcss": "^0.2.4"
+    "fg-loadcss": "^0.2.4",
+    "fg-loadjs": "^0.2.3"
   }
 }

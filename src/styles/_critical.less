@@ -26,8 +26,8 @@ html {
 body {
     background-color: @background-color--light;
     color: @text-color--dark;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 17px;
+    font-family: 'Roboto Condensed', Helvetica Neue, sans-serif;
+    font-size: 18px;
     font-weight: 300;
     position: relative;
 
@@ -102,11 +102,11 @@ time {
 .logo--name {
     display: block;
     line-height: 1em;
-    letter-spacing: -0.01em;
     margin: 0 0 0 -.5em;
     max-width: 8em;
 
     &.error {
+        letter-spacing: -0.01em;
         margin: 0;
         width: auto;
 
@@ -118,20 +118,11 @@ time {
 
 .logo--job {
     display: block;
-    font-size: .55em;
+    font-size: .5em;
     font-weight: 300;
     line-height: 1em;
     margin: -.4em 0 0;
     text-transform: lowercase;
-}
-
-
-/* --- HEADER STYLES --- */
-
-header {
-    border-style: solid;
-    border-width: 5px 0 0;
-    transition: border-color .25s ease;
 }
 
 
@@ -149,14 +140,12 @@ nav {
 .nav--link {
     color: @text-color--dark;
     display: inline-block;
-    font-size: 18px;
     font-weight: 400;
-    line-height: 20px;
     position: relative;
     text-transform: uppercase;
 
     + .nav--link {
-        margin: 0 0 0 25px;
+        margin: 0 0 0 30px;
     }
 }
 
@@ -199,6 +188,7 @@ nav {
     z-index: 200;
     // layer creation hack
     transform: translate3d(0, 0, 0);
+    will-change: transform;
 
     &-inner {
         background-color: black;
@@ -222,14 +212,6 @@ nav {
             color: @text-color--light; 
         }
     }
-
-    &-overlay {
-        display: none;
-        height: 100%;
-        position: absolute;
-        width: 100%;
-        z-index: 100;
-    }
 }
 
 
@@ -237,15 +219,11 @@ nav {
 @media screen and (min-width: 769px) {
 
     body {
-        font-size: 19px;
+        font-size: 20px;
     }
 
     .logo {
         font-size: 38px;
-    }
-
-    .logo--job {
-        font-size: .45em;
     }
 
     .nav--column {

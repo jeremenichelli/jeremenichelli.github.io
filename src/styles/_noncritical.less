@@ -53,10 +53,16 @@ h3 {
 }
 
 
-/* --- BANNERS --- */
+/* --- BANNERS AND FOOTERS --- */
 
 .blog--banner {
-    background-color: @background-color--medium;
+
+    &-title {
+
+        span {
+            color: @blog-color--dark;
+        }
+    }
 
     a {
         color: @blog-color--dark;
@@ -77,6 +83,14 @@ h3 {
 
     h2 {
         margin-top: 0;
+    }
+}
+
+footer {
+    background-color: @background-color--medium;
+
+    a {
+        line-height: 1.5em;
     }
 }
 
@@ -102,6 +116,22 @@ h3 {
         .mobile--navigation-third-div {
             transform: rotate(-45deg) translate3d(3px, -8px, 0);
         }
+    }
+}
+
+.mobile--navigation-overlay {
+    background-color: #000000;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    transition: opacity .4s ease;
+    visibility: hidden;
+    width: 100%;
+    z-index: 100;
+
+    &.active {
+        opacity: .5;
+        visibility: visible;
     }
 }
 

@@ -6,7 +6,7 @@ type: post
     <div class="row">
         <div class="column column-6"> 
             <time class="post--date">{{ page.date | date: '%-d %b %Y'}}</time>
-            <h1 class="post--title">{{ page.title }}</h1>
+            <h1 class="post--title">{{ page.title }}&nbsp;<span>~</span></h1>
 
             {% if page.resume %}
                 <p class="post--resume">{{ page.resume }}</p>
