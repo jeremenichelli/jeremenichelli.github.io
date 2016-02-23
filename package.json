@@ -61,7 +61,6 @@
     "build": "npm run less && npm run js"
   },
   "dependencies": {
-    "fg-loadcss": "^0.2.4",
-    "fg-loadjs": "^0.2.3"
+    "fg-loadcss": "^0.2.4"
   }
 }
