@@ -78,7 +78,7 @@ This is the name of your folder where your layouts, pretty obvious, are going to
 </html>
 ```
 
-Pretty easy to understand. We're going to call this layout **default.html**, but if we want more special layouts for pages or posts we can add as many as we want. For example let's create a post layout structure. This time the `{{ content }}` placeholder will hold the text inside the article and not the whole page.
+Pretty easy to understand. We're going to call this layout **default.html**, but if we want more special layouts for pages or posts we can add as many as we want. For example let's create a post layout structure. This time the `{% raw %}{{ content }}{% endraw %}` placeholder will hold the text inside the article and not the whole page.
 
 ```html
 <!DOCTYPE html>

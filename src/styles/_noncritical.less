@@ -94,47 +94,6 @@ footer {
     }
 }
 
-
-/* --- MOBILE NAVIGATION --- */
-
-.mobile--navigation-button {
-
-    &.active {
-
-        div {
-            background-color: @text-color--light;
-        }
-        
-        .mobile--navigation-first-div {
-            transform: rotate(45deg) translate3d(3px, 8px, 0);
-        }
-
-        .mobile--navigation-second-div {
-            opacity: 0;
-        }
-
-        .mobile--navigation-third-div {
-            transform: rotate(-45deg) translate3d(3px, -8px, 0);
-        }
-    }
-}
-
-.mobile--navigation-overlay {
-    background-color: #000000;
-    height: 100%;
-    opacity: 0;
-    position: absolute;
-    transition: opacity .4s ease;
-    visibility: hidden;
-    width: 100%;
-    z-index: 100;
-
-    &.active {
-        opacity: .5;
-        visibility: visible;
-    }
-}
-
 // desktop styles
 @media screen and (min-width: 769px) {
  
@@ -145,10 +104,5 @@ footer {
 
     h4, h5, h6 {
         font-size: 26px;
-    }
-
-    .mobile--navigation,
-    .mobile--navigation-overlay {
-        display: none !important;
     }
 }

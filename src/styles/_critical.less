@@ -55,7 +55,7 @@ h1 {
 }
 
 h2 {
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 300;
     letter-spacing: -0.03em;
     margin: 40px 0 0 -2px;
@@ -96,7 +96,7 @@ time {
 
 .logo {
     display: inline-block;
-    font-size: 30px;
+    font-size: 34px;
 }
 
 .logo--name {
@@ -129,88 +129,17 @@ time {
 /* --- NAV STYLES --- */
 
 nav {
-    padding: 18px 0 0;
-    text-align: right;
-}
-
-.nav--column {
-    display: none;
+    margin: 50px 0 0;
 }
 
 .nav--link {
-    color: @text-color--dark;
-    display: inline-block;
-    font-weight: 400;
-    position: relative;
     text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: .02em;
 
     + .nav--link {
-        margin: 0 0 0 30px;
-    }
-}
-
-.mobile--navigation-button {
-    background: none;
-    border: none;
-    float: right;
-    margin: 11px -5px 0 0;
-    padding: 0;
-    position: relative;
-    z-index: 300;
-
-    &:focus {
-        outline: 0;
-    }
-
-    div {
-        background: @text-color--dark;
-        border-radius: 1px;
-        height: 2px;
-        transition: all .4s ease;
-        width: 28px;
-        // layer creation hack
-        transform: translate3d(0, 0, 0);
-
-        + div {
-            margin: 6px 0 0;
-        }
-    }
-}
-
-.mobile--navigation {
-    height: 0;
-    left: 0;
-    overflow: hidden;
-    position: absolute;
-    transition: height .4s ease;
-    top: 0;
-    width: 100%;
-    z-index: 200;
-    // layer creation hack
-    transform: translate3d(0, 0, 0);
-    will-change: transform;
-
-    &-inner {
-        background-color: black;
-        padding: 65px 25px;
-    }
-
-    &-link {
-        display: block;
-        color: @text-color--light;
-        font-size: 1.5em;
-        font-weight: 300;
-        margin: 35px 0 0;
-        text-align: center;
-        text-transform: uppercase;
-
-        &:first-child {
-            font-weight: 400;
-        }
-
-        &:visited {
-            color: @text-color--light; 
-        }
+        margin: 0 0 0 35px;
     }
 }
 
@@ -225,13 +154,15 @@ nav {
     .logo {
         font-size: 38px;
     }
-
-    .nav--column {
-        display: block;
+    
+    nav {
+        float: right;
+        margin: 0;
+        text-align: right;
     }
 
-    .mobile--navigation-button {
-        display: none;
+    .nav--link {
+        line-height: 52px;
     }
 
     h1 {

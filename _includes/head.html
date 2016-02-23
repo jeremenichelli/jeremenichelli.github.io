@@ -39,11 +39,7 @@
     
     <link rel="icon" type="image/png" href="/assets/favicon/android-chrome-192x192.png?v=2bbQ36qWKR" sizes="192x192">
     
-    {% if page.type == 'labs' %}<meta name="theme-color" content="#673ab7">{% endif %}
-    {% if page.type == 'about' %}<meta name="theme-color" content="#37474f">{% endif %}
-    {% if page.type == 'home' %}<meta name="theme-color" content="#03a9f4">{% endif %}
-    {% if page.type == 'error' %}<meta name="theme-color" content="#e53935">{% endif %}
-    {% if page.type == 'post' or page.type == 'blog' %}<meta name="theme-color" content="#ffb300">{% endif %}
+    <meta name="theme-color" content="#404040">
     
     <meta name="msapplication-TileColor" content="#fefefe">
     <meta name="msapplication-TileImage" content="/assets/favicon/mstile-144x144.png?v=2bbQ36qWKR">
@@ -63,12 +59,5 @@
 
     <noscript>
         <link rel="stylesheet" href="/assets/styles/{{ page.type }}.css">
-
-        <style>
-            @media screen and (max-width: 768px) {
-                .mobile--navigation { height: auto !important; position: static !important; }
-                .mobile--navigation-button { display: none !important; }
-            }
-        </style>
     </noscript>
 </head>

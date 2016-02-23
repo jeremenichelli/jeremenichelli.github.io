@@ -1,37 +1,15 @@
-<div class="mobile--navigation">
-    <div class="mobile--navigation-inner {% if page.type %}mobile--navigation-inner-{{ page.type }}{% endif %}">
-        {% for link in site.data.navigation %}
-            <a href="{{ link.href }}" class="mobile--navigation-link" {% if link.external %}target="_blank"{% endif %}>
-                {{ link.text }}
-            </a>
-        {% endfor %}
-    </div>
-</div>
-
-<div class="mobile--navigation-overlay"></div>
-
-
 <header {% if page.type %}class="{{ page.type }}--header"{% endif %}>
     <div class="row">
-        <div class="column column-3">
-            <button class="mobile--navigation-button">
-                <div class="mobile--navigation-first-div"></div>
-                <div class="mobile--navigation-second-div"></div>
-                <div class="mobile--navigation-third-div"></div>
-            </button>
-            <{% if page.type == 'home' %}span{% else %}a href="/"{% endif %} class="logo">
-                <img src="/assets/img/logo-1x.png" srcset="/assets/img/logo-2x.png 2x" class="logo--name"
-                    alt="Jeremias Menichelli" onerror="this.className = this.className + ' error';">
-                <span class="logo--job">Web Developer</span>
-            </{% if page.type == 'home' %}span{% else %}a{% endif %}>
-        </div>
+        <{% if page.type == 'home' %}span{% else %}a href="/"{% endif %} class="logo">
+            <img src="/assets/img/logo-1x.png" srcset="/assets/img/logo-2x.png 2x" class="logo--name"
+                alt="Jeremias Menichelli" onerror="this.className = this.className + ' error';">
+            <span class="logo--job">Web Developer</span>
+        </{% if page.type == 'home' %}span{% else %}a{% endif %}>
 
-        <div class="column column-3 nav--column">
-            <nav>
-                {% for link in site.data.navigation %}
-                    <a href="{{ link.href }}" class="nav--link">{{ link.text }}</a>
-                {% endfor %}
-            </nav>
-        </div>
+        <nav>
+            {% for link in site.data.navigation %}
+                <a href="{{ link.href }}" class="nav--link">{{ link.text }}</a>
+            {% endfor %}
+        </nav>
     </div>
 </header>
