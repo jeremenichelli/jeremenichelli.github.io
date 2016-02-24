@@ -20,7 +20,7 @@ Don't force the developer to do things one way, it's hard to imagine every use c
 
 ### steer
 
-Here's a good example of these two principles working together, when I was building a library to run code when the user changes the scrolling direction, I knew that I needed to do some stuff during the scroll event. But what if the developer also needs to execute some stuff and prefers to group what happens on scrolling, or use the library logic under a condition?
+Here's a good example of these two principles working together. I was building a library to run code when the user changes the scrolling direction and I knew that I needed to do some stuff during the scroll event, but what if the developer also needs to execute some stuff and prefers to group what happens on scrolling, or use the library logic under a condition?
 
 To allow this the function that will be executed during scrolling is also accessible on its own through the API *(1)*, instead of being private. In addition to that, an `events` option can be passed as `false` when the module is initialized *(2)*, and you can <a href="https://github.com/jeremenichelli/steer#steertrigger" target="_blank">call the method inside your own event architecture</a>.
 
@@ -32,14 +32,14 @@ If a method needs more than two arguments to work, use a configuration object. T
 
 ## 4. Throwing errors is good
 
-Errors are a natural part of a programming language and in JavaScript hey have their own constructor. I generally see plugins trying to avoid them.
+Errors are a natural part of a programming language and in JavaScript they even have their own constructor. I generally see plugins trying to avoid them.
 
 Use them to <a href="https://github.com/jeremenichelli/mnster/blob/master/dist/mnster.js#L179" target="_blank">inform the developer why their code is failing</a> while your library is in use.
 
 
 ## 5. Keep general stuff private
 
-If it's not going to cause an over engineering, having a couple of private methods solving more general stuff with flags will shrink the final size of the library and actually <a href="https://github.com/jeremenichelli/vigenere/blob/master/src/vigenere.js#L69" target="_blank">improve the readability</a> for potential contributors.
+If it's not going to cause an over engineering, having a couple of private methods solving more general stuff with behavior flags will shrink the final size of the library and actually <a href="https://github.com/jeremenichelli/vigenere/blob/master/src/vigenere.js#L69" target="_blank">improve the readability</a> for potential contributors.
 
 
 ## 6. Allow chaining
@@ -51,17 +51,17 @@ Whenever possible, <a href="https://github.com/jeremenichelli/jabiru/blob/master
 
 I think this is the most important advice on the list, because it can lead to multiple solutions in the same project, ergo duplicated code.
 
-I've seen a lot of libraries that claim to solve one thing for example, detect when a DOM element becomes visible while scrolling, and later exposing a method to change or add the class to that element.
+A lot of libraries that claim to solve one thing for example, detect when a DOM element becomes visible while scrolling, and later exposing a method to change or add a class to that element.
 
 Unless we're talking about a jQuery plugin, there is a high change you are using another library or a helper function to solve cross browsing implicance on class manipulation. 
 
 If that's the case then your web project will hold two different solutions for it, the one inside the library and yours.
 
-Your library should hold the code to solve one specific thing, avoid solving possible use cases for it and focus on keep it short and clear, and provide nice documentation showing examples on how your stuff can be used to solve common scenarios.
+Your library should hold the code to solve one specific thing, avoid populating its API with methods for possible use cases. Focus on keep it short and clear and provide nice documentation showing examples on how your stuff can be used to solve these common scenarios.
 
 
 ## Wrap-up
 
 These seven philosophies are the consequence of building my own vanilla solutions for projects I've been present, maybe your experience lead you to different conclusions.
 
-They are not universal rules you must follow, but they might help while coding modules that will be used by other developers.
+So, they are not universal rules you must follow, but they might help while coding modules that will be used by other developers or different projects.
