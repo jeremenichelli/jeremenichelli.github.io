@@ -1,4 +1,7 @@
 <head>
+    {% if page.type %}{% capture type %}{{ page.type }}{% endcapture %}
+    {% else %}{% capture type %}{{ page.layout }}{% endcapture %}
+    {% endif %}
 
     {% if page.title %}{% capture title %}{{ page.title }} | {{ site.author }}{% endcapture %}
     {% else %}{% capture title %}{{ site.title }}{% endcapture %}
@@ -52,12 +55,12 @@
     <meta name="twitter:url" content="{{ url }}">
     <meta name="twitter:image" content="https://s.gravatar.com/avatar/802b096bc7cef6843db036595503b559?s=240">
 
-    <style>{% include critical--{{ page.type }}.html %}</style>
+    <style>{% include critical--{{ type }}.html %}</style>
 
-    <script>window.PAGE = '{{ page.type }}';</script>
+    <script>window.PAGE = '{{ type }}';</script>
     <script>{% include critical--js.html %}</script>
 
     <noscript>
-        <link rel="stylesheet" href="/assets/styles/{{ page.type }}.css">
+        <link rel="stylesheet" href="/assets/styles/{{ type }}.css">
     </noscript>
 </head>
