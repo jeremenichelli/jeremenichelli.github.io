@@ -1,4 +1,4 @@
-{% if page.type != 'error' and type != 'post' and type != 'blog' and site.posts.size > 0 %}
+{% if type == 'home' and site.posts.size > 0 %}
 <section class="blog--banner">
     <div class="row">
         <div class="column column-6">
@@ -15,7 +15,7 @@
 </section>
 {% endif %}
 
-<footer {% if page.type %}class="{{ page.type }}--footer"{% endif %}>
+<footer {% if type %}class="{{ type }}--footer"{% endif %}>
     <div class="row">
         <div class="column column-6">
             <a href="https://www.twitter.com/jeremenichelli">Twitter</a> | <a href="https://www.github.com/jeremenichelli">GitHub</a> | <a href="/feed.xml" target="_blank">Subscribe&nbsp;to&nbsp;the&nbsp;RSS&nbsp;feed&nbsp;&raquo;</a>
