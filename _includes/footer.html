@@ -1,9 +1,9 @@
-{% if page.type != 'error' and page.type != 'post' and page.type != 'blog' and site.posts.size > 0 %}
+{% if type == 'home' and site.posts.size > 0 %}
 <section class="blog--banner">
     <div class="row">
         <div class="column column-6">
-            <h2>Blog</h2>
-            <p>When some thoughts or experiences can help others I write about them.</p>
+            <h2 class="blog--banner-title">Blog&nbsp;<span>~</span></h2>
+            <p>When some thoughts or experiences can help others I write about them, like this one...</p>
             <div class="inner-row">
                 <div class="column column-6">
                     <h3>{{ site.posts[0].title }}</h3>
@@ -15,22 +15,11 @@
 </section>
 {% endif %}
 
-{% if page.type != 'about' %}
-<section class="about--banner">
-    <div class="row">
-        <div class="column column-6">
-            <h2>About this site</h2>
-            <p>Built with Jekyll and hosted by GitHub Pages. <a href="/about">Find&nbsp;out&nbsp;more&nbsp;&raquo;</a></p>
-        </div>
-    </div>
-</section>
-{% endif %}
-
-<footer {% if page.type %}class="{{ page.type }}--footer"{% endif %}>
+<footer {% if type %}class="{{ type }}--footer"{% endif %}>
     <div class="row">
         <div class="column column-6">
             <a href="https://www.twitter.com/jeremenichelli">Twitter</a> | <a href="https://www.github.com/jeremenichelli">GitHub</a> | <a href="/feed.xml" target="_blank">Subscribe&nbsp;to&nbsp;the&nbsp;RSS&nbsp;feed&nbsp;&raquo;</a>
-            <p>{{ site.url }} | {{ site.author }} &reg; All rights reserved.</p>
+            <p>{{ site.url }} | {{ site.author }} &copy; All rights reserved</p>
         </div>
     </div>
 </footer>

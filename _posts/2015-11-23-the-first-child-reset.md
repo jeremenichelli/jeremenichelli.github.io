@@ -46,7 +46,7 @@ So, instead of applying a style and immediately reseting it we could just do thi
 }
 
 .column + .column {
-    margin-left: 0;
+    margin-left: 5px;
 }
 ```
 
@@ -55,4 +55,6 @@ Following this approach, we avoid seeing this <del>margin-left: 5%</del> in the 
 
 ## Wrap-up
 
-I'm not against using pseudo classes, the goal is trying not to reset your own styles. Common practices like this one are a little dangerous and we can easily end up stepping on our own feet. Finding a simple solution with no hacks and trying to keep strikethrough rules at minimum is a good sign.
+I'm not against using pseudo classes, the goal is trying not to reset your own styles. Common practices like this one are a little dangerous and we can easily end up stepping on our own feet.
+
+Find a simple solution with no hacks and try to keep strikethrough rules at minimum.

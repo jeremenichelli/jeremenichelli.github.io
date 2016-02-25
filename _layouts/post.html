@@ -6,7 +6,7 @@ type: post
     <div class="row">
         <div class="column column-6"> 
             <time class="post--date">{{ page.date | date: '%-d %b %Y'}}</time>
-            <h1 class="post--title">{{ page.title }}</h1>
+            <h1 class="post--title">{{ page.title }}&nbsp;<span>~</span></h1>
 
             {% if page.resume %}
                 <p class="post--resume">{{ page.resume }}</p>
@@ -19,21 +19,21 @@ type: post
 
 <section class="post--navigation">
     <div class="row">
-        {% if page.previous %}
         <div class="column column-3 post--navigation-prev">
+        {% if page.previous %}
                 <a href="{{ page.previous.url }}" class="post--navigation-link">
                     <span class="post--navigation-indicator">&laquo; Previous post</span>
                     <h2>{{ page.previous.title }}</h2>
                 </a>
-        </div>
         {% endif %}
-        {% if page.next %}
+        </div>
         <div class="column column-3 post--navigation-next">
+        {% if page.next %}
                 <a href="{{ page.next.url }}" class="post--navigation-link">
                     <span class="post--navigation-indicator">Next post &raquo;</span>
                     <h2>{{ page.next.title }}</h2>
                 </a>
-        </div>
         {% endif %}
+        </div>
     </div>
 </section>

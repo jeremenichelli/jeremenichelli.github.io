@@ -5,9 +5,6 @@ description: "My name is up there so you need me to tell you that. In case you d
 url: "http://jeremenichelli.github.io"
 baseurl: ""
 
-# site theme colors
-themebackgroundcolor: "#ffffff"
-
 # build settings
 port: 4000
 highlighter: pygments

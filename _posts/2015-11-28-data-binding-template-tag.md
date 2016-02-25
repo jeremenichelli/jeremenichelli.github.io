@@ -166,7 +166,9 @@ If this is more convenient than adding a whole framework or not will depend on w
 
 ### Live example
 
-You can see this approach working in a <a href="https://jeremenichelli.github.io/octosearch" target="_blank">simple app to visualize GitHub user profiles</a> I've written recently using another library of mine called <a href="https://github.com/jeremenichelli/jabiru" target="_blank">jabiru</a> to manage **jsonp** requests and <a href="https://github.com/jeremenichelli/mnster" target="_blank">mnster</a> for **data binding** with the template logic that was explored in this post. You can check it out in its <a href="https://github.com/jeremenichelli/octosearch" target="_blank">repository</a> too.
+You can see this approach working in a simple web app to visualize GitHub user profiles I wrote recently using another library of mine called <a href="https://github.com/jeremenichelli/jabiru" target="_blank">jabiru</a> to manage **jsonp** requests and <a href="https://github.com/jeremenichelli/mnster" target="_blank">mnster</a> for **data binding** with the template logic that was explored in this post.
+
+You can check it out in its <a href="https://github.com/jeremenichelli/octosearch" target="_blank">repository</a> or <a href="https:/jeremenichelli.github.io/octosearch" target="_blank">see it in action</a>.
 
 
 ## Wrap-up

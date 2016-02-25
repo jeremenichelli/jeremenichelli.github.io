@@ -1,0 +1,176 @@
+@import '__variables.less';
+@import '__normalize.less';
+@import '__grid.less';
+
+
+/* --- BOX SIZING RESET --- */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+
+    // disable outline on focus
+    &:focus {
+        outline: 0;
+    }
+
+    // disable tap color in Chrome mobile
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+/* --- SHARED CRITICAL STYLES --- */
+
+body {
+    background-color: @background-color--light;
+    color: @text-color--dark;
+    font-family: 'Roboto Condensed', Helvetica Neue, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    position: relative;
+
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+    -webkit-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern=1";
+}
+
+
+/* --- HEADINGS STYLES --- */
+
+h1, h2 {
+    clear: both;
+    line-height: 1.1em;
+}
+
+h1 {
+    font-size: 38px;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    margin: 0 0 0 -2px;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    margin: 40px 0 0 -2px;
+}
+
+
+/* --- GENERAL STYLES --- */
+
+img {
+    max-width: 100%;
+}
+
+p {
+    line-height: 1.5em;
+    margin: 20px 0 0;
+}
+
+a {
+    color: inherit;
+    font-weight: 400;
+    text-decoration: none;
+    
+    &:visited {
+        color: @text-color--dark;
+    }
+}
+
+em {
+    font-weight: 400;
+}
+
+time {
+    text-transform: uppercase;
+}
+
+
+/* --- LOGO STYLES --- */
+
+.logo {
+    display: inline-block;
+    font-size: 34px;
+}
+
+.logo--name {
+    display: block;
+    line-height: 1em;
+    margin: 0 0 0 -.5em;
+    max-width: 8em;
+
+    &.error {
+        letter-spacing: -0.01em;
+        margin: 0;
+        width: auto;
+
+        + .logo--job {
+            margin: 0;
+        }
+    }
+}
+
+.logo--job {
+    display: block;
+    font-size: .5em;
+    font-weight: 300;
+    line-height: 1em;
+    margin: -.4em 0 0;
+    text-transform: lowercase;
+}
+
+
+/* --- NAV STYLES --- */
+
+nav {
+    margin: 50px 0 0;
+}
+
+.nav--link {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: .02em;
+
+    + .nav--link {
+        margin: 0 0 0 35px;
+    }
+}
+
+
+// desktop styles
+@media screen and (min-width: 769px) {
+
+    body {
+        font-size: 20px;
+    }
+
+    .logo {
+        font-size: 38px;
+    }
+    
+    nav {
+        float: right;
+        margin: 0;
+        text-align: right;
+    }
+
+    .nav--link {
+        line-height: 52px;
+    }
+
+    h1 {
+        font-size: 56px;
+    }
+
+    h2 {
+        font-size: 42px;
+        margin-top: 45px;
+    }
+}

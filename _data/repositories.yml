@@ -1,6 +1,6 @@
-- name: jabiru
-  description: Cross-browsing library to manage JSONP calls.
-  url: https://github.com/jeremenichelli/jabiru
+- name: hunt
+  description: Library to detect when DOM elements become visible and disappear on scroll.
+  url: https://github.com/jeremenichelli/hunt
 - name: smoothscroll
   description: Polyfill for smooth scroll behavior API co-authored with Dustan Kasten.
   url: https://github.com/iamdustan/smoothscroll

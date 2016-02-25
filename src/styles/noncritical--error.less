@@ -1,0 +1,20 @@
+// import color variables
+@import '__variables.less';
+
+// import shared noncritical styles
+@import '_noncritical.less';
+
+/* --- ERROR PAGE NON CRITICAL STYLES --- */
+
+.error--title span,
+.nav--link:hover {
+    color: @error-color;
+}
+
+.error--main-message {
+    margin: 0;
+
+    a {
+        color: @error-color;
+    }
+}

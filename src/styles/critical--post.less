@@ -1,0 +1,47 @@
+// import shared critical styles
+@import '_critical.less';
+
+
+/* --- POSTS CRITICAL STYLES --- */
+ul {
+    line-height: 1.5em;
+    padding: 0 0 0 20px;
+}
+
+li + li {
+    margin: 10px 0 0;
+}
+
+pre {
+    margin: 20px 0 0;
+}
+
+code {
+    font-size: 14px;
+}
+
+blockquote {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 400;
+    margin: 32px auto;
+    max-width: 512px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.post--navigation {
+    display: none;
+}
+
+// desktop styles
+@media screen and (min-width: 769px) {
+
+    blockquote {
+        font-size: 24px;
+    }
+
+    .post--navigation {
+        display: block;
+    }
+}
