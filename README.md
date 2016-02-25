@@ -18,11 +18,6 @@ This project uses <a href="https://www.lesscss.org" target="_blank">LESS</a> as 
 The font that rules the whole site is Roboto Condensed by Christian Robertson, interface designer at Google and the one from the logo is Southpaw crafted by <a href="https://www.tylerfinck.com/" target="_blank">Tyler Finck</a>, whose work you should definitely check out by the way.</p>
 
 
-Writing
-
-All the posts in my blog are written using Markdown.
-
-
 ### Browser support
 
 This site _**should**_ run perfectly in the latest versions of Chrome, Firefox, Safari, Safari mobile, Chrome for Android, Internet Explorer 10 and 11 and Microsoft Edge.
