@@ -6,9 +6,12 @@
 
 /* --- ERROR PAGE NON CRITICAL STYLES --- */
 
-.error--title span,
-.nav--link:hover {
-    color: @error-color;
+.nav--link {
+
+    &:hover,
+    &:focus {
+        color: @error-color;
+    }
 }
 
 .error--main-message {

@@ -6,9 +6,12 @@
 
 /* --- HOME PAGE NON CRITICAL STYLES --- */
 
-.home--title span,
-.nav--link:hover {
-    color: @main-color;
+.nav--link {
+
+    &:hover,
+    &:focus {
+        color: @main-color;
+    }
 }
 
 .home--main,
@@ -22,4 +25,19 @@
 .home--contact {
     background-color: @background-color--medium;
     transition: background-color .35s ease;
+}
+
+.blog--banner {
+
+    a {
+        color: @blog-color;
+    }
+}
+
+.blog--banner-title {
+    margin-top: 0;
+
+    span {
+        color: @blog-color;
+    }
 }

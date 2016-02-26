@@ -6,9 +6,12 @@
 
 /* --- BLOG PAGE NON CRITICAL STYLES --- */
 
-.blog--title span,
-.nav--link:hover {
-    color: @blog-color;
+.nav--link {
+
+    &:hover,
+    &:focus {
+        color: @blog-color;
+    }
 }
 
 .blog--lastpost-resume {

@@ -18,7 +18,7 @@ type: home
     </div>
     <div class="row">
         <div class="column column-6">
-            <h2>Stuff on GitHub</h2>
+            <h2 class="home--main-title">Stuff on GitHub</h2>
             <p>These are some of the ideas I have shared with the community...</p>
         </div>
         {% for r in site.data.repositories %}
@@ -36,3 +36,20 @@ type: home
         {% endfor %}
     </div>
 </section>
+
+{% if site.posts.size > 0 %}
+<section class="blog--banner">
+    <div class="row">
+        <div class="column column-6">
+            <h2 class="blog--banner-title">Blog&nbsp;<span>~</span></h2>
+            <p>When some thoughts or experiences can help others I write about them, like this one...</p>
+            <div class="inner-row">
+                <div class="column column-6">
+                    <h3>{{ site.posts[0].title }}</h3>
+                    <p>{{ site.posts[0].resume }} <a href="{{ site.posts[0].url }}">Go&nbsp;to&nbsp;the&nbsp;post&nbsp;&raquo;</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

@@ -6,9 +6,12 @@
 
 /* --- POSTS NON CRITICAL STYLES --- */
 
-.post--title span,
-.nav--link:hover {
-    color: @blog-color;
+.nav--link {
+
+    &:hover,
+    &:focus {
+        color: @blog-color;
+    }
 }
 
 .post--main {
@@ -67,7 +70,7 @@ pre {
 
     + h2 {
         font-size: 35px;
-        margin: 8px 0 0;
+        margin: 6px 0 0;
     }
 }
 
