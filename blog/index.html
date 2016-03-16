@@ -10,7 +10,9 @@ type: blog
         <div class="row">
             <div class="column column-6">
                 <span class="blog--post-tag blog--lastpost-tag">Last post</span>
-                <time class="blog--post-date blog--lastpost-date">{{ site.posts[0].date | date : '%-d %b %Y' }}</time>
+                <time class="blog--post-date blog--lastpost-date"
+                    datetime="{{ site.posts[0].date | date_to_xmlschema }}">{{ site.posts[0].date | date : '%-d %b %Y' }}
+                </time>
                 <a href="{{ site.posts[0].url }}">
                     <h2 class="blog--post-title blog--lastpost-title">{{ site.posts[0].title }}</h2>
                 </a>
@@ -28,7 +30,9 @@ type: blog
                     <div class="row">
                 {% endif %}
                         <div class="column column-3">
-                            <time class="blog--post-date">{{ post.date | date : '%-d %b %Y' }}</time>
+                            <time class="blog--post-date"
+                                datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date : '%-d %b %Y' }}
+                            </time>
                             <a href="{{ post.url }}">
                                 <h2 class="blog--post-title">{{ post.title }}</h2>
                             </a>
