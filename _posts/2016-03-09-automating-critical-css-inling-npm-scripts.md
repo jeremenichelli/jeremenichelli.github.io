@@ -4,7 +4,7 @@ title: Automating the critical CSS inlining with npm scripts
 resume: A few months ago I published an article about inling critical CSS to improve content-first-pages performance and looking at the stats it became quite popular. Later I wrote another one about the benefits of using npm scripts when possible, so consider this a merge of both.
 ---
 
-*I will avoid an introduction about these topics, but you can go to my previous posts about [critical css inlining](/2015/10/automating-the-critical-css-inlining-with-gulp) and [npm scripts](/2016/01/you-might-not-need-a-task-runner).*
+*I will avoid an introduction about these topics, but you can go to my previous posts about [critical css inlining](/2015/10/automating-the-critical-css-inlining-with-gulp) and [npm scripts](/2016/01/you-might-not-need-a-task-runner) and then come back to this one.*
 
 
 ## Divide and conquer
