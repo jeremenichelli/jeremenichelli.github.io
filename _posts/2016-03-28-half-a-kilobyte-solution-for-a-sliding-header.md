@@ -95,6 +95,9 @@ window.addEventListener('scroll', function() {
                 header.classList.remove('header--hidden');
             }
         }
+    } else {
+        // show the header on top
+        header.classList.remove('header--hidden');
     }
 
     // update scroll position
@@ -120,13 +123,10 @@ var actions = {
 };
 
 window.addEventListener('scroll', function() {
-    direction = window.scrollY > y ? 'down' : 'up';
 
-    // update scroll position
-    y = window.scrollY;
+    if (window.scrollY > 150) {
+        direction = window.scrollY > y ? 'down' : 'up';
 
-    if (y > 150) {
-        // execute only when more than 150 pixels have been scrolled
         if (direction !== previousDirection) {
             // update direction value
             previousDirection = direction;
@@ -137,6 +137,9 @@ window.addEventListener('scroll', function() {
     } else {
         actions[ 'up' ]();
     }
+
+    // update scroll position
+    y = window.scrollY;
 });
 ```
 
