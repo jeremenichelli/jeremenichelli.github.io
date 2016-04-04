@@ -80,6 +80,17 @@ pre {
     text-align: right;
 }
 
+// selection flavour
+::selection {
+    background-color: @blog-color;
+    color: @text-color--light;
+}
+
+::-moz-selection {
+    background-color: @blog-color;
+    color: @text-color--light;
+}
+
 // desktop styles
 @media screen and (min-width: 769px) {
 
