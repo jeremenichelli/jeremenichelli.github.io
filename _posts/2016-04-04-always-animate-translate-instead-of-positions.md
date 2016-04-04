@@ -1,0 +1,86 @@
+---
+layout: post
+title: Always animate translate instead of positions
+resume: While visiting an article in WebKit's blog I noticed how badly an animation in a nested menu performed and decided to fix it.
+---
+
+Not only it was slow which didn't help, you could see the browser pushing each pixel of the menu with their list of links so I inspected its styles and this was the output.
+
+```css
+/*
+ * I deleted the styles that don't matter
+ * to this case studdy
+ */
+
+.sub-menu-layer {
+    opacity: 0;
+    position: absolute;
+    top: 7rem;
+    transition: opacity 0.6s, top 0.6s;
+}
+
+.menu-item:hover .sub-menu-layer {
+    opacity: 1;
+    top: 8rem;
+}
+```
+
+As you might have noticed that this code is animating from **7rem** to **8rem** the `top` property giving the menu a slide in entrance effect.
+
+This triggers layout and paint unnecessarily while we could use composition properties and improve frames per second numbers making it smoothier visually speaking.
+
+The solution is to take the element to its final position by default, add a negative translate value on the **y axis** and reset it on hover.
+
+```css
+.sub-menu-layer {
+    opacity: 0;
+    position: absolute;
+    top: 8rem;
+    transform: translateY(-1rem);
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+.menu-item:hover .sub-menu-layer {
+    opacity: 1;
+    transform: translateY(0);
+}
+```
+
+**Done!** This runs smooth now.
+
+
+### User experience and animation times
+
+Still the transition duration is **600ms** and that is too much. Users expect a micro animations like this one to finish in **~350ms**, other way they will feel they are waiting for it.
+
+If you want to create a nice *but not immediate* animation is better to add a subtle delay to it.
+
+```css
+.sub-menu-layer {
+    opacity: 0;
+    position: absolute;
+    top: 8rem;
+    transform: translateY(-1rem);
+    transition: opacity 0.35s, transform 0.35s;
+    transition-delay: .05s;
+}
+
+.menu-item:hover .sub-menu-layer {
+    opacity: 1;
+    transform: translateY(0);
+}
+```
+
+The transition delay should not exceed the **100ms** neither or users will feel it *unresponsive*.
+
+
+### Recommended links
+- Post by Paul Irish about the benefits of <a href="http://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/">moving objects using translate instead of top and left</a>
+- Google Developers documentation on <a href="https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count?hl=en">composition layers and animation</a>
+- UX question in StackOverflow about <a href="http://ux.stackexchange.com/questions/66604/optimal-duration-for-animating-transitions">optimal duration on transitions for humans</a>
+
+
+## Wrap-up
+
+When animating elements think a way to accomplish the desired effect using tranform operations and opacity to avoid unperformant results and show nice animations and transitions to the user.
+
