@@ -1,5 +1,7 @@
 _site/
 
+_drafts/
+
 node_modules
 npm-debug.log
 
