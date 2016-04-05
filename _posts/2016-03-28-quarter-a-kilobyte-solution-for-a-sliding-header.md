@@ -11,7 +11,7 @@ Yes, there are plenty of them, here is my approach.
 
 First of all we need to know in which direction the user is scrolling, which it's not complicated, just store how much the user has gone scrolling and compare it to a previous value to see if it is greater or not.
 
-```js
+{% highlight javascript %}
 /*
  * initialize variables
  * y: current scroll position
@@ -34,7 +34,7 @@ window.addEventListener('scroll', function() {
     // update scroll position
     y = window.scrollY;
 });
-```
+{% endhighlight %}
 
 This works great, we can toggle a class on our **header** and call it the day, but we can do it better.
 
@@ -42,7 +42,7 @@ We are executing the code inside the `if` statements on each scroll event which 
 
 Since we are going to toggle our header when the user *starts* scrolling up or down, we rather detect when the scrolling the direction has changed craeting one more variable to store the last direction registered and compare it with the current one.
 
-```js
+{% highlight javascript %}
 var y = window.scrollY,
     previousDirection = null,
     direction = null;
@@ -66,11 +66,11 @@ window.addEventListener('scroll', function() {
     // update scroll position
     y = window.scrollY;
 });
-```
+{% endhighlight %}
 
 We can now add a class toggle on our **header** inside to the solution. It is also recommended to execute this solution once the user has scrolled a bit so the **header** is always present on the top of out site.
 
-```js
+{% highlight javascript %}
 var header = document.getElementsByTagName('header')[0],
     y = window.scrollY,
     previousDirection = null,
@@ -103,11 +103,11 @@ window.addEventListener('scroll', function() {
     // update scroll position
     y = window.scrollY;
 });
-```
+{% endhighlight %}
 
 Those are a lot of `if` statements, we can reduce them using <a href="/2014/10/the-power-of-using-object-literals">the power of object literals</a>.
 
-```js
+{% highlight javascript %}
 var header = document.getElementsByTagName('header')[0],
     y = window.scrollY,
     previousDirection = null,
@@ -141,7 +141,7 @@ window.addEventListener('scroll', function() {
     // update scroll position
     y = window.scrollY;
 });
-```
+{% endhighlight %}
 
 The hardest part is done, but our **header** won't move unless we write some styles for it.
 
@@ -150,7 +150,7 @@ The hardest part is done, but our **header** won't move unless we write some sty
 
 Apart from setting a **fixed** position to the element, we need to make it disappear when the **header--hidden** class hits it.
 
-```css
+{% highlight css %}
 header {
     position: fixed;
     /* the need of setting a height on the element will
@@ -162,11 +162,11 @@ header {
 .header--hidden {
     display: none;
 }
-```
+{% endhighlight %}
 
 That works though it's not fancy at all. Let's use a negative translate value on the **y axis** to move the element up and a transition to animate the change.
 
-```css
+{% highlight css %}
 header {
     position: fixed;
     height: 100px;
@@ -178,7 +178,7 @@ header {
 .header--hidden {
     transform: translate(0, -100%);
 }
-```
+{% endhighlight %}
 
 See it working in this <a href="https://jeremenichelli.github.io/sticky" target="_blank">demostration page</a>.
 
@@ -192,7 +192,7 @@ See it working in this <a href="https://jeremenichelli.github.io/sticky" target=
 
 But you know, maybe you just want some library to help you do the trick and keep moving. Then you can include <a href="https://jeremenichelli.github.io/steer">steer</a> in your project and use its API to toggle the **header** class.
 
-```js
+{% highlight javascript %}
 var header = document.getElementsByTagName('header')[0];
 
 steer.set({
@@ -212,7 +212,7 @@ window.addEventListener('scroll', function() {
         showHeader();
     }
 });
-```
+{% endhighlight %}
 
 This script will add some legacy browser support under the hood for this approach, though you will still need a polyfill for <a href="https://github.com/eligrey/classList.js" target="_blank">classList</a> which doesn't work in older versions of Internet Explorer.
 

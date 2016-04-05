@@ -6,7 +6,7 @@ resume: While visiting an article in WebKit's blog I noticed how badly an animat
 
 Not only it was slow which didn't help, you could see the browser pushing each pixel of the menu with their list of links so I inspected its styles and this was the output.
 
-```css
+{% highlight css %}
 /*
  * I deleted the styles that don't matter
  * to this case studdy
@@ -23,7 +23,7 @@ Not only it was slow which didn't help, you could see the browser pushing each p
     opacity: 1;
     top: 8rem;
 }
-```
+{% endhighlight %}
 
 As you might have noticed that this code is animating from **7rem** to **8rem** the `top` property giving the menu a slide in entrance effect.
 
@@ -31,7 +31,7 @@ This triggers layout and paint unnecessarily while we could use composition prop
 
 The solution is to take the element to its final position by default, add a negative translate value on the **y axis** and reset it on hover.
 
-```css
+{% highlight css %}
 .sub-menu-layer {
     opacity: 0;
     position: absolute;
@@ -44,7 +44,7 @@ The solution is to take the element to its final position by default, add a nega
     opacity: 1;
     transform: translateY(0);
 }
-```
+{% endhighlight %}
 
 **Done!** This runs smooth now.
 
@@ -55,7 +55,7 @@ Still the transition duration is **600ms** and that is too much. Users expect a 
 
 If you want to create a nice *but not immediate* animation is better to add a subtle delay to it.
 
-```css
+{% highlight css %}
 .sub-menu-layer {
     opacity: 0;
     position: absolute;
@@ -69,18 +69,21 @@ If you want to create a nice *but not immediate* animation is better to add a su
     opacity: 1;
     transform: translateY(0);
 }
-```
+{% endhighlight %}
 
 The transition delay should not exceed the **100ms** neither or users will feel it *unresponsive*.
 
 
 ### Recommended links
-- Post by Paul Irish about the benefits of <a href="http://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/">moving objects using translate instead of top and left</a>
-- Google Developers documentation on <a href="https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count?hl=en">composition layers and animation</a>
-- UX question in StackOverflow about <a href="http://ux.stackexchange.com/questions/66604/optimal-duration-for-animating-transitions">optimal duration on transitions for humans</a>
+- Post by Paul Irish about the benefits of [moving objects using translate instead of top and left][1]
+- Google Developers documentation on [composition layers and animation][2]
+- UX question in StackOverflow about [optimal duration on transitions for humans][3]
 
 
 ## Wrap-up
 
 When animating elements think a way to accomplish the desired effect using tranform operations and opacity to avoid unperformant results and show nice animations and transitions to the user.
 
+[1]: http://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/
+[2]: https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count?hl=en
+[3]: http://ux.stackexchange.com/questions/66604/optimal-duration-for-animating-transitions
