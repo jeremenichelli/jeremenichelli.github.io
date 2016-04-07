@@ -49,7 +49,7 @@ The solution is to take the element to its final position by default, add a nega
 **Done!** This runs smooth now.
 
 
-### User experience and animation times
+## User experience and animation times
 
 Still the transition duration is **600ms** and that is too much. Users expect a micro animations like this one to finish in **~350ms**, other way they will feel they are waiting for it.
 
@@ -83,6 +83,10 @@ The transition delay should not exceed the **100ms** neither or users will feel 
 ## Wrap-up
 
 When animating elements think a way to accomplish the desired effect using tranform operations and opacity to avoid unperformant results and show nice animations and transitions to the user.
+
+### Update
+
+- 7 APR 2014 &mdash; after reporting this to the WebKit team about this, they quickly fixed and shipped the new improved transitions to their site.
 
 [1]: http://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/
 [2]: https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count?hl=en
