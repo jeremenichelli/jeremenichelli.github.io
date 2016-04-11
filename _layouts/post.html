@@ -25,7 +25,7 @@ type: post
         {% if page.previous %}
                 <a href="{{ page.previous.url }}" class="post--navigation-link">
                     <span class="post--navigation-indicator">&laquo; Previous post</span>
-                    <h2>{{ page.previous.title }}</h2>
+                    <h6 class="post--navigation-title">{{ page.previous.title }}</h6>
                 </a>
         {% endif %}
         </div>
@@ -33,7 +33,7 @@ type: post
         {% if page.next %}
                 <a href="{{ page.next.url }}" class="post--navigation-link">
                     <span class="post--navigation-indicator">Next post &raquo;</span>
-                    <h2>{{ page.next.title }}</h2>
+                    <h6 class="post--navigation-title">{{ page.next.title }}</h6>
                 </a>
         {% endif %}
         </div>
