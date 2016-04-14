@@ -7,7 +7,7 @@ baseurl: ""
 
 # build settings
 port: 4000
-exclude: [ 'node_modules' ]
+exclude: [ 'node_modules', 'src' ]
 markdown: kramdown
 kramdown:
   input: GFM
