@@ -35,7 +35,7 @@
     "preimg": "mkdir -p assets/img",
     "img": "ncp src/img/logo-1x.png assets/img/logo-1x.png & ncp src/img/logo-2x.png assets/img/logo-2x.png",
     "lint": "eslint src/scripts/critical/main.js",
-    "js": "browserify src/scripts/critical/main.js -o _includes/critical--js.html",
+    "js": "browserify src/scripts/critical/main.js | uglifyjs > _includes/critical--js.html",
     "prejs": "npm run lint && mkdir -p assets/scripts",
     "watch:js": "onchange 'src/**/*.js' -- npm run js",
     "less:critical:about": "lessc --clean-css src/styles/critical--about.less _includes/critical--about.html",
