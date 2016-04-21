@@ -34,7 +34,7 @@ fontStyleSheet.href = 'http://fonts.googleapis.com/css?family=Roboto';
 document.head.appendChild(fontStyleSheet);
 ```
 
-And guess what? It didn't work. There was still a gap where invisible text was shown, apparently this happens because I changed the font-family of the site when the stylesheet was ready which is ok, but the browser still was rendering the new font. That difference in time trigger a re-paint in the text leading to this.
+And guess what? It didn't work. There was still a gap where invisible text was shown, apparently this happens because I changed the font family of the site when the stylesheet was ready which is ok, but the browser still was rendering the new font. That difference in time triggered a re-paint in the text leading to this.
 
 
 ### Solutions available today
