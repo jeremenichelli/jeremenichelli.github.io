@@ -1,18 +1,18 @@
 ---
 layout: post
 title: What is it to be the new IE?
-resume: In the last couple of months some blog posts emerged complaining about Safari and Chrome, and for some reason not Firefox. The first one was Nolan Lawson's post about Safari's lag to implement some features present in modern browsers, saying that Safari is the new IE. Later, Benjamin De Cock said that Chrome was the new IE, but what does exactly mean to be the new IE?
+resume: In the last couple of months some blog posts emerged complaining about Safari and Chrome, and for some reason not Firefox. The first one was Nolan Lawson's post about Safari's lag to implement some features present in modern browsers, saying that Safari is the new IE. Later, Benjamin De Cock said that Chrome was the new IE, but what does that exactly mean?
 ---
 
 If you are a web developer, a front end more specifically, you work with CSS to style your projects, JavaScript to add behavior and of course you use HTML to show content. I don't know you but I really like my job, I decided to do this every day and I don't regret it.
 
 There's a quote from Confucius that is pretty popular, *"Choose a job you love, and you will never have to work a day in your life"* and I totally agree with this, but at some point I had to support old versions of Internet Explorer and it began to feel like work again.
 
-Most of the complaints are related to some basic and well received JavaScript methods that Internet Explorer didn't have out of the box, like **bind in IE8** and CSS properties that were unsopported like **display: inline-block in IE7**.
+Most of the complaints are related to some basic and well received JavaScript methods that Internet Explorer didn't have out of the box, like **bind in IE8** and CSS properties that were unsopported like **inline-block in IE7**.
 
 > I had to support old versions of Internet Explorer and it began to feel like work again
 
-Users were still using those versions, clients were still asking us to support them so hacks, polyfills and lots of *ifs* statements in our scripts begin to populate almost any project.
+Users were still using those versions, clients were still asking us to support them so hacks, polyfills and lots of *ifs* statements in our scripts begun to populate almost any project.
 
 Are you familiar with the facade pattern? If you are, awesome. If you aren't, well you probably are but just didn't know it had a name. Does this look familiar to you?
 
