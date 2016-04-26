@@ -68,7 +68,7 @@ img {
 
 p {
     line-height: 1.5em;
-    margin: 20px 0 0;
+    margin: 22px 0 0;
 }
 
 a {
@@ -132,7 +132,7 @@ nav {
 
 .nav--link {
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 18.5px;
     font-weight: 700;
     letter-spacing: .03em;
 
@@ -160,7 +160,12 @@ nav {
     }
 
     .nav--link {
+        letter-spacing: .05em;
         line-height: 52px;
+
+        + .nav--link {
+            margin: 0 0 0 38px;
+        }
     }
 
     p {
@@ -168,11 +173,11 @@ nav {
     }
 
     h1 {
-        font-size: 56px;
+        font-size: 52px;
     }
 
     h2 {
-        font-size: 42px;
+        font-size: 38px;
         margin-top: 45px;
     }
 }

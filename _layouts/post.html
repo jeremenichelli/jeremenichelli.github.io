@@ -8,7 +8,7 @@ type: post
             <time class="post--date"
                 datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %b %Y'}}
             </time>
-            <h1 class="post--title">{{ page.title }}&nbsp;<span>~</span></h1>
+            <h1 class="post--title">{{ page.title }}&nbsp;<span>&laquo;</span></h1>
 
             {% if page.resume %}
                 <p class="post--resume">{{ page.resume }}</p>

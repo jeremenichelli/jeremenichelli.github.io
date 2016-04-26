@@ -4,9 +4,9 @@
 - name: smoothscroll
   description: Polyfill for smooth scroll behavior API co-authored with Dustan Kasten.
   url: https://github.com/iamdustan/smoothscroll
-- name: mnster
-  description: A simple and expandable data binding library. Allows fast implementation and little CPU usage while being super light-weight.
-  url: https://github.com/jeremenichelli
 - name: vigenere
   description: ES2015 module to cipher and decipher strings using Vigenère encrypting method.
   url: https://github.com/jeremenichelli/vigenere
+- name: cormoran
+  description: Light weight library to handle JSONP calls with Promises.
+  url: https://github.com/jeremenichelli/cormoran

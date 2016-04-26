@@ -75,7 +75,7 @@ The transition delay should not exceed the **100ms** neither or users will feel 
 
 
 ### Recommended links
-- Post by Paul Irish about the benefits of [moving objects using translate instead of top and left][1]
+- Post by Paul Irish about the benefits of [moving objects using translate][1]
 - Google Developers documentation on [composition layers and animation][2]
 - UX question in StackOverflow about [optimal duration on transitions for humans][3]
 
@@ -84,9 +84,11 @@ The transition delay should not exceed the **100ms** neither or users will feel 
 
 When animating elements think a way to accomplish the desired effect using tranform operations and opacity to avoid unperformant results and show nice animations and transitions to the user.
 
+
 ### Update
 
-- 7 APR 2014 &mdash; after reporting this to the WebKit team about this, they quickly fixed and shipped the new improved transitions to their site.
+**7 APR 2014** &mdash; after reporting this to the WebKit team about this, they quickly fixed and shipped the new improved transitions to their site.
+
 
 [1]: http://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/
 [2]: https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count?hl=en
