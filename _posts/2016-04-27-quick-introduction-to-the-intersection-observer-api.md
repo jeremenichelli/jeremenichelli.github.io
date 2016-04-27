@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Quick introduction to Intersection Observer API
+title: Quick introduction to the Intersection Observer API
 resume: These last years browsers vendors have paid more attention to the riddles developers were trying to solve to implement native and more performant solutions.
 ---
 
