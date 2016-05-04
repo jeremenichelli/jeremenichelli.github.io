@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: About that time I tried to beat browser cache
 resume: After applying a new redesign and architectural changes to my site to improve loading and rendering times, I started thinking what else I could do to give a faster experience to the user. Then I saw the Network tab on the developer tools and found it!
 ---

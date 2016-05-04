@@ -1,77 +1,14 @@
 @import '__variables.less';
 
-
-/* --- NON CRITICAL STYLES --- */
-
-strong {
-    font-weight: 400;
-}
-
-
-/* --- HEADING STYLES --- */
-
-h3, h4, h5, h6 {
-    clear: both;
-    line-height: 1.1em;
-}
-
-h3 {
-    font-size: 26px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    margin: 40px 0 0 -2px;
-}
-
-h4, h5, h6 {
-    font-size: 20px;
-    font-weight: 400;
-    margin: 38px 0 0 -2px;
-    text-transform: uppercase;
-}
-
-// mitigate margin top when a
-// paragraph is under a heading
-h3, h4, h5, h6 {
-
-    + p {
-        margin-top: 15px;
-    }
-}
-
-h2 {
-
-    + h3 {
-        margin-top: 20px;
-    }
-}
-
-h3 {
-
-    + h4 {
-        margin-top: 20px;
-    }
-}
-
-
-/* --- FOOTERS --- */
-
 footer {
-    background-color: @background-color--medium;
-
-    a {
-        line-height: 1.5em;
-    }
+    text-align: center;
 }
 
-// desktop styles
-@media screen and (min-width: 769px) {
- 
-    h3 {
-        font-size: 30px;
-        margin-top: 45px;
-    }
+// selection flavour
+::selection {
+    background-color: @background-color--medium;
+}
 
-    h4, h5, h6 {
-        font-size: 22px;
-    }
+::-moz-selection {
+    background-color: @background-color--medium;
 }

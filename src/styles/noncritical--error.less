@@ -1,34 +1,4 @@
-// import color variables
 @import '__variables.less';
-
-// import shared noncritical styles
 @import '_noncritical.less';
 
-/* --- ERROR PAGE NON CRITICAL STYLES --- */
-
-.nav--link {
-
-    &:hover,
-    &:focus {
-        color: @error-color;
-    }
-}
-
-.error--main-message {
-    margin: 0;
-
-    a {
-        color: @error-color;
-    }
-}
-
-// selection flavour
-::selection {
-    background-color: @error-color;
-    color: @text-color--light;
-}
-
-::-moz-selection {
-    background-color: @error-color;
-    color: @text-color--light;
-}
+// error page non critical styles

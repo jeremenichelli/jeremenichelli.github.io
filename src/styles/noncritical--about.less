@@ -1,34 +1,4 @@
-// import color variables
 @import '__variables.less';
-
-// import shared noncritical styles
 @import '_noncritical.less';
 
-/* --- LABS PAGE NON CRITICAL STYLES --- */
-
-.nav--link {
-
-    &:hover,
-    &:focus {
-        color: @about-color;
-    }
-}
-
-.about--hero,
-.about--main {
-
-    a {
-        color: @about-color;
-    }
-}
-
-// selection flavour
-::selection {
-    background-color: @about-color;
-    color: @text-color--light;
-}
-
-::-moz-selection {
-    background-color: @about-color;
-    color: @text-color--light;
-}
+// about non critical styles

@@ -1,52 +1,25 @@
-// import color variables
 @import '__variables.less';
-
-// import shared noncritical styles
 @import '_noncritical.less';
 
-/* --- POSTS NON CRITICAL STYLES --- */
-
-.nav--link {
-
-    &:hover,
-    &:focus {
-        color: @blog-color;
-    }
-}
-
-.post--main {
-
-    a {
-        color: @blog-color;
-    }
-}
-
-del {
+// post non critical styles
+del, code {
     font-family: Menlo, Consolas, Monaco, monospace;
-    font-size: 14px;
-    font-weight: 300;
-    padding: 1px 5px;
-}
-
-blockquote {
-    color: @blog-color;
+    font-size: .80555556em;
+    padding: 1px 4px;
 }
 
 code {
     background-color: @background-color--medium;
-    font-family: Menlo, Consolas, Monaco, monospace;
-    font-size: 14px;
-    padding: 1px 5px;
-    vertical-align: middle;
+    border-radius: 4px;
 
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
+    -moz-tab-size: @tab-size;
+    -o-tab-size: @tab-size;
+    tab-size: @tab-size;
 
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
+    -webkit-hyphens: @code-hyphens;
+    -moz-hyphens: @code-hyphens;
+    -ms-hyphens: @code-hyphens;
+    hyphens: @code-hyphens;
 }
 
 .c, .c1, .cm {
@@ -55,49 +28,15 @@ code {
 }
 
 pre {
-    background-color: @background-color--medium;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    line-height: 1.15em;
+    overflow: auto;
     padding: 12px 15px;
-
-    code {
-        background-color: transparent;
-        font-size: 14px;
-        padding: 0;
-    }
 }
 
-.post--navigation-indicator {
-    color: @blog-color;
-    text-transform: uppercase;
-}
-
-.post--navigation-title {
-    font-style: italic;
-    margin: 6px 0 0;
-}
-
-.post--navigation-next {
-    text-align: right;
-}
-
-// selection flavour
-::selection {
-    background-color: @blog-color;
-    color: @text-color--light;
-}
-
-::-moz-selection {
-    background-color: @blog-color;
-    color: @text-color--light;
-}
-
-// desktop styles
-@media screen and (min-width: 769px) {
-
-    code {
-        font-size: 15px;
-    }
-
-    blockquote {
-        text-align: center;
-    }
+pre code {
+    background-color: transparent;
+    font-size: 14px;
+    padding: 0;
 }

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Getting an object property from a string
 resume: One of the puzzles I had to solve when writing a data binding script was how to get the value of a property from the value of an attribute. As always, I decided to go my own way before looking for other solutions.
 ---

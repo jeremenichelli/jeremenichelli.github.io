@@ -1,10 +1,16 @@
 ---
-layout: page
+layout: default
 title: About
-resume: I'm Jeremias Menichelli, a 29 years old web developer specialized in front end technologies currently living San Lorenzo, Santa Fe, Argentina.
 type: about
 ---
-<section class="about--main">
+
+**Hello.**
+
+## Bla bla
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, quas, dolore dolores, architecto pariatur, sapiente rerum ut fugiat repellat laboriosam corporis consequatur inventore nisi quod cum! Sint asperiores quia consectetur?
+
+<!-- <section class="about--main">
     <div class="row">
         <div class="column column-6">
             <h3 class="about--main-title">Story and experience</h3>
@@ -30,4 +36,4 @@ type: about
             <p>If you see something not working good or that could be improved feel free to <a href="https://github.com/jeremenichelli/jeremenichelli.github.io/issues/new" target="_blank">report it</a>.</p>
         </div>
     </div>
-</section>
+</section> -->

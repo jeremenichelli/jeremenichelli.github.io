@@ -1,8 +1,11 @@
-<footer {% if type %}class="{{ type }}--footer"{% endif %}>
-    <div class="row">
-        <div class="column column-6">
-            <a href="https://www.twitter.com/jeremenichelli">Twitter</a> | <a href="https://www.github.com/jeremenichelli">GitHub</a> | <a href="/feed.xml" target="_blank">Subscribe&nbsp;to&nbsp;the&nbsp;RSS&nbsp;feed&nbsp;&raquo;</a>
-            <p>{{ site.url }} | {{ site.author }} &copy; All rights reserved</p>
-        </div>
+<footer>
+    <div class="container">
+        <a href="/">
+            {% if page.type == 'home' %}
+                jeremiasmenichelli.com
+            {% else %}
+                &laquo; Back
+            {% endif %}
+        </a>
     </div>
 </footer>
