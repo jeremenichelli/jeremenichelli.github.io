@@ -59,14 +59,14 @@ function loadScript(url) {
 }
 {% endhighlight %}
 
-To initialize our app only after this script, just use **then** after calling **loadScript**.
+To initialize our app just use **then** after calling **loadScript**.
 
 {% highlight javascript %}
 loadScript('/assets/scripts/app.js')
     .then(initApp);
 {% endhighlight %}
 
-For cases when multiple scripts need to be loaded, **Promise.all** will come handy.
+**Promise.all** will come handy when multiple scripts need to be loaded.
 
 {% highlight javascript %}
 // create a Promise for each script
@@ -82,7 +82,7 @@ Promise.all([ appPromise, jqueryPromise ])
 
 ## Styles
 
-A similar approach can be applied here, this time creating a **link** element.
+A similar approach can be applied when loading styles, but this time creating a **link** element.
 
 {% highlight javascript %}
 function loadStyles(url) {
