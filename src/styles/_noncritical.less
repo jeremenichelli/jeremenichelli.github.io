@@ -1,14 +1,32 @@
 @import '__variables.less';
 
+// equal line heights and spacing
+h3, h4, h5, h6 {
+    line-height: 1.367em;
+    margin: 1.5em 0 1em;
+}
+
+h4, h5, h6 {
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+h5, h6 {
+    color: @text-color--medium;
+    font-weight: 400;
+}
+
 footer {
     text-align: center;
 }
 
 // selection flavour
 ::selection {
-    background-color: @background-color--medium;
+    background-color: @background-color--selection;
+    color: @text-color--light;
 }
 
 ::-moz-selection {
-    background-color: @background-color--medium;
+    background-color: @background-color--selection;
+    color: @text-color--light;
 }

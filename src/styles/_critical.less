@@ -21,7 +21,7 @@ html {
 // general styles
 body {
     background-color: @background-color--light;
-    color: @text-color;
+    color: @text-color--dark;
     font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -36,7 +36,7 @@ a {
     text-decoration: none;
 
     &:visited {
-        color: @text-color;
+        color: @text-color--dark;
     }
 }
 
@@ -57,15 +57,10 @@ header {
     text-align: center;
 }
 
-.header__title {
-    font-size: 1.777778em;
-    line-height: 1.25em;
-    margin: .5em 0 .15em;
-}
-
-.header__subtitle, time {
-    color: #757575;
-    text-transform: uppercase;
+.container {
+    margin: 0 auto;
+    max-width: 695px;
+    padding: @spacing--mobile;
 }
 
 .avatar {
@@ -77,10 +72,20 @@ header {
     overflow: hidden;
 }
 
-.container {
-    margin: 0 auto;
-    max-width: 695px;
-    padding: @spacing--mobile;
+.header__title {
+    font-size: 1.777778em;
+    line-height: 1.25em;
+    margin: .5em 0 .15em;
+}
+
+.header__subtitle, time {
+    color: #757575;
+    text-transform: uppercase;
+}
+
+h2 {
+    line-height: 1.2em;
+    margin: 1.75em 0 .83195em;
 }
 
 .divider {

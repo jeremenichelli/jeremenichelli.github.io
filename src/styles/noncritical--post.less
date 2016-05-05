@@ -40,3 +40,22 @@ pre code {
     font-size: 14px;
     padding: 0;
 }
+
+blockquote {
+    background-color: @background-color--medium;
+    border-color: @divider-color;
+    border-style: solid;
+    border-width: 0 0 0 5px;
+    font-style: italic;
+    line-height: 1.75em;
+    margin: 2em 0;
+    padding: 20px;
+}
+
+@media (min-width: 769px) {
+    
+    blockquote {
+        padding-right: 35px;
+        padding-left: 35px;
+    }
+}
