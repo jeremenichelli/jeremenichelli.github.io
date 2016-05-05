@@ -1,5 +1,46 @@
 @import '__variables.less';
 
+// non critical styles
+.avatar__tip {
+    background: @background-color--selection;
+    border-radius: 4px;
+    color: @text-color--light;
+    font-size: 0.9em;
+    left: 118%;
+    line-height: 1em;
+    margin: 0px;
+    opacity: 0;
+    padding: 5px 8px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity .25s ease;
+    text-transform: uppercase;
+    visibility: hidden;
+
+    &:before {
+        content: '';
+        border-width: 5px 5px 5px 0;
+        border-style: solid;
+        border-color: transparent @background-color--selection;
+        position: absolute;
+        top: 50%;
+        left: -5px;
+        transform: translateY(-50%);
+    }
+}
+
+.avatar {
+
+    &:hover {
+
+        .avatar__tip {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
 // equal line heights and spacing
 h3, h4, h5, h6 {
     line-height: 1.2em;

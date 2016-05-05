@@ -2,9 +2,20 @@
 @import '_noncritical.less';
 
 // post non critical styles
-.post a {
-    text-decoration: underline;
-    word-wrap: break-word;
+.post {
+
+    a {
+        text-decoration: underline;
+        word-wrap: break-word;
+    }
+
+    /*
+     * eliminate the margin-bottom on
+     * the article's last element
+     */
+    *:last-child {
+        margin-bottom: 0;
+    }
 }
 
 del, code {

@@ -5,12 +5,12 @@
                 src="https://s.gravatar.com/avatar/802b096bc7cef6843db036595503b559?s=85"
                 srcset="https://s.gravatar.com/avatar/802b096bc7cef6843db036595503b559?s=170 2x">
 
-            <span class="avatar__tip" style="display: none;">
-                {% if type == 'home' %}About me{% else %}Back to home{% endif %}
-            </span>
+            <p class="avatar__tip">
+                {% if type == 'home' %}About&nbsp;me{% else %}Back&nbsp;to&nbsp;home{% endif %}
+            </p>
         </a>
 
-        <h1 class="header__title">{{ page.title }}</h1>
+        <h1 class="header__title">{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
 
     {% if type == 'home' %}
         <span class="header__subtitle">front end developer</span>

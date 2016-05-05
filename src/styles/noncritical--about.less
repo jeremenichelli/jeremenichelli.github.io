@@ -2,6 +2,18 @@
 @import '_noncritical.less';
 
 // about non critical styles
-.about a {
-    text-decoration: underline;
+.about {
+
+    a {
+        text-decoration: underline;
+        word-wrap: break-word;
+    }
+
+    /*
+     * eliminate the margin-bottom on
+     * the page body's last element
+     */
+    *:last-child {
+        margin-bottom: 0;
+    }
 }

@@ -28,6 +28,7 @@ body {
     line-height: 1.5em;
 
     text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
@@ -64,12 +65,15 @@ header {
 }
 
 .avatar {
-    border-radius: 50%;
     display: block;
     height: @avatar-size;
     width: @avatar-size;
     margin: 0 auto;
-    overflow: hidden;
+    position: relative;
+}
+
+.avatar__img {
+    border-radius: 50%;
 }
 
 .header__title {
