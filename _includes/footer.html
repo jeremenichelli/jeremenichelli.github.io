@@ -1,11 +1,15 @@
 <footer>
+    <div class="container footer__links">
+    {% if page.type == 'home' %}
+        <a href="/archive">All posts &raquo;</a>
+    {% else %}
+        <a href="/">&laquo; Back</a>
+    {% endif %}
+    </div>
+
     <div class="container">
         <a href="/">
-            {% if page.type == 'home' %}
-                jeremiasmenichelli.com
-            {% else %}
-                &laquo; Back
-            {% endif %}
+            {{ site.url }}
         </a>
     </div>
 </footer>

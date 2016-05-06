@@ -1,14 +1,21 @@
-# site settings
+# Site settings
 title: Jeremias Menichelli
 author: Jeremias Menichelli
-description: "My name is Jeremias Menichelli and I love the web, that's why I work as a front end developer to make it better, building beautiful and scalable products using JavaScript and CSS, with a big eye on usability and performance."
-url: "https://jeremenichelli.github.io"
+description: "I work as a front end developer to make the web better, using JavaScript and CSS to build beautiful products, with a big eye on usability and performance."
+url: jeremenichelli.github.io
 baseurl: ""
 
-# build settings
+# Build settings
 port: 4000
-exclude: [ 'node_modules', 'src' ]
+exclude: [ "node_modules", "src" ]
+
+# Markdown
 markdown: kramdown
 kramdown:
   input: GFM
+
+# Blog settings
 permalink: /:year/:month/:title
+
+# Gems
+gems: [ "jekyll-paginate" ]

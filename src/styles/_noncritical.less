@@ -1,4 +1,4 @@
-@import '__variables.less';
+@import '__helpers.less';
 
 // non critical styles
 .avatar__tip {
@@ -6,18 +6,16 @@
     border-radius: 4px;
     color: @text-color--light;
     font-size: 0.9em;
-    left: 118%;
+    left: 115%;
     line-height: 1em;
     margin: 0px;
-    opacity: 0;
     padding: 5px 8px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    transition: opacity .25s ease;
     text-transform: uppercase;
-    visibility: hidden;
 
+    // tip arrow
     &:before {
         content: '';
         border-width: 5px 5px 5px 0;
@@ -59,6 +57,13 @@ h5, h6 {
 
 footer {
     text-align: center;
+}
+
+.footer__links {
+    color: #757575;
+    letter-spacing: .01em;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 // selection flavour

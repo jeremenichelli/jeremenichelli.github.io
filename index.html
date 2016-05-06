@@ -5,7 +5,7 @@ type: home
 
 {% if site.posts.size > 0 %}
     <ul class="bloglist">
-    {% for post in site.posts %}
+    {% for post in site.posts | limit: 10 %}
         <li>
             <time class="bloglist__time"
                 datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y'}}</time>
@@ -16,42 +16,3 @@ type: home
 {% else %}
     <p>No posts yet!</p>
 {% endif %}
-
-<!-- <section class="home--main">
-    <div class="row">
-        <div class="column column-6">
-            <h2 class="home--main-title">Stuff on GitHub&nbsp;<span>&laquo;</span></h2>
-            <p>These are some of the ideas I have shared with the community...</p>
-        </div>
-        {% for r in site.data.repositories %}
-            {% assign mod = forloop.index0 | modulo:2 %}
-            {% if mod == 0 %}
-                <div class="inner-row">
-            {% endif %}
-                    <div class="column column-3">
-                        <h3>{{ r.name }}</h3>
-                        <p>{{ r.description }} <a href="{{ r.url }}" target="_blank">Go&nbsp;to&nbsp;the&nbsp;project&nbsp;repository&nbsp;&raquo;</a></p>
-                    </div>
-            {% if mod != 0 or forloop.last %}
-                </div>
-            {% endif %}
-        {% endfor %}
-    </div>
-</section>
-
-{% if site.posts.size > 0 %}
-<section class="blog--banner">
-    <div class="row">
-        <div class="column column-6">
-            <h2 class="blog--banner-title">Blog&nbsp;<span>&laquo;</span></h2>
-            <p>When some thoughts or experiences can help others I write about them, like this one...</p>
-            <div class="inner-row">
-                <div class="column column-6">
-                    <h3>{{ site.posts[0].title }}</h3>
-                    <p>{{ site.posts[0].resume }} <a href="{{ site.posts[0].url }}">Go&nbsp;to&nbsp;the&nbsp;post&nbsp;&raquo;</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-{% endif %} -->
