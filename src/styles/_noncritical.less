@@ -60,9 +60,8 @@ footer {
 }
 
 .footer__links {
-    color: #757575;
-    letter-spacing: .01em;
-    text-align: center;
+    color: @text-color--medium;
+    letter-spacing: .02em;
     text-transform: uppercase;
 }
 
@@ -75,4 +74,11 @@ footer {
 ::-moz-selection {
     background-color: @background-color--selection;
     color: @text-color--light;
+}
+
+@media (min-width: 769px) {
+
+    .footer__links {
+        font-size: .9em;
+    }
 }

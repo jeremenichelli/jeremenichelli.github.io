@@ -9,11 +9,6 @@ html {
 *, *:before, *:after {
     box-sizing: inherit;
 
-    // disable outline on focus
-    &:focus {
-        outline: 0;
-    }
-
     // disable tap color in Chrome mobile
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -37,7 +32,11 @@ a {
     text-decoration: none;
 
     &:visited {
-        color: @text-color--dark;
+        color: inherit;
+    }
+
+    &:focus {
+        outline: none;
     }
 }
 
