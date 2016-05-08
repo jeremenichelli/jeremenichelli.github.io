@@ -17,7 +17,7 @@ html {
 body {
     background-color: @background-color--light;
     color: @text-color--dark;
-    font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
+    font-family: 'Fira Sans', Arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5em;
@@ -74,6 +74,16 @@ header {
 
 .avatar__img {
     border-radius: inherit;
+    height: inherit;
+    width: inherit;
+    opacity: 0;
+    transform: scale(.75);
+    transition: opacity .25s ease .02s, transform .25s ease;
+
+    &.loaded {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .avatar__tip {
