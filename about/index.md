@@ -2,9 +2,8 @@
 layout: default
 title: About
 type: about
+resume: My name is Jeremias Menichelli and I love the web, that's why I work as a front end developer to make it better, using JavaScript and CSS to build beautiful products, with a big eye on usability and performance.
 ---
-
-My name is Jeremias Menichelli and I love the web, that's why I work as a front end developer to make it better, using JavaScript and CSS to build beautiful products, with a big eye on usability and performance.
 
 ## Story and experience
 
