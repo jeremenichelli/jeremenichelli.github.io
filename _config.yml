@@ -7,7 +7,7 @@ baseurl: ""
 
 # Build settings
 port: 4000
-exclude: [ "node_modules", "src" ]
+exclude: [ "node_modules", "src", "gulpfile.babel.js" ]
 
 # Markdown
 markdown: kramdown
