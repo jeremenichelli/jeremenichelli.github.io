@@ -31,6 +31,10 @@ const paths = {
     favicon: {
         src: './src/favicon/*',
         dest: './assets/favicon/'
+    },
+    images: {
+        src: './src/img/*',
+        dest: './assets/img/'
     }
 };
 
@@ -80,6 +84,12 @@ gulp.task('favicon', _ => {
         .pipe(gulp.dest(paths.favicon.dest));
 });
 
+// images
+gulp.task('images', _ => {
+    return gulp.src(paths.images.src)
+        .pipe(gulp.dest(paths.images.dest));
+});
+
 // clean
 gulp.task('clean', done => {
     del('./assets/');
@@ -87,7 +97,7 @@ gulp.task('clean', done => {
 });
 
 // build
-gulp.task('build', [ 'favicon', 'less', 'js:critical' ]);
+gulp.task('build', [ 'favicon', 'images', 'less', 'js:critical' ]);
 
 // default task
 gulp.task('default', [ 'build' ]);
