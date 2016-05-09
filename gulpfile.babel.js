@@ -96,6 +96,20 @@ gulp.task('clean', done => {
     done();
 });
 
+// watch
+gulp.task('watch', _ => {
+    // watch styles
+    gulp.watch(paths.less.critical.src, [ 'less:critical' ]);
+    gulp.watch(paths.less.noncritical.src, [ 'less:noncritical' ]);
+
+    // watch scripts
+    gulp.watch(paths.js.critical.src, [ 'js:critical' ]);
+
+    // watch other assets
+    gulp.watch(paths.favicon.src, [ 'favicon' ]);
+    gulp.watch(paths.images.src, [ 'images' ]);
+});
+
 // build
 gulp.task('build', [ 'favicon', 'images', 'less', 'js:critical' ]);
 

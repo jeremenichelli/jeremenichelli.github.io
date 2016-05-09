@@ -31,7 +31,8 @@
   "main": "index.html",
   "scripts": {
     "less": "gulp less",
-    "js": "gulp js",
+    "js": "gulp js:critical",
+    "watch": "gulp watch",
     "clean": "gulp clean",
     "prebuild": "gulp clean",
     "build": "gulp"
