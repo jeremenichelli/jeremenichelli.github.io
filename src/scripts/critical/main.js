@@ -7,21 +7,19 @@
     var DEV = (host === 'localhost' || host === '0.0.0.0' || host === '127.0.0.1');
 
     if (DEV) {
-        // clear storage, show store css messages
-        _win.sessionStorage.clear();
         _win.store.verbose();
     }
 
     // stylesheets
     if (_win.PAGE) {
-        // page styles
-        _win.store.css('/assets/styles/' + PAGE + '.css', {
-            storage: 'session'
-        });
         // font face styles
         _win.store.css('https://fonts.googleapis.com/css?family=Fira+Sans:400,400italic,700', {
             storage: 'session',
             crossOrigin: 'anonymous'
+        });
+        // page styles
+        _win.store.css('/assets/styles/' + PAGE + '.css', {
+            storage: 'session'
         });
     }
 
