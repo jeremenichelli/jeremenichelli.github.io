@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Vanilla computed properties
 resume: A feature available in almost every framework today is the ability to some how generate computed properties from existing data, but isn't JavaScript already capable of doing that?
 ---

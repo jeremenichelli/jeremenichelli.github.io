@@ -1,10 +1,10 @@
 ---
-layout: post
+layout: default
 title: Classes, constructors and inheritance in ES2015
 resume: Understanding prototype inheritance was one of the pain points in JavaScript development. One of the main reasons was that the language didn't provide a nice syntax that translated this programming concept in a straight manner.
 ---
 
-First of all, let's remember the way we are writing constructor functions today.
+Let's remember the way we are writing constructor functions today.
 
 {% highlight javascript %}
 // ES5

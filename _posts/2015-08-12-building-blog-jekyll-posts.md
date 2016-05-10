@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Building a blog using Jekyll. Writing posts and presenting them
 resume: In this third and final post about Jekyll, we are going to exploit its blog-aware features.
 ---

@@ -1,15 +1,25 @@
-<header {% if type %}class="{{ type }}--header"{% endif %}>
-    <div class="row">
-        <{% if type == 'home' %}span{% else %}a href="/"{% endif %} class="logo">
-            <img src="/assets/img/logo-1x.png" srcset="/assets/img/logo-2x.png 2x" class="logo--name"
-                alt="Jeremias Menichelli" onerror="this.className = this.className + ' error';">
-            <span class="logo--job">Web Developer</span>
-        </{% if type == 'home' %}span{% else %}a{% endif %}>
+<header>
+    <div class="container">
+        <a class="avatar" href="{% if type == 'home' %}/about{% else %}/{% endif %}">
+            <img alt="" class="avatar__img"
+                src="/assets/img/avatar1x.jpeg"
+                srcset="/assets/img/avatar2x.jpeg 2x"
+                onload="this.className+=' loaded'"
+                onerror="this.parentNode.style.display='none'">
 
-        <nav>
-            {% for link in site.data.navigation %}
-                <a href="{{ link.href }}" class="nav--link">{{ link.text }}</a>
-            {% endfor %}
-        </nav>
+            <p class="avatar__tip">
+                {% if type == 'home' %}About&nbsp;me{% else %}Go&nbsp;to&nbsp;home{% endif %}
+            </p>
+        </a>
+
+        <h1 class="header__title">{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+
+    {% if type == 'home' %}
+        <span class="header__subtitle">front end developer</span>
+    {% endif %}
+
+    {% if type == 'post' %}
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %B, %Y'}}</time>
+    {% endif %}
     </div>
 </header>

@@ -1,0 +1,41 @@
+// layout variables
+@spacing: 45px;
+@spacing--mobile: 30px 20px;
+
+// color variables
+@background-color--light: #ffffff;
+@background-color--medium: #f7f7f7;
+
+@background-color--selection: #78909c;
+
+@text-color--light: #fefefe;
+@text-color--medium: #757575;
+@text-color--dark: #212121;
+
+@divider-color: #e0e0e0;
+
+// other values
+@avatar-size: 85px;
+@tab-size: 4;
+@code-hyphens: none;
+
+
+// mixins
+.bloglist--component() {
+    .bloglist {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+        li + li {
+            margin: 2em 0 0;
+        }
+    }
+
+    .bloglist__link {
+        display: block;
+        font-size: 1.277778em;
+        font-weight: 700;
+    }
+}

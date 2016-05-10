@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: How Gulp helped me to deal with crap
 resume: It's not a big secret that maintaining code that we didn't create is a big pain sometimes. Of course the only fact that other developer did it puts us in an uncomfortable place because there's a high chance that you're trying to understand patterns and approaches you wouldn't have taken, which doesn't mean they are wrong they just aren't yours. For a few months I had to deal not only with this, but with code full of bad practices. 
 ---

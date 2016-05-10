@@ -1,77 +1,84 @@
-@import '__variables.less';
+@import '__helpers.less';
 
+// non critical styles
+.avatar__tip {
+    background: @background-color--selection;
+    border-radius: 4px;
+    color: @text-color--light;
+    font-size: 0.875em;
+    left: 115%;
+    line-height: 1em;
+    margin: 0px;
+    padding: 5px 8px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-transform: uppercase;
 
-/* --- NON CRITICAL STYLES --- */
-
-strong {
-    font-weight: 400;
+    // tip arrow
+    &:before {
+        content: '';
+        border-width: 5px 5px 5px 0;
+        border-style: solid;
+        border-color: transparent @background-color--selection;
+        position: absolute;
+        top: 50%;
+        left: -5px;
+        transform: translateY(-50%);
+    }
 }
 
+.avatar {
 
-/* --- HEADING STYLES --- */
+    &:hover {
 
+        .avatar__tip {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+// equal line heights and spacing
 h3, h4, h5, h6 {
-    clear: both;
-    line-height: 1.1em;
-}
-
-h3 {
-    font-size: 26px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    margin: 40px 0 0 -2px;
+    line-height: 1.2em;
+    margin: 1.25em 0 .83195em;
 }
 
 h4, h5, h6 {
-    font-size: 20px;
-    font-weight: 400;
-    margin: 38px 0 0 -2px;
+    font-size: 1em;
     text-transform: uppercase;
 }
 
-// mitigate margin top when a
-// paragraph is under a heading
-h3, h4, h5, h6 {
-
-    + p {
-        margin-top: 15px;
-    }
+h5, h6 {
+    color: @text-color--medium;
+    font-weight: 400;
 }
-
-h2 {
-
-    + h3 {
-        margin-top: 20px;
-    }
-}
-
-h3 {
-
-    + h4 {
-        margin-top: 20px;
-    }
-}
-
-
-/* --- FOOTERS --- */
 
 footer {
-    background-color: @background-color--medium;
-
-    a {
-        line-height: 1.5em;
-    }
+    text-align: center;
 }
 
-// desktop styles
-@media screen and (min-width: 769px) {
- 
-    h3 {
-        font-size: 30px;
-        margin-top: 45px;
-    }
+.footer__links {
+    color: @text-color--medium;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+}
 
-    h4, h5, h6 {
-        font-size: 22px;
+// selection flavour
+::selection {
+    background-color: @background-color--selection;
+    color: @text-color--light;
+}
+
+::-moz-selection {
+    background-color: @background-color--selection;
+    color: @text-color--light;
+}
+
+@media (min-width: 769px) {
+
+    .footer__links {
+        font-size: .9em;
     }
 }

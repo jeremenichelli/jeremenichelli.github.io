@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Object literal extensions in ES2015
 resume: With the awake of a new JavaScript version making its way into modern browsers, one of the features you will find yourself using more often is the new syntax to manipulate object properties.
 ---

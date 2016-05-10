@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Using Gulp
 resume: How to quickly start improving your project tasks with this package.
 ---

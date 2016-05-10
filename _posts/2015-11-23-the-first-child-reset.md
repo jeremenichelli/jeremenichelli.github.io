@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: The :first-child reset
 resume: At some point in history, pseudo classes appear in scene to bring more power and versatility to our styles, but are we using them correctly? I feel like having these shortcuts available sometimes blind us and here's why.
 ---

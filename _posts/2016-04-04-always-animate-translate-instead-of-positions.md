@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Always animate translate instead of positions
 resume: While visiting an article in WebKit's blog I noticed how badly an animation in a nested menu performed and decided to fix it.
 ---

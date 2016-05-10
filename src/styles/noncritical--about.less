@@ -1,34 +1,19 @@
-// import color variables
-@import '__variables.less';
-
-// import shared noncritical styles
+@import '__helpers.less';
 @import '_noncritical.less';
 
-/* --- LABS PAGE NON CRITICAL STYLES --- */
-
-.nav--link {
-
-    &:hover,
-    &:focus {
-        color: @about-color;
-    }
-}
-
-.about--hero,
-.about--main {
+// about non critical styles
+.about {
 
     a {
-        color: @about-color;
+        text-decoration: underline;
+        word-wrap: break-word;
     }
-}
 
-// selection flavour
-::selection {
-    background-color: @about-color;
-    color: @text-color--light;
-}
-
-::-moz-selection {
-    background-color: @about-color;
-    color: @text-color--light;
+    /*
+     * eliminate the margin-bottom on
+     * the page body's last element
+     */
+    *:last-child {
+        margin-bottom: 0;
+    }
 }

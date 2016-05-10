@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Me, myself and the DOM manipulation
 resume: Sometimes as a developer you need to do something you already did in the past, solve the same problem again. Probably not the same but very similar. That happened to me a few months ago, and instead of looking at my last approach I decided to start from blank and see what could have changed in me in that time.
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: The Vigenère encryption
 resume: While doing a problem set for an online course I was asked to build a script that ciphers a phrase using this encryption method in language C. After finishing it, I decided to give it a try in JavaScript.
 ---

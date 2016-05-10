@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: How to shuffle an array
 resume: The other day I was asked at work to sort randomly an array of objects and while it didn't seem a very complex task it turned out into hours of investigation. There are a lot of things to take care of, so yes, it is a complex scenario and there are a lot of possible solutions.
 ---

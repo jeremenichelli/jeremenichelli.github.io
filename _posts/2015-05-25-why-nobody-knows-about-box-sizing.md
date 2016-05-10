@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Why not everyone knows about box-sizing?
 resume: It really surprises me that almost all developers I've interviewed in the recent time didn't know about the existance of this property at all and I'm really asking myself, why?
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: npm install debate
 resume: About a few hours ago, eleven lines of code dissapear and thousands of projects broke. As every time something not so good happens in the industry, we have to talk about it.
 ---

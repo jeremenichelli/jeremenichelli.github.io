@@ -7,11 +7,20 @@
 
         {% include header.html %}
 
-          {{ content }}
+        <div class="divider"></div>
+
+        <main {% if type %}class="{{ type }}"{% endif %}>
+            <div class="container">
+
+                {% if page.resume %}
+                    <p class="main__resume">{{ page.resume }}</p>
+                {% endif %}
+
+                {{ content }}
+            </div>
+        </main>
 
         {% include footer.html %}
 
-        <link rel="stylesheet" property="stylesheet" type="text/css"
-            href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,400italic,700">
     </body>
 </html>

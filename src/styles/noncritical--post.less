@@ -1,52 +1,41 @@
-// import color variables
-@import '__variables.less';
-
-// import shared noncritical styles
+@import '__helpers.less';
 @import '_noncritical.less';
 
-/* --- POSTS NON CRITICAL STYLES --- */
-
-.nav--link {
-
-    &:hover,
-    &:focus {
-        color: @blog-color;
-    }
-}
-
-.post--main {
+// post non critical styles
+.post {
 
     a {
-        color: @blog-color;
+        text-decoration: underline;
+        word-wrap: break-word;
+    }
+
+    /*
+     * eliminate the margin-bottom on
+     * the article's last element
+     */
+    *:last-child {
+        margin-bottom: 0;
     }
 }
 
-del {
+del, code {
     font-family: Menlo, Consolas, Monaco, monospace;
-    font-size: 14px;
-    font-weight: 300;
-    padding: 1px 5px;
-}
-
-blockquote {
-    color: @blog-color;
+    font-size: .80555556em;
+    padding: 1px 4px;
 }
 
 code {
     background-color: @background-color--medium;
-    font-family: Menlo, Consolas, Monaco, monospace;
-    font-size: 14px;
-    padding: 1px 5px;
-    vertical-align: middle;
+    border-radius: 4px;
 
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
+    -moz-tab-size: @tab-size;
+    -o-tab-size: @tab-size;
+    tab-size: @tab-size;
 
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
+    -webkit-hyphens: @code-hyphens;
+    -moz-hyphens: @code-hyphens;
+    -ms-hyphens: @code-hyphens;
+    hyphens: @code-hyphens;
 }
 
 .c, .c1, .cm {
@@ -55,49 +44,34 @@ code {
 }
 
 pre {
-    background-color: @background-color--medium;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    line-height: 1.15em;
+    overflow: auto;
     padding: 12px 15px;
-
-    code {
-        background-color: transparent;
-        font-size: 14px;
-        padding: 0;
-    }
 }
 
-.post--navigation-indicator {
-    color: @blog-color;
-    text-transform: uppercase;
+pre code {
+    background-color: transparent;
+    font-size: 14px;
+    padding: 0;
 }
 
-.post--navigation-title {
+blockquote {
+    background-color: @background-color--medium;
+    border-color: @divider-color;
+    border-style: solid;
+    border-width: 0 0 0 5px;
     font-style: italic;
-    margin: 6px 0 0;
+    line-height: 1.75em;
+    margin: 2em 0;
+    padding: 20px;
 }
 
-.post--navigation-next {
-    text-align: right;
-}
-
-// selection flavour
-::selection {
-    background-color: @blog-color;
-    color: @text-color--light;
-}
-
-::-moz-selection {
-    background-color: @blog-color;
-    color: @text-color--light;
-}
-
-// desktop styles
-@media screen and (min-width: 769px) {
-
-    code {
-        font-size: 15px;
-    }
-
+@media (min-width: 769px) {
+    
     blockquote {
-        text-align: center;
+        padding-right: 35px;
+        padding-left: 35px;
     }
 }
