@@ -6,11 +6,13 @@
     // development flag
     var DEV = (host === 'localhost' || host === '0.0.0.0' || host === '127.0.0.1');
 
-    // stylesheets
     if (DEV) {
+        // clear storage, show store css messages
+        sessionsStorage.clear();
         _win.store.verbose();
     }
 
+    // stylesheets
     if (_win.PAGE) {
         // page styles
         _win.store.css('/assets/styles/' + PAGE + '.css', {

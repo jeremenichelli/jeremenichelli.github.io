@@ -13,6 +13,7 @@ const $ = plugins({
 // paths
 const paths = {
     less: {
+        all: './src/styles/**/*.less',
         critical: {
             src: './src/styles/critical--*',
             dest: './_includes/'
@@ -99,8 +100,7 @@ gulp.task('clean', done => {
 // watch
 gulp.task('watch', _ => {
     // watch styles
-    gulp.watch(paths.less.critical.src, [ 'less:critical' ]);
-    gulp.watch(paths.less.noncritical.src, [ 'less:noncritical' ]);
+    gulp.watch(paths.less.all, [ 'less' ]);
 
     // watch scripts
     gulp.watch(paths.js.critical.src, [ 'js:critical' ]);
