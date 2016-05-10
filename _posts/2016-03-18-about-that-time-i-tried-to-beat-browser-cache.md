@@ -51,7 +51,7 @@ link.onload = function() {
 };
 ```
 
-We are ready to start playing with our **link** element and its stylesheet. Take note that inside the **onload** function we can use `this` will point to it.
+We are ready to start playing with our **link** element and its stylesheet.
 
 
 ### sheet just got real
