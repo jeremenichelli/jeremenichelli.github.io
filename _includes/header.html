@@ -4,7 +4,8 @@
             <img alt="" class="avatar__img"
                 src="/assets/img/avatar1x.jpeg"
                 srcset="/assets/img/avatar2x.jpeg 2x"
-                onload="this.className+=' loaded'">
+                onload="this.className+=' loaded'"
+                onerror="this.parentNode.style.display='none'">
 
             <p class="avatar__tip">
                 {% if type == 'home' %}About&nbsp;me{% else %}Go&nbsp;to&nbsp;home{% endif %}
