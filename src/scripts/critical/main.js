@@ -8,7 +8,7 @@
 
     if (DEV) {
         // clear storage, show store css messages
-        sessionsStorage.clear();
+        _win.sessionStorage.clear();
         _win.store.verbose();
     }
 
