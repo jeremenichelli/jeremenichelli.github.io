@@ -4,7 +4,7 @@
   "url": "http://jeremenichelli.github.io",
   "author": "Jeremias Menichelli",
   "copyright": "2016",
-  "version": "2.5.0",
+  "version": "3.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
   "main": "index.html",
   "scripts": {
     "less": "gulp less",
-    "js": "gulp js:critical",
+    "js": "gulp js",
     "watch": "gulp watch",
     "clean": "gulp clean",
     "prebuild": "gulp clean",

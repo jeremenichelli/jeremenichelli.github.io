@@ -24,9 +24,14 @@ const paths = {
         }
     },
     js: {
+        all: './src/scripts/**/*.js',
         critical: {
             src: './src/scripts/critical/**/*.js',
             dest: './_includes/'
+        },
+        noncritical: {
+            src: './src/scripts/noncritical/**/*.js',
+            dest: './assets/scripts/'
         }
     },
     favicon: {
@@ -67,7 +72,7 @@ gulp.task('less:noncritical', _ => {
 // less task
 gulp.task('less', [ 'less:critical', 'less:noncritical' ]);
 
-// javascript task
+// javascript critical
 gulp.task('js:critical', _ => {
     return gulp.src(paths.js.critical.src)
         .pipe($.concatUtil('main.js'))
@@ -78,6 +83,20 @@ gulp.task('js:critical', _ => {
         }))
         .pipe(gulp.dest(paths.js.critical.dest));
 });
+
+// javascript noncritical
+gulp.task('js:noncritical', _ => {
+    return gulp.src(paths.js.noncritical.src)
+        .pipe($.concatUtil('main.js'))
+        .pipe(uncompressed ? $.util.noop() : $.uglify())
+        .pipe($.rename({
+            basename: 'site'
+        }))
+        .pipe(gulp.dest(paths.js.noncritical.dest));
+});
+
+// javascript task
+gulp.task('js', [ 'js:critical', 'js:noncritical' ]);
 
 // favicon
 gulp.task('favicon', _ => {
@@ -103,7 +122,7 @@ gulp.task('watch', _ => {
     gulp.watch(paths.less.all, [ 'less' ]);
 
     // watch scripts
-    gulp.watch(paths.js.critical.src, [ 'js:critical' ]);
+    gulp.watch(paths.js.all, [ 'js' ]);
 
     // watch other assets
     gulp.watch(paths.favicon.src, [ 'favicon' ]);
@@ -111,7 +130,7 @@ gulp.task('watch', _ => {
 });
 
 // build
-gulp.task('build', [ 'favicon', 'images', 'less', 'js:critical' ]);
+gulp.task('build', [ 'favicon', 'images', 'less', 'js' ]);
 
 // default task
 gulp.task('default', [ 'build' ]);

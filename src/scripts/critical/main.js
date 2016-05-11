@@ -10,32 +10,23 @@
         _win.store.verbose();
     }
 
-    // stylesheets
+    // page styles
     if (_win.PAGE) {
-        // font face styles
-        _win.store.css('https://fonts.googleapis.com/css?family=Fira+Sans:400,400italic,700', {
-            storage: 'session',
-            crossOrigin: 'anonymous'
-        });
-        // page styles
         _win.store.css('/assets/styles/' + PAGE + '.css', {
             storage: 'session'
         });
     }
+    // font face styles
+    _win.store.css('https://fonts.googleapis.com/css?family=Fira+Sans:400,400italic,700', {
+        storage: 'session',
+        crossOrigin: 'anonymous'
+    });
 
     // fonts
     if (_win.sessionStorage.getItem('fonts-loaded')) {
         _doc.documentElement.classList.add('fonts-loaded');
     } else {
-        var w400 = new FontFaceObserver('Fira Sans', { weight: 400 }),
-            w400i = new FontFaceObserver('Fira Sans', { weight: 400, style: 'italic' }),
-            w700 = new FontFaceObserver('Fira Sans', { weight: 700 });
-
-        Promise.all([ w400.load(), w400i.load(), w700.load() ])
-            .then(function() {
-                _doc.documentElement.classList.add('fonts-loaded');
-                _win.sessionStorage.setItem('fonts-loaded', true);
-            });
+        _win.loadJS('/assets/scripts/site.js');
     }
 
     // analytics
