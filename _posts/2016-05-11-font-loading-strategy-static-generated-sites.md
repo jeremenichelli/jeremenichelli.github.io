@@ -111,7 +111,9 @@ Users will only experiment a *flick* in the font style on the first page view. Y
 
 ## TL;DR
 
-It's important to have a *strategy* when using web fonts so we don't delay content showing. To do this in static generated sites you can load a script which observes when the font is ready and set a flag using *sessionStorage* for future visits.
+It's important to have a *strategy* when using web fonts to prevent invisible text in some browsers.
+
+For static generated sites this can be done loading a script which observes when the font is ready, toggling a class on the document and set a flag using *sessionStorage* for future visits.
 
 
 [1]: https://www.filamentgroup.com/lab/font-events.html
