@@ -16,6 +16,11 @@
             storage: 'session'
         });
     }
+    // font face styles
+    _win.store.css('https://fonts.googleapis.com/css?family=Fira+Sans:400,400italic,700', {
+        storage: 'session',
+        crossOrigin: 'anonymous'
+    });
 
     // fonts
     if (_win.sessionStorage.getItem('fonts-loaded')) {

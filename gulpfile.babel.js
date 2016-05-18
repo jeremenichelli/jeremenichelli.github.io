@@ -34,10 +34,6 @@ const paths = {
             dest: './assets/scripts/'
         }
     },
-    fonts: {
-        src: './src/fonts/*',
-        dest: './assets/fonts/'
-    },
     favicon: {
         src: './src/favicon/*',
         dest: './assets/favicon/'
@@ -102,12 +98,6 @@ gulp.task('js:noncritical', _ => {
 // javascript task
 gulp.task('js', [ 'js:critical', 'js:noncritical' ]);
 
-// fonts
-gulp.task('fonts', _ => {
-    return gulp.src(paths.fonts.src)
-        .pipe(gulp.dest(paths.fonts.dest));
-});
-
 // favicon
 gulp.task('favicon', _ => {
     return gulp.src(paths.favicon.src)
@@ -135,13 +125,12 @@ gulp.task('watch', _ => {
     gulp.watch(paths.js.all, [ 'js' ]);
 
     // watch other assets
-    gulp.watch(paths.fonts.src, [ 'fonts' ]);
     gulp.watch(paths.favicon.src, [ 'favicon' ]);
     gulp.watch(paths.images.src, [ 'images' ]);
 });
 
 // build
-gulp.task('build', [ 'fonts', 'favicon', 'images', 'less', 'js' ]);
+gulp.task('build', [ 'favicon', 'images', 'less', 'js' ]);
 
 // default task
 gulp.task('default', [ 'build' ]);
