@@ -103,7 +103,7 @@ function loadStyles(url) {
 }
 {% endhighlight %}
 
-**Promise.all** can be used like we did for scripts Promises or even combine them.
+The same **Promise.all** pattern can be used for different resources.
 
 {% highlight javascript %}
 // create a Promise for each resource

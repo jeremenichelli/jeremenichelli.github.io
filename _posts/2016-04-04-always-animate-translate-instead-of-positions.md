@@ -51,7 +51,7 @@ The solution is to take the element to its final position by default, add a nega
 
 ## User experience and animation times
 
-Still the transition duration is **600ms** and that is too much. Users expect a micro animations like this one to finish in **~350ms**, other way they will feel they are waiting for it.
+Still the transition duration is **600ms** and that is too much. Users expect micro animations like this one to finish in **~350ms**, other way they will feel they are waiting for it.
 
 If you want to create a nice *but not immediate* animation is better to add a subtle delay to it.
 
