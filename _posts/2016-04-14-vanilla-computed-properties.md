@@ -6,7 +6,7 @@ resume: A feature available in almost every framework today is the ability to so
 
 Libraries today offer you the capability to express complex expressions and operations as objects properties like [VueJS][1] does here.
 
-{% highlight javascript %}
+```js
 var me = new Vue({
     data: {
         firstName: 'John',
@@ -20,7 +20,7 @@ var me = new Vue({
 });
 
 me.fullName; // John Oliver
-{% endhighlight %}
+```
 
 *I have nothing against VueJS and it is actually used in this article because its simplicity in comparison with other libraries and frameworks.*
 
@@ -32,7 +32,7 @@ We are used to define properties through dot notation, but it's good to keep in 
 
 The `Object.defineProperty` method accepts a base object as the first argument, the property key string and a descriptor object.
 
-{% highlight javascript %}
+```js
 var me = {
     firstName: 'John',
     lastName: 'Oliver'
@@ -44,7 +44,7 @@ Object.defineProperty(me, 'age', {
     enumerable: false,
     writeable: true
 });
-{% endhighlight %}
+```
 
 
 ### configurable
@@ -66,7 +66,7 @@ The property will be *read-only* if this option is *false*.
 
 In addition to these options, we can also define operations that will run when the property is being both **get** and **set**, and the first one is what we are looking for to mimic the behavior from our first framework snippet.
 
-{% highlight javascript %}
+```js
 var me = {
     firstName: 'John',
     lastName: 'Oliver'
@@ -81,20 +81,20 @@ Object.defineProperty(me, 'fullName', {
 });
 
 me.fullName; // John Oliver
-{% endhighlight %}
+```
 
 This feature is really powerful when combined with prototyped constructors.
 
-{% highlight javascript %}
+```js
 var Circle = function(r) {
     this.radius = r;
     this.diameter = r * 2;
 };
-{% endhighlight %}
+```
 
 Doing this makes it possible to modify the **diameter** property on any `Circle` instance, breaking the arithmetical relation it has with the **radius** value.
 
-{% highlight javascript %}
+```js
 var Circle = function(r) {
     this.radius = r;
 };
@@ -106,7 +106,7 @@ Object.defineProperty(Circle.prototype, 'diameter', {
         return this.radius * 2;
     }
 });
-{% endhighlight %}
+```
 
 Defining the **diameter** this way fixes the possibility of inconsistence data.
 
@@ -115,7 +115,7 @@ Defining the **diameter** this way fixes the possibility of inconsistence data.
 
 In some cases we need to define more than one property, hopefully there is another similar method available to prevent duplicated code for the same action.
 
-{% highlight javascript %}
+```js
 var Circle = function(r) {
     this.radius = r;
 };
@@ -148,7 +148,7 @@ var example = new Circle(1.75);
 example.diameter // 3.5
 example.circumference // 10.99557
 example.area // 9.62112
-{% endhighlight %}
+```
 
 This time we just need two arguments, a base object and a descriptor containing the properties.
 

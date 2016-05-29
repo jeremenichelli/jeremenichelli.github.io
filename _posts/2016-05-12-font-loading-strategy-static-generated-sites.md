@@ -19,7 +19,7 @@ body {
 }
 
 .fonts-loaded body {
-    font-family: 'Roboto', sans-serif;   
+    font-family: 'Roboto', sans-serif;
 }
 ```
 
@@ -70,7 +70,7 @@ This way the user will not see the text *switching* from one font family to the 
 
 ## The critical rendering path paradigm
 
-To actually get rid of the *text switching issue*, the solution from above should be inlined in the head of the page. 
+To actually get rid of the *text switching issue*, the solution from above should be inlined in the head of the page.
 
 The problem is that putting a big font event library in the head of the page will have a negative impact in loading times and that's a step backwards on our *content first* strategy.
 

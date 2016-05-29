@@ -6,7 +6,7 @@ resume: Understanding prototype inheritance was one of the pain points in JavaSc
 
 Let's remember the way we are writing constructor functions today.
 
-{% highlight javascript %}
+```js
 // ES5
 
 // constructor function
@@ -25,7 +25,7 @@ Object.defineProperty(Circle.prototype, 'diameter', {
         this.radius * 2;
     }
 });
-{% endhighlight %}
+```
 
 As you might have noticed there are three independent statements to define different instance properties. This example shows a class with two properties and one method, but this decoupling on big objects can affect your code in a really bad way.
 
@@ -33,7 +33,7 @@ As you might have noticed there are three independent statements to define diffe
 
 In order to avoid this, the new standard defines a `class` reserved word which acts as a declaring block for prototyped methods and properties.
 
-{% highlight javascript %}
+```js
 // ES2015
 
 class Circle {
@@ -47,7 +47,7 @@ class Circle {
         return this.diameter * Math.PI;
     }
 }
-{% endhighlight %}
+```
 
 Though it's not declared using parenthesis **Circle** is still a function, but now all the stuff that happens when a new instance is created must be moved to the **constructor** method inside the **class** block.
 
@@ -58,7 +58,7 @@ Any method you add inside that block, as **getCircumference** in our example, wi
 
 Thanks to this new access to the prototype of the constructor and the **get** and **set** special words we don't necessarily have to use `Object.defineProperty` for computed properties.
 
-{% highlight javascript %}
+```js
 // ES2015
 
 class Circle {
@@ -82,7 +82,7 @@ let sample = new Circle(5); // same as in ES5
 
 sample.diameter; // 10
 sample.getCircumference(); // 31.41592
-{% endhighlight %}
+```
 
 With this new notation everything related to the **Circle** class gets declared inside the same block which is way better to read and quicker understand.
 
@@ -93,7 +93,7 @@ Generating a long prototype chain was literally a mess and if you got the chance
 
 This time, our new friends on the neighbourhood are **extends** and **super** words, they will make inheritance an easy thing to track through our code base.
 
-{% highlight javascript %}
+```js
 // ES2015
 
 class Rectangle {
@@ -106,11 +106,11 @@ class Rectangle {
         return this.height * this.width;
     }
 }
-{% endhighlight %}
+```
 
 Talking just a little bit about geometry and shapes, squares are rectangles which height equals its width. We can *extend* our already existing class and inherit useful methods and properties.
 
-{% highlight javascript %}
+```js
 // ES2015
 
 class Rectangle {
@@ -135,13 +135,13 @@ let sample = new Square(3.5);
 sample.height; // 3.5
 sample.width; // 3.5
 sample.area; // 12.25
-{% endhighlight %}
+```
 
 Using **super** we execute the constructor method from the class we are extending, avoiding duplicated code or helper functions.
 
 It can also work as a namespace for calling inherited methods.
 
-{% highlight javascript %}
+```js
 // ES2015
 
 class Person {
@@ -167,7 +167,7 @@ class Doctor extends Person {
 let greg = new Doctor('Gregory');
 
 greg.salute(); // 'Hi! My name is Gregory and I am a Doctor!'
-{% endhighlight %}
+```
 
 All the code inside a class declaration is executed in *strict mode*, no way to get around that.
 

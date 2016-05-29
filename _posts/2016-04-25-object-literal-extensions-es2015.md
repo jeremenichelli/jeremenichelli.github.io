@@ -10,7 +10,7 @@ These are some of those new features that can come useful in the future or even 
 
 This is how you add a property present in a variable today.
 
-{% highlight javascript %}
+```js
 // ES5
 
 var firstName = 'Charlie';
@@ -22,11 +22,11 @@ var student = {
 };
 
 student.firstName; // 'Charlie'
-{% endhighlight %}
+```
 
 In **ES2015** when the property is named as the variable that holds its value, you can directly place it inside the object declaration.
 
-{% highlight javascript %}
+```js
 // ES2015
 
 let firstName = 'Charlie';
@@ -38,13 +38,13 @@ let student = {
 };
 
 student.firstName; // 'Charlie'
-{% endhighlight %}
+```
 
 An immediate consequence that you will notice in this first example, and the ones that will come later in this article, is how cleaner the new form looks.
 
 You can also do something similar when declaring functions as properties.
 
-{% highlight javascript %}
+```js
 // ES2015
 
 let firstName = 'Charlie';
@@ -59,7 +59,7 @@ let student = {
 };
 
 student.getFullName(); // 'Charlie Brown'
-{% endhighlight %}
+```
 
 Through this article I will be using template strings, another awesome ES2015 feature. If this is the first time you hear or read about them I recommend checking the [MDN documentation][1].
 
@@ -68,7 +68,7 @@ Through this article I will be using template strings, another awesome ES2015 fe
 
 You can also generate a property name using any valid expression inside square brackets.
 
-{% highlight javascript %}
+```js
 // ES2015
 
 let student = {
@@ -82,7 +82,7 @@ let classroom = {
 }
 
 classroom.violet_gray; // Object { firstName: 'Violet', lastName: 'Gray', age: 10 }
-{% endhighlight %}
+```
 
 This can come really useful while mapping an array into a new object structure for example.
 
@@ -91,7 +91,7 @@ This can come really useful while mapping an array into a new object structure f
 
 Like an inverse syntax, we can break apart object properties and expose them into the current scope. Let's see how we are doing this right now.
 
-{% highlight javascript %}
+```js
 // ES5
 
 var student = {
@@ -103,11 +103,11 @@ var student = {
 var first = student.firstName;
 var last = student.lastName;
 var age = student.age;
-{% endhighlight %}
+```
 
 Enclosing variable declarations in brackets and referencing the properties from the object allows us to extract them, also rename them or just use the current property name as with **age** in here.
 
-{% highlight javascript %}
+```js
 // ES2015
 
 let student = {
@@ -126,7 +126,7 @@ let { firstName: first, age, birthDate } = student;
 first; // 'Violet'
 age; // 10
 birthDate; // undefined
-{% endhighlight %}
+```
 
 Trying to access a property that is not present in the object will safely return `undefined` as value without throwing any error.
 
