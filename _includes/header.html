@@ -15,11 +15,15 @@
         <h1 class="header__title">{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
 
     {% if type == 'home' %}
-        <span class="header__subtitle">front end developer</span>
+        <p class="header__subtitle">front end developer
+           <!-- at <a href="http://www.jam3.com/">jam3</a> -->
+        </p>
     {% endif %}
 
     {% if type == 'post' %}
+      <p class="header__subtitle">
         <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %B, %Y'}}</time>
+      </p>
     {% endif %}
     </div>
 </header>

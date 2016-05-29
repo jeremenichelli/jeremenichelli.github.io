@@ -59,10 +59,12 @@ footer {
     text-align: center;
 }
 
-.footer__links {
-    color: @text-color--medium;
-    letter-spacing: .02em;
-    text-transform: uppercase;
+.footer__link {
+    .secondary--text();
+
+    &:visited {
+        color: @text-color--medium;
+    }
 }
 
 // selection flavour
@@ -74,11 +76,4 @@ footer {
 ::-moz-selection {
     background-color: @background-color--selection;
     color: @text-color--light;
-}
-
-@media (min-width: 769px) {
-
-    .footer__links {
-        font-size: .9em;
-    }
 }
