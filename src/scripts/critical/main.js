@@ -10,9 +10,10 @@
         _win.store.verbose();
     }
 
-    // page styles
+    // page styles after critical ones
     if (_win.PAGE) {
-        _win.store.css('/assets/styles/' + PAGE + '.css', {
+        _win.store.css('/assets/styles/' + PAGE + '.css?time=' + _win.TIMESTAMPS.styles, {
+            ref: document.getElementById('critical').nextElementSibling,
             storage: 'session'
         });
     }
@@ -26,7 +27,7 @@
     if (_win.sessionStorage.getItem('fonts-loaded')) {
         _doc.documentElement.classList.add('fonts-loaded');
     } else {
-        _win.loadJS('/assets/scripts/site.js');
+        _win.loadJS('/assets/scripts/site.js?time=' + _win.TIMESTAMPS.scripts);
     }
 
     // analytics
