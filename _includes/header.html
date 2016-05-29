@@ -2,8 +2,8 @@
     <div class="container">
         <a class="avatar" href="{% if type == 'home' %}/about{% else %}/{% endif %}">
             <img alt="" class="avatar__img"
-                src="/assets/img/avatar1x.jpeg"
-                srcset="/assets/img/avatar2x.jpeg 2x"
+                src="/assets/img/avatar1x.jpeg?time={{ site.data.timestamps.images }}"
+                srcset="/assets/img/avatar2x.jpeg?time={{ site.data.timestamps.images }} 2x"
                 onload="this.className+=' loaded'"
                 onerror="this.parentNode.style.display='none'">
 
