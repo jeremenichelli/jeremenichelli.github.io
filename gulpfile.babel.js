@@ -75,7 +75,7 @@ function updateTimestamp(stamp) {
     )
 
     // save json file and return valid stream
-    return $.file('timestamps.json', JSON.stringify(timestamps, null, 2), { src: true})
+    return $.file('timestamps.json', JSON.stringify(timestamps, null, 2), { src: true })
     .pipe(gulp.dest(paths.data.dest));
   } else {
     return $.util.noop();
