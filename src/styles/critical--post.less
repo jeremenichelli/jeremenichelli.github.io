@@ -1,7 +1,12 @@
 @import '_critical.less';
 
 // post critical styles
-figure {
-    margin-left: 0;
-    margin-right: 0;
+main {
+    .underline-links();
+
+    /*
+     * eliminate the margin-bottom on
+     * the article's last element
+     */
+    .mitigate-last-element-margin();
 }

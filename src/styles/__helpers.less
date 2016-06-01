@@ -53,3 +53,22 @@
         font-weight: 700;
     }
 }
+
+.underline-links() {
+    & {
+
+        a {
+            text-decoration: underline;
+            word-wrap: break-word;
+        }
+    }
+}
+
+.mitigate-last-element-margin() {
+    & {
+
+        .container > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

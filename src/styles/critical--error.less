@@ -1,10 +1,14 @@
 @import '_critical.less';
 
 // error page critical styles
-.error {
+main {
+    text-align: center;
 
-    a {
-        text-decoration: underline;
-        word-wrap: break-word;
-    }
+    .underline-links();
+
+    /*
+     * eliminate the margin-bottom on
+     * the article's last element
+     */
+    .mitigate-last-element-margin();
 }
