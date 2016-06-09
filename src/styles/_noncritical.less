@@ -1,43 +1,7 @@
 @import '__helpers.less';
 
 // non critical styles
-.avatar__tip {
-    background: @background-color--selection;
-    border-radius: 4px;
-    color: @text-color--light;
-    font-size: 0.875em;
-    left: 115%;
-    line-height: 1em;
-    margin: 0px;
-    padding: 5px 8px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    text-transform: uppercase;
 
-    // tip arrow
-    &:before {
-        content: '';
-        border-width: 5px 5px 5px 0;
-        border-style: solid;
-        border-color: transparent @background-color--selection;
-        position: absolute;
-        top: 50%;
-        left: -5px;
-        transform: translateY(-50%);
-    }
-}
-
-.avatar {
-
-    &:hover {
-
-        .avatar__tip {
-            opacity: 1;
-            visibility: visible;
-        }
-    }
-}
 
 // equal line heights and spacing
 h3, h4, h5, h6 {

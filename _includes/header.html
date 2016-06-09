@@ -1,15 +1,11 @@
 <header>
     <div class="container">
-        <a class="avatar" href="{% if type == 'home' %}/about{% else %}/{% endif %}">
+        <a class="avatar" href="/">
             <img alt="" class="avatar__img"
                 src="/assets/img/avatar1x.jpeg?time={{ site.data.timestamps.images }}"
                 srcset="/assets/img/avatar2x.jpeg?time={{ site.data.timestamps.images }} 2x"
                 onload="this.className+=' loaded'"
                 onerror="this.parentNode.style.display='none'">
-
-            <p class="avatar__tip">
-                {% if type == 'home' %}About&nbsp;me{% else %}Go&nbsp;to&nbsp;home{% endif %}
-            </p>
         </a>
 
         <h1 class="header__title">{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>

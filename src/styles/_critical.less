@@ -70,13 +70,27 @@ header {
     padding: @spacing--mobile;
 }
 
+nav {
+  .secondary--text();
+  display: flex;
+  margin: 0 auto;
+  max-width: 365px;
+  padding: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.nav__link {
+  flex: 1;
+  font-size: .88889em;
+}
+
 .avatar {
     border-radius: 50%;
     display: block;
     height: @avatar-size;
     width: @avatar-size;
     margin: 0 auto;
-    position: relative;
 }
 
 .avatar__img {
@@ -91,11 +105,6 @@ header {
         opacity: 1;
         transform: scale(1);
     }
-}
-
-.avatar__tip {
-    opacity: 0;
-    visibility: hidden;
 }
 
 .header__title {
@@ -136,6 +145,10 @@ h2 {
 
     .container {
         padding: @spacing;
+    }
+
+    nav {
+      margin: 0 0 0 auto;
     }
 
     .header__title {
