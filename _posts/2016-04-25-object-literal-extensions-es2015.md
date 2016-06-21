@@ -66,7 +66,7 @@ Through this article I will be using template strings, another awesome ES2015 fe
 
 ## Computed property names
 
-You can also generate a property name using any valid expression inside square brackets.
+You can also generate a property name using any valid JavaScript expression inside square brackets.
 
 ```js
 // ES2015
@@ -84,7 +84,7 @@ let classroom = {
 classroom.violet_gray; // Object { firstName: 'Violet', lastName: 'Gray', age: 10 }
 ```
 
-This can come really useful while mapping an array into a new object structure for example.
+This can come really useful while mapping an array into a new object structure.
 
 
 ## Destructuring
