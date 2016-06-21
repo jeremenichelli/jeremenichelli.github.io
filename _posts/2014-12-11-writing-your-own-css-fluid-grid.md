@@ -89,7 +89,7 @@ Writing the styles is the simplest part in my opinion. We're going to use a clas
 
 For the common styles the first thing we need is to float them so they stick side by side, we can't use *inline-block* because it adds extra space between the elements, we don't want that at all. The next property is a left margin with the value of the gap we decided and last but not least, *min-height: 1px*, why? Because if the column doesn't have any content it will collapse and gain no width breaking our grid.
 
-We still need one more tweak to do, the first column of each row doesn't need a left margin, or the sum of the widths will be 103%. Yeah, it doesn't sound good. 
+We still need one more tweak to do, the first column of each row doesn't need a left margin, or the sum of the widths will be 103%. Yeah, it doesn't sound good.
 
 ```css
 .column {
@@ -177,7 +177,6 @@ And that's it!
 
 ## Wrap-up
 
-I may have forgotten something up there, if you found out I did don't hesitate on contact me by email or twitter so we can discuss it. If you're still lazy or my explanation sucked all the way I've built something you will like, an <a href="https://jeremenichelli.github.io/gridbuilder" target="_blank">automatic grid builder</a>, it's not perfect and still need some work but it will give you the main styles right away.
+I may have forgotten something up there, if you found out I did don't hesitate on contact me by email or twitter so we can discuss it. If my explanation sucked all the way I've built an <a href="https://jeremenichelli.github.io/gridbuilder" target="_blank">automatic grid builder</a>, it's not perfect and still needs some work but it will give you the main styles right away.
 
 Happy coding!
-

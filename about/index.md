@@ -19,7 +19,7 @@ I also say stuff on [Twitter][tw] and throw some code on [GitHub][gh].
 
 ## About this site
 
-Built with [Jekyll][1] and is hosted by [GitHub Pages][2] to work. Though it was developed from scratch, the design was heavily inspired by [the plain theme][3] whose author is [Heiswayi Nrird][4].
+Built with [Jekyll][1] and is hosted by [GitHub Pages][2] to work. Though it was developed from scratch, the design was heavily inspired by Heiswayi Nrird's [the plain theme][3].
 
 [tw]: https://twitter.com/jeremenichelli
 [gh]: https://github.com/jeremenichelli
@@ -27,4 +27,3 @@ Built with [Jekyll][1] and is hosted by [GitHub Pages][2] to work. Though it was
 [1]: https://www.jekyllrb.com
 [2]: https://pages.github.com
 [3]: https://heiswayi.github.io/the-plain/
-[4]: https://github.com/heiswayi

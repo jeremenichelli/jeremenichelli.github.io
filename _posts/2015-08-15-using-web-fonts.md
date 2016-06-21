@@ -21,7 +21,7 @@ The first one, while it's not perfect, prioritizes showing something to the user
 
 If there's a font that's taking a while to load is better to show content to the user until everything is ready. Google's <a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank">PageSpeed Insight</a> will penalize you if you don't follow this approach, for example.
 
-After hearing about this, I did what a lot of developers did, just load the style sheet containing the **@font-face** declaration by JavaScript, wait for the `onload` event to fire and add a class to the *body* or *html* tag to change the font-family of the site by CSS.
+After hearing about this, I just loaded the stylesheet containing the **@font-face** declaration by JavaScript, wait for the `onload` event to fire and add a class to the *body* or *html* tag to change the font-family of the site by CSS.
 
 ```js
 var fontStyleSheet = document.createElement('link');
@@ -34,7 +34,7 @@ fontStyleSheet.href = 'http://fonts.googleapis.com/css?family=Roboto';
 document.head.appendChild(fontStyleSheet);
 ```
 
-And guess what? It didn't work. There was still a gap where invisible text was shown, apparently this happens because I changed the font family of the site when the stylesheet was ready which is ok, but the browser still was rendering the new font. That difference in time triggered a re-paint in the text leading to this.
+And guess what? It didn't work. There was still a gap where invisible text was shown, apparently this happens because I changed the font family of the site when the stylesheet was ready which is ok, but the browser still was rendering the new font.
 
 
 ### Solutions available today
@@ -47,14 +47,14 @@ You still need to add your fonts via **@font-face** declaration or include the *
 FontFaceOnload("Oswald", {
     success: function() {
         // when font is available, add class to body
-        document.body.classList.add('font-loaded'); 
+        document.body.classList.add('font-loaded');
     }
 });
 ```
 
 The second one is <a href="https://github.com/bramstein/fontfaceobserver" target="_blank">fontfaceobserver</a> by <a href="https://github.com/bramstein">bramstein</a>. According to its creator, this one uses scroll events to detect when the font is available immediately.
 
-Again, you include your custom font by CSS but this time an observer object is created.
+Again, include your custom font by CSS but this time an observer object is created.
 
 ```js
 var observer = new FontFaceObserver('Oswald');
@@ -105,11 +105,11 @@ Then I've moved to <a href="http://www.webpagetest.org/" target="_blank">www.web
 
 ### You Only Load Once
 
-Now that we have nice solutions, we are causing a **FOUT** on purpose to always show text content to the user, but now created a new problem. Once the user got to your homepage and starts navigating through your site is going to *experience the same effect in every page* because, though the font has been previously loaded and cached by the browser, we are not switching to it until we detect it by JavaScript and add a class to the *html* or *body* tag.
+Now that we have nice solutions, we are causing a **FOUT** on purpose to always show text content to the user, but now created a new problem.
 
-Yes, **boooooh**.
+Once the user got to your homepage and starts navigating through your site is going to *experience the same effect in every page* because, though the font has been previously loaded and cached by the browser, we are not switching to it until we detect it by JavaScript and add a class to the *html* or *body* tag.
 
-This is not hard to solve, once you load the font you can place a cookie using JavaScript.
+This is not hard to solve, once you load the font you can place a cookie.
 
 ```js
 var observer = new FontFaceObserver('Oswald');
@@ -124,7 +124,7 @@ Then add the class dynamically, for example in *php* if your engine is Wordpress
 
 Yes, **boooooh**.
 
-The good thing is that new specs to control the <a href="https://github.com/KenjiBaheux/css-font-rendering" target="_blank">font rendering behavior</a> are being discussed.
+Good thing is new specs to control the <a href="https://github.com/KenjiBaheux/css-font-rendering" target="_blank">font rendering behavior</a> are being discussed.
 
 ## Recommended articles
 

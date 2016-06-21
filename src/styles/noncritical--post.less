@@ -2,10 +2,19 @@
 @import '_noncritical.less';
 
 // post non critical styles
+a[href*="jsfiddle.net"] {
+    color: @background-color--selection;
+    display: block;
+    font-style: italic;
+    text-align: center;
+    text-decoration: none;
+}
+
 del, code {
     font-family: Menlo, Consolas, Monaco, monospace;
     font-size: .80555556em;
     padding: 1px 4px;
+    word-break: keep-all;
 }
 
 code {
@@ -30,15 +39,15 @@ code {
 pre {
     background-color: #f5f5f5;
     border-radius: 4px;
-    line-height: 1.15em;
+    line-height: 1.25em;
     overflow: auto;
-    padding: 12px 15px;
-}
+    padding: 10px 15px;
 
-pre code {
-    background-color: transparent;
-    font-size: 14px;
-    padding: 0;
+    code {
+      background-color: transparent;
+      font-size: 13px;
+      padding: 0;
+    }
 }
 
 blockquote {
@@ -57,5 +66,12 @@ blockquote {
     blockquote {
         padding-right: 35px;
         padding-left: 35px;
+    }
+
+    pre {
+
+      code {
+        font-size: 13.5px;
+      }
     }
 }
