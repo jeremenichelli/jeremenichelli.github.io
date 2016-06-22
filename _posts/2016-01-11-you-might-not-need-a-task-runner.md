@@ -153,7 +153,3 @@ On the other hand, you can't use custom command arguments and you can end up wit
 ## Wrap up
 
 As I always said, the intention of this post is not to bust task runners, I love using Gulp in my projects. But it's good to know what are the compromises they bring and if you are dealing with a build process that is easy to solve with a couple of bash commands, then you should definitely give npm scripts a try.
-
-
-
-
