@@ -11,7 +11,7 @@ In this case I will go through my thoughts and feelings on developing components
 
 ## Introduction to Vue
 
-The primary goal of **Vue** is to easily create interfaces which _react_ on data changes, so when a **Vue instance** is create you need to define a template and a model.
+The primary goal of **Vue** is to easily create interfaces which _react_ on data changes, so when a **Vue instance** is created you need to define a template and a model.
 
 Inside these templates you can interpolate properties with curly braces like you do in popular templating engines or use attributes.
 
