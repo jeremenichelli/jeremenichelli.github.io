@@ -386,4 +386,4 @@ As any other framework, its ecosystem kind of forces you to do things you might 
 [vue-cli]: https://github.com/vuejs/vue-cli
 [polymer-cli]: https://github.com/Polymer/polymer-cli
 [angular-cli]: https://github.com/angular/angular-cli
-[vue-movies]: https://github.com/jeremenichelli/movies
+[vue-movies]: https://github.com/jeremenichelli/movies/results/vue
