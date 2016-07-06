@@ -15,7 +15,7 @@ Later, I joined **OrderGroove** to build awesome scripts that power the subscrip
 
 I'm currently living in Montevideo, Uruguay working with the people from **Jam3**.
 
-_I also write nonsenses on [Twitter][tw] and throw some code on [GitHub][gh]._
+_I also write stuff on [Twitter][tw] and throw some code on [GitHub][gh]._
 
 ## About this site
 
