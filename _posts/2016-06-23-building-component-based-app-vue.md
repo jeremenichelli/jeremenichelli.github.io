@@ -78,8 +78,6 @@ The library is really well documented, one of the things I like the most about i
 
 ## Writing components
 
-### Templates and binding
-
 I find its component syntax the strong selling point of the library.
 
 Just as you create **Vue instances** you can create **Vue components** to be reused.
@@ -193,6 +191,15 @@ Vue.component('results-list', {
 Props are prefixed with a _colon_ because we are passing a data reference, but it should be removed when passing the value itself.
 
 
+### Styles
+
+There is still a discussion on going about extending the components philosophy to styles, probably one of the pain points of atomizing the user interface since almost all approaches forces you to mix unnatural CSS syntax with JavaScript.
+
+New standards like HTML imports and Shadow DOM are preparing the ground for a future where native web components will be easy to develop and cross browser compatible.
+
+In the meantime, devs are adding steps in their build processes to transform their stylesheets into [local scoped CSS][scoped-css] for pure JavaScript components.
+
+
 ### Routing
 
 Vue capabilities can be extended with plugins calling the `use` method.
@@ -254,15 +261,6 @@ There's no need to learn nothing special for views creation, they are _component
 A special directive, `v-link` allows anchors to navigate the app and the _router-view_ tag is the placeholder where the view's template will be mounted.
 
 Finally, map the different paths and send to `router.start` the app instance and the selector to initialize the project.
-
-
-### Styles
-
-There is still a discussion on going about extending the components philosophy to styles, probably one of the pain points of atomizing the user interface since almost all approaches forces you to mix unnatural CSS syntax with JavaScript.
-
-New standards like HTML imports and Shadow DOM are preparing the ground for a future where native web components will be easy to develop and cross browser compatible.
-
-In the meantime, devs are adding steps in their build processes to transform their stylesheets into [local scoped CSS][scoped-css] for pure JavaScript components.
 
 
 ## Ecosystem
@@ -332,8 +330,8 @@ You can later import **.vue** files to let components be used by other instances
 
 ```js
 <template>
-  <h1>Search</h1>
-  <h2>Movies</h2>
+  <h1>Movies</h1>
+  <h2>Search</h2>
   <search-box></search-box>
 </template>
 
