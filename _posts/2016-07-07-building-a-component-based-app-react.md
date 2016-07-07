@@ -1,0 +1,496 @@
+---
+layout: default
+title: Building a component based app with React
+resume: Developers have been trying to find a solution to architecture on complex web applications. The most recent answer to that are components, divide the interface in smaller and autonomous blocks to conquer maintainability and scalability.
+---
+
+_This writing belongs to a serie of articles about using components with different frameworks and libraries. Stay tuned for future posts about this topic._
+
+In this case I will go through my thoughts and feelings on developing components using [React][react], probably the most popular library to render views these days, created by Facebook developers.
+
+
+## Introduction to React
+
+According to its authors, the mear existence of this framework is to compose large web applications through components instead of directives. Those components will only be updated if the data bound to them does.
+
+To achieve this React provides a set of methods to express HTML elements with object notation, an abstraction pattern usually known as _virtual DOM_.
+
+So, instead of creating and appending elements as usual, you represent them with an object passing tag, properties and children to the **createElement** function.
+
+```js
+let Link = React.createElement(
+	'a',
+  {
+  	href: 'https://github.com/jeremenichelli',
+    className: 'github-link'
+  },
+  'GitHub'
+  );
+
+ReactDOM.render(Link, document.querySelector('#example'));
+```
+
+[See it in action &raquo;](https://jsfiddle.net/jeremenichelli/kqLmfcq4)
+
+In this example we are creating an anchor, passing the **href** and **class** properties and a text node as its only children.
+
+It's necessary to express element's properties as their JavaScript equivalent, that's why **className** is used instead of **class**.
+
+
+### JSX
+
+Not mandatory, but an optional way to describe render trees is **JSX** which basically let's you write HTML inside your script, with some gotchas.
+
+Our previous example using JSX syntax with React's **createClass** would become this.
+
+```js
+let GitHubLink = React.createClass({
+  render() {
+    return (
+      <a
+        href="https://github.com/jeremenichelli"
+        className="github-link">
+          GitHub
+      </a>
+    );
+  }
+});
+
+ReactDOM.render(<GitHubLink />, document.querySelector('#example'));
+```
+
+Seeing tags inside your code might feel weird at first, however it becomes a better option when writing more complex elements with a bigger number of children that can be harder to read using React's method.
+
+Of course this will need to be _transpiled_ to actually work, but more on that later.
+
+
+## Writing components
+
+As React promises, the best reason for using it is to improve the architecture of your application diving the views into reusable components.
+
+One of the many ways to achieve this is using the **createClass** method and is the one you will find in the official documentatio right now. I prefer extending the component class.
+
+```js
+import { Component } from 'react';
+import { render } from 'react-dom';
+
+class GitHubLink extends Component {
+  render() {
+    return (
+      <a
+        href="https://github.com/jeremenichelli"
+        className="github-link">
+        { this.props.user } on github
+      </a>
+    );
+  }
+}
+
+render(
+  <GitHubLink user="jeremenichelli"/>,
+  document.querySelector('#example')
+);
+```
+
+These components become custom tags you can put inside other components or pass it to the render function. _Component tags need to be capitalized so JSX can differenciate them from standard HTML ones._
+
+The problem with this component here is that the url is hardcoded, an anchor always pointing to the same page won't be _that_ reusable.
+
+
+### Props
+
+To customize our components, data values can be passed to them as _props_.
+
+```js
+import { Component } from 'react';
+import { render } from 'react-dom';
+
+const baseUrl = 'https://github.com/';
+
+class GitHubLink extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <a
+        href={ baseUrl + this.props.user }
+        className="github-link">
+          GitHub
+      </a>
+    );
+  }
+}
+
+render(
+  <GitHubLink user="jeremenichelli"/>,
+  document.querySelector('#example')
+);
+```
+
+When declaring components with this pattern, _props_ need to be passed to the **super** class constructor so they are applied to the component itself.
+
+As you see in the **href** value, JavaScript expressions can be used inside JSX when wrapped with curly braces to apply more dynamic and readable approaches.
+
+```js
+import { Component } from 'react';
+import { render } from 'react-dom';
+
+const baseUrl = 'https://github.com/';
+
+class GitHubLink extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <a
+        href={ baseUrl + this.props.user }
+        className="github-link">
+          GitHub
+      </a>
+    );
+  }
+}
+
+class GitHubUsers extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <GitHubLink user="jeremenichelli"/>
+        <GitHubLink user="iamdustan"/>
+      </div>
+    );
+  }
+}
+
+render(
+  <GitHubUsers />,
+  document.querySelector('#example')
+);
+```
+
+[See it in action &raquo;](https://jsfiddle.net/jeremenichelli/oLL9j1bj/3)
+
+_The render function in React components always has to return a single root element, that's why the two GitHub links are placed inside a **div** tag._
+
+Remember you can use JavaScript inside `render`, which is pretty neat when the number of children is unknown or too big.
+
+```js
+const users = [
+  'jeremenichelli',
+  'iamdustan'
+];
+
+class GitHubUsers extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div hidden={ !users.length }>
+        { users.map(user => <GitHubLink user={ user }/>) }
+      </div>
+    );
+  }
+}
+```
+
+[See it in action &raquo;](https://jsfiddle.net/jeremenichelli/oLL9j1bj/4/)
+
+This is a better pattern since now the logic inside `render` doesn't need to be updated when the data changes, improving the maintainability of the code.
+
+
+#### PropTypes
+
+Validation can be added to props, for example specifying type.
+
+```js
+import { Component, PropTypes } from 'react';
+import { render } from 'react-dom';
+
+const baseUrl = 'https://github.com/';
+
+class GitHubLink extends Component {
+  constructor(props) {
+    super(props);
+  }
+  propTypes: {
+    user: PropTypes.string.isRequired
+  }
+  render() {
+    return (
+      <a
+        href={ baseUrl + this.props.user }
+        className="github-link">
+          GitHub
+      </a>
+    );
+  }
+}
+```
+
+After passing the type we can go further and use `isRequired` so the presence of it becomes mandatory for rendering the component.
+
+There are lots of possible validations, I suggest [React docs section][props] about it.
+
+### States
+
+When data values change over a component's life cycle they are called _states_.
+
+It's important to mention that not every single data used in a component should be a state. When the state doesn't affect the render of the component is better to keep it outside of it.
+
+When using **createClass** you get access to the **getInitialState** method to specify the initial states' values, but if you're doing in the the ES2015 way just define a _state_ object on the instance's constructor.
+
+```js
+import { Component } from 'react';
+import { render } from 'react-dom';
+
+class AccordionElement extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      expanded: false
+    }
+  }
+  render() {
+    return (
+      <div className={ this.state.expanded ? 'expanded' : '' }>
+        <button>{ this.props.heading }</button>
+        <p>{ this.props.content }</p>
+      </div>
+    );
+  }
+}
+```
+
+Here we are defining an accordion element, the _expanded_ value will define wether the content will be visible or not so it makes sense to define it as a _state_.
+
+To reveal the content we need to toggle the _expanded_ value.
+
+To do it we use **setState** and React will update the components view. I recommend to place this logic inside a method so it can be bound later as an event.
+
+```js
+import { Component } from 'react';
+import { render } from 'react-dom';
+
+class AccordionElement extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      expanded: false
+    }
+  }
+  toggleState() {
+  	this.setState({ expanded: !this.state.expanded });
+  }
+  render() {
+    return (
+      <div className={ this.state.expanded ? 'expanded' : '' }>
+        <button onClick={ this.toggleState.bind(this) }>
+          { this.props.heading }
+        </button>
+        <p>{ this.props.content }</p>
+      </div>
+    );
+  }
+}
+```
+
+[See it in action &raquo;](https://jsfiddle.net/jeremenichelli/oLL9j1bj/5)
+
+The context inside the **toggleState** function will be the rendered node, with **bind** we change it back to the component.
+
+
+### Model binding
+
+As it doesn't offer directives out of the box, when you need to track properties like the value of an input value you will need to do it yourself.
+
+It's not hard since React encapsulation itself comes handy for this.
+
+```js
+import React, { Component, PropTypes } from 'react';
+
+
+// components
+class SearchBox extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+        searchValue: ''
+    };
+
+    // bind events
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(e) {
+    this.setState({ searchValue: e.target.value });
+  }
+  render() {
+    return (
+      <form action="?">
+        <input type="text" value={ this.props.searchValue } onChange={ this.handleChange }/>
+        <button type="submit">Search</button>
+      </form>
+    );
+  }
+}
+```
+
+This is a pretty common pattern of updating a container every time the value changes which here can be used as a _state_ in case it defines some other rendered section of the component.
+
+### Styles
+
+If you're using React, the main reason should be that you find the separation of concerns and encapsulation the best way to structure your application, so your strategy around styles should match this philosophy.
+
+**CSS modules** alter original selectors so they are unique, and as a consequence, encapsulates the styles for a set of elements so they aren't affected by other rules define in the project.
+
+```js
+import React, { Component } from 'react';
+
+import styles from '../styles/icon.css';
+
+class Icon extends Component {
+  render() {
+    return (
+      <i className={ styles.icon }></i>
+    );
+  }
+}
+```
+
+When you import a style file like this, selectors are changed to key combinations of letters and numbers on it. Inside your script an object is return containing exactly those unique references you can place in your components like values.
+
+Of course this happens at compilation time so you will need external tools like [webpack loaders][css-modules-webpack] to manage your styles this way.
+
+### Routing
+
+The most popular alternative to turn your React project in a single page application is the [official react router][react-router]. As you might have guessed, you need to define the shell of your app and the views as components.
+
+```js
+import React, { Component } from 'react';
+
+class App extends Component {
+  render() {
+    return (
+      <div className="app">
+        <h1>React single page application</h1>
+        { this.props.children }
+      </div>
+    );
+  }
+}
+
+class Home extends Component {
+  render() {
+    return (
+      <div className="home">
+        <h2>Home</h2>
+          // view content ...
+      </div>
+    );
+  }
+}
+
+class About extends Component {
+  render() {
+    return (
+      <div className="about">
+        <h2>About</h2>
+          // view content ...
+      </div>
+    );
+  }
+}
+```
+
+Next, you pass these views as _props_ to special route components that will mount the app and manage the transitions for you.
+
+```js
+import { render } from 'react-dom';
+import { Router, Route, IndexRoute } from 'react-router';
+
+render((
+<Router>
+  <Route path="/" component={ App }>
+    <IndexRoute component={ Home } />
+    <Route path="/about" component={ About }>
+      <Route path="/about/:author" component={ Author }></Route>
+    </Route>
+  </Route>
+</Router>
+), document.getElementById('app'))
+```
+
+Basically you're configuring the routes by placing tags defining the structure of your project, meaning you can go deeper placing routes and defining parameters.
+
+```js
+import React, { Component } from 'react';
+import { Link } from 'react-router';
+
+class Home extends Component {
+  render() {
+    return (
+      <div className="home">
+        <h2>Home</h2>
+        <Link to="about/jeremenichelli">About me</Link>
+          // view content ...
+      </div>
+    );
+  }
+}
+```
+
+To render anchors pointing to a defined route, a **Link** component is available.
+
+
+## Ecosystem
+
+Even when it has a great and growing community, its ecosystem is its weakest point.
+
+Try to learn a new framework always brings a learning curve that, in my opinion, is too steep in React. There are a lot of reasons for that.
+
+The first one is the **documentation**. I have to admit is really complete, though a bit unorganized which is a big deal for begginers, probably a consequence of a fast evolution pace the repository experimented recently.
+
+> "The official docs grew organically and need gardening." - Dan Abramov
+
+The second one is **JSX** it self. Using it really improves the developing experience, but it has its tricks and limitations.
+
+I would suggest trying React without it first or you will find yourself learning two things at the same time and not knowing _what's wrong and where_ when your script renders nothing.
+
+The last one is **tooling**. If your building your application with React, there's a high chance you will need transpiling and a build process to handle the whole thing.
+
+Actually a build process to bundle your application should be there since you're choosing this path to structure your project separating it in smaller parts.
+
+There are a lot of boilerplates, _a lot_... which I think is a symptom of what's going on with the library nowadays. Apparently developers are having a hard time around decisions when they start a new project which includes React.
+
+
+## Architecture
+
+This heading probably won't be present in all the articles form this serie and the reason is because React actually affected how I was structuring my application. The library itself in combination with CSS modules _forced_ me in own way or another to encapsulate both logic and styles.
+
+
+## Wrap-up
+
+React has something that makes you like it, it does **one** thing. Short set of methods and patterns to learn and you're ready to go.
+
+But it needs to improve documentation and tooling to help developers without strong definitions around the concept of components.
+
+It definitely forces you to change the way you conceive a web app and how it will grow, after you do it is really a joy to let React rule your project's architecture.
+
+Most of these thoughts came while building a [simple web app][react-movies] using tools and approaches mentioned in this article.
+
+
+
+[react]: https://facebook.github.io/react
+[props]: https://facebook.github.io/react/docs/reusable-components.html#single-child
+[css-modules]: http://andrewhfarmer.com/what-are-css-modules/
+[css-modules-webpack]: https://css-modules.github.io/webpack-demo/
+[react-router]: https://github.com/reactjs/react-router
+[react-movies]: https://github.com/jeremenichelli/movies/results/react
