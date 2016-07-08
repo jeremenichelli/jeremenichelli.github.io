@@ -316,9 +316,7 @@ It's not hard since React encapsulation itself comes handy for this.
 ```js
 import React, { Component, PropTypes } from 'react';
 
-
-// components
-class SearchBox extends Component {
+export default class SearchBox extends Component {
   constructor(props) {
     super(props);
 
@@ -473,19 +471,50 @@ There are a lot of boilerplates, _a lot_... which I think is a symptom of what's
 
 ## Architecture
 
-This heading probably won't be present in all the articles form this serie and the reason is because React actually affected how I was structuring my application. The library itself in combination with CSS modules _forced_ me in own way or another to encapsulate both logic and styles.
+This heading probably won't be present in all the articles from this serie and the reason is React actually shaped the structure of my application.
+
+While trying to avoid repeated code and follow best practices, the library itself in combination with CSS modules _forced_ me in own way or another to encapsulate both logic and styles.
+
+
+### Components as modules
+
+Once you've resolved the tooling part, enclosing each component as a module is the best way to organize an application that might scale in time.
+
+The **SearchBox** component example shown above, it can be easily imported to compose more complex components or views.
+
+```js
+import React, { Component } from 'react';
+
+// components
+import Card from '../components/card.js';
+import SearchBox from '../components/search-box.js';
+
+export default class SearchView extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <Card>
+        <SearchBox />
+      </Card>
+    );
+  }
+};
+```
+
+Following this small set of rules, the project grows naturally without overthinking around where you should put something, and that's a big win from this library.
 
 
 ## Wrap-up
 
 React has something that makes you like it, it does **one** thing. Short set of methods and patterns to learn and you're ready to go.
 
-But it needs to improve documentation and tooling to help developers without strong definitions around the concept of components.
+But it needs to improve documentation and tooling to help developers without strong concepts around architecture and components.
 
-It definitely forces you to change the way you conceive a web app and how it will grow, after you do it is really a joy to let React rule your project's architecture.
+It definitely could force you to change the develop and scale your app, but after you've done that letting React rule your project's architecture is a relief.
 
-Most of these thoughts came while building a [simple web app][react-movies] using tools and approaches mentioned in this article.
-
+Most of these thoughts came while building a [simple web app][react-movies] using tools and approaches mentioned in this article you can explore on GitHub.
 
 
 [react]: https://facebook.github.io/react
