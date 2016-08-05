@@ -128,18 +128,18 @@ Another useful feature available is the `dom-repeat` extension that allows you t
   <script>
     Polymer({
       is: 'link-list',
-			ready: function() {
-				this.links = [
-				  'https://google.com',
-				  'https://facebook.com'
-				];
-			}
+				ready: function() {
+					this.links = [
+					  'https://google.com',
+					  'https://facebook.com'
+					];
+				}
     });
   </script>
 </dom-module>
 ```
 
-`ready` is one of the many lifecycle callbacks provided by the library and are well documented if you want to [know more on them](https://www.polymer-project.org/1.0/docs/devguide/registering-elements#lifecycle-callbacks).
+In the example above I'm using `ready`, one of the lifecycle callbacks provided by the library. They are well documented if you want to [know more on them](https://www.polymer-project.org/1.0/docs/devguide/registering-elements#lifecycle-callbacks).
 
 
 ### Properties
@@ -419,7 +419,7 @@ Polymer tries to squeeze every feature of the modern web and provides others tha
 
 But the lack of versatility of its ecosystem and uncommon architecture makes it hard to choose it over other popular libraries which provide similar development experience without these caveats.
 
-All these conclusions came up while building a [simple movie web app available on GitHub](https://github.com/jeremenichelli/movies/tree/master/results/polymer).
+All these conclusions came up while building a [simple web app available on GitHub](https://github.com/jeremenichelli/movies/tree/master/results/polymer).
 
 I hope Polymer teams keeps working hard and improves this since it is the closest alternative to native web features.
 
