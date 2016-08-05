@@ -105,13 +105,41 @@ The one you're going to use more is the `<dom-module>` tag, inside of which we p
 
 [See it in action &raquo;](https://jsfiddle.net/jeremenichelli/nvd4t92h/)
 
-The element's name must match in the `<dom-module>` tag and the Polymer function call for the **is** attribute and property respectively.
+The element's name must match in the `<dom-module>` tag and the Polymer function call for the [is](https://www.w3.org/TR/custom-elements/#custom-elements-customized-builtin-example) attribute and property respectively.
 
 Also the name must contain a _hyphen_, a web components gotcha.
 
-The `<content>` tag is also new though it actually belongs to the web components standard and not Polymer. This indicates where the content between our custom element tags will be rendered.
+`<content>` is also new though it actually belongs to the web components standard and not Polymer. This indicates where the content between our custom element tags will be rendered.
 
 It's pretty obvious where the text should go in the previous example, but it won't be for more complex views.
+
+Another useful feature available is the `dom-repeat` extension that allows you to pass a collection and render multiple elements.
+
+```html
+<link rel="import" href="path/to/polymer.html">
+
+<dom-module is="link-list">
+  <template>
+    <template is="dom-repeat" items="[[ links ]]">
+      <a href="[[ item ]]">[[ item ]]</a>
+    </template>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'link-list',
+			ready: function() {
+				this.links = [
+				  'https://google.com',
+				  'https://facebook.com'
+				];
+			}
+    });
+  </script>
+</dom-module>
+```
+
+`ready` is one of the many lifecycle callbacks provided by the library and are well documented if you want to [know more on them](https://www.polymer-project.org/1.0/docs/devguide/registering-elements#lifecycle-callbacks).
 
 
 ### Properties
@@ -390,6 +418,8 @@ There's an approach that didn't became popular called [IMD](https://github.com/P
 Polymer tries to squeeze every feature of the modern web and provides others that can be easily used and are well documented. An immediate consequence is better performance and accessibility in your project.
 
 But the lack of versatility of its ecosystem and uncommon architecture makes it hard to choose it over other popular libraries which provide similar development experience without these caveats.
+
+All these conclusions came up while building a [simple movie web app available on GitHub](https://github.com/jeremenichelli/movies/tree/master/results/polymer).
 
 I hope Polymer teams keeps working hard and improves this since it is the closest alternative to native web features.
 
