@@ -139,7 +139,7 @@ Another useful feature available is the `dom-repeat` extension that allows you t
 </dom-module>
 ```
 
-In the example above I'm using `ready`, one of the lifecycle callbacks provided by the library. They are well documented if you want to [know more on them](https://www.polymer-project.org/1.0/docs/devguide/registering-elements#lifecycle-callbacks).
+In the example above I'm using `ready`, one of the lifecycle callbacks provided by the library. They are well documented if you want to [know them more deeply](https://www.polymer-project.org/1.0/docs/devguide/registering-elements#lifecycle-callbacks).
 
 
 ### Properties
