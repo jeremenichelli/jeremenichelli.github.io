@@ -15,7 +15,7 @@ kramdown:
   input: GFM
 
 # Blog settings
-permalink: /:year/:month/:title
+permalink: /:year/:month/:title/
 
 # Gems
 gems: [ "jekyll-paginate" ]
