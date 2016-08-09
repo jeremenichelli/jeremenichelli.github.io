@@ -16,6 +16,3 @@ kramdown:
 
 # Blog settings
 permalink: /:year/:month/:title/
-
-# Gems
-gems: [ "jekyll-paginate" ]
