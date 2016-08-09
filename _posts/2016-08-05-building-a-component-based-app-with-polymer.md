@@ -421,7 +421,11 @@ But the lack of versatility of its ecosystem and uncommon architecture makes it 
 
 All these conclusions came up while building a [simple web app available on GitHub](https://github.com/jeremenichelli/movies/tree/master/results/polymer).
 
-I hope Polymer teams keeps working hard and improves this since it is the closest alternative to native web features.
+I hope Polymer team keeps working hard and improves this since it is the closest alternative to native web features.
+
+### Update
+
+**8 AUG 2016** &mdash; specs have been updated, `document.registerElement` has been deprecated in favor of `customElements.define` and easier extending syntax was added. I suggest reading [Eric Bidelman's article](https://developers.google.com/web/fundamentals/primers/customelement) which explains these two changes.
 
 
 [polymer]: https://polymer-project.org
