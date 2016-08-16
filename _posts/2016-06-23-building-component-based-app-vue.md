@@ -120,7 +120,9 @@ Vue.component('search-box', {
 
 Calling the `component` method requires first a string indicating a custom tag in kekab case and a constructor object.
 
-Inside the template you might notice `:disabled` which is just a shortcut for `v-bind:disabled` directive and the `v-model` binding, super useful to synchronize a form element value with data. The `@` symbol is used to bind events from `methods`.
+Inside the template you might notice `:disabled` which is just a shortcut for `v-bind:disabled` directive and the `v-model` binding, super useful to synchronize a form element value with data.
+
+The `@` symbol is used to bind events from `methods`.
 
 Instead of an object, `data` is a function returning one to prevent all instances from sharing the same object reference causing a undesired collisions.
 
@@ -353,7 +355,7 @@ To transpile this to something the browser can actually render, a [loader][vue-l
 If you're building a web app you should be already using them either way, _right?_
 
 
-### CLI
+#### CLI
 
 Vue's ecosystem and its single file components are great, thank you, but now you have to deal with building configuration?
 
