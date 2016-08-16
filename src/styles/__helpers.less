@@ -1,74 +1,70 @@
 // layout variables
-@spacing: 40px;
+@spacing: 45px;
 @spacing--mobile: 30px 20px;
 
 // color variables
 @background-color--light: #ffffff;
 @background-color--medium: #f7f7f7;
 
-@background-color--selection: #78909c;
+@accent: #2196F3;
 
 @text-color--light: #fefefe;
 @text-color--medium: #757575;
 @text-color--dark: #212121;
 
-@divider-color: #e0e0e0;
-
 // other values
-@avatar-size: 80px;
 @tab-size: 2;
 @code-hyphens: none;
 
 
 // mixins
 .secondary--text() {
-    & {
-      color: @text-color--medium;
-      font-size: .9444444em;
-      letter-spacing: .02em;
-      text-transform: uppercase;
-    }
+  & {
+    color: @accent;
+    font-size: .9444444em;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+  }
 }
 
 .bloglist--component() {
-    .bloglist {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        text-align: center;
+  .bloglist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-        li + li {
-            margin: 2.25em 0 0;
-        }
+    li + li {
+      margin: 2.5em 0 0;
     }
+  }
 
-    .bloglist_time {
-        .secondary--text();
-        margin: 0;
-    }
+  .bloglist_time {
+    .secondary--text();
+    margin: 0;
+  }
 
-    .bloglist__link {
-        display: block;
-        font-size: 1.25em;
-        font-weight: 700;
-    }
+  .bloglist__link {
+    display: block;
+    font-size: 1.25em;
+    font-weight: 700;
+  }
 }
 
 .underline-links() {
-    & {
+  & {
 
-        a {
-            text-decoration: underline;
-            word-wrap: break-word;
-        }
+    a {
+      text-decoration: underline;
+      word-wrap: break-word;
     }
+  }
 }
 
 .mitigate-last-element-margin() {
-    & {
+  & {
 
-        .container > *:last-child {
-            margin-bottom: 0;
-        }
+    .container > *:last-child {
+      margin-bottom: 0;
     }
+  }
 }
