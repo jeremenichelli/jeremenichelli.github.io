@@ -13,17 +13,16 @@ That same year, **Globant** hired me and I had the chance to work with clients l
 
 Later, I joined **OrderGroove** to build awesome scripts that power the subscription revolution with their team from New York.
 
-I'm currently living in Montevideo, Uruguay working with the people from **Jam3**.
+I'm currently living in Montevideo, Uruguay working with the **Jam3** team.
 
 _I also write stuff on [Twitter][tw] and throw some code on [GitHub][gh]._
 
 ## About this site
 
-Built with [Jekyll][1] and hosted by [GitHub Pages][2] to work. Though it was developed from scratch, the design was heavily inspired by Heiswayi Nrird's [the plain theme][3].
+Built with [Jekyll][1] and hosted by [GitHub Pages][2].
 
 [tw]: https://twitter.com/jeremenichelli
 [gh]: https://github.com/jeremenichelli
 
 [1]: https://www.jekyllrb.com
 [2]: https://pages.github.com
-[3]: https://heiswayi.github.io/the-plain/
