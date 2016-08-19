@@ -350,9 +350,7 @@ export default {
 
 Of course, the **.vue** extension is not a valid module you can import.
 
-To transpile this to something the browser can actually render, a [loader][vue-loader] for Webpack and a [transform][vueify] for Browserify are available to add them as more step to your bundling process.
-
-If you're building a web app you should be already using them either way, _right?_
+To transpile this to something the browser can actually render, a [loader][vue-loader] for Webpack and a [transform][vueify] for Browserify are available. 
 
 
 #### CLI
