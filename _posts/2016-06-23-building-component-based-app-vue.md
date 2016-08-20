@@ -46,7 +46,7 @@ You can also bind methods and compute properties.
 
 // JavaScript
 new Vue({
-  el: '#view',
+  el: 'app',
   template: `
     <div id="view">
       <h1>{{ fullName }}</h1>
@@ -350,7 +350,7 @@ export default {
 
 Of course, the **.vue** extension is not a valid module you can import.
 
-To transpile this to something the browser can actually render, a [loader][vue-loader] for Webpack and a [transform][vueify] for Browserify are available. 
+To transpile this to something the browser can actually render, a [loader][vue-loader] for Webpack and a [transform][vueify] for Browserify are available.
 
 
 #### CLI
