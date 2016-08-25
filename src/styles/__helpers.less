@@ -1,5 +1,5 @@
 // layout variables
-@spacing: 45px;
+@spacing: 40px;
 @spacing--mobile: 30px 20px;
 
 // color variables
@@ -51,12 +51,16 @@
   }
 }
 
-.underline-links() {
+.highlight-links() {
   & {
 
     a {
-      text-decoration: underline;
+      color: @accent;
       word-wrap: break-word;
+      
+      &:visited {
+        color: @accent;
+      }
     }
   }
 }
