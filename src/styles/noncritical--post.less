@@ -2,7 +2,8 @@
 @import '_noncritical.less';
 
 // post non critical styles
-a[href*="jsfiddle.net"] {
+a[href*="jsfiddle"],
+a[href*="plnkr"] {
   color: @accent;
   display: block;
   font-style: italic;
@@ -59,7 +60,7 @@ blockquote {
   color: @accent;
   font-style: italic;
   line-height: 1.75em;
-  margin: 2em 0;
+  margin: 0;
   padding: 20px;
 }
 
@@ -68,6 +69,7 @@ blockquote {
   blockquote {
     padding-right: 35px;
     padding-left: 35px;
+    margin: 2em 0;
   }
 
   code {
