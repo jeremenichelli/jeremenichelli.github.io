@@ -1,25 +1,18 @@
 <header>
-    <div class="container">
-        <a class="avatar" href="/">
-            <img alt="" class="avatar__img"
-                src="/assets/img/avatar1x.jpeg?time={{ site.data.timestamps.images }}"
-                srcset="/assets/img/avatar2x.jpeg?time={{ site.data.timestamps.images }} 2x"
-                onload="this.className+=' loaded'"
-                onerror="this.parentNode.style.display='none'">
-        </a>
+  <div class="container">
 
-        <h1 class="header__title">{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+    <h1 class="header__title">{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
 
     {% if type == 'home' %}
-        <p class="header__subtitle">front end developer
-           at <a href="http://www.jam3.com/" target="_blank">Jam3</a>
-        </p>
+    <p class="header__subtitle">front end developer
+      at <a href="http://www.jam3.com/" target="_blank">Jam3</a>
+    </p>
     {% endif %}
 
     {% if type == 'post' %}
-      <p class="header__subtitle">
-        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %B, %Y'}}</time>
-      </p>
+    <p class="header__subtitle">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %B, %Y'}}</time>
+    </p>
     {% endif %}
-    </div>
+  </div>
 </header>
