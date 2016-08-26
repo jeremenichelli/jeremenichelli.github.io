@@ -4,39 +4,33 @@
 
 // equal line heights and spacing
 h3, h4, h5, h6 {
-    line-height: 1.2em;
-    margin: 1.25em 0 .83195em;
+  line-height: 1.2em;
+  margin: 1.5em 0 .83195em;
 }
 
 h4, h5, h6 {
-    font-size: 1em;
-    text-transform: uppercase;
+  font-size: .9375em;
+  letter-spacing: .05em;
+  text-transform: uppercase;
 }
 
 h5, h6 {
-    color: @text-color--medium;
-    font-weight: 400;
+  color: @text-color--medium;
+  font-weight: 400;
 }
 
 footer {
-    text-align: center;
-}
-
-.footer__link {
-    .secondary--text();
-
-    &:visited {
-        color: @text-color--medium;
-    }
+  color: @accent;
+  text-align: center;
 }
 
 // selection flavour
 ::selection {
-    background-color: @background-color--selection;
-    color: @text-color--light;
+  background-color: @accent;
+  color: @text-color--light;
 }
 
 ::-moz-selection {
-    background-color: @background-color--selection;
-    color: @text-color--light;
+  background-color: @accent;
+  color: @text-color--light;
 }
