@@ -4,7 +4,7 @@ title: Building a component based app with Polymer
 resume: Developers have been trying to find a solution to architecture on complex web applications. The most recent answer to that are components, divide the interface in smaller and autonomous blocks to conquer maintainability and scalability.
 ---
 
-_This writing belongs to a serie of articles about using components with different frameworks and libraries. Stay tuned for future posts about this topic._
+_This writing belongs to a serie of articles about using components with [Vue][vue-article], [React][react-article] and [Angular 2][angular-article]._
 
 In this case I will go through my thoughts and feelings on developing components using [Polymer][polymer], a library written by Google developers built on top of native web technologies.
 
@@ -429,3 +429,8 @@ I hope Polymer team keeps working hard and improves this since it is the closest
 
 
 [polymer]: https://polymer-project.org
+
+[vue-article]: /2016/06/building-component-based-app-vue/
+[react-article]: /2016/07/building-a-component-based-app-react/
+[polymer-article]: /2016/08/building-a-component-based-app-polymer/
+[angular-article]: /2016/08/building-acomponent-based-app-angular-2/
