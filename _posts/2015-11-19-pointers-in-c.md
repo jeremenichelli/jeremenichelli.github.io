@@ -85,14 +85,14 @@ Similar to JavaScript, in C every time a function is called a new scope is creat
 #include <stdio.h>
 
 void increase(int n) {
-    n = n + 1;    
+  n = n + 1;    
 };
 
 int main(void) {
-    int a = 1;
-    increase(a);
-    printf("%i", a);
-    // prints 1
+  int a = 1;
+  increase(a);
+  printf("%i", a);
+  // prints 1
 };
 ```
 
@@ -106,14 +106,14 @@ The only difference is that for this particular case, we don't need to create a 
 #include <stdio.h>
 
 void increase(int* n) {
-    *n = *n + 1;    
+  *n = *n + 1;    
 };
 
 int main(void) {
-    int a = 1;
-    increase(&a);
-    printf("%i", a);
-    // prints 2
+  int a = 1;
+  increase(&a);
+  printf("%i", a);
+  // prints 2
 };
 ```
 
@@ -122,7 +122,3 @@ Every time we want to change the value of the pointer we need to use the star pr
 ## Wrap-up
 
 Hopefully after writing this small article I won't have to google again how pointers work, but just in case I forget again, I know I just need to come back here.
-
-
-
-

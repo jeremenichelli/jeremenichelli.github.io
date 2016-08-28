@@ -1,7 +1,7 @@
 ---
 layout: default
 title: How Gulp helped me to deal with crap
-resume: It's not a big secret that maintaining code that we didn't create is a big pain sometimes. Of course the only fact that other developer did it puts us in an uncomfortable place because there's a high chance that you're trying to understand patterns and approaches you wouldn't have taken, which doesn't mean they are wrong they just aren't yours. For a few months I had to deal not only with this, but with code full of bad practices. 
+resume: It's not a big secret that maintaining code that we didn't create is a big pain sometimes. Of course the only fact that other developer did it puts us in an uncomfortable place because there's a high chance that you're trying to understand patterns and approaches you wouldn't have taken, which doesn't mean they are wrong they just aren't yours. For a few months I had to deal not only with this, but with code full of bad practices.
 ---
 
 Some guys from my home town have a news site and they needed some new stuff and little tweaks on the design, after looking at the code I said that I would only work on it if they gave me the time to improve loading times and clean a little bit the code. And you know what, it wasn't that bad. At the beggining I didn't know how to work around this and get a good output at the end. Two things came to help me in a big way: Gulp and LESS.
@@ -52,21 +52,21 @@ In case you've never heard of it, <a href="http://www.gulpjs.com" target="_blank
 One of the reasons why I prefer it from <a href="http://www.gruntjs.com" target="_blank">GruntJS</a> is that is faster to set and easier to read, if this is the first time you ever read a **gulpfile** you will notice that you will be able to guess what's happening in most of the lines.
 
 ```js
-var gulp = require('gulp'),
-    autoprefixer = require('gulp-autoprefixer'),
-    rename = require('gulp-rename'),
-    less = require('gulp-less'),
-    minifyCss = require('gulp-minify-css');
+var gulp = require('gulp');
+var autoprefixer = require('gulp-autoprefixer');
+var rename = require('gulp-rename');
+var less = require('gulp-less');
+var minifyCss = require('gulp-minify-css');
 
 gulp.task('styles', function() {
-    return gulp.src('./src/less/main.less')
-        .pipe(less())
-        .pipe(autoprefixer())
-        .pipe(minifyCss())
-        .pipe(rename({
-            suffix: '.min'
-        }))
-        .pipe(gulp.dest('./assets/styles/'));
+  return gulp.src('./src/less/main.less')
+    .pipe(less())
+    .pipe(autoprefixer())
+    .pipe(minifyCss())
+    .pipe(rename({
+        suffix: '.min'
+      }))
+    .pipe(gulp.dest('./assets/styles/'));
 });
 ```
 

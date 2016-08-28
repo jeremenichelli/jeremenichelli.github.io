@@ -34,7 +34,7 @@ link.rel = 'stylesheet';
 link.href = 'styles.css';
 
 link.onload = function() {
-    // loaded -- now, do something!
+  // loaded -- now, do something!
 };
 
 document.head.appendChild(link);
@@ -46,8 +46,8 @@ In some browsers this event is executed twice, to prevent that you can assign `n
 
 ```js
 link.onload = function() {
-    this.onload = null;
-    // loaded -- now, do something!
+  this.onload = null;
+  // loaded -- now, do something!
 };
 ```
 
@@ -62,13 +62,13 @@ For this case, I just needed one thing, a collection of strings for all the CSS 
 
 ```js
 link.onload = function() {
-    this.onload = null;
+  this.onload = null;
 
-    var rules = this.sheet.cssRules;
+  var rules = this.sheet.cssRules;
 
-    for (var i = 0, len = rules.length; i < len; i++) {
-        // rules[i].cssText -- do something with it!
-    }
+  for (var i = 0, len = rules.length; i < len; i++) {
+    // rules[i].cssText -- do something with it!
+  }
 };
 ```
 
@@ -76,17 +76,17 @@ We had to crawl a little deep inside the `sheet` property but now we can iterate
 
 ```js
 link.onload = function() {
-    this.onload = null;
+  this.onload = null;
 
-    var rules = this.sheet.cssRules,
-        ssContent = '';
+  var rules = this.sheet.cssRules;
+  var ssContent = '';
 
-    for (var i = 0, len = rules.length; i < len; i++) {
-        ssContent += rules[i].cssText;
-    }
+  for (var i = 0, len = rules.length; i < len; i++) {
+    ssContent += rules[i].cssText;
+  }
 
-    // use link href as key
-    localStorage.setItem(this.href, ssContent);
+  // use link href as key
+  localStorage.setItem(this.href, ssContent);
 };
 ```
 
@@ -101,28 +101,28 @@ link.href = 'styles.css';
 var stored = localStorage.getItem(link.href);
 
 if (stored) {
-    // retrieve stored rules
-    var style = document.createElement('style');
+  // retrieve stored rules
+  var style = document.createElement('style');
 
-    style.textContent = stored;
+  style.textContent = stored;
 
-    document.head.appendChild(style);
+  document.head.appendChild(style);
 } else {
-    // nothing stored, load stylesheet
-    link.onload = function() {
-        this.onload = null;
+  // nothing stored, load stylesheet
+  link.onload = function() {
+    this.onload = null;
 
-        var rules = this.sheet.cssRules,
-            ssContent = '';
+    var rules = this.sheet.cssRules;
+    var ssContent = '';
 
-        for (var i = 0, len = rules.length; i < len; i++) {
-            ssContent += rules[i].cssText;
-        }
+    for (var i = 0, len = rules.length; i < len; i++) {
+      ssContent += rules[i].cssText;
+    }
 
-        localStorage.setItem(this.href, ssContent);
-    };
+    localStorage.setItem(this.href, ssContent);
+  };
 
-    document.head.appendChild(link);
+  document.head.appendChild(link);
 }
 ```
 
@@ -150,7 +150,3 @@ Even when you are not sure if what you are doing will work, or there's another t
 This approach lives in its own [repository](https://github.com/jeremenichelli/store-css) in case you want to check its final version, covering a lot of edge cases and variants.
 
 The veredict is that *caching beats web storage*, but loading our stylesheets asynchornously is a proven benefit so I encourage you to use [loadCSS by Filament Group](https://github.com/filamentgroup/loadCSS) that takes care of that.
-
-
-
-

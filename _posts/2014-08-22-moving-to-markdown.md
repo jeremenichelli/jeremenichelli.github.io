@@ -14,8 +14,8 @@ The best way to achieve this while following the standards is to write a *&lt;pr
 
 ```
 <pre><code>function doSomething(){
-    var anything = 'string';
-    <span class="comment">// do something</span>
+  var anything = 'string';
+  <span class="comment">// do something</span>
 }</pre></code>
 ```
 
@@ -31,8 +31,8 @@ There are a lot of Markdown interpreters that you can use, most of them respect 
 
 ```js
 function doSomething(){
-    var anything = 'string';
-    // do something
+  var anything = 'string';
+  // do something
 }
 ```
 

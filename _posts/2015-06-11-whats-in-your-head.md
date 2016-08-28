@@ -17,7 +17,7 @@ Here is our head for the moment.
 
 ```html
 <head>
-    <title>Page Title | Section | Website Title</title>
+  <title>Page Title | Section | Website Title</title>
 </head>
 ```
 
@@ -59,12 +59,12 @@ Now, let's update our head tag.
 
 ```html
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Some description of the page.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>Page Title | Section | Website Title</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Some description of the page.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Page Title | Section | Website Title</title>
 </head>
 ```
 
@@ -74,15 +74,15 @@ This link tag is used to specify which url the page is refering in case you have
 
 ```html
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Some description of the page.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>Page Title | Section | Website Title</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Some description of the page.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- if your mobile URL is different from the desktop URL, add a canonical link to the desktop page -->
-    <link rel="canonical" href="http://www.example.com/path/to/page">
+  <title>Page Title | Section | Website Title</title>
+
+  <!-- if your mobile URL is different from the desktop URL, add a canonical link to the desktop page -->
+  <link rel="canonical" href="http://www.example.com/path/to/page">
 </head>
 ```
 
@@ -132,7 +132,7 @@ No. Don't put scripts here since they are going to block rendering. In cases whe
 
 ```html
 <!--[if lt IE 9]>
-    <script src="assets/scripts/html5shiv.js"></script>
+  <script src="assets/scripts/html5shiv.js"></script>
 <![endif]-->
 ```
 
@@ -159,65 +159,64 @@ Let's take a deep breath and see what a complete **head** tag looks like.
 
 ```html
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Some description of the page.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>Page Title | Section | Website Title</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Some description of the page.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- if your mobile URL is different from the desktop URL, add a canonical link to the desktop page -->
-    <link rel="canonical" href="http://www.example.com/path/to/page">
+  <title>Page Title | Section | Website Title</title>
 
-    <!-- Cover all apple devices -->
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon-180x180.png">
+  <!-- if your mobile URL is different from the desktop URL, add a canonical link to the desktop page -->
+  <link rel="canonical" href="http://www.example.com/path/to/page">
 
-    <!-- Old school favicon -->
-    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+  <!-- Cover all apple devices -->
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon-180x180.png">
 
-    <!-- General favicon sizes for different sizes -->
-    <link rel="icon" type="image/png" href="assets/favicon/favicon-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="assets/favicon/favicon-160x160.png" sizes="160x160">
-    <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="assets/favicon/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png" sizes="32x32">
+  <!-- Old school favicon -->
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico">
 
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Page title">
-    <link rel="icon" sizes="192x192" href="assets/favicon/chrome-touch-icon-192x192.png">
+  <!-- General favicon sizes for different sizes -->
+  <link rel="icon" type="image/png" href="assets/favicon/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="assets/favicon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="assets/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png" sizes="32x32">
 
-    <!-- Web Application Manifest -->
-    <link rel="manifest" href="manifest.json">
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Page title">
+  <link rel="icon" sizes="192x192" href="assets/favicon/chrome-touch-icon-192x192.png">
 
-    <!-- theme color for Chrome mobile -->
-    <meta name="theme-color" content="#3372DF">
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
 
-    <!-- Icon for Win8 -->
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/favicon/mstile-144x144.png">
+  <!-- theme color for Chrome mobile -->
+  <meta name="theme-color" content="#3372DF">
 
-    <!--[if lt IE 9]>
-        <script>
-            // minified code from html5shiv
-        </script>
-    <![endif]-->
+  <!-- Icon for Win8 -->
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="assets/favicon/mstile-144x144.png">
 
-    <style>
-        // above the fold CSS rules
-    </style>
+  <!--[if lt IE 9]>
+    <script>
+      // minified code from html5shiv
+    </script>
+  <![endif]-->
+
+  <style>
+    // above the fold CSS rules
+  </style>
 </head>
 ```
 
 Pretty big, right? It's even bigger than the head tag of this post you're reading. Of course you don't need all of these, that depends on the browser scope of your project and what type of project it is.
 
 Maybe you don't need all these favicon declarations, or you don't need to cover HTML5 tags, but in case you want a nice cross browsing experience following the last trends, your head will have to look a little similar to this one.
-

@@ -21,12 +21,12 @@ Let's go with something simple.
 {% raw %}{% include header.html %}{% endraw %}
 
 <section class="post--content">
-    {% raw %}<p class="post--date">{{ page.date | date_to_string }}</p>{% endraw %}
+  {% raw %}<p class="post--date">{{ page.date | date_to_string }}</p>{% endraw %}
 
-    {% raw %}<h1>{{ page.title }}</h1>{% endraw %}
-    {% raw %}<p>{{ page.introduction }}</p>{% endraw %}
+  {% raw %}<h1>{{ page.title }}</h1>{% endraw %}
+  {% raw %}<p>{{ page.introduction }}</p>{% endraw %}
 
-    {% raw %}{{ content }}{% endraw %}
+  {% raw %}{{ content }}{% endraw %}
 </section>
 
 {% raw %}{% include footer.html %}{% endraw %}
@@ -66,41 +66,37 @@ The url that your post will have can be changed in the *_config.yml* file and Je
 
 It's time to brag about your writing skills, **posts** is an array accessible in any file through the `site` namespace. It's up to you to show them in your home or create a new page where you can list them. Whatever your choice is, this will get the job done.
 
-```html
-{% raw %}
+```html{% raw %}
 <ul>
 {% for post in site.posts %}
-    <li>
-        <a href="{{ post.url }}">
-            <h2>{{ post.title }}</h2>
-        </a>
-    </li>
+  <li>
+    <a href="{{ post.url }}">
+      <h2>{{ post.title }}</h2>
+    </a>
+  </li>
 {% endfor %}
-</ul>
-{% endraw %}
+</ul>{% endraw %}
 ```
 
 Not so hard, but what if you're launching your site and didn't wrote anything yet?
 
-```html
-{% raw %}
+```html{% raw %}
 {% if site.posts.size > 0 %}
-    <ul>
-    {% for post in site.posts %}
-        <li>
-            <a href="{{ post.url }}">
-                <h2>{{ post.title }}</h2>
-            </a>
-        </li>
-    {% endfor %}
-    </ul>
-    {% else %}
-    <p>There are no posts available right. Come back soon!</p>
-{% endif %}
-{% endraw %}
+  <ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">
+        <h2>{{ post.title }}</h2>
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+  {% else %}
+  <p>There are no posts available right. Come back soon!</p>
+{% endif %}{% endraw %}
 ```
 
-A **for** loop and an **if** block, I'm guessing you're familiar with those in any other programming language, that's them in their Liquid form. Of course you have plenty of options to structure this view and show the date, the excerpt or any data related to posts. 
+A **for** loop and an **if** block, I'm guessing you're familiar with those in any other programming language, that's them in their Liquid form. Of course you have plenty of options to structure this view and show the date, the excerpt or any data related to posts.
 
 As you get into the Liquid language the opportunities will multiply.
 

@@ -11,19 +11,19 @@ Let's remember the way we are writing constructor functions today.
 
 // constructor function
 function Circle(r) {
-    this.radius = r;
+  this.radius = r;
 }
 
 // prototyped method
 Circle.prototype.getCircumference = function() {
-    return this.diameter * Math.PI;
+  return this.diameter * Math.PI;
 };
 
 // computed property
 Object.defineProperty(Circle.prototype, 'diameter', {
-    get: function() {
-        this.radius * 2;
-    }
+  get: function() {
+    this.radius * 2;
+  }
 });
 ```
 
@@ -37,15 +37,15 @@ In order to avoid this, the new standard defines a `class` reserved word which a
 // ES2015
 
 class Circle {
-    // constructor function
-    constructor(r) {
-        this.radius = r;
-    }
+  // constructor function
+  constructor(r) {
+    this.radius = r;
+  }
 
-    // prototyped method
-    getCircumference() {
-        return this.diameter * Math.PI;
-    }
+  // prototyped method
+  getCircumference() {
+    return this.diameter * Math.PI;
+  }
 }
 ```
 
@@ -62,20 +62,20 @@ Thanks to this new access to the prototype of the constructor and the **get** an
 // ES2015
 
 class Circle {
-    // constructor function
-    constructor(r) {
-        this.radius = r;
-    }
+  // constructor function
+  constructor(r) {
+    this.radius = r;
+  }
 
-    // prototyped method
-    getCircumference() {
-        return this.diameter * Math.PI;
-    }
+  // prototyped method
+  getCircumference() {
+    return this.diameter * Math.PI;
+  }
 
-    // computed property
-    get diameter() {
-        this.radius * 2;
-    }
+  // computed property
+  get diameter() {
+    this.radius * 2;
+  }
 }
 
 let sample = new Circle(5); // same as in ES5
@@ -97,14 +97,14 @@ This time, our new friends on the neighbourhood are **extends** and **super** wo
 // ES2015
 
 class Rectangle {
-    constructor(height, width) {
-        this.height = height;
-        this.width = width;
-    }
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
 
-    get area() {
-        return this.height * this.width;
-    }
+  get area() {
+    return this.height * this.width;
+  }
 }
 ```
 
@@ -114,20 +114,20 @@ Talking just a little bit about geometry and shapes, squares are rectangles whic
 // ES2015
 
 class Rectangle {
-    constructor(height, width) {
-        this.height = height;
-        this.width = width;
-    }
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
 
-    get area() {
-        return this.height * this.width;
-    }
+  get area() {
+    return this.height * this.width;
+  }
 }
 
 class Square extends Rectangle {
-    constructor(side) {
-        super(side, side);
-    }
+  constructor(side) {
+    super(side, side);
+  }
 }
 
 let sample = new Square(3.5);
@@ -145,23 +145,23 @@ It can also work as a namespace for calling inherited methods.
 // ES2015
 
 class Person {
-    constructor(name) {
-        this.name = name;
-    }
+  constructor(name) {
+    this.name = name;
+  }
 
-    salute() {
-        return 'Hi! My name is ' + this.name;
-    }
+  salute() {
+    return 'Hi! My name is ' + this.name;
+  }
 }
 
 class Doctor extends Person {
-    constructor(name) {
-        super(name);
-    }
+  constructor(name) {
+    super(name);
+  }
 
-    salute() {
-        return super.salute() + ' and I am a Doctor!';
-    }
+  salute() {
+    return super.salute() + ' and I am a Doctor!';
+  }
 }
 
 let greg = new Doctor('Gregory');

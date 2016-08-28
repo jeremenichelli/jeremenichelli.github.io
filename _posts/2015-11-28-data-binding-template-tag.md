@@ -38,7 +38,7 @@ The data can come from a request or a plain object that resides in a script.
 
 ```js
 var userData = {
-    name: 'Jeremias Menichelli'
+  name: 'Jeremias Menichelli'
 };
 ```
 
@@ -64,7 +64,7 @@ This new little but powerful friend can be placed inside our main page but nothi
 
 ```html
 <template id="user-template">
-    <p mns-text="user.name"></p>
+  <p mns-text="user.name"></p>
 </template>
 ```
 
@@ -94,7 +94,7 @@ Let's create a placeholder view in which we're going to append the content and t
 <div id="user-view"></div>
 
 <template id="user-template">
-    <p mns-text="user.name"></p>
+  <p mns-text="user.name"></p>
 </template>
 ```
 
@@ -106,7 +106,7 @@ Then get the elements and build the methods.
  * for convension use <TYPE>-template notation to name them
  */
 var templates = {
-    user: document.getElementById('user-template');
+  user: document.getElementById('user-template');
 };
 
 /*
@@ -114,28 +114,28 @@ var templates = {
  * for convension use <TYPE>-view notation to name them
  */
 var views = {
-    user: document.getElementById('user-view');
+  user: document.getElementById('user-view');
 };
 
 /*
  * Clone template method
  */
 function clone(name) {
-    return document.importNode(templates[name].content, true);
+  return document.importNode(templates[name].content, true);
 }
 
 /*
  * Build view method
  */
 function build(name, data) {
-    var temp = clone(name);
+  var temp = clone(name);
 
-    mnster.view(temp, { context: name, model: data });
+  mnster.view(temp, { context: name, model: data });
 
-    // clean previous content
-    views.name.innerHTML = '';
+  // clean previous content
+  views.name.innerHTML = '';
 
-    views[name].appendChild(temp);
+  views[name].appendChild(temp);
 }
 ```
 
@@ -155,9 +155,9 @@ Also, the template tag is not supported in any Internet Explorer version and it'
 
 ```js
 if ('content' in document.createElement('template')) {
-    // template tag supported
+  // template tag supported
 } else {
-    // template tag not supported, apply fallback
+  // template tag not supported, apply fallback
 }
 ```
 
@@ -173,7 +173,7 @@ You can check it out in its <a href="https://github.com/jeremenichelli/octosearc
 
 ## Wrap-up
 
-Again, I'm not against using frameworks. If you think is the best option for your project, if loading times are not that critical and you're aware of performance and good practices around your choice then you'll be fine, but it's a nice habit to first go and check if you can use the amazing features the browsers bring today out of the box and give the user a better experience. 
+Again, I'm not against using frameworks. If you think is the best option for your project, if loading times are not that critical and you're aware of performance and good practices around your choice then you'll be fine, but it's a nice habit to first go and check if you can use the amazing features the browsers bring today out of the box and give the user a better experience.
 
 There are tons of documentation around, examples and small libraries to fill some spots on your project. The template tag and a custom data binding library are just a small example of this, but they are also a concept proof of the options we have to develop today.
 

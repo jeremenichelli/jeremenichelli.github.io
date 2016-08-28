@@ -41,15 +41,15 @@ You can still play a little with Liquid here. For example inside the head tag yo
 
 ```html
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>
-        {% raw %}{% if page.title %} {{ page.title }}
-        {% else %} {{ site.title }}
-        {% endif %}{% endraw %}
-    </title>
-    <meta name="description" content="{% raw %}{{ site.description }}{% endraw %}">
-    <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>
+    {% raw %}{% if page.title %} {{ page.title }}
+    {% else %} {{ site.title }}
+    {% endif %}{% endraw %}
+  </title>
+  <meta name="description" content="{% raw %}{{ site.description }}{% endraw %}">
+  <meta name="viewport" content="width=device-width">
 </head>
 ```
 
@@ -63,18 +63,18 @@ This is the name of your folder where your layouts, pretty obvious, are going to
 ```html
 <!DOCTYPE html>
 <html lang="en">
-    
-    {% raw %}{% include head.html %}{% endraw %}
 
-    {% raw %}{% include header.html %}{% endraw %}
+  {% raw %}{% include head.html %}{% endraw %}
 
-    <body>
-        <section class="page-wrapper">
-            {% raw %}{{content}}{% endraw %}
-        </section>
-    </body>
+  {% raw %}{% include header.html %}{% endraw %}
 
-    {% raw %}{% include footer.html %}{% endraw %}
+  <body>
+    <section class="page-wrapper">
+      {% raw %}{{content}}{% endraw %}
+    </section>
+  </body>
+
+  {% raw %}{% include footer.html %}{% endraw %}
 </html>
 ```
 
@@ -83,22 +83,22 @@ Pretty easy to understand. We're going to call this layout **default.html**, but
 ```html
 <!DOCTYPE html>
 <html lang="en">
-    
-    {% raw %}{% include head.html %}{% endraw %}
 
-    {% raw %}{% include header.html %}{% endraw %}
+  {% raw %}{% include head.html %}{% endraw %}
 
-    <body>
-        <section class="post-wrapper">
-            <p class="post-date">{% raw %}{{ page.date }}{% endraw %}</p>
-        </section>
-        <h1 class="post-title">{{ page.title}}</h1>
-        <article class="post-content">
-            {% raw %}{{content}}{% endraw %}
-        </article>
-    </body>
+  {% raw %}{% include header.html %}{% endraw %}
 
-    {% raw %}{% include footer.html %}{% endraw %}
+  <body>
+    <section class="post-wrapper">
+      <p class="post-date">{% raw %}{{ page.date }}{% endraw %}</p>
+    </section>
+    <h1 class="post-title">{{ page.title}}</h1>
+    <article class="post-content">
+      {% raw %}{{content}}{% endraw %}
+    </article>
+  </body>
+
+  {% raw %}{% include footer.html %}{% endraw %}
 </html>
 ```
 

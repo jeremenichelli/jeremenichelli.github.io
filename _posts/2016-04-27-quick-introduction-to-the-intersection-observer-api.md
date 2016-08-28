@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Quick introduction to the Intersection Observer API
+title: Quick introduction to the Intersection Observer&nbsp;API
 resume: These last years browsers vendors have paid more attention to the riddles developers were trying to solve to implement native and more performant solutions.
 ---
 
@@ -13,15 +13,15 @@ First thing you need to do is to instance a new observer passing a **callback** 
 
 ```js
 let observer = new IntersectionObserver(onChange, {
-    threshold: [ .25 ]
+  threshold: [ .25 ]
 });
 
 function onChange(changes) {
-    // for each element that has become visible
-    changes.forEach(change => {
-        // add class to element
-        change.target.classList.add('visible');
-    }
+  // for each element that has become visible
+  changes.forEach(change => {
+    // add class to element
+    change.target.classList.add('visible');
+  }
 }
 ```
 
@@ -42,9 +42,9 @@ let observer = new IntersectionObserver(onChange);
 observer.observe(document.querySelector('.hidden'));
 
 function onChange(changes) {
-    changes.forEach(change => {
-        change.target.classList.remove('hidden');
-    }
+  changes.forEach(change => {
+    change.target.classList.remove('hidden');
+  }
 }
 ```
 
@@ -58,12 +58,12 @@ let observer = new IntersectionObserver(onChange);
 observer.observe(document.querySelector('.hidden'));
 
 function onChange(changes) {
-    changes.forEach(change => {
-        change.target.classList.remove('hidden');
+  changes.forEach(change => {
+    change.target.classList.remove('hidden');
 
-        // stop observing the current target
-        observer.unobserve(change.target);
-    }
+    // stop observing the current target
+    observer.unobserve(change.target);
+  }
 }
 ```
 
@@ -75,13 +75,13 @@ let observer = new IntersectionObserver(onChange);
 observer.observe(document.querySelector('.hidden'));
 
 function onChange(changes) {
-    changes.forEach(change => {
-        change.target.classList.remove('hidden');
-        observer.unobserve(change.target);
+  changes.forEach(change => {
+    change.target.classList.remove('hidden');
+    observer.unobserve(change.target);
 
-        // thank you, we don't need you anymore
-        observer.disconnect();
-    }
+    // thank you, we don't need you anymore
+    observer.disconnect();
+  }
 }
 ```
 
@@ -98,13 +98,13 @@ To show an actual use case let's do some lazy loading, a practice useful to impr
 let observer = new IntersectionObserver(onChange);
 
 function onChange(changes) {
-    changes.forEach(change => {
-        // take image url from `data-src` attribute
-        change.target.src = change.target.dataset.src;
+  changes.forEach(change => {
+    // take image url from `data-src` attribute
+    change.target.src = change.target.dataset.src;
 
-        // stop observing the current target
-        observer.unobserve(change.target);
-    }
+    // stop observing the current target
+    observer.unobserve(change.target);
+  }
 }
 
 // convert node list to array
@@ -123,7 +123,7 @@ Since this is super new in the web world it's not available in any browser yet. 
 
 In the mean time you can grab [this nice polyfill][1] written by Surma Das from Google or check it out in [Chrome Canary][2]. Want to see it in action? Check out this [living example][3] by Wilson Page.
 
-If you want to know more, I suggest reading the [explainer][4] present in GitHub's API sketch.
+To know more I suggest reading the [explainer][4] present in GitHub's API sketch.
 
 [1]: https://github.com/surma-dump/IntersectionObserver/blob/polyfill/polyfill/intersectionobserver-polyfill.js
 [2]: https://www.google.es/chrome/browser/canary.html

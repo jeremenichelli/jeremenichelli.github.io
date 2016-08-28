@@ -10,56 +10,56 @@ For the ones that don't work with SASS or LESS or never heard about it, the ampe
 
 Examples are better, right?
 
-<div class="highlight"><pre>
-<code>.box {
-    display: block;
-    float: left;
+```less
+.box {
+  display: block;
+  float: left;
 
-    &.small {
-        height: 40px;
-        width: 40px;
-    }
+  &.small {
+    height: 40px;
+    width: 40px;
+  }
 
-    &.large {
-        height: 90px;
-        width: 90px;
-    }
-}</code>
-</pre></div>
+  &.large {
+    height: 90px;
+    width: 90px;
+  }
+}
+```
 
 Remember that new declarations inside curly braces in LESS indicates inner elements, but using an ampersand changes everything and we are now indicating that a *.box* element with an additional class that can be **small** or **medium** needs extra styles. This is the result...
 
-<div class="highlight"><pre>
-<code>.box.small {
-    display: block;
-    float: left;
-    height: 40px;
-    width: 40px;
+```css
+.box.small {
+  display: block;
+  float: left;
+  height: 40px;
+  width: 40px;
 }
 
 .box.medium {
-    display: block;
-    float: left;
-    height: 90px;
-    width: 90px;
-}</code>
-</pre></div>
+  display: block;
+  float: left;
+  height: 90px;
+  width: 90px;
+}
+```
 
 It's a nice touch, maybe not a big thing. To me this little guy it's great when working with elements that have pseudo-elements or different states like buttons or links. It's also very useful inside mixins.
 
-<div class="highlight"><pre>
-<code>.clearfix() {
-    &:before,
-    &:after {
-        content: " ";
-        display: table;
-    }
+```less
+.clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
 
-    &:after {
-        clear: both;
-    }
-}</code>
-</pre></div>
+  &:after {
+    clear: both;
+  }
+}
+```
 
 I love how the symbol eliminates the noise in the declaration. You know that everything inside that mixin takes care of one specific thing,. It's like a closure, you don't need to look for other style declaration for that, it's all there. Simpler to read, ergo simpler to mantain.
 
@@ -68,62 +68,62 @@ I love how the symbol eliminates the noise in the declaration. You know that eve
 
 Now let's see what happens when you need to style buttons or links.
 
-<div class="highlight"><pre>
-<code>.button() {
-    background-color: #f90000;
-    border: solid 1px #9a3590;
-    border-radius: 3px;
-    color: #ffffff;
-    min-width: 120px;
-    padding: 10px;
+```less
+.button() {
+  background-color: #f90000;
+  border: solid 1px #9a3590;
+  border-radius: 3px;
+  color: #ffffff;
+  min-width: 120px;
+  padding: 10px;
 
-    &:hover {
-        background-color: #ff3a3a;
-    }
+  &:hover {
+    background-color: #ff3a3a;
+  }
 
-    &[disabled] {
-        opacity: .5;
-    }
-}</code>
-</pre></div>
+  &[disabled] {
+    opacity: .5;
+  }
+}
+```
 
 The code is pretty straight forward and if you use variables inside the mixin you can build flavors of button in a really easy way.
 
-<div class="highlight"><pre>
-<code>.button(@color) {
-    background-color: @color;
-    border: solid 1px @color - #555555;
-    border-radius: 3px;
-    color: #ffffff;
-    min-width: 120px;
-    padding: 10px;
+```less
+.button(@color) {
+  background-color: @color;
+  border: solid 1px @color - #555555;
+  border-radius: 3px;
+  color: #ffffff;
+  min-width: 120px;
+  padding: 10px;
 
-    &:hover {
-        background-color: @color + #222222;
-    }
+  &:hover {
+    background-color: @color + #222222;
+  }
 
-    &:active {
-        background-color: @color + #111111;
-        color: #e0e0e0;
-    }
+  &:active {
+    background-color: @color + #111111;
+    color: #e0e0e0;
+  }
 
-    &[disabled] {
-        opacity: .5;
-    }
+  &[disabled] {
+    opacity: .5;
+  }
 }
 
 .red-button {
-    .button(#d32f2f);
+  .button(#d32f2f);
 }
 
 .blue-button {
-    .button(#303f9f);
+  .button(#303f9f);
 }
 
 .green-button {
-    .button(#388e3c);
-}</code>
-</pre></div>
+  .button(#388e3c);
+}
+```
 
 I don't know you but to me that's beautiful.
 
@@ -132,39 +132,39 @@ I don't know you but to me that's beautiful.
 
 Well this has nothing to do with the ampersand selector, but this simple feature is a beast if you know where you can use it. What it basically does is to put variables content inside strings. Again, examples are better.
 
-<div class="highlight"><pre>
-<code>@base-img-url: '../img'
+```less
+@base-img-url: '../img'
 
 #header {
-    background-image: url('@{base-img-url}/banner.jpg');
-    background-repeat: no-repeat;
-}</code>
-</pre></div>
+  background-image: url('@{base-img-url}/banner.jpg');
+  background-repeat: no-repeat;
+}
+```
 
 There's a higher chance you'll use the same base path for images so in case you need to change it for some reason, you only have to do it in one place.
 
 Here's another place where I usually need this...
 
-<div class="highlight"><pre>
-<code>.opacity(@value) {
-    @percentValue: @value * 100;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=@{percentValue})";
-    filter: alpha(opacity=7@percentValue);
-    -moz-opacity: @value;
-    -khtml-opacity: @value;
-    opacity: @value;
+```less
+.opacity(@value) {
+  @percentValue: @value * 100;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=@{percentValue})";
+  filter: alpha(opacity=7@percentValue);
+  -moz-opacity: @value;
+  -khtml-opacity: @value;
+  opacity: @value;
 }
 
 .overlay {
-    .opacity(0.75);
-    background-color: #000000;
-    transition: opacity .25s ease; 
+  .opacity(0.75);
+  background-color: #000000;
+  transition: opacity .25s ease;
 
-    &.closed {
-        .opacity(0);
-    }
-}</code>
-</pre></div>
+  &.closed {
+    .opacity(0);
+  }
+}
+```
 
 
 ## Wrap-up

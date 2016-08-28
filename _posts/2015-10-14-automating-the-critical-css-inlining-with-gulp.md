@@ -6,7 +6,7 @@ resume: Stylesheets can block the rendering process of your site not allowing th
 
 ## Critical rendering path
 
-Including styles and scripts on top of your site can give a very bad experience to the user. Each time a stylesheet is found in your page the render-tree needs to be updated and while this happens the browser stops parsing content delaying the first view of the whole site. 
+Including styles and scripts on top of your site can give a very bad experience to the user. Each time a stylesheet is found in your page the render-tree needs to be updated and while this happens the browser stops parsing content delaying the first view of the whole site.
 
 A good solution is to inline the critical styles in the **&lt;head&gt;** tag and load the rest of them asynchronically. This way we deliver to the user a consumable site, partially loaded but avoiding a blocking experience.
 
@@ -43,10 +43,10 @@ Then create a file called `gulpfile.js` in the root of your project and require 
 
 ```js
 // require the dependencies
-var gulp = require('gulp'),
-    rename = require('gulp-rename'),
-    concat = require('gulp-concat-util'),
-    minify = require('gulp-minify-css');
+var gulp = require('gulp');
+var rename = require('gulp-rename');
+var concat = require('gulp-concat-util');
+var minify = require('gulp-minify-css');
 ```
 
 Let's take the critical file first. What do we need to do? Grab the file, minify its content, wrap it with `style` tags and convert it to a file we can include in our site generator, let's take Jekyll as an example.
@@ -54,28 +54,28 @@ Let's take the critical file first. What do we need to do? Grab the file, minify
 ```js
 // critical styles task
 gulp.task('styles:critical', function() {
-    return gulp.src('src/styles/critical.css')
-        // minify content
-        .pipe(minify())
-        // wrap with style tags
-        .pipe(concat.header('<style>'))
-        .pipe(concat.footer('</style>'))
-        // convert it to an include file
-        .pipe(rename({
-            basename: 'criticalCSS',
-            extname: '.html'
-        }))
-        // insert file in the includes folder
-        .pipe(gulp.dest('_includes/'));
-});
+  return gulp.src('src/styles/critical.css')
+    // minify content
+    .pipe(minify())
+    // wrap with style tags
+    .pipe(concat.header('<style>'))
+    .pipe(concat.footer('</style>'))
+    // convert it to an include file
+    .pipe(rename({
+        basename: 'criticalCSS',
+        extname: '.html'
+      }))
+    // insert file in the includes folder
+    .pipe(gulp.dest('_includes/'));
+    });
 ```
 
 Then you just need to include the **criticalCSS.html** file in the head of the site.
 
 ```html
 <head>
-    ...
-    {% raw %}{% include criticalCSS.html %}{% endraw %}
+  ...
+  {% raw %}{% include criticalCSS.html %}{% endraw %}
 </head>
 ```
 
@@ -87,19 +87,19 @@ The only thing you need to change if your site is not built with Jekyll is the d
 
 ```js
 gulp.task('styles:critical', function() {
-    return gulp.src('wp-content/themes/your_theme/src/styles/critical.css')
-        // minify it
-        .pipe(minify())
-        // wrap with style tags
-        .pipe(concat.header('<style>'))
-        .pipe(concat.footer('</style>'))
-        // convert it to a php file
-        .pipe(rename({
-            basename: 'criticalCSS',
-            extname: '.php'
-        }))
-        // insert it Wordpress theme folder
-        .pipe(gulp.dest('wp-content/themes/your_theme/'));
+  return gulp.src('wp-content/themes/your_theme/src/styles/critical.css')
+    // minify it
+    .pipe(minify())
+    // wrap with style tags
+    .pipe(concat.header('<style>'))
+    .pipe(concat.footer('</style>'))
+    // convert it to a php file
+    .pipe(rename({
+        basename: 'criticalCSS',
+        extname: '.php'
+      }))
+    // insert it Wordpress theme folder
+    .pipe(gulp.dest('wp-content/themes/your_theme/'));
 });
 ```
 
@@ -107,12 +107,12 @@ Then include the file in `head.php`.
 
 ```html
 <head>
-    ...
-    <?php include (TEMPLATEPATH . '/criticalCSS.php'); ?>
+  ...
+  <?php include (TEMPLATEPATH . '/criticalCSS.php'); ?>
 </head>
 ```
 
-As you see, adapting this approach to a completely different platform is very simple. 
+As you see, adapting this approach to a completely different platform is very simple.
 
 
 ### Pre-processing critical styles
@@ -129,25 +129,25 @@ Require them in your `gulpfile.js`.
 
 ```js
 // in addition to the packages required previously
-var less = require('gulp-less'),
-    autoprefixer = require('gulp-autoprefixer');
+var less = require('gulp-less');
+var autoprefixer = require('gulp-autoprefixer');
 ```
 
 Add these new steps to the task.
 
 ```js
 gulp.task('styles:critical', function() {
-    return gulp.src('src/styles/critical.less')
-        .pipe(less())
-        .pipe(autoprefixer())
-        .pipe(minify())
-        .pipe(concat.header('<style>'))
-        .pipe(concat.footer('</style>'))
-        .pipe(rename({
-            basename: 'criticalCSS',
-            extname: '.html'
-        }))
-        .pipe(gulp.dest('_includes/'));
+  return gulp.src('src/styles/critical.less')
+    .pipe(less())
+    .pipe(autoprefixer())
+    .pipe(minify())
+    .pipe(concat.header('<style>'))
+    .pipe(concat.footer('</style>'))
+    .pipe(rename({
+        basename: 'criticalCSS',
+        extname: '.html'
+      }))
+    .pipe(gulp.dest('_includes/'));
 });
 ```
 
@@ -157,12 +157,12 @@ Let's now close the circle and generate a `.css` file for the rest of the styles
 
 ```js
 gulp.task('styles:noncritical', function() {
-    return gulp.src('src/styles/noncritical.css')
-        .pipe(minify())
-        .pipe(rename({
-            basename: 'site'
-        }))
-        .pipe(gulp.dest('assets/styles/'));
+  return gulp.src('src/styles/noncritical.css')
+    .pipe(minify())
+    .pipe(rename({
+        basename: 'site'
+      }))
+    .pipe(gulp.dest('assets/styles/'));
 });
 ```
 
@@ -177,8 +177,8 @@ To actually automate this, we need to trigger those tasks every time we modify a
 
 ```js
 gulp.task('watch', function() {
-    gulp.watch([ 'src/styles/critical.css' ], [ 'styles:critical' ]);
-    gulp.watch([ 'src/styles/noncritical.css' ], [ 'styles:noncritical' ]);    
+  gulp.watch([ 'src/styles/critical.css' ], [ 'styles:critical' ]);
+  gulp.watch([ 'src/styles/noncritical.css' ], [ 'styles:noncritical' ]);    
 });
 ```
 

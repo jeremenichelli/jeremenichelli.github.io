@@ -21,7 +21,7 @@ Nowadays it's really weird to not use a preprocesor, so let's suppose we are usi
 
 ## Keeping it simple
 
-First thing is to detect what we need to do, in order to know what packages we're going to install. For this recipe, process `.less` files, minimize them and move them to the correct folder. 
+First thing is to detect what we need to do, in order to know what packages we're going to install. For this recipe, process `.less` files, minimize them and move them to the correct folder.
 
 To visualize how powerful **npm scripts** are, this is all we need to install.
 
@@ -35,10 +35,10 @@ In the **scripts** property of the `package.json` file of your project, add a `s
 
 ```json
 {
-    ...
-    "scripts": {
-        "styles:noncritical": "lessc src/styles/noncritical.less | cssmin > assets/styles/site.css"
-    }
+  ...
+  "scripts": {
+    "styles:noncritical": "lessc src/styles/noncritical.less | cssmin > assets/styles/site.css"
+  }
 }
 ```
 
@@ -52,11 +52,11 @@ npm install --save-dev mkdirp
 
 ```json
 {
-    ...
-    "scripts": {
-        "prestyles:noncritical": "mkdirp assets/styles",
-        "styles:noncritical": "lessc src/styles/noncritical.less | cssmin > assets/styles/site.css"
-    }
+  ...
+  "scripts": {
+    "prestyles:noncritical": "mkdirp assets/styles",
+    "styles:noncritical": "lessc src/styles/noncritical.less | cssmin > assets/styles/site.css"
+  }
 }
 ```
 
@@ -66,12 +66,12 @@ For this one the solution is pretty much the same, the only differences are the 
 
 ```json
 {
+  ...
+  "scripts": {
     ...
-    "scripts": {
-        ...
-        "prestyles:critical": "mkdirp _includes",
-        "styles:critical": "lessc src/styles/critical.less | cssmin > _includes/criticalCSS.html"
-    }
+    "prestyles:critical": "mkdirp _includes",
+    "styles:critical": "lessc src/styles/critical.less | cssmin > _includes/criticalCSS.html"
+  }
 }
 ```
 
@@ -79,8 +79,8 @@ We are exporting the result as an **.html** file because that's the type of file
 
 ```html
 <head>
-    ...
-    <style>{% raw %}{% include criticalCSS.html %}{% endraw %}</style>
+  ...
+  <style>{% raw %}{% include criticalCSS.html %}{% endraw %}</style>
 </head>
 ```
 
@@ -91,11 +91,11 @@ In **Wordpress** the solution doesn't differ that much. This time the file will 
 
 ```json
 {
+  ...
+  "scripts": {
     ...
-    "scripts": {
-        ...
-        "styles:critical": "lessc src/styles/critical.less | cssmin > wp-content/themes/your_theme/criticalCSS.php"
-    }
+    "styles:critical": "lessc src/styles/critical.less | cssmin > wp-content/themes/your_theme/criticalCSS.php"
+  }
 }
 ```
 
@@ -103,8 +103,8 @@ Take in count that the path could change depending on where your **package.json*
 
 ```php
 <head>
-    ...
-    <?php include (TEMPLATEPATH . '/criticalCSS.php'); ?>
+  ...
+  <?php include (TEMPLATEPATH . '/criticalCSS.php'); ?>
 </head>
 ```
 
@@ -114,14 +114,14 @@ To simplify the execution of them we can put these both tasks together in a new 
 
 ```json
 {
-    ...
-    "scripts": {
-        "prestyles:noncritical": "mkdirp assets/styles",
-        "styles:noncritical": "lessc src/styles/noncritical.less | cssmin > assets/styles/site.css",
-        "prestyles:critical": "mkdirp _includes",
-        "styles:critical": "lessc src/styles/critical.less | cssmin > _includes/criticalCSS.html",
-        "styles": "npm run styles:noncritical & npm run styles:critical"
-    }
+  ...
+  "scripts": {
+    "prestyles:noncritical": "mkdirp assets/styles",
+    "styles:noncritical": "lessc src/styles/noncritical.less | cssmin > assets/styles/site.css",
+    "prestyles:critical": "mkdirp _includes",
+    "styles:critical": "lessc src/styles/critical.less | cssmin > _includes/criticalCSS.html",
+    "styles": "npm run styles:noncritical & npm run styles:critical"
+  }
 }
 ```
 
@@ -140,15 +140,15 @@ Add a watch script.
 
 ```json
 {
-    ...
-    "scripts": {
-        "prestyles:noncritical": "mkdirp assets/styles",
-        "styles:noncritical": "lessc src/styles/noncritical.less | cssmin > assets/styles/site.css",
-        "prestyles:critical": "mkdirp _includes",
-        "styles:critical": "lessc src/styles/critical.less | cssmin > _includes/criticalCSS.html",
-        "styles": "npm run styles:noncritical & npm run styles:critical",
-        "watch:styles": "onchange src/**/*.less -- 'npm run styles'"
-    }
+  ...
+  "scripts": {
+    "prestyles:noncritical": "mkdirp assets/styles",
+    "styles:noncritical": "lessc src/styles/noncritical.less | cssmin > assets/styles/site.css",
+    "prestyles:critical": "mkdirp _includes",
+    "styles:critical": "lessc src/styles/critical.less | cssmin > _includes/criticalCSS.html",
+    "styles": "npm run styles:noncritical & npm run styles:critical",
+    "watch:styles": "onchange src/**/*.less -- 'npm run styles'"
+  }
 }
 ```
 
@@ -158,5 +158,3 @@ Finally we can write `npm run watch:styles` in the terminal and the **styles** s
 ## Wrap-up
 
 This is a base solution for CSS inlining using **npm scripts** and it might defer depending on how your site is built and what you're using to write its styles, but it shouldn't be hard to adapt.
-
-

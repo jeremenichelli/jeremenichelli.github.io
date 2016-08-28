@@ -12,11 +12,11 @@ Let's see it in action. What's the width of this element?
 
 ```html
 <style>
-    .box {
-        height: 50px;
-        padding: 20px;
-        width: 100px;
-    }
+  .box {
+    height: 50px;
+    padding: 20px;
+    width: 100px;
+  }
 </style>
 
 <div class="box"></div>
@@ -28,13 +28,13 @@ But, wait I also need a border and keep the element **100px** wide. Now the widt
 
 ```html
 <style>
-    .box {
-        border-style: solid;
-        border-width: 2px;
-        height: 50px;
-        padding: 20px;
-        width: 56px;
-    }
+  .box {
+    border-style: solid;
+    border-width: 2px;
+    height: 50px;
+    padding: 20px;
+    width: 56px;
+  }
 </style>
 
 <div class="box"></div>
@@ -56,14 +56,14 @@ So let's go back to our example and make a small change.
 
 ```html
 <style>
-    .box {
-        box-sizing: padding-box;
-        border-style: solid;
-        border-width: 2px;
-        height: 50px;
-        padding: 20px;
-        width: 100px;
-    }
+  .box {
+    box-sizing: padding-box;
+    border-style: solid;
+    border-width: 2px;
+    height: 50px;
+    padding: 20px;
+    width: 100px;
+  }
 </style>
 
 <div class="box"></div>
@@ -78,14 +78,14 @@ Ignoring **inherit**, this is the last optional value that *box-sizing* can adop
 
 ```html
 <style>
-    .box {
-        box-sizing: border-box;
-        border-style: solid;
-        border-width: 2px;
-        height: 50px;
-        padding: 20px;
-        width: 100px;
-    }
+  .box {
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 2px;
+    height: 50px;
+    padding: 20px;
+    width: 100px;
+  }
 </style>
 
 <div class="box"></div>
@@ -102,10 +102,10 @@ Almost all developers around the globe reset the default to follow the **border-
 
 ```css
 html {
-   box-sizing: border-box;
+  box-sizing: border-box;
 }
 *, *:before, *:after {
-   box-sizing: inherit;
+  box-sizing: inherit;
 }
 ```
 
@@ -124,4 +124,3 @@ You can survive in the front end world without **border-box**, but I don't know 
 If my explanation was a little confusing I suggest <a href="http://www.paulirish.com/2012/box-sizing-border-box-ftw/" target="_blank">Paul Irish's article</a> and <a href="https://css-tricks.com/box-sizing/" target="_blank">CSS Trick's reference page</a> about this. You can also download this small html page in this <a href="https://gist.github.com/jeremenichelli/a7f26e5951bfb2b77043" target="_blank">gist</a> I did and see how this property affects an element with the same border, padding, height and width.
 
 Something else, there is an <a href="https://css-tricks.com/international-box-sizing-awareness-day/">International box-sizing Awareness Day</a>. Yes, this is real.
-

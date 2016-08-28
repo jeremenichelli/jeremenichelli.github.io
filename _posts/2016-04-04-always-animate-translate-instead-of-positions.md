@@ -13,15 +13,15 @@ Not only it was slow which didn't help, you could see the browser pushing each p
  */
 
 .sub-menu-layer {
-    opacity: 0;
-    position: absolute;
-    top: 7rem;
-    transition: opacity 0.6s, top 0.6s;
+  opacity: 0;
+  position: absolute;
+  top: 7rem;
+  transition: opacity 0.6s, top 0.6s;
 }
 
 .menu-item:hover .sub-menu-layer {
-    opacity: 1;
-    top: 8rem;
+  opacity: 1;
+  top: 8rem;
 }
 ```
 
@@ -33,16 +33,16 @@ The solution is to take the element to its final position by default, add a nega
 
 ```css
 .sub-menu-layer {
-    opacity: 0;
-    position: absolute;
-    top: 8rem;
-    transform: translateY(-1rem);
-    transition: opacity 0.6s, transform 0.6s;
+  opacity: 0;
+  position: absolute;
+  top: 8rem;
+  transform: translateY(-1rem);
+  transition: opacity 0.6s, transform 0.6s;
 }
 
 .menu-item:hover .sub-menu-layer {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 ```
 
@@ -57,17 +57,17 @@ If you want to create a nice *but not immediate* animation is better to add a su
 
 ```css
 .sub-menu-layer {
-    opacity: 0;
-    position: absolute;
-    top: 8rem;
-    transform: translateY(-1rem);
-    transition: opacity 0.35s, transform 0.35s;
-    transition-delay: .05s;
+  opacity: 0;
+  position: absolute;
+  top: 8rem;
+  transform: translateY(-1rem);
+  transition: opacity 0.35s, transform 0.35s;
+  transition-delay: .05s;
 }
 
 .menu-item:hover .sub-menu-layer {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 ```
 

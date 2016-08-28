@@ -32,7 +32,7 @@ The next one is <a href="http://jscs.info/" target="_blank">jscs</a> which is us
 
 ```js
 {
-    "preset: "google"
+  "preset: "google"
 }
 ```
 
@@ -46,10 +46,10 @@ Also, in **eslint** instead of setting an option to be ```true``` or ```false```
 
 ```js
 {
-    // other eslint rules...
+  // other eslint rules...
 
-    // 0: no error, 1: warning, 2: error
-    "quotes": [1, "single"]
+  // 0: no error, 1: warning, 2: error
+  "quotes": [1, "single"]
 }
 ```
 
@@ -68,15 +68,15 @@ Once you've done that you can create a ```lint``` task.
 
 ```js
 var gulp = require('gulp'),
-    jshint = require('gulp-jshint'),
-    jscs = require('gulp-jscs');
+  jshint = require('gulp-jshint'),
+  jscs = require('gulp-jscs');
 
 gulp.task('lint', function() {
-    return gulp.src('/assets/scripts/**/*.js')
-        .pipe(jshint())
-        // interrupt task if an error is found
-        .pipe(jshint.reporter('fail'))
-        .pipe(jscs());
+  return gulp.src('/assets/scripts/**/*.js')
+    .pipe(jshint())
+    // interrupt task if an error is found
+    .pipe(jshint.reporter('fail'))
+    .pipe(jscs());
 });
 ```
 
@@ -90,13 +90,13 @@ This is how the ```lint``` task will look in this case.
 
 ```js
 gulp.task('lint', function() {
-    return gulp.src('/assets/scripts/**/*.js')
-        .pipe(eslint())
-        // outputs the lint results to the console. 
-        .pipe(eslint.format())
-        // To have the process exit with an error code (1) on 
-        // lint error, return the stream and pipe to failOnError last. 
-        .pipe(eslint.failOnError());
+  return gulp.src('/assets/scripts/**/*.js')
+    .pipe(eslint())
+    // outputs the lint results to the console.
+    .pipe(eslint.format())
+    // To have the process exit with an error code (1) on
+    // lint error, return the stream and pipe to failOnError last.
+    .pipe(eslint.failOnError());
 });
 ```
 

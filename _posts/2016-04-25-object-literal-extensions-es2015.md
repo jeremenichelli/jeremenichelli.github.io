@@ -12,13 +12,12 @@ This is how you add a property present in a variable today.
 
 ```js
 // ES5
-
 var firstName = 'Charlie';
 var lastName = 'Brown';
 
 var student = {
-    firstName: firstName,
-    lastName: lastName
+  firstName: firstName,
+  lastName: lastName
 };
 
 student.firstName; // 'Charlie'
@@ -28,13 +27,12 @@ In **ES2015** when the property is named as the variable that holds its value, y
 
 ```js
 // ES2015
-
 let firstName = 'Charlie';
 let lastName = 'Brown';
 
 let student = {
-    firstName,
-    lastName
+  firstName,
+  lastName
 };
 
 student.firstName; // 'Charlie'
@@ -46,16 +44,15 @@ You can also do something similar when declaring functions as properties.
 
 ```js
 // ES2015
-
 let firstName = 'Charlie';
 let lastName = 'Brown';
 
 let student = {
-    firstName,
-    lastName,
-    getFullName() {
-        return `${ this.firstName } ${ this.lastName }`;
-    }
+  firstName,
+  lastName,
+  getFullName() {
+    return `${ this.firstName } ${ this.lastName }`;
+  }
 };
 
 student.getFullName(); // 'Charlie Brown'
@@ -70,15 +67,14 @@ You can also generate a property name using any valid JavaScript expression insi
 
 ```js
 // ES2015
-
 let student = {
-    firstName: 'Violet',
-    lastName: 'Gray',
-    age: 10
+  firstName: 'Violet',
+  lastName: 'Gray',
+  age: 10
 };
 
 let classroom = {
-    [ `${ student.firstName }_${ student.lastName }`.toLowerCase() ]: student
+  [ `${ student.firstName }_${ student.lastName }`.toLowerCase() ]: student
 }
 
 classroom.violet_gray; // Object { firstName: 'Violet', lastName: 'Gray', age: 10 }
@@ -93,11 +89,10 @@ Like an inverse syntax, we can break apart object properties and expose them int
 
 ```js
 // ES5
-
 var student = {
-    firstName: 'Violet',
-    lastName: 'Gray',
-    age: 10
+  firstName: 'Violet',
+  lastName: 'Gray',
+  age: 10
 };
 
 var first = student.firstName;
@@ -109,11 +104,10 @@ Enclosing variable declarations in brackets and referencing the properties from 
 
 ```js
 // ES2015
-
 let student = {
-    firstName: 'Violet',
-    lastName: 'Gray',
-    age: 10
+  firstName: 'Violet',
+  lastName: 'Gray',
+  age: 10
 };
 
 /*

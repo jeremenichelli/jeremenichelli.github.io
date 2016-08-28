@@ -38,15 +38,15 @@ Of course you can't just use the `browserify` command in your terminal, for that
 
 ```json
 {
-    "name": "npm-scripts-sample",
-    "title": "npm scripts sample project",
-    "description": "Sample project to show how npm scripts work",
-    "copyright": "2015",
-    "version": "1.0.0",
-    "license": "MIT",
-    "scripts": {
-        "build": "browserify js/app.js -o main.js"
-    }
+  "name": "npm-scripts-sample",
+  "title": "npm scripts sample project",
+  "description": "Sample project to show how npm scripts work",
+  "copyright": "2015",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "browserify js/app.js -o main.js"
+  }
 }
 ```
 
@@ -62,8 +62,8 @@ We can use the `|` operator to pass the output of browserify to uglify command.
 
 ```json
 "scripts": {
-    "build:dev": "browserify js/app.js -o main.js --debug",
-    "build:prod": "browserify js/app.js | uglifyjs > main.js"
+  "build:dev": "browserify js/app.js -o main.js --debug",
+  "build:prod": "browserify js/app.js | uglifyjs > main.js"
 }
 ```
 
@@ -73,8 +73,8 @@ Let's include styles in our build process. We better rename the script tasks so 
 
 ```json
 "scripts": {
-    "js:dev": "browserify js/app.js -o main.js --debug",
-    "js:prod": "browserify js/app.js | uglifyjs > main.js"
+  "js:dev": "browserify js/app.js -o main.js --debug",
+  "js:prod": "browserify js/app.js | uglifyjs > main.js"
 }
 ```
 
@@ -88,11 +88,11 @@ Then add the style script and a general `build` task to run both.
 
 ```json
 "scripts": {
-    "js:dev": "browserify js/app.js -o main.js --debug",
-    "js:prod": "browserify js/app.js | uglifyjs > main.js",
-    "less": "lessc less/app.less | cssmin > main.css",
-    "build:dev": "npm run less & npm run js:dev",
-    "build:prod": "npm run less & npm run js:prod"
+  "js:dev": "browserify js/app.js -o main.js --debug",
+  "js:prod": "browserify js/app.js | uglifyjs > main.js",
+  "less": "lessc less/app.less | cssmin > main.css",
+  "build:dev": "npm run less & npm run js:dev",
+  "build:prod": "npm run less & npm run js:prod"
 }
 ```
 
@@ -105,14 +105,14 @@ You can also specify a task that needs to finish successfully before a script ca
 
 ```json
 "scripts": {
-    "lint": "eslint js/**/*.js",
-    "prejs:dev": "npm run lint",
-    "prejs:prod": "npm run lint",
-    "js:dev": "browserify js/app.js -o main.js --debug",
-    "js:prod": "browserify js/app.js | uglifyjs > main.js",
-    "less": "lessc less/app.less | cssmin > main.css",
-    "build:dev": "npm run less & npm run js:dev",
-    "build:prod": "npm run less & npm run js:prod"
+  "lint": "eslint js/**/*.js",
+  "prejs:dev": "npm run lint",
+  "prejs:prod": "npm run lint",
+  "js:dev": "browserify js/app.js -o main.js --debug",
+  "js:prod": "browserify js/app.js | uglifyjs > main.js",
+  "less": "lessc less/app.less | cssmin > main.css",
+  "build:dev": "npm run less & npm run js:dev",
+  "build:prod": "npm run less & npm run js:prod"
 }
 ```
 
@@ -126,17 +126,17 @@ To avoid running the same script over and over again we can install a <a href="h
 
 ```json
 "scripts": {
-    "lint": "eslint js/**/*.js",
-    "prejs:dev": "npm run lint",
-    "prejs:prod": "npm run lint",
-    "js:dev": "browserify js/app.js -o main.js --debug",
-    "js:prod": "browserify js/app.js | uglifyjs > main.js",
-    "less": "lessc less/app.less | cssmin > main.css",
-    "build:dev": "npm run less & npm run js:dev",
-    "build:prod": "npm run less & npm run js:prod",
-    "watch:js": "onchange './js/**/*.js' -- npm run js:dev",
-    "watch:less": "onchange './less/**/*.less' -- npm run less",
-    "watch": "npm run watch:less & npm run watch:js"
+  "lint": "eslint js/**/*.js",
+  "prejs:dev": "npm run lint",
+  "prejs:prod": "npm run lint",
+  "js:dev": "browserify js/app.js -o main.js --debug",
+  "js:prod": "browserify js/app.js | uglifyjs > main.js",
+  "less": "lessc less/app.less | cssmin > main.css",
+  "build:dev": "npm run less & npm run js:dev",
+  "build:prod": "npm run less & npm run js:prod",
+  "watch:js": "onchange './js/**/*.js' -- npm run js:dev",
+  "watch:less": "onchange './less/**/*.less' -- npm run less",
+  "watch": "npm run watch:less & npm run watch:js"
 }
 ```
 

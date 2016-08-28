@@ -57,12 +57,12 @@ In that small portion of code I've printed both the character and its ASCII valu
 
 ```c
 char *phrase = "HELLOWORLD",
-     *word = "BANANA";
+   *word = "BANANA";
 
 for (int i = 0, len = strlen(phrase); i < len; i++) {
-    int h = (phrase[i] - 65) + (word[i] - 65);
-    h = h % 26;
-    printf("%c", h + 65);
+  int h = (phrase[i] - 65) + (word[i] - 65);
+  h = h % 26;
+  printf("%c", h + 65);
 };
 ```
 
@@ -72,16 +72,16 @@ Though it looks like that simple loop would do the job, the index position of th
 
 ```c
 char *phrase = "HELLOWORLD",
-     *word = "BANANA";
+   *word = "BANANA";
 
 for (int i = 0, j = 0, len = strlen(phrase); i < len; i++) {
-    int h = (phrase[i] - 65) + (word[j] - 65);
-    h = h % 26;
-    printf("%c", h + 65);
-    j++;
-    // reset word index
-    if (j == strlen(word))
-        j = 0;
+  int h = (phrase[i] - 65) + (word[j] - 65);
+  h = h % 26;
+  printf("%c", h + 65);
+  j++;
+  // reset word index
+  if (j == strlen(word))
+    j = 0;
 };
 
 // prints "IEYLBWPRYD"
@@ -119,18 +119,18 @@ In other words, you get the Vigenère equivalent of a letter using `indexOf`, ap
 
 ```js
 var ref = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-    phrase = 'HELLOWORLD',
-    word = 'BANANA',
-    result = '';
+  phrase = 'HELLOWORLD',
+  word = 'BANANA',
+  result = '';
 
 for (var i = 0, j = 0, len = phrase.length; i < len; i++) {
-    var h = ref.indexOf(phrase[i]) + ref.indexOf(word[j]);
-    h %= 26;
-    result += ref[h];
-    j++;
-    // reset word index
-    if (j === word.length)
-        j = 0;
+  var h = ref.indexOf(phrase[i]) + ref.indexOf(word[j]);
+  h %= 26;
+  result += ref[h];
+  j++;
+  // reset word index
+  if (j === word.length)
+    j = 0;
 }
 
 // print result in console
@@ -149,12 +149,12 @@ But if you want you message to be more consistent and still work in these edge c
 // variables declaration
 
 for (var i = 0, j = 0, len = phrase.length; i < len; i++) {
-    if (ref.indexOf(phrase[i]) !== -1) {
-        // apply encryption algorithm
-    } else {
-        // add to the result string without modification
-        result += phrase[i];
-    }
+  if (ref.indexOf(phrase[i]) !== -1) {
+    // apply encryption algorithm
+  } else {
+    // add to the result string without modification
+    result += phrase[i];
+  }
 }
 ```
 
@@ -166,7 +166,3 @@ You can also create two reference strings one for lowercase and other for upperc
 It's great to see how small parts of a language structure can change drastically the solution you build of the same problem. If you're more curious about this, I've put a Vigenère solution that works with both uppercase and lowercase and ignores special characters in a <a href="https://github.com/jeremenichelli/vigenere" target="_blank">GitHub repository</a> so you can check it out and play with it.
 
 Happy encrypting!
-
-
-
-

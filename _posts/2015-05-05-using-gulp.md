@@ -31,10 +31,10 @@ npm install --save-dev gulp-uglify
 Finally, create a file called *gulpfile.js*, require all your modules you'll use and you can start automating tasks for your projects.
 
 ```js
-var gulp = require('gulp'),
-    rename = require('gulp-rename'),
-    jshint = require('gulp-jshint'),
-    uglify = require('gulp-uglify');
+var gulp = require('gulp');
+var rename = require('gulp-rename');
+var jshint = require('gulp-jshint');
+var uglify = require('gulp-uglify');
 ```
 
 ## How it works
@@ -47,12 +47,12 @@ When you declare a **task** in Gulp, you first choose a source directory.
 
 ```js
 gulp.task('minify', function() {
-    return gulp.src('src/**/*.js')
-        .pipe(uglify())
-        .pipe(rename({
-            suffix: '.min'
-        }))
-        .pipe(gulp.dest('dist/'));
+  return gulp.src('src/**/*.js')
+    .pipe(uglify())
+    .pipe(rename({
+        suffix: '.min'
+    }))
+    .pipe(gulp.dest('dist/'));
 });
 ```
 
@@ -66,18 +66,18 @@ If you want to check your scripts' syntax before minifying them (which you shoul
 
 ```js
 gulp.task('hint', function() {
-    return gulp.src('src/**/*.js')
-        .pipe(jshint());
-        .pipe(jshint.reporter('fail'));
+  return gulp.src('src/**/*.js')
+    .pipe(jshint());
+    .pipe(jshint.reporter('fail'));
 });
 
 gulp.task('minify', [ 'hint' ], function() {
-    return gulp.src('src/**/*.js')
-        .pipe(uglify())
-        .pipe(rename({
-            suffix: '.min'
-        }))
-        .pipe(gulp.dest('dist/'));
+  return gulp.src('src/**/*.js')
+    .pipe(uglify())
+    .pipe(rename({
+        suffix: '.min'
+    }))
+    .pipe(gulp.dest('dist/'));
 });
 ```
 

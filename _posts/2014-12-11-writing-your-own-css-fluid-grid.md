@@ -93,50 +93,50 @@ We still need one more tweak to do, the first column of each row doesn't need a 
 
 ```css
 .column {
-    float: left;
-    margin-left: 3%;
-    min-height: 1px;
+  float: left;
+  margin-left: 3%;
+  min-height: 1px;
 }
 
 .column:first-child {
-    margin: 0;
+  margin: 0;
 }
 
 .column-1 {
-    width: 5.583333333333333%;
+  width: 5.583333333333333%;
 }
 .column-2 {
-    width: 14.166666666666666%;
+  width: 14.166666666666666%;
 }
 .column-3 {
-    width: 22.75%;
+  width: 22.75%;
 }
 .column-4 {
-    width: 31.333333333333332%;
+  width: 31.333333333333332%;
 }
 .column-5 {
-    width: 39.916666666666664%;
+  width: 39.916666666666664%;
 }
 .column-6 {
-    width: 48.5%;
+  width: 48.5%;
 }
 .column-7 {
-    width: 57.08333333333333%;
+  width: 57.08333333333333%;
 }
 .column-8 {
-    width: 65.66666666666666%;
+  width: 65.66666666666666%;
 }
 .column-9 {
-    width: 74.25%;
+  width: 74.25%;
 }
 .column-10 {
-    width: 82.83333333333333%;
+  width: 82.83333333333333%;
 }
 .column-11 {
-    width: 91.41666666666666%;
+  width: 91.41666666666666%;
 }
 .column-12 {
-    width: 100%;
+  width: 100%;
 }
 ```
 
@@ -149,9 +149,9 @@ So, we need a row class element and then fill it up with the group of columns we
 
 ```html
 <div class="row">
-    <div class="column column-4"></div>
-    <div class="column column-6"></div>
-    <div class="column column-2"></div>
+  <div class="column column-4"></div>
+  <div class="column column-6"></div>
+  <div class="column column-2"></div>
 </div>
 ```
 
@@ -164,11 +164,11 @@ In order to have a grid completely responsive we need to add a media query to ou
 
 ```css
 @media (max-width: 768px) {
-    .column {
-        float: none;
-        margin: 20px 0 0;
-        width: 100%;
-    }
+  .column {
+    float: none;
+    margin: 20px 0 0;
+    width: 100%;
+  }
 }
 ```
 

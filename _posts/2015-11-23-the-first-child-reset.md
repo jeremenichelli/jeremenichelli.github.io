@@ -8,9 +8,9 @@ To show a clear picture of this, let's start with a small example. Let's say we 
 
 ```css
 .column {
-    float: left;
-    margin-left: 5%;
-    width: 30%;
+  float: left;
+  margin-left: 5%;
+  width: 30%;
 }
 ```
 
@@ -18,13 +18,13 @@ Pretty simple, but it won't work just yet because we have three columns with `30
 
 ```css
 .column {
-    float: left;
-    margin-left: 5%;
-    width: 30%;
+  float: left;
+  margin-left: 5%;
+  width: 30%;
 }
 
 .column:first-child {
-    margin-left: 0;
+  margin-left: 0;
 }
 ```
 
@@ -41,12 +41,12 @@ So, instead of applying a style and immediately reseting it we could just do thi
 
 ```css
 .column {
-    float: left;
-    width: 30%;
+  float: left;
+  width: 30%;
 }
 
 .column + .column {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 ```
 
@@ -55,6 +55,4 @@ Following this approach, we avoid seeing this <del>margin-left: 5%</del> in the 
 
 ## Wrap-up
 
-I'm not against using pseudo classes, the goal is trying not to reset your own styles. Common practices like this one are a little dangerous and we can easily end up stepping on our own feet.
-
-Find a simple solution with no hacks and try to keep strikethrough rules at minimum.
+Nesting is part of CSS, and it's not actually wrong to step over a style, but if you find a straight forward and readable solution with no hacks and to keep strikethrough rules at minimum the better.

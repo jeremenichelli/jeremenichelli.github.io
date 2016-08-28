@@ -23,8 +23,7 @@ What's funny is that if you don't pass any arguments to slice it returns a new a
 
 ```js
 function shuffle(array) {
-    
-    var origArray = array.slice();
+  var origArray = array.slice();
 }
 ```
 
@@ -34,12 +33,11 @@ There's a pretty famous guy in the neighbourhood called <a href="https://develop
 
 ```js
 function shuffle(array) {
-    
-    var origArray = array.slice(), 
-        len = origArray.length,
-        position;
+  var origArray = array.slice();
+  var len = origArray.length;
+  var position;
 
-    position = parseInt(Math.random() * len);
+  position = parseInt(Math.random() * len);
 }
 ```
 
@@ -47,14 +45,13 @@ Now we must put this logic inside a loop and decrease the length in every iterat
 
 ```js
 function shuffle(array) {
-    
-    var origArray = array.slice(), 
-        len = origArray.length,
-        position;
+  var origArray = array.slice();
+  var len = origArray.length;
+  var position;
 
-    while (len) {
-        position = parseInt(Math.random() * len--);
-    }
+  while (len) {
+    position = parseInt(Math.random() * len--);
+  }
 }
 ```
 
@@ -67,18 +64,17 @@ We still need to extract the element in that position from *origArray* and store
 
 ```js
 function shuffle(array) {
-    
-    var origArray = array.slice(),
-        len = origArray.length,
-        newArray = [], 
-        position;
+  var origArray = array.slice();
+  var len = origArray.length;
+  var newArray = [];
+  var position;
 
-    while (len) {
-        position = parseInt(Math.random() * len--);
-        newArray.push(origArray.splice(position, 1)[0]);
-    }
+  while (len) {
+    position = parseInt(Math.random() * len--);
+    newArray.push(origArray.splice(position, 1)[0]);
+  }
 
-    return newArray;
+  return newArray;
 }
 ```
 
@@ -86,24 +82,26 @@ If you want to shorten this code you can put all the logic in a single line. Als
 
 ```js
 function shuffle(array) {
-    
-    if (!!array && array.length > 1) {
-        var origArray = array.slice(),
-            len = origArray.length;
-            newArray = []; 
+  if (!!array && array.length > 1) {
+    var origArray = array.slice();
+    var len = origArray.length;
+    var newArray = [];
 
-        while (len) {
-            newArray.push(origArray.splice(parseInt(Math.random() * len--), 1)[0]);
-        }
-    } else {
-        return array ? array.slice() : [];
+    while (len) {
+      newArray.push(
+        origArray.splice(parseInt(Math.random() * len--), 1)[0]
+      );
     }
+  } else {
+    return array ? array.slice() : [];
+  }
 
-    return newArray;
+  return newArray;
 }
 ```
+[See it in action &raquo;](http://jsfiddle.net/jeremenichelli/7qLbpr1b/6/)
 
-I've created a <a href="http://jsfiddle.net/jeremenichelli/7qLbpr1b/6/" target="_blank">fiddle</a> where you can see this working. It also contains an iteration that gets executed a thousand times with the results that shows the frequencies distribution in console.
+I've created a fiddle (link above) where you can see this working. It also contains an iteration that gets executed a thousand times with the results that shows the frequencies distribution in console.
 
 After running those tests and making sure it worked well I started searching for alternatives and stepped out with what I think is an ugly solution to this.
 
@@ -118,19 +116,21 @@ array.sort(function() { return 0.5 - Math.random() });
 
 Beautiful, isn't it? Just one line, something that will encourage you to put it inside your code right away because, you know, it's just one line man! The problem with this is that is not taking in consideration how *sort* really works. Every time the compare function is called, sort expects a negative number, a positive number or zero. In case the number is negative the second element in comparison will be moved before the first one, the opposite will happen if the number is positive and nothing will happen if the number returned is zero.
 
-That's pretty useful when you are actually sorting elements but since we want to create a random scenario half of the times the compare function is called nothing will changes, leaving the elements in the position they are. We don't want that. If you send an array of two or three elements there's a high probability you will get the exact same array and after running these tests <a href="http://jsfiddle.net/jeremenichelli/vhn6nbfy/1/" target="_blank">that's what actually happens</a>.
+That's pretty useful when you are actually sorting elements but since we want to create a random scenario half of the times the compare function is called nothing will changes, leaving the elements in the position they are. We don't want that. If you send an array of two or three elements there's a high probability you will get the exact same array.
 
 
 ## The best solution out there
 
-I supposed that this problem wasn't new and that probably smarter people than me already had a solution for a well distributed and performant algorithm. Luckily that was true. The solution is very old and it's called <a href="http://en.wikipedia.org/wiki/Fisher–Yates_shuffle" target="_blank">Fisher-Yates shuffle</a> named after Ronald Fisher and Frank Yates and it assures that any possible permutation is equally likely. This algorithm is the one applied by underscore library in their **_.shuffle** method and you can see its implementation in <a href="https://github.com/jashkenas/underscore/blob/master/underscore.js#L342" target="_blank">github</a>.
+I supposed that this problem wasn't new and that probably smarter people than me already had a solution for a well distributed and performant algorithm.
 
-If you need this code without underscore dependencies here's a <a href="https://jsfiddle.net/jeremenichelli/4ze2buLa/2/" target="_blank">fiddle</a> I've created with the method and some tests showing how well distributed are the frequencies. You can also check its performance in this <a href="http://jsperf.com/most-performant-shuffle-method-for-arrays" target="_blank">profile</a>.
+Luckily that was true. The solution is very old and it's called <a href="http://en.wikipedia.org/wiki/Fisher–Yates_shuffle" target="_blank">Fisher-Yates shuffle</a> named after Ronald Fisher and Frank Yates and it assures that any possible permutation is equally likely.
+
+This algorithm is the one applied by underscore library in their **_.shuffle** method and you can see its implementation in <a href="https://github.com/jashkenas/underscore/blob/master/underscore.js#L342" target="_blank">github</a>.
 
 
 ## Wrap-up
 
-I knew that there was probably a better solution for this before starting my own approach, but I think that giving it a try gives you a great opportunity to think, investigate and learn a lot not only about the problem itself, you also get to know new methods, new tools, new patterns. 
+I knew that there was probably a better solution for this before starting my own approach, but I think that giving it a try gives you a great opportunity to think, investigate and learn a lot not only about the problem itself, you also get to know new methods, new tools, new patterns.
 
 That's the good thing about trying to make your own way through challenges. I hope this post reflected some of that experience and in case you were looking for a nice solution to shuffle an array that it was also useful.
 

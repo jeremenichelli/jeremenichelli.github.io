@@ -20,19 +20,19 @@ While the standard mentioned before covers any type of request, there's a work a
 
 ```js
 function wrapper (responseData) {
-      // do something with responseData
-      console.log(responseData);
+  // do something with responseData
+  console.log(responseData);
 };
 
 var script = document.createElement('script');
-script.src = 'http://api.somedomain.com/find?id=ebf4g38f0cf4&q=5&callback=wrapper';
+script.src = 'http://api.some.com/find?id=ebf4g4&q=5&callback=wrapper';
 document.head.appendChild(script);
 ```
 
 As you may notice we've appended a script inside the *&lt;head&gt;* tag of the web page, and if everything goes well its content will call the *wrapper* function with the response of the server as an argument.
 
 ```js
-wrapper({"id": "ebf4g38f0cf4", "properties": [ "a", "b", "c", "d", "e"]});
+wrapper({"id": "ebf4g4", "properties": [ "a", "b", "c", "d", "e"]});
 ```
 In this case, our function will just log the result in the console, but you can do whatever you want with it.
 

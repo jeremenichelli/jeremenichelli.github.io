@@ -8,15 +8,15 @@ Libraries today offer you the capability to express complex expressions and oper
 
 ```js
 var me = new Vue({
-    data: {
-        firstName: 'John',
-        lastName: 'Oliver'
-    },
-    computed: {
-        fullName: function() {
-            return this.firstName + ' ' + this.lastName;
-        }
+  data: {
+    firstName: 'John',
+    lastName: 'Oliver'
+  },
+  computed: {
+    fullName: function() {
+      return this.firstName + ' ' + this.lastName;
     }
+  }
 });
 
 me.fullName; // John Oliver
@@ -34,15 +34,15 @@ The `Object.defineProperty` method accepts a base object as the first argument, 
 
 ```js
 var me = {
-    firstName: 'John',
-    lastName: 'Oliver'
+  firstName: 'John',
+  lastName: 'Oliver'
 };
 
 Object.defineProperty(me, 'age', {
-    value: 45,
-    configurable: false,
-    enumerable: false,
-    writeable: true
+  value: 45,
+  configurable: false,
+  enumerable: false,
+  writeable: true
 });
 ```
 
@@ -68,16 +68,16 @@ In addition to these options, we can also define operations that will run when t
 
 ```js
 var me = {
-    firstName: 'John',
-    lastName: 'Oliver'
+  firstName: 'John',
+  lastName: 'Oliver'
 };
 
 Object.defineProperty(me, 'fullName', {
-    enumerable: true,
-    writeable: false,
-    get: function() {
-        return this.firstName + ' ' + this.lastName;
-    }
+  enumerable: true,
+  writeable: false,
+  get: function() {
+    return this.firstName + ' ' + this.lastName;
+  }
 });
 
 me.fullName; // John Oliver
@@ -87,8 +87,8 @@ This feature is really powerful when combined with prototyped constructors.
 
 ```js
 var Circle = function(r) {
-    this.radius = r;
-    this.diameter = r * 2;
+  this.radius = r;
+  this.diameter = r * 2;
 };
 ```
 
@@ -96,15 +96,15 @@ Doing this makes it possible to modify the **diameter** property on any `Circle`
 
 ```js
 var Circle = function(r) {
-    this.radius = r;
+  this.radius = r;
 };
 
 Object.defineProperty(Circle.prototype, 'diameter', {
-    enumerable: true,
-    writeble: false,
-    get: function() {
-        return this.radius * 2;
-    }
+  enumerable: true,
+  writeble: false,
+  get: function() {
+    return this.radius * 2;
+  }
 });
 ```
 
@@ -117,29 +117,29 @@ In some cases we need to define more than one property, hopefully there is anoth
 
 ```js
 var Circle = function(r) {
-    this.radius = r;
+  this.radius = r;
 };
 
 // define computed values
 Object.defineProperties(Circle.prototype, {
-    diameter: {
-        writeable: false,
-        get: function() {
-            return this.radius * 2;
-        }
-    },
-    circumference: {
-        writeable: false,
-        get: function() {
-            return this.diameter * Math.PI;
-        }
-    },
-    area: {
-        writeable: false,
-        get: function() {
-            return Math.pow(this.radius, 2) * Math.PI;
-        }
+  diameter: {
+    writeable: false,
+    get: function() {
+      return this.radius * 2;
     }
+  },
+  circumference: {
+    writeable: false,
+    get: function() {
+      return this.diameter * Math.PI;
+    }
+  },
+  area: {
+    writeable: false,
+    get: function() {
+      return Math.pow(this.radius, 2) * Math.PI;
+    }
+  }
 });
 
 // create circle instance

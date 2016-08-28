@@ -23,7 +23,13 @@ To sum up very quickly these last paragraphs, Jekyll is a static site generator 
 
 So, you want to build a site or just know what all the fuss is about, then this is what you have to install.
 
-**Jekyll** runs on **Ruby**, so this is the first basic requirement, here you can download the correct installation package depending on your operative system: <a href="https://www.ruby-lang.org/en/downloads/" target="_blank">https://www.ruby-lang.org/en/downloads/</a>. You're also going to need **RubyGems** which is a package manager framework for Ruby which you can download here: <a href="https://rubygems.org/pages/download" target="_blank">https://rubygems.org/pages/download</a>.
+**Jekyll** runs on **Ruby**, so this is the first basic requirement, here you can download the correct installation package depending on your operative system:
+
+<a href="https://www.ruby-lang.org/en/downloads/" target="_blank">https://www.ruby-lang.org/en/downloads/</a>
+
+You're also going to need **RubyGems** which is a package manager framework for Ruby which you can download here:
+
+<a href="https://rubygems.org/pages/download" target="_blank">https://rubygems.org/pages/download</a>
 
 <a href="https://www.nodejs.org" target="_blank">NodeJS</a> is required only if you want CoffeScript support out of the box.
 

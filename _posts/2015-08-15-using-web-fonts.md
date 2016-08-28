@@ -27,7 +27,7 @@ After hearing about this, I just loaded the stylesheet containing the **@font-fa
 var fontStyleSheet = document.createElement('link');
 
 fontStyleSheet.onload = function() {
-    document.body.classList.add('font-loaded');
+  document.body.classList.add('font-loaded');
 };
 
 fontStyleSheet.href = 'http://fonts.googleapis.com/css?family=Roboto';
@@ -45,10 +45,10 @@ You still need to add your fonts via **@font-face** declaration or include the *
 
 ```js
 FontFaceOnload("Oswald", {
-    success: function() {
-        // when font is available, add class to body
-        document.body.classList.add('font-loaded');
-    }
+  success: function() {
+    // when font is available, add class to body
+    document.body.classList.add('font-loaded');
+  }
 });
 ```
 
@@ -60,7 +60,7 @@ Again, include your custom font by CSS but this time an observer object is creat
 var observer = new FontFaceObserver('Oswald');
 
 observer.check().then(function() {
-    document.body.classList.add('font-loaded');
+  document.body.classList.add('font-loaded');
 });
 ```
 
@@ -72,9 +72,9 @@ You won't need a **@font-face** declaration in your styles here, just JavaScript
 
 ```js
 WebFont.load({
-    google: {
-        families: [ 'Oswald' ]
-    }
+  google: {
+    families: [ 'Oswald' ]
+  }
 });
 ```
 
@@ -82,13 +82,13 @@ The script will automatically add classes to the body of the document, but if yo
 
 ```js
 WebFont.load({
-    google: {
-        families: [ 'Oswald' ]
-    },
-    classes: false,
-    active: function() {
-        document.body.classList.add('font-loaded');
-    }
+  google: {
+    families: [ 'Oswald' ]
+  },
+  classes: false,
+  active: function() {
+    document.body.classList.add('font-loaded');
+  }
 });
 ```
 
@@ -115,8 +115,8 @@ This is not hard to solve, once you load the font you can place a cookie.
 var observer = new FontFaceObserver('Oswald');
 
 observer.check().then(function() {
-    document.body.classList.add('font-loaded');
-    document.cookie = 'fonts-loaded';
+  document.body.classList.add('font-loaded');
+  document.cookie = 'fonts-loaded';
 });
 ```
 

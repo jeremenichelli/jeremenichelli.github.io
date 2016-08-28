@@ -15,11 +15,11 @@ First, set the styles to switch the font family only when a special class is pre
 
 ```css
 body {
-    font-family: sans-serif;
+  font-family: sans-serif;
 }
 
 .fonts-loaded body {
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 ```
 
@@ -29,10 +29,10 @@ Now, we need to add that class when the font's ready. In this example I'm going 
 var robotoFamily = new FontFaceObserver('Roboto');
 
 robotoFamily
-    .load()
-    .then(function() {
-        document.documentElement.classList.add('fonts-loaded');
-    });
+  .load()
+  .then(function() {
+    document.documentElement.classList.add('fonts-loaded');
+  });
 ```
 
 With this simple set of lines we can move any project to a better font loading strategy.
@@ -50,18 +50,18 @@ Of course this is not possible in static sites since the server already holds th
 
 ```js
 if (sessionStorage.getItem('fonts-loaded')) {
-    // fonts cached, add class to document
-    document.documentElement.classList.add('fonts-loaded');
+  // fonts cached, add class to document
+  document.documentElement.classList.add('fonts-loaded');
 } else {
-    var robotoFamily = new FontFaceObserver('Roboto');
+  var robotoFamily = new FontFaceObserver('Roboto');
 
-    robotoFamily
-        .load()
-        .then(function() {
-            document.documentElement.classList.add('fonts-loaded');
-            // set mark on storage for future page views
-            sessionStorage.setItem('fonts-loaded', true);
-        });
+  robotoFamily
+  .load()
+  .then(function() {
+    document.documentElement.classList.add('fonts-loaded');
+    // set mark on storage for future page views
+    sessionStorage.setItem('fonts-loaded', true);
+  });
 }
 ```
 
@@ -82,11 +82,11 @@ The following code should be placed inside the head including the previously men
 /* include loadJS library */
 
 if (sessionStorage.getItem('fonts-loaded')) {
-    // fonts cached, add class to document
-    document.documentElement.classList.add('fonts-loaded');
+  // fonts cached, add class to document
+  document.documentElement.classList.add('fonts-loaded');
 } else {
-    // load script with font observing logic
-    loadJS('/scripts/font.js');
+  // load script with font observing logic
+  loadJS('/scripts/font.js');
 }
 ```
 
@@ -98,12 +98,12 @@ The **font.js** file will look similar to this.
 var robotoFamily = new FontFaceObserver('Roboto');
 
 robotoFamily
-    .load()
-    .then(function() {
-        document.documentElement.classList.add('fonts-loaded');
-        // set mark on storage for future page views
-        sessionStorage.setItem('fonts-loaded', true);
-    });
+  .load()
+  .then(function() {
+    document.documentElement.classList.add('fonts-loaded');
+    // set mark on storage for future page views
+    sessionStorage.setItem('fonts-loaded', true);
+  });
 ```
 
 Users will only experiment a *flick* in the font style on the first page view. You can check how this works on this [demo page][5] and the resulting code in its [repository][6].

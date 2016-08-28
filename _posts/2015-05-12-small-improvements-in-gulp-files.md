@@ -17,16 +17,16 @@ var project = require('./package.json');
 
 // project paths
 var paths = {
-    src: './src/' + project.name + '.js',
-    spec: './test/' + project.name + '.spec.js',
-    output: './dist'
+  src: './src/' + project.name + '.js',
+  spec: './test/' + project.name + '.spec.js',
+  output: './dist'
 }
 
 gulp.task('something', function() {
-    gulp.src(paths.src)
-        .pipe( ... )
-        .pipe( ... )
-        .pipe(gulp.dest(paths.dest));
+  gulp.src(paths.src)
+    .pipe( ... )
+    .pipe( ... )
+    .pipe(gulp.dest(paths.dest));
 });
 ```
 
@@ -38,17 +38,17 @@ Another way to use the information available inside the package is to build a ba
 var concat = require('gulp-concat-util');
 
 var banner = '/*' +
-    '\n * ' + project.title + ' - v' + project.version +
-    '\n * ' + project.url +
-    '\n * ' + project.copyright + ' (c) ' + project.author + ' - ' + project.license + ' License' +
-    '\n*/\n\n';
+  '\n * ' + project.title + ' - v' + project.version +
+  '\n * ' + project.url +
+  '\n * ' + project.copyright + ' (c) ' + project.author + ' - ' + project.license + ' License' +
+  '\n*/\n\n';
 
 gulp.task('build', function() {
-    gulp.dest(paths.src)
-        .pipe( ... )
-        .pipe( ... )
-        .pipe(concat.header(banner));
-        .pipe(gulp.dest(paths.output));
+  gulp.dest(paths.src)
+    .pipe( ... )
+    .pipe( ... )
+    .pipe(concat.header(banner));
+    .pipe(gulp.dest(paths.output));
 });
 ```
 
@@ -58,7 +58,7 @@ As I explained in <a href="/2015/05/using-gulp/">my previous post</a>, Gulp has 
 
 ```js
 gulp.task('karma', [ 'lint' ], function() {
-   // do something 
+  // do something 
 });
 ```
 

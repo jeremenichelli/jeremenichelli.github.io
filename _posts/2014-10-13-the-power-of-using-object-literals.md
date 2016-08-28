@@ -8,7 +8,7 @@ resume: For the last months I've found myself using this simple technic quite a 
 
 One of the main caracteristics of JavaScript is that **almost** everything is an object. As you may know, or if you don't, you have two ways to access to an object property, both to read from it and write on it.
 
-One is the dot notation *person.age*, the other one is the brackets notation that goes like this *person['age']* where **person** is the object and **age** the property you want to have access to.
+One is the dot notation `person.age`, the other one is the brackets notation that goes like this `person['age']` where **person** is the object and **age** the property you want to have access to.
 
 In the second one we are passing the property as a string and that's the main reason why object literals are so useful and clean since strings are primitive values in JavaScript; this means you can compare them to take some different paths on your code.
 
@@ -21,10 +21,10 @@ Sometimes functions and components need a lot of customization by the time they'
 
 ```js
 var carousel = new Carousel(document.getElementById('photos'), {
-    loop: false,
-    time: 500,
-    prevButton: 'previous',
-    nextButton: 'next'
+  loop: false,
+  time: 500,
+  prevButton: 'previous',
+  nextButton: 'next'
 });
 ```
 
@@ -35,11 +35,11 @@ First of all, we must create an object containing the default values.
 ```js
 // default options
 var dflt = {
-    loop: true,
-    time: 300,
-    navigation: true,
-    nextButton: '&gt;',
-    prevButton: '&lt;'
+  loop: true,
+  time: 300,
+  navigation: true,
+  nextButton: '&gt;',
+  prevButton: '&lt;'
 };
 ```
 
@@ -47,13 +47,13 @@ Then we have to create a method that will compare the modified options object wi
 
 ```js
 function setOptions (options) {
-    var newOptions = {};
+  var newOptions = {};
 
-    for (var opt in dflt) {
-        newOptions[opt] = (typeof options[opt] !== 'undefined') ? options[opt] : dflt[opt];
-    }
+  for (var opt in dflt) {
+    newOptions[opt] = options[opt] !== 'undefined' ? options[opt] : dflt[opt];
+  }
 
-    return newOptions;
+  return newOptions;
 }
 ```
 
@@ -70,46 +70,46 @@ If this flag is not boolean, meaning it could have more than two possible values
 
 ```js
 var method = {
-    active: function () {
-        // do something for active state
-    },
-    inactive: function () {
-        // do something for inactive state
-    },
-    waiting: function () {
-        // do something for the waiting state
-    }
+  active: function () {
+    // do something for active state
+  },
+  inactive: function () {
+    // do something for inactive state
+  },
+  waiting: function () {
+    // do something for the waiting state
+  }
 };
 
 // assuming getState returns a string
 var state = getState();
 
-method[state](); 
+method[state]();
 ```
 
 Doing this is convenient because you avoid doing this not-so-good approach.
 
 ```js
 function isActive() {
-    // do something for active state
+  // do something for active state
 }
 
 function isInactive() {
-    // do something for inactive state
+  // do something for inactive state
 }
 
 function isWaiting() {
-    // do something for waiting state
+  // do something for waiting state
 }
 
 var state = getState();
 
 if (state === 'active') {
-    isActive();
+  isActive();
 } else if (state === 'inactive') {
-    isInactive();
+  isInactive();
 } else {
-    isWaiting();
+  isWaiting();
 }
 ```
 
@@ -118,26 +118,26 @@ Not only the code is ugly, but is not future proof. If at some point another sta
 I use a similar structure in <a href="https://www.github.com/jeremenichelli/steer" target="_blank">steer</a>.
 
 
-### Data binding 
+### Data binding
 
 Injecting large amount of data into an HTML Document can be hard to do in a clean a simple way. A nice choice is to solve this using *data* attributes in the elements and object literals.
 
 ```js
 var data = {
-    name: 'Alan Turing',
-    age: '58',
-    field: 'Computing Science',
-    job: 'professor',
-    place: 'Cambridge'
+  name: 'Alan Turing',
+  age: '58',
+  field: 'Computing Science',
+  job: 'professor',
+  place: 'Cambridge'
 };
 
 for (var property in data) {
-    var selector = '[data-' + property + ']',
-        element = document.querySelector(selector);
+  var selector = '[data-' + property + ']',
+    element = document.querySelector(selector);
 
-    if (element) {
-        element.innerHTML = data[property];
-    } 
+  if (element) {
+    element.innerHTML = data[property];
+  }
 };
 ```
 
@@ -156,28 +156,27 @@ Just create a base name and an integer to increase everytime you make a call to 
 
 ```js
 var cName = 'apicall',
-    cNumber = 0;
+  cNumber = 0;
 
 var _getData = function (baseUrl, callback) {
-    var script = document.createElement('script'),
-        callbackId = cName + cNumber;
+  var script = document.createElement('script'),
+    callbackId = cName + cNumber;
 
-    // increase callback number
-    cNumber++;
+  // increase callback number
+  cNumber++;
 
-    // make padding method global
-    window[callbackId] = function (data) {
-        if (typeof callback === 'function') {
-            callback(data);
-        } else {
-            console.error('You must specify a method as a callback');
-        }
-    };
+  // make padding method global
+  window[callbackId] = function (data) {
+    if (typeof callback === 'function') {
+      callback(data);
+    } else {
+      console.error('You must specify a method as a callback');
+    }
+  };
 
-    script.src = baseUrl + '&callback=' + callbackId;
-    document.head.appendChild(script);
+  script.src = baseUrl + '&callback=' + callbackId;
+  document.head.appendChild(script);
 };
-
 ```
 
 These lines belong to a simple script I developed to make JSONP calls that, for some unknown reason I named <a href="https://www.github.com/jeremenichelli/jabiru" target="_blank">jabiru</a>. I wrote <a href="/2014/09/south-american-bird-cross-domain-calls/" target="_blank">a post about it</a> if you're interested on cross domain requests.

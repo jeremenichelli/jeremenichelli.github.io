@@ -11,39 +11,39 @@ The result was very good so I forgot to look at third party solutions. Later I d
 The start point for this is a *node* object which has a property called *attributes*, an array-like list with all the attributes of the element. Pretty obvious so far.
 
 ```js
-var node = document.getElementById('sample-element'),
-    attrs = node.attributes,
-    sampleAttr = attrs[0];
+var node = document.getElementById('sample-element');
+var attrs = node.attributes;
+var sampleAttr = attrs[0];
 ```
 
 The value of this attribute is accessible by doing *sampleAttr.value*. When you're using a data binding library (or writing one) you get something like this *'user.name.first'*.
 
 ```js
 var model = {
-    user: {
-        name: {
-            first: 'John',
-            last: 'Oliver'
-        }
+  user: {
+    name: {
+      first: 'John',
+      last: 'Oliver'
     }
+  }
 };
 ```
 Now the question is how we could get the value *'John'* given this model and the string *'user.name.first'*.
 
 ```js
 function getFromPath(obj, path) {
-    var props = path.split('.'),
-        newObj = obj;
+  var props = path.split('.');
+  var newObj = obj;
 
-    for (var i = 0, len = props.length; i < len; i++) {
-        if (newObj[props[i]] !== null && newObj[props[i]] !== undefined) {
-            newObj = newObj[props[i]];
-        } else {
-            return null;
-        }
-    } 
+  for (var i = 0, len = props.length; i < len; i++) {
+    if (newObj[props[i]] !== null && newObj[props[i]] !== undefined) {
+      newObj = newObj[props[i]];
+    } else {
+      return null;
+    }
+  }
 
-    return newObj;
+  return newObj;
 }
 ```
 
@@ -62,32 +62,31 @@ A good thing about **lodash**'s approach is that it lets you pass a default valu
 
 ```js
 function getFromPath(obj, path, defaultValue) {
-    var props = path.split('.'),
-        newObj = obj;
+  var props = path.split('.');
+  var newObj = obj;
 
-    for (var i = 0, len = props.length; i < len; i++) {
-        if (newObj[props[i]] !== null && newObj[props[i]] !== undefined) {
-            newObj = newObj[props[i]];
-        } else {
-            return defaultValue || null;
-        }
-    } 
+  for (var i = 0, len = props.length; i < len; i++) {
+    if (newObj[props[i]] !== null && newObj[props[i]] !== undefined) {
+      newObj = newObj[props[i]];
+    } else {
+      return defaultValue || null;
+    }
+  }
 
     return newObj;
 };
 
 var model = {
-    user: {
-        name: {
-            first: 'John',
-            last: 'Oliver'
-        }
+  user: {
+    name: {
+      first: 'John',
+      last: 'Oliver'
     }
+  }
 };
 
 var middleName = getFromPath(model, 'user.name.middle', 'William');
 // middleName value is "William"
-
 ```
 
 ## Performance
