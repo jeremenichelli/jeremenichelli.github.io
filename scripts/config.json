@@ -1,0 +1,32 @@
+{
+  "less": {
+    "noncritical": {
+      "entry": "./src/styles/**/noncritical*.less",
+      "output": "./assets/styles/"
+    },
+    "critical": {
+      "entry": "./src/styles/**/critical*.less",
+      "output": "./_includes/"
+    }
+  },
+  "js": {
+    "noncritical": {
+      "entry": "./src/scripts/noncritical/**/*.js",
+      "output": "./assets/scripts/site.js"
+    },
+    "critical": {
+      "entry": "./src/scripts/critical/**/*.js",
+      "output": "./_includes/critical--js.html"
+    }
+  },
+  "favicon": {
+    "entry": "./src/favicon/favicon.png",
+    "output": "./assets/favicon/",
+    "path": "/assets/favicon/",
+    "html": "./_includes/favicons.html"
+  },
+  "images": {
+    "entry": "./src/images/*.{jpeg,jpg}",
+    "output": "./assets/images/"
+  }
+}
