@@ -428,7 +428,7 @@ I hope Polymer team keeps working hard and improves this since it is the closest
 **8 AUG 2016** &mdash; specs have been updated, `document.registerElement` has been deprecated in favor of `customElements.define` and easier extending syntax was added. I suggest reading [Eric Bidelman's article](https://developers.google.com/web/fundamentals/primers/customelement) which explains these two changes.
 
 
-[polymer]: https://polymer-project.org
+[polymer]: https://www.polymer-project.org
 
 [vue-article]: /2016/06/building-component-based-app-vue/
 [react-article]: /2016/07/building-a-component-based-app-react/
