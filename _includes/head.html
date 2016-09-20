@@ -34,7 +34,7 @@
     <meta name="twitter:description" content="{{ description }}">
     <meta name="twitter:url" content="{{ url }}">
     <meta name="twitter:image"
-      content="{{ site.url }}/assets/images/avatar.jpeg?time={{ site.data.timestamps.images }}">
+      content="{{ site.url | prepend: 'http://' }}/assets/images/avatar.jpeg?time={{ site.data.timestamps.images }}">
 
     <script>
       window.PAGE = '{{ type }}';
