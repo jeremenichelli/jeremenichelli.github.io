@@ -27,7 +27,7 @@ I think that its strongest drawback is its self-defined field of action. Initial
 Some of these stuff has been addressed in [an upcoming new version][vue2]. Features that can be accomplished with plain JavaScript have been deprecated, also view parser and runtime are now splited into two different bundles minimizing loading times and allowing server side rendering.
 
 - [Complete article about Vue](/2016/06/building-component-based-app-vue/)
-- [Simple web app built with Vue](https://github.com/jeremenichelli/movies/results/vue)
+- [Simple web app built with Vue](https://github.com/jeremenichelli/movies/tree/master/results/vue)
 
 
 ## React
@@ -47,7 +47,7 @@ It isn't slow, but it isn't fast either unless you apply certain patterns in spe
 To make a performant **React** app you need knowledge about how it works, knowledge that most of the time a team doesn't have time to absorb, and though documentation is complete, it definitely needs some gardening.
 
 - [Complete article about React](/2016/07/building-a-component-based-app-react/)
-- [Simple web app built with React](https://github.com/jeremenichelli/movies/results/react)
+- [Simple web app built with React](https://github.com/jeremenichelli/movies/tree/master/results/react)
 
 
 ## Polymer
@@ -65,7 +65,7 @@ Well, while performance is something _almost_ everyone cares, scaling a big appl
 As someone who prefers vanilla solutions over framework-based ones, I really hope **Polymer** takes some shape with time and helps you structure and scale your project in a similar way others do.
 
 - [Complete article about Polymer](/2016/08/building-a-component-based-app-polymer/)
-- [Simple web app built with Polymer](https://github.com/jeremenichelli/movies/results/polymer)
+- [Simple web app built with Polymer](https://github.com/jeremenichelli/movies/tree/master/results/polymer)
 
 
 ## Angular 2
@@ -82,8 +82,8 @@ It won't be hard to adopt if you are coming from **Angular 1.x**, but if you are
 
 This second version introduces interesting concepts and improvements under the hood, but they will be hard to sell if documentation and initial configuration aren't friendly for begginers.
 
-- [Complete article about Polymer](/2016/08/building-component-based-app-angular-2/)
-- [Simple web app built with Polymer](https://github.com/jeremenichelli/movies/results/angular)
+- [Complete article about Angular 2](/2016/08/building-component-based-app-angular-2/)
+- [Simple web app built with Angular 2](https://github.com/jeremenichelli/movies/tree/master/results/angular)
 
 
 ## Wrap-up
