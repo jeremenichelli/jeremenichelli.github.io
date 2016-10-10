@@ -30,7 +30,7 @@ let Link = React.createElement(
 ReactDOM.render(Link, document.querySelector('#example'));
 ```
 
-[See it in action &raquo;](https://jsfiddle.net/jeremenichelli/kqLmfcq4)
+[See it in action](https://jsfiddle.net/jeremenichelli/kqLmfcq4)
 
 In this example we are creating an anchor, passing the **href** and **class** properties and a text node as its only children.
 
@@ -173,7 +173,7 @@ render(
 );
 ```
 
-[See it in action &raquo;](https://jsfiddle.net/jeremenichelli/oLL9j1bj/3)
+[See it in action](https://jsfiddle.net/jeremenichelli/oLL9j1bj/3)
 
 _The render function in React components always has to return a single root element, that's why the two GitHub links are placed inside a **div** tag._
 
@@ -199,7 +199,7 @@ class GitHubUsers extends Component {
 }
 ```
 
-[See it in action &raquo;](https://jsfiddle.net/jeremenichelli/oLL9j1bj/4/)
+[See it in action](https://jsfiddle.net/jeremenichelli/oLL9j1bj/4/)
 
 This is a better pattern since now the logic inside `render` doesn't need to be updated when the data changes, improving the maintainability of the code.
 
@@ -302,7 +302,7 @@ class AccordionElement extends Component {
 }
 ```
 
-[See it in action &raquo;](https://jsfiddle.net/jeremenichelli/oLL9j1bj/5)
+[See it in action](https://jsfiddle.net/jeremenichelli/oLL9j1bj/5)
 
 When the **toggleState** function gets called the context will be the rendered node, with **bind** we change it back to the component.
 

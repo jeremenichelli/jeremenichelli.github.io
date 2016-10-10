@@ -71,7 +71,7 @@ new Vue({
 });
 ```
 
-[See it in action &raquo;](https://jsfiddle.net/jeremenichelli/k9vatv0m/)
+[See it in action](https://jsfiddle.net/jeremenichelli/k9vatv0m/)
 
 The library is really well documented, one of the things I like the most about it. Give the [guide][guide] a quick read which details methods, features available and also explains how it works under the hood.
 
@@ -139,7 +139,7 @@ new Vue({
 });
 ```
 
-[See it in action &raquo;](https://jsfiddle.net/jeremenichelli/k4xqwto9/)
+[See it in action](https://jsfiddle.net/jeremenichelli/k4xqwto9/)
 
 
 ### Props
@@ -188,7 +188,7 @@ Vue.component('results-list', {
 });
 ```
 
-[See it in action &raquo;](https://jsfiddle.net/jeremenichelli/eoa5qhsf/)
+[See it in action](https://jsfiddle.net/jeremenichelli/eoa5qhsf/)
 
 Props are prefixed with a _colon_ because we are passing a data reference, but it should be removed when passing the value itself.
 

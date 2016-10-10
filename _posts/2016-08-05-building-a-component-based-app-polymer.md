@@ -59,7 +59,7 @@ class GitHubLink extends HTMLElement {
 document.registerElement('github-link', GitHubLink);
 ```
 
-[See it in action &raquo;](https://jsfiddle.net/8Lrm8dzh/)
+[See it in action](https://jsfiddle.net/8Lrm8dzh/)
 
 When extending native elements prototype, some life cycle functions become available like the **createdCallback** and **attachedCallback** to run some code at specific moments.
 
@@ -103,7 +103,7 @@ The one you're going to use more is the `<dom-module>` tag, inside of which we p
 </dom-module>
 ```
 
-[See it in action &raquo;](https://jsfiddle.net/jeremenichelli/nvd4t92h/)
+[See it in action](https://jsfiddle.net/jeremenichelli/nvd4t92h/)
 
 The element's name must match in the `<dom-module>` tag and the Polymer function call for the [is](https://www.w3.org/TR/custom-elements/#custom-elements-customized-builtin-example) attribute and property respectively.
 
@@ -172,7 +172,7 @@ When we create a new element with Polymer, properties are declared in its object
 </dom-module>
 ```
 
-[See it in action &raquo;](https://jsfiddle.net/jeremenichelli/fdg4mwez/)
+[See it in action](https://jsfiddle.net/jeremenichelli/fdg4mwez/)
 
 Properties are accessible in the view by enclosing them with square brackets.
 
@@ -251,7 +251,7 @@ In Polymer when using `[[ ]]`, single operators can be used and object propertie
 </dom-module>
 ```
 
-[See it in action &raquo;](https://jsfiddle.net/jeremenichelli/kfz4pbqn/)
+[See it in action](https://jsfiddle.net/jeremenichelli/kfz4pbqn/)
 
 To define a computed property, add it with a **computed** key referencing a method and including the properties that will trigger a value change in the arguments.
 

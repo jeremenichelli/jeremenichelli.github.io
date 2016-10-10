@@ -99,7 +99,7 @@ function shuffle(array) {
   return newArray;
 }
 ```
-[See it in action &raquo;](http://jsfiddle.net/jeremenichelli/7qLbpr1b/6/)
+[See it in action](http://jsfiddle.net/jeremenichelli/7qLbpr1b/6/)
 
 I've created a fiddle (link above) where you can see this working. It also contains an iteration that gets executed a thousand times with the results that shows the frequencies distribution in console.
 
