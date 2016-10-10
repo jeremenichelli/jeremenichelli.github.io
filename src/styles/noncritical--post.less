@@ -16,13 +16,13 @@ del, code {
   font-family: Menlo, Consolas, Monaco, monospace;
   font-size: 13px;
   line-height: 1.5;
-  padding: 0 4px;
+  padding: 0 5px;
 }
 
 code {
-  background-color: @background-color--dark;
-  color: @text-color--light;
+  background-color: @background-color--medium;
   border-radius: 4px;
+  margin: 0 .05em;
 
   -moz-tab-size: @tab-size;
   -o-tab-size: @tab-size;
@@ -44,7 +44,7 @@ code {
 }
 
 pre {
-  background-color: @background-color--dark;
+  background-color: @background-color--medium;
   border-radius: 4px;
   line-height: 1.25em;
   overflow: auto;
@@ -52,6 +52,7 @@ pre {
 
   code {
     background-color: transparent;
+    margin: 0;
     padding: 0;
   }
 }

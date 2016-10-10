@@ -63,18 +63,22 @@ ul {
 }
 
 nav {
-  .secondary--text();
-  display: flex;
-  margin: 0 auto;
-  max-width: 425px;
-  padding: 1.75em;
-  text-align: center;
+  padding: 1.75em 20px;
+  overflow: hidden;
+  text-align: left;
   text-transform: uppercase;
 }
 
 .nav__link {
-  flex: 1;
-  font-size: .90625rem;
+  .secondary--text();
+
+  &:visited {
+    color: @accent;
+  }
+
+  + .nav__link {
+    margin: 0 0 0 3em;
+  }
 }
 
 .header__title {
@@ -110,7 +114,16 @@ h2 {
   }
 
   nav {
-    margin: 0 0 0 auto;
+    padding: 1.75em 4.5em;
+    text-align: right;
+  }
+
+  .nav__link {
+    font-size: .90625em;
+
+    + .nav__link {
+      margin: 0 0 0 4.5em;
+    }
   }
 
   .header__title {
