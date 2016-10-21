@@ -208,7 +208,7 @@ class Movies extends React.Component {
 
     return (
       <div className="movies">
-        { (movies || noMovies).map(m => renderMovie(m)) }
+        { (movies || noMovies).map(renderMovie) }
       </div>
     );
   }
