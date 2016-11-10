@@ -4,5 +4,6 @@ _drafts/
 
 node_modules
 npm-debug.log
+.jekyll-metadata
 
 .DS_Store
