@@ -94,6 +94,8 @@ componentWillLeave(done) {
 }
 ```
 
+A `done` callback is passed to indicate the lifecycle hooks call should continue.
+
 
 ## will-change
 
@@ -280,7 +282,7 @@ Steps to optimize transitions are pretty easy: **hint** the browser, give it a l
 
 The main challenge will be to keep the code straight-forward and readable.
 
-If you want to know more about `will-change` I suggest two articles, one from [Paul Lewis][paul-will-change] and another one from [Sara Soueidan][sara-will-change] both explaining the nature of this property better than I.
+If you want to know more about `will-change` I suggest two articles, one from [Paul Lewis][paul-will-change] and another one from [Sara Soueidan][sara-will-change] both explaining the nature of this property..
 
 [paul-will-change]: https://aerotwist.com/blog/bye-bye-layer-hacks/
 [sara-will-change]: https://dev.opera.com/articles/css-will-change-property/
