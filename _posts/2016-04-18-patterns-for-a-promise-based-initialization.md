@@ -4,9 +4,9 @@ title: Patterns for a Promises based initialization
 resume: When is your web site or app ready for usage? It could depend on scripts and styles being loaded, it might need an external API to be accessible, or all of them together. Having control over this situation could generate a heavy reliance on callbacks and one of the best ways to fight this asynchronicity are Promises.
 ---
 
-*If you haven't checked Promises yet I recommend [the post Jake Archibald wrote][1] about them.*
+*If you haven't checked Promises yet I recommend [Jake Archibald's post][1] about them.*
 
-Now, let's suppose we have a method named **initApp** we need to call when stuff is ready.
+Say we have a method named **initApp** we need to call after some stuff is ready.
 
 ```js
 function initApp() {
@@ -59,14 +59,14 @@ function loadScript(url) {
 }
 ```
 
-To initialize our app just use **then** after calling **loadScript**.
+To initialize our app just use `then` after calling `loadScript`.
 
 ```js
 loadScript('/assets/scripts/app.js')
   .then(initApp);
 ```
 
-**Promise.all** will come handy when multiple scripts need to be loaded.
+`Promise.all` will come handy when multiple scripts need to be loaded.
 
 ```js
 // create a Promise for each script
@@ -82,7 +82,7 @@ Promise.all([ appPromise, jqueryPromise ])
 
 ## Styles
 
-A similar approach can be applied when loading styles, but this time creating a **link** element.
+We can load styles in a similar way, this time creating a **link** element.
 
 ```js
 function loadStyles(url) {
@@ -117,7 +117,7 @@ Promise.all([ scriptPromise, stylesPromise ])
 
 ## DOM ready
 
-Trying to detect when the DOM has been completely parsed and move it to a Promise based algorithm will require the use of a different pattern, because of the nature of event listeners.
+Trying to detect when the DOM has been completely parsed and move it to a `Promise` based algorithm will require the use of a different pattern, because of the nature of event listeners.
 
 ```js
 document.addEventListener('DOMContentLoaded', function() {
