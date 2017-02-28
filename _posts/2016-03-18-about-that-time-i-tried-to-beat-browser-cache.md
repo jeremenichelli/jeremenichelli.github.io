@@ -1,21 +1,21 @@
 ---
 layout: default
 title: About that time I tried to beat browser cache
-resume: After applying a new redesign and architectural changes to my site to improve loading and rendering times, I started thinking what else I could do to give a faster experience to the user. Then I saw the Network tab on the developer tools and found it!
+resume: After a redesign on my site to improve loading and rendering times, I started thinking what else I could do to give a faster experience to the user.
 ---
 
-*What if I save the content of the stylesheets in the local storage and use it on future visits?*
+Then I saw the Network tab on the developer tools and found it. *What if I save the stylesheets content in the local storage and use it on future visits?*
 
-Of course, this is similar to what <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching" target="_blank">browser caching</a> does, it temporarily stores used resources.
-
-When a page tries to fetch a **cached** resource instead of going into roundtrips between client and server the browser provides it saving loading time and network usage, but in some way, that fetch is still a network request with headers and directives.
+Of course, this is similar to what <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching" target="_blank">browser caching</a> does, temporarily storing used resources.
 
 My inital goal was to improve that using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API" target="_blank">Web Storage API</a> and JavaScript, but first I needed to dive into the **link** element and how it works.
 
 
 ## About the link element
 
-The link element inherits a lot of native methods from the HTML Element object. In addition it brings some special features because of its own nature, and some of them crucial to achieve what I wanted.
+The link element inherits a lot of native methods from the HTML Element object.
+
+It also brings some special features because of its own nature, and some of them crucial to achieve what I wanted.
 
 The first step was to know when the stylesheet is finally loaded so all the rules are available to be stored and how that could actually be done.
 
@@ -54,9 +54,9 @@ link.onload = function() {
 We are ready to start playing with our **link** element and its stylesheet.
 
 
-### sheet just got real
+### sheet just got real!
 
-In modern browsers, a `sheet` property is available on **link** elements which initial value is `null`, but when the stylesheet hits the browser it contains a lot of information about our **.css** file.
+In modern browsers, a `sheet` property is available on **link** elements which initial value is `null`, but when the stylesheet hits the browser it contains a lot of information about our _.css_ file.
 
 For this case, I just needed one thing, a collection of strings for all the CSS rules.
 
