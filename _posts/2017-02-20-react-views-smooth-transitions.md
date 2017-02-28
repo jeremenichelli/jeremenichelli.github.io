@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Smooth view transitions for React views
+title: Smooth transitions for React views
 resume: Today's web app development has become way too JavaScript centric and achieving nice and performant animations on modern web apps can be a real challenge.
 ---
 
-This happened to me in a recent project with view transitions. The main reason is that libraries like React and our code requires heavy processing activity to update the DOM, not leaving enough room for smooth animations.
+This happened to me in a recent project with view transitions. Nowadays libraries like React and our code require heavy processing activity to update the DOM, not leaving enough room for smooth animations.
 
 After debugging and many tries these findings were the most _bulletproof_ solutions.
 
@@ -38,7 +38,7 @@ class Home extends Component {
 }
 ```
 
-Instead of the generic [gsap](https://www.npmjs.com/package/gsap) module we import [gsap-promise](https://www.npmjs.com/package/gsap-promise) which is just a wrapper of the official one that returns a Promise when animations are done, keeping the code cleaner.
+Instead of the generic [gsap](https://www.npmjs.com/package/gsap) module we import [gsap-promise](https://www.npmjs.com/package/gsap-promise) which is just a wrapper of the official one that returns a `Promise` when animations are done, keeping the code cleaner.
 
 When an element is wrapped by a transition group, `componentWillAppear` and `componentWillLeave` lifecycle hooks become available.
 
@@ -59,7 +59,7 @@ class App extends Component {
 }
 ```
 
-Assuming this component where the views are rendered, we place the `children` prop inside a `TransitionGroup` component so the previously mentioned hooks are called.
+Assuming this is where the views are rendered, we place the `children` prop inside a `TransitionGroup` component so the previously mentioned hooks get called.
 
 
 ### Basic animations
@@ -94,12 +94,14 @@ componentWillLeave(done) {
 }
 ```
 
-A `done` callback is passed to indicate the lifecycle hooks call should continue.
+A `done` callback is passed to indicate the lifecycle sequence should continue.
 
 
 ## will-change
 
-The first thing that caught my eye was that we weren't upgrading elements so that their style updates are handle by the GPU when possible, this not so new CSS property acts as a hint for the browser so it optimizes elements we are about to animate.
+The first thing that caught my eye was that we weren't upgrading elements so that their style updates are handle by the GPU when possible.
+
+This not so new CSS property acts as a hint for the browser so it optimizes elements we are about to animate.
 
 So we could easily add a step before our animation and call it the day.
 
@@ -130,7 +132,7 @@ If things were **that** simple it wouldn't be web development, right?
 
 ### Giving the browser time
 
-We have to options here, apply some delay to the animation, enough for the browser to run optimizations but not too long so the user actually doesn't notice it.
+We have two options here, delay our animation enough for the browser to run optimizations, but not too long so the user actually doesn't notice it.
 
 The other one is queuing a high priority task on the next available frame using `requestAnimationFrame`, and I'm picking up this one.
 
@@ -197,25 +199,25 @@ componentWillAppear(done) {
 
 Second problem, _solved_.
 
-With this additions, transitions between views became really smooth, but when the animation run for the first time after the site was loaded it lagged. **Sad face emoji**.
+With these additions, transitions between views became really smooth, but when animations run after the site was loaded they lagged. **Sad face emoji**.
 
-It occurred to me that a big bundle just got parsed, there was a lot of scripting going on and the browser handling lots of DOM updates because well, we use JavaScript to write HTML now, and that comes with a cost.
+My guess was that after parsing a big bundle, there was a lot of scripting going on and the browser might be handling lots of DOM updates, because well... we use JavaScript to write HTML now and that comes with a cost.
 
 
 ## Load event
 
-In _most_ browsers when the `load` event is triggered, all resources where fetched and parsed and the browser is done on the busy task of building the render tree.
+In most browsers when the `load` event is triggered, it means that all resources where fetched and parsed and the browser is done on the busy task of building the render tree.
 
-So, waiting until that happens to run the animations sounded like a nice try.
+Running animations after all of that already happened sounds reasonable.
 
-Adding a listener inside the view is not an option, since after the `load` event happened the callback we passed will not get called. Racing condition.
+We could add a listener inside the view's component but that will not work, since after the `load` event occurred its callback is ignored. Racing condition.
 
-Also, the user might access the app from different routes so it was priority to have a centralized approach on this.
+Also, the user might access the app from different routes so it's better to have a centralized approach for this.
 
 
 ### Promises, promises
 
-To achieve this and keep the code consistent, and before we kicked off the application render process, I exposed a global `Promise` that got resolved when the `load` event got triggered.
+To achieve this keeping the code consistent, and before we kicked off the application render process, I exposed a global `Promise` that got resolved when the `load` event was triggered.
 
 ```js
 let appResolve;
@@ -231,12 +233,12 @@ self.addEventListener('load', appResolve);
 
 If you want to understand better how this code works, I wrote an [article about it](/2016/04/patterns-for-a-promise-based-initialization/) a while ago.
 
-Notice I'm storing the `Promise` under the `self` global object so it can be accessed by any view and because it is a `Promise` there is no race condition with the event itself. **Win**.
+Notice I'm storing the `Promise` object under the `self` namespace so it can be accessed by any view and because it is a `Promise` there is no race condition with the event itself.
 
 
 ## Come together
 
-In the original code, the animation was on it's own async method and there were some dirty checks for legacy browsers. Here is an all-in version of the approach that works in modern browsers.
+In the original code, the animation was on its own async method and some dirty checks were necessary for legacy browsers, but here is an all-in version of the approach that works in modern browsers.
 
 ```js
 componentWillAppear(done) {
@@ -273,7 +275,7 @@ componentWillAppear(done) {
 }
 ```
 
-Applying this to each view in you project might be a good indication that a decorator or a reusable component containing all this logic _just once_ might be worth.
+If you find yourself writing this same logic repeatedly in several parts of a project it might be worth to build a decorator or a reusable component containing all this logic in just one place.
 
 
 ## Wrap-up
@@ -282,7 +284,7 @@ Steps to optimize transitions are pretty easy: **hint** the browser, give it a l
 
 The main challenge will be to keep the code straight-forward and readable.
 
-If you want to know more about `will-change` I suggest two articles, one from [Paul Lewis][paul-will-change] and another one from [Sara Soueidan][sara-will-change] both explaining the nature of this property..
+If you want to know more about `will-change` there are two excellent articles, one from [Paul Lewis][paul-will-change] and another one from [Sara Soueidan][sara-will-change], both explaining the nature of this property.
 
 [paul-will-change]: https://aerotwist.com/blog/bye-bye-layer-hacks/
 [sara-will-change]: https://dev.opera.com/articles/css-will-change-property/
