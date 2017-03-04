@@ -386,9 +386,9 @@ As any other framework, its ecosystem kind of forces you to do things you might 
 [vue-cli]: https://github.com/vuejs/vue-cli
 [polymer-cli]: https://github.com/Polymer/polymer-cli
 [angular-cli]: https://github.com/angular/angular-cli
-[vue-movies]: https://github.com/jeremenichelli/movies/results/vue
+[vue-movies]: https://github.com/jeremenichelli/movies/tree/master/results/vue
 
 [vue-article]: /2016/06/building-component-based-app-vue/
 [react-article]: /2016/07/building-a-component-based-app-react/
 [polymer-article]: /2016/08/building-a-component-based-app-polymer/
-[angular-article]: /2016/08/building-acomponent-based-app-angular-2/
+[angular-article]: /2016/08/building-component-based-app-angular-2/
