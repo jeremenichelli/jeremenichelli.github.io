@@ -522,9 +522,9 @@ Most of these thoughts came while building a [simple web app][react-movies] usin
 [css-modules]: http://andrewhfarmer.com/what-are-css-modules/
 [css-modules-webpack]: https://css-modules.github.io/webpack-demo/
 [react-router]: https://github.com/reactjs/react-router
-[react-movies]: https://github.com/jeremenichelli/movies/results/react
+[react-movies]: https://github.com/jeremenichelli/movies/tree/master/results/react
 
 [vue-article]: /2016/06/building-component-based-app-vue/
 [react-article]: /2016/07/building-a-component-based-app-react/
 [polymer-article]: /2016/08/building-a-component-based-app-polymer/
-[angular-article]: /2016/08/building-acomponent-based-app-angular-2/
+[angular-article]: /2016/08/building-component-based-app-angular-2/
