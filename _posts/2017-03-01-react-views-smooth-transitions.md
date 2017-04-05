@@ -286,7 +286,7 @@ The main challenge will be to keep the code straight-forward and readable.
 
 If you want to know more about `will-change` there are two excellent articles, one from [Paul Lewis][paul-will-change] and another one from [Sara Soueidan][sara-will-change], both explaining the nature of this property.
 
-_Thanks to Matt DesLauriers for reviewing this article._
+_Thanks to [Matt DesLauriers](https://twitter.com/mattdesl) for reviewing this article._
 
 [paul-will-change]: https://aerotwist.com/blog/bye-bye-layer-hacks/
 [sara-will-change]: https://dev.opera.com/articles/css-will-change-property/
