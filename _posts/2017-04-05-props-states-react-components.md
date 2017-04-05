@@ -4,8 +4,6 @@ title: Props and state in React components
 resume: React not only changed the way we build our interfaces but also put data in the spotlight. This is a short take around components internals, data and states.
 ---
 
-I will explore different ways React component are able to contain information and how to detect cases where it might be better to move it to a different place.
-
 ## Props
 
 By definition _props_ are initial properties that affect how a component is rendered.
