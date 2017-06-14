@@ -76,7 +76,7 @@ That's why the **Angular** team is betting on a complete rewrite to keep pace.
 
 Though it was still on beta I decided to give it a try. This second version pushes a lot of changes into the development experience, like TypeScript over vanilla JavaScript and a new component interface.
 
-It won't be hard to adopt if you are coming from **Angular 1.x**, but if you are not prepare for a big learning curve. An **Angular 2** requires a lot of configuration to bootstrap a simple application, but scaling over it is really easy.
+It won't be hard to adopt if you are coming from **Angular 1.x**, but if you are not prepare for a big learning curve. **Angular 2** requires a lot of configuration to bootstrap a simple application, but scaling over it is really easy.
 
 > When using Angular 2 in your project, you are choosing a slow start for a rapid and organized growth
 
