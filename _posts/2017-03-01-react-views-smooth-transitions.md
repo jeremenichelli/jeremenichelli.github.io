@@ -154,7 +154,8 @@ componentWillAppear(done) {
         duration,
         { autoAlpha: 0, scale: .5 },
         { autoAlpha: 1, scale: 1 }
-      );
+      )
+      .then(done);
   });
 }
 ```
@@ -256,20 +257,20 @@ componentWillAppear(done) {
       // wait for next available frame
       requestAnimationFrame(() => {
         animate
-        .fromTo(
-          [ this.title, this.content ],
-          duration,
-          { autoAlpha: 0, scale: .5 },
-          { autoAlpha: 1, scale: 1 }
-        )
-        .then(() => {
-          // set will-change back
-          return animate.set(
+          .fromTo(
             [ this.title, this.content ],
-            { willChange: 'auto' }
-          );
-        })
-        .then(done);
+            duration,
+            { autoAlpha: 0, scale: .5 },
+            { autoAlpha: 1, scale: 1 }
+          )
+          .then(() => {
+            // set will-change back
+            return animate.set(
+              [ this.title, this.content ],
+              { willChange: 'auto' }
+            );
+          })
+          .then(done);
       });
     });
 }
