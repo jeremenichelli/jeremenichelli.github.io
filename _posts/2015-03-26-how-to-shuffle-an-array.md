@@ -29,7 +29,7 @@ function shuffle(array) {
 
 ### Get a random position
 
-There's a pretty famous guy in the neighbourhood called <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random" target="_blank">Math.random()</a> that picks a number between *0* and *0.99* and returns it. Let's say we have an array with three elements, if we call this method and then multiply the result with the length of the array we can get a value between *0 * 3 = 0* and *0.99 * 3 = 2.99*. Removing the floating part of any of the possible result we can get zero, one or two which are the three available indexes in an array of three elements. What really surprised me is that JavaScript doesn't have a *truncate* method or to be more accurate <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc" target="_blank">it has one but it's not present in all browsers</a>. A good alternative is to use *parseInt()*.
+There's a pretty famous guy in the neighbourhood called <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random" target="_blank">Math.random()</a> that picks a number between *0* and *0.99* and returns it. Let's say we have an array with three elements, if we call this method and then multiply the result with the length of the array we can get a value between *0 * 3 = 0* and *0.99 * 3 = 2.99*. Removing the floating part of any of the possible result we can get zero, one or two which are the three available indexes in an array of three elements.
 
 ```js
 function shuffle(array) {
@@ -37,7 +37,7 @@ function shuffle(array) {
   var len = origArray.length;
   var position;
 
-  position = parseInt(Math.random() * len);
+  position = Math.floor(Math.random() * len);
 }
 ```
 
@@ -50,7 +50,7 @@ function shuffle(array) {
   var position;
 
   while (len) {
-    position = parseInt(Math.random() * len--);
+    position = Math.floor(Math.random() * len--);
   }
 }
 ```
@@ -70,7 +70,7 @@ function shuffle(array) {
   var position;
 
   while (len) {
-    position = parseInt(Math.random() * len--);
+    position = Math.floor(Math.random() * len--);
     newArray.push(origArray.splice(position, 1)[0]);
   }
 
@@ -89,7 +89,7 @@ function shuffle(array) {
 
     while (len) {
       newArray.push(
-        origArray.splice(parseInt(Math.random() * len--), 1)[0]
+        origArray.splice(Math.floor(Math.random() * len--), 1)[0]
       );
     }
   } else {
