@@ -67,8 +67,6 @@ This method will be called every time React tries to update the element. If deci
 
 A common case is when a component receives an object as a _prop_.
 
-Instead of comparing the whole object, check for a key or a combination of them which makes the _prop_ unique.
-
 ```js
 class MovieBox extends React.Component {
   shouldComponentUpdate(nextProps) {
@@ -88,7 +86,7 @@ class MovieBox extends React.Component {
 }
 ```
 
-Comparing primitive values like strings is fast making the logic efficient and valuable from a performance perspective.
+Instead of comparing the whole object, check for a key or a combination of them which makes the _prop_ unique.
 
 
 ## Avoid unnecessary element reconciling
@@ -138,14 +136,12 @@ class SearchButton extends React.Component {
 }
 ```
 
-You can get similar behaviors by returning `false` when the component should update or extending from `PureComponent` class as mentioned before, something that might not be possible the source of the component doesn't belong to your project.
+You can get similar behaviors by returning `false` when the component should update or extending from `PureComponent` class as mentioned before, something that might not be possible the source of the component doesn't belong to your codebase.
 
 
 ## Avoid anonymous references
 
 Not only returning React elements, other computational operations like loops can happen inside a render function.
-
-This power in combination with some short hand allowed from JavaScript itself can become a double-edge sword.
 
 ```js
 class Movies extends React.Component {
@@ -210,8 +206,6 @@ class Movies extends React.Component {
 ```
 
 [See it in action](https://jsfiddle.net/jeremenichelli/rt9tnk45/)
-
-For the same reason, you should avoid using `bind` inside **render**.
 
 These optimizations are similar to the ones shown before. The general take is to place outside the component everything that will remain constant.
 
