@@ -56,16 +56,16 @@ if (sessionStorage.getItem('fonts-loaded')) {
   var robotoFamily = new FontFaceObserver('Roboto');
 
   robotoFamily
-  .load()
-  .then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-    // set mark on storage for future page views
-    sessionStorage.setItem('fonts-loaded', true);
-  });
+    .load()
+    .then(function() {
+      document.documentElement.classList.add('fonts-loaded');
+      // set mark on storage for future page views
+      sessionStorage.setItem('fonts-loaded', true);
+    });
 }
 ```
 
-This way the user will not see the text *switching* from one font family to the desired one on every page load.
+The user will not see the text *switching* from one font family to the desired one on every page load if the font files are already cached.
 
 
 ## The critical rendering path paradigm
