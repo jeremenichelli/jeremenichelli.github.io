@@ -25,11 +25,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
-.fonts-loaded {
-
-  body {
+  .fonts-loaded & {
     font-family: 'Fira Sans', sans-serif;
   }
 }
@@ -81,7 +78,6 @@ nav {
 }
 
 .header__title {
-  font-size: 1.666667em;
   line-height: 1.25em;
   margin: 1em 0 0;
 }
@@ -117,15 +113,7 @@ h2 {
     text-align: right;
   }
 
-  .nav__link {
-    font-size: .90625em;
-
-    + .nav__link {
-      margin: 0 0 0 4.5em;
-    }
-  }
-
-  .header__title {
-    font-size: 1.75em;
+  .nav__link + .nav__link {
+    margin: 0 0 0 4.5em;
   }
 }
