@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Small improvements in gulp files
 resume: I want to share some things I always do when I'm building my tasks in Gulp. Small patterns to solve simple situations and improve the build process in my projects.
 ---
@@ -58,7 +57,7 @@ As I explained in <a href="/2015/05/using-gulp/">my previous post</a>, Gulp has 
 
 ```js
 gulp.task('karma', [ 'lint' ], function() {
-  // do something 
+  // do something
 });
 ```
 

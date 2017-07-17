@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Writing your own CSS fluid grid
 resume: The structure and layout of a website or web app is one of the main decisions made over its design. There are a lot of grid systems already built and ready to use like the ones included in Bootstrap or Foundation, but I prefer to build my own and have more control over the layout of my project.
 ---

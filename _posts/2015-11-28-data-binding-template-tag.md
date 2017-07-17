@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Data binding using the template tag
 resume: There's a discussion taking place in the front end development industry right now about frameworks. No matter which side you are, truth is we sometimes forget all the things the web platform has available for us to achieve some complex requirements.
 ---

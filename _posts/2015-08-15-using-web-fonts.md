@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Using web fonts? Be careful
 resume: Searching for better design and stronger identity, custom fonts have become something present in almost all modern sites. While the result is great, this feature also comes with one or more network requests and other compromises like FOUT and FOIT.
 ---

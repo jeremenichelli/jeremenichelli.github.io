@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Pointers in C
 resume: There are two things that I do every year in my life, one is turning one year older, the other is trying to remember again how to properly use pointers in C.
 ---

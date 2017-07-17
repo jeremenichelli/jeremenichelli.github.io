@@ -1,5 +1,4 @@
 ---
-layout: default
 title: About that time I tried to beat browser cache
 resume: After a redesign on my site to improve loading and rendering times, I started thinking what else I could do to give a faster experience to the user.
 ---

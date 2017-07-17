@@ -1,5 +1,4 @@
 ---
-layout: default
 title: A Gulp recipe for timestamps
 resume: Making sure you serve your users the correct collection of assets is a real challenge, even for static websites, but you can combine some logic on a task runner and your site generator templating to solve this riddle.
 ---

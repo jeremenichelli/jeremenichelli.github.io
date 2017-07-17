@@ -1,5 +1,4 @@
 ---
-layout: default
 title: The component based frameworks experience
 resume: I'm not a framework or library person, but they exist for a reason. There's a need of solving things quickly, a clear growth path and fast adoption for new team members.
 ---

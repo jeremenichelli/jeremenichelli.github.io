@@ -1,5 +1,4 @@
 ---
-layout: default
 title: npm install debate
 resume: About a few hours ago, eleven lines of code dissapear and thousands of projects broke. As every time something not so good happens in the industry, we have to talk about it.
 ---
@@ -30,9 +29,9 @@ Some people had a horrible time trying to find out why their projects were break
 
 *What could we have done better?* We are relying **a lot** in **npm modules**, or at least we need a back up plan. I'm sure that having this discussion will take us somewhere better.
 
-The creator of JavaScript module bundler **Rollup** already published <a href="https://medium.com/@Rich_Harris/how-to-not-break-the-internet-with-this-one-weird-trick-e3e2d57fee28#.51bhkzdaj" target="_blank">his solution for this</a>. 
+The creator of JavaScript module bundler **Rollup** already published <a href="https://medium.com/@Rich_Harris/how-to-not-break-the-internet-with-this-one-weird-trick-e3e2d57fee28#.51bhkzdaj" target="_blank">his solution for this</a>.
 
-*What could npm have done better?* Probably ask lawyers for more time to explain the situation to the community, be more open about what was happening. I don't quite agree with what they did, but maybe this whole lawyer thing got them scared, I don't know. 
+*What could npm have done better?* Probably ask lawyers for more time to explain the situation to the community, be more open about what was happening. I don't quite agree with what they did, but maybe this whole lawyer thing got them scared, I don't know.
 
 By the time I was writing this there was no formal statement from **npm**, but we will have one soon for sure. I'm sure they are not happy with this whole thing either.
 

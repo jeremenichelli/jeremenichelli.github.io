@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Automating the critical CSS inlining with npm scripts
 resume: A few months ago I published an article about inling critical CSS to improve content-first-pages performance and looking at the stats it became quite popular. Later I wrote another one about the benefits of using npm scripts when possible, so consider this a merge of both.
 ---

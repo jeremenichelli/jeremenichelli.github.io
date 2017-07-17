@@ -1,5 +1,4 @@
 ---
-layout: default
 title: What's in your head?
 resume: Not singing a Cranberries song. Not saying you're crazy. I realized that when I have to start a new web project I spend a lot of time trying to make sure I'm not forgetting anything inside the head tag.
 ---

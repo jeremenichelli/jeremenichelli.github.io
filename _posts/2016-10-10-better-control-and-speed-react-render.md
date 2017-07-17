@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Optimize performance in React components
 resume: Under the hood, React creates something similar to a virtual DOM tree to track updates when a component state or prop changes.
 ---

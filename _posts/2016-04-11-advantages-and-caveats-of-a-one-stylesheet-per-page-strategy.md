@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Advantages and caveats of a one stylesheet per page strategy
 resume: I recently changed the CSS structure of my personal site and blog aiming for better loading times and moved to single set of styles. Not every project will benefit from this.
 ---

@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Quick introduction to the Intersection Observer&nbsp;API
 resume: These last years browsers vendors have paid more attention to the riddles developers were trying to solve to implement native and more performant solutions.
 ---

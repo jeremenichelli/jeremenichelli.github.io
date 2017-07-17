@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Moving to Markdown
 resume: A few days ago I received an email from a developer asking for help with Markdown files on Jekyll. Giving him some assistance on this reminded me how good and agnostic this language is for writing, so from now on my posts will be Markdown files. Here is why I'm doing this and some tips about it.
 ---
