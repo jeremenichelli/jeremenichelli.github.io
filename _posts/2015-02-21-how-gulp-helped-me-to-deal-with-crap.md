@@ -13,7 +13,7 @@ When I received the permissions to put my hands in the code the first little thi
 
 They weren't the funniest hours of my life but it reduced the file by more than a half and I lost less time trying to find what to fix or delete in the code in the next weeks.
 
-### A master LESS file to rule them all
+### One .less file to rule them all
 
 A small decision sometimes becomes big. I decided to create a *main.less* file that will import first the *_oldStyles.less* file and everytime I refactored a particular section or functionality of the site I should erase them from that file and move it to a new one.
 
