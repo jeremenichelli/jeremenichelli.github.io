@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GPU accelarated view transitions in React
+title: GPU accelerated view transitions in React
 resume: Achieving nice and performant animations on modern web apps can be a real challenge. Using libraries like React can require a lot CPU activity to update the DOM, not leaving enough room for smooth transitions.
 ---
 
