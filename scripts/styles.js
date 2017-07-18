@@ -1,15 +1,17 @@
-var fs = require('fs');
-var path = require('path');
-var mkdirp = require('mkdirp');
-var glob = require('glob');
-var chalk = require('chalk');
+const fs = require('fs');
+const path = require('path');
+const mkdirp = require('mkdirp');
+const glob = require('glob');
+const chalk = require('chalk');
 
-var config = require('./config.json');
-var timestamps = require('./timestamps.js');
-var less = require('less');
-var cleanCSSPlugin = require('less-plugin-clean-css');
+const config = require('./config.json');
+const less = require('less');
+const cleanCSSPlugin = require('less-plugin-clean-css');
+const postcss = require('postcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
 
-var cleanCSS = new cleanCSSPlugin({ advanced: true });
+const cleanCSS = new cleanCSSPlugin({ advanced: true });
 
 /**
  * Creates output directory and transform LESS files
@@ -17,19 +19,22 @@ var cleanCSS = new cleanCSSPlugin({ advanced: true });
  * @param {String} type
  */
 function convertLESS(type) {
+  if (config.less[type].output === '') {
+    return;
+  }
   // create base output directory
-  mkdirp(config.less[type].output, function(error) {
+  mkdirp(config.less[type].output, (error) => {
     if (!error) {
-      glob(config.less[type].entry,
-        function(error, files) {
+      glob(
+        config.less[type].entry,
+        (error, files) => {
           if (!error) {
-            var transformFn = type === 'critical' ? toHTML : toCSS;
+            const transformFn = type === 'critical' ? toHTML : toCSS;
             // transform file
-            files.map(function(file) {
-              transformFn(file)
-            });
+            files.map(transformFn);
           }
-        });
+        }
+      );
     } else {
       console.log(chalk.red(error));
     }
@@ -43,29 +48,37 @@ function convertLESS(type) {
  */
 function toCSS(file) {
   // read less file
-  fs.readFile(file, 'UTF-8', function(error, content) {
+  fs.readFile(file, 'UTF-8', (error, content) => {
     if (!error) {
-      var options = {
+      const options = {
         compress: true,
-        paths: [ path.dirname(file) ],
-        plugins: [ cleanCSS ]
+        paths: [ path.dirname(file) ]
       }
-      var output =
+
+      const output =
         config.less.noncritical.output +
         path.basename(file)
           .replace('noncritical--', '')
           .replace('.less', '.css');
+
       // process less file
       less
         .render(content, options)
-        .then(function(result) {
-          fs.writeFile(output, result.css, 'UTF-8');
-          // log
-          console.log(chalk.green('>>> ') + chalk.magenta(output));
+        .then((result) => {
+          // autoprefix styles
+          postcss([ autoprefixer, cssnano ])
+            .process(result.css)
+            .then((result) => {
+              result.warnings().forEach((warn) => {
+                console.log(chalk.yellow(warn.toString()));
+              });
+              fs.writeFile(output, result.css, 'UTF-8');
+              console.log(chalk.green(`${output} style file written\n`));
+            });
         }, function(error) {
-          console.log(chalk.red(error));
+          console.log(chalk.red(`${error}\n`));
         });
-    }
+      }
   });
 }
 
@@ -76,27 +89,34 @@ function toCSS(file) {
  */
 function toHTML(file) {
   // read less file
-  fs.readFile(file, 'UTF-8', function(error, content) {
+  fs.readFile(file, 'UTF-8', (error, content) => {
     if (!error) {
-      var options = {
-        paths: [ path.dirname(file) ],
-        plugins: [ cleanCSS ]
+      const options = {
+        paths: [ path.dirname(file) ]
       }
-      var output =
+
+      const output =
         config.less.critical.output +
         path.basename(file)
           .replace('.less', '.html');
-      // process less file
+
       less
         .render(content, options)
-        .then(function(result) {
-          fs.writeFile(output, result.css, 'UTF-8');
-          // log
-          console.log(chalk.green('>>> ') + chalk.magenta(output));
+        .then((result) => {
+          // autoprefix styles
+          postcss([ autoprefixer, cssnano ])
+            .process(result.css)
+            .then((result) => {
+              result.warnings().forEach((warn) => {
+                console.log(chalk.yellow(warn.toString()));
+              });
+              fs.writeFile(output, result.css, 'UTF-8');
+              console.log(chalk.green(`${output} style file written\n`));
+            });
         }, function(error) {
-          console.log(chalk.red(error));
+          console.log(chalk.red(`${error}\n`));
         });
-    }
+      }
   });
 }
 
@@ -105,6 +125,3 @@ convertLESS('critical');
 
 // process noncritical LESS files
 convertLESS('noncritical');
-
-// update timestamps for styles
-timestamps.update('styles');

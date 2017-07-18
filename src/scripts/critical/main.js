@@ -1,38 +1,40 @@
 (function(_win, _doc) {
   'use strict';
 
-  var host = _win.location.hostname;
-
-  // development flag
-  var DEV = (host === 'localhost' || host === '0.0.0.0' || host === '127.0.0.1');
-
-  if (DEV) {
+  // add store.css logs on dev mode
+  if (DEV === true) {
     _win.store.verbose();
   }
 
-  // page styles after critical ones
-  if (_win.PAGE) {
-    _win.store.css('/assets/styles/' + PAGE + '.css?time=' + _win.TIMESTAMPS.styles, {
-      ref: document.getElementById('critical').nextElementSibling,
-      storage: 'session'
-    });
-  }
-  // font face styles
-  _win.store.css('https://fonts.googleapis.com/css?family=Fira+Sans:400,400italic,700', {
+  // load font face styles
+  _win.store.css('https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700', {
     storage: 'session',
     crossOrigin: 'anonymous'
   });
 
-  // fonts
-  if (_win.sessionStorage.getItem('fonts-loaded')) {
-    _doc.documentElement.classList.add('fonts-loaded');
+  // conditionally load fonts or add class
+  if (_win.FONTS_LOADED === null) {
+    // load scripts
+    var scripts = [ window.BASE + '/assets/js/site.js' ]; // script for all users
+
+    var legacyBrowser = !('Promise' in window);
+
+    if (legacyBrowser == true) {
+      scripts.unshift('https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.min.js');
+    }
+
+    scripts.map(function(src) {
+      var scriptEl = _doc.createElement('script');
+      scriptEl.src = src;
+      scriptEl.async = false;
+      _doc.head.appendChild(scriptEl);
+    });
   } else {
-    _win.loadJS('/assets/scripts/site.js?time=' + _win.TIMESTAMPS.scripts);
+    _doc.documentElement.classList.add('fonts-loaded');
   }
 
-  // analytics
-  if (!DEV) {
-    // track visit when not serving locally
+  // analytics for production
+  if (DEV === false) {
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

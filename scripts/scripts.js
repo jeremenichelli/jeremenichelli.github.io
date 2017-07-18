@@ -1,14 +1,13 @@
-var fs = require('fs');
-var path = require('path');
-var mkdirp = require('mkdirp');
-var glob = require('glob');
-var chalk = require('chalk');
+const fs = require('fs');
+const path = require('path');
+const mkdirp = require('mkdirp');
+const glob = require('glob');
+const chalk = require('chalk');
 
-var uglify = require('uglify-js');
-var config = require('./config.json');
-var timestamps = require('./timestamps.js');
+const uglify = require('uglify-js');
+const config = require('./config.json');
 
-var dev = process.argv[2] === '--dev';
+const dev = process.env.NODE_ENV === 'development';
 
 /**
  * Concats all JS files
@@ -17,42 +16,53 @@ var dev = process.argv[2] === '--dev';
  */
 function concatJS(type) {
   // create base output directory
-  mkdirp(path.dirname(config.js[ type ].output), function(error) {
+  mkdirp(path.dirname(config.js[ type ].output), (error) => {
     if (!error) {
-      glob(config.js[ type ].entry,
-        function(error, files) {
+      glob(
+        config.js[ type ].entry,
+        (error, files) => {
           if (!error) {
-            var content = '';
+            let content = '';
+
             // concat files content
-            files.map(function(file) {
+            files.map((file) => {
               content += fs.readFileSync(file).toString();
             });
 
-            // uglify
-            if (!dev) {
-              content = uglify.minify(content, { fromString: true }).code;
+            const uglified = uglify.minify(content, {
+              mangle: !dev,
+              compress: dev ? false : {
+                dead_code: true,
+                global_defs: {
+                  DEV: false
+                },
+                passes: 2
+              },
+              output: {
+                beautify: dev,
+                preamble: dev ? 'window.DEV = true;' : ''
+              }
+            });
+
+            if (uglified.error !== undefined) {
+              return console.log(chalk.red(`${uglified.error}\n`));
             }
 
-            // write concat file
-            fs.writeFile(config.js[ type ].output, content, 'UTF-8');
+            fs.writeFile(config.js[ type ].output, uglified.code, 'UTF-8');
 
             // log
-            console.log(chalk.green('>>> ') + chalk.magenta(config.js[ type ].output));
+            console.log(chalk.green(`${type} javascript files written\n`));
           }
-        });
+        }
+      );
     } else {
-      console.log(chalk.red(error));
+      console.log(chalk.red(`${error}\n`));
     }
   });
 }
 
-// process critical LESS files
+// process critical JS files
 concatJS('critical');
 
-// process noncritical LESS files
+// process noncritical JS files
 concatJS('noncritical');
-
-if (!dev) {
-  // update timestamps for styles
-  timestamps.update('scripts');
-}
