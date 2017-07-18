@@ -37,6 +37,7 @@
 
     <script>
       window.PAGE = '{{ type }}';
+      window.FONTS_LOADED = sessionStorage.getItem('fonts-loaded');
       window.TIMESTAMPS = {{ site.data.timestamps | jsonify }};
     </script>
 

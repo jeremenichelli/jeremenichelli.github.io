@@ -170,9 +170,7 @@ window.DEV = true;
         weight: 700
     }).load();
     Promise.all([ w400r, w400i, w700r ]).then(function() {
-        _win.requestAnimationFrame(function() {
-            _doc.documentElement.classList.add("fonts-loaded");
-        });
+        _doc.documentElement.classList.add("fonts-loaded");
         try {
             sessionStorage.setItem("fonts-loaded", true);
         } catch (e) {

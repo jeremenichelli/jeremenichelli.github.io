@@ -82,9 +82,9 @@ window.DEV = true;
         crossOrigin: "anonymous"
     });
     if (_win.FONTS_LOADED === null) {
-        var scripts = [ window.BASE + "/assets/js/site.js" ];
+        var scripts = [ "/assets/scripts/site.js" ];
         var legacyBrowser = !("Promise" in window);
-        if (legacyBrowser == true) {
+        if (legacyBrowser === true) {
             scripts.unshift("https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.min.js");
         }
         scripts.map(function(src) {
@@ -94,9 +94,7 @@ window.DEV = true;
             _doc.head.appendChild(scriptEl);
         });
     } else {
-        _win.requestAnimationFrame(function() {
-            _doc.documentElement.classList.add("fonts-loaded");
-        });
+        _doc.documentElement.classList.add("fonts-loaded");
     }
     if (DEV === false) {
         (function(i, s, o, g, r, a, m) {

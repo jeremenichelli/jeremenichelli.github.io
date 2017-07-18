@@ -15,11 +15,11 @@
   // conditionally load fonts or add class
   if (_win.FONTS_LOADED === null) {
     // load scripts
-    var scripts = [ window.BASE + '/assets/js/site.js' ]; // script for all users
+    var scripts = [ '/assets/scripts/site.js' ]; // script for all users
 
     var legacyBrowser = !('Promise' in window);
 
-    if (legacyBrowser == true) {
+    if (legacyBrowser === true) {
       scripts.unshift('https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.min.js');
     }
 
