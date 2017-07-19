@@ -1,4 +1,4 @@
-@import '__helpers.less';
+@import '__vars.less';
 @import '_page.less';
 
 .bloglist {
@@ -12,8 +12,15 @@
 }
 
 .bloglist__info {
-  text-transform: uppercase;
+  font-size: @short--font-size;
+  letter-spacing: @low--letter-spacing;
   margin: 0;
+  text-transform: uppercase;
+}
+
+.bloglist__time,
+.bloglist__host {
+  color: @accent;
 }
 
 .bloglist__link {
