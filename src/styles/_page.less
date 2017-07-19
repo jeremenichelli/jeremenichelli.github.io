@@ -1,0 +1,30 @@
+@import '__helpers.less';
+
+.header__subtitle {
+  margin: .1em 0 0;
+  text-transform: uppercase;
+}
+
+.main__resume {
+  margin-top: 0;
+}
+
+main {
+  // highlight links
+  a {
+    color: @accent;
+    word-wrap: break-word;
+
+    &:visited {
+      color: @accent;
+    }
+  }
+
+  /*
+   * eliminate the margin-bottom on
+   * the article's last element
+   */
+  .container > *:last-child {
+    margin-bottom: 0;
+  }
+}

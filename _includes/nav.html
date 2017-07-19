@@ -1,4 +1,5 @@
 <nav>
-  <a href="/blog" class="nav__link">Blog</a>
-  <a href="/about" class="nav__link">About</a>
+  {% for link in site.data.nav_links %}
+  <a href="{{ link.url }}" class="nav__link accent__text">{{ link.text }}</a>
+  {% endfor %}
 </nav>

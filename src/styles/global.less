@@ -13,6 +13,17 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+// selection flavour
+::selection {
+  background-color: @accent;
+  color: @text-color--light;
+}
+
+::-moz-selection {
+  background-color: @accent;
+  color: @text-color--light;
+}
+
 // general styles
 body {
   background-color: @background-color--light;
@@ -29,6 +40,10 @@ body {
   .fonts-loaded & {
     font-family: 'Fira Sans', sans-serif;
   }
+
+  @media @desktop {
+    font-size: 17px;
+  }
 }
 
 a {
@@ -44,29 +59,34 @@ a {
   }
 }
 
-img {
-  max-width: 100%;
-}
-
-ul {
-  padding: 0 0 0 16px;
-}
-
 .container {
-  margin: 0 auto;
-  max-width: 43em;
   padding: @spacing--mobile;
+
+  @media @desktop {
+    margin: 0 auto;
+    max-width: @container--max-width;
+    padding: @spacing;
+  }
 }
 
+.header__container {
+  padding-top: 4em;
+}
+
+// nav and nav links
 nav {
-  padding: 1.75em 20px;
-  overflow: hidden;
-  text-align: left;
-  text-transform: uppercase;
+  padding: @horizontal--spacing--mobile;
+
+  @media @desktop {
+    padding: 2em 4em;
+    // leaving this here in case it is needed in the future
+    // padding-left: ~'calc((100vw - @{container--max-width})/2 + @{spacing})';
+    text-align: right;
+  }
 }
 
 .nav__link {
-  .secondary--text();
+  text-transform: uppercase;
 
   &:visited {
     color: @accent;
@@ -74,17 +94,17 @@ nav {
 
   + .nav__link {
     margin: 0 0 0 3em;
+
+    @media @desktop {
+      margin: 0 0 0 4em;
+    }
   }
 }
 
+// headings
 .header__title {
   line-height: 1.25em;
-  margin: 1em 0 0;
-}
-
-.header__subtitle {
-  .secondary--text();
-  margin: .1em 0 0;
+  margin: 0;
 }
 
 h2 {
@@ -93,27 +113,15 @@ h2 {
   margin: 1.5em 0 .83195em;
 }
 
-.main__resume {
-  margin-top: 0;
+// footer
+footer {
+  color: @accent;
+  text-align: center;
 }
 
-// desktop
-@media (min-width: 769px) {
-
-  body {
-    font-size: 16px;
-  }
-
-  .container {
-    padding: @spacing;
-  }
-
-  nav {
-    padding: 1.75em 4.5em;
-    text-align: right;
-  }
-
-  .nav__link + .nav__link {
-    margin: 0 0 0 4.5em;
-  }
+// other
+.accent__text {
+  color: @accent;
+  font-size: .9em;
+  letter-spacing: .02em;
 }

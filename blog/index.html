@@ -7,8 +7,8 @@ title: Blog
 <ul class="bloglist">
 {% for post in site.posts %}
   <li>
-    <p class="bloglist_time">
-      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y'}}</time>
+    <p class="bloglist__info">
+      <time class="accent__text" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y'}}</time>
     </p>
     <a class="bloglist__link" href="{{ post.url }}">{{ post.title }}</a>
   </li>

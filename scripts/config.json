@@ -1,13 +1,7 @@
 {
   "less": {
-    "noncritical": {
-      "entry": "./src/styles/**/noncritical*.less",
-      "output": "./assets/styles/"
-    },
-    "critical": {
-      "entry": "./src/styles/**/critical*.less",
-      "output": "./_includes/"
-    }
+    "files": "./src/styles/{global,about,blog,error,home,post}.less",
+    "output": "./_includes/"
   },
   "js": {
     "noncritical": {

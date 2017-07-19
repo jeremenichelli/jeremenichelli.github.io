@@ -18,20 +18,16 @@ const cleanCSS = new cleanCSSPlugin({ advanced: true });
  * @method convertLESS
  * @param {String} type
  */
-function convertLESS(type) {
-  if (config.less[type].output === '') {
-    return;
-  }
+function processLESS(type) {
   // create base output directory
-  mkdirp(config.less[type].output, (error) => {
+  mkdirp(config.less.output, (error) => {
     if (!error) {
       glob(
-        config.less[type].entry,
+        config.less.files,
         (error, files) => {
           if (!error) {
-            const transformFn = type === 'critical' ? toHTML : toCSS;
             // transform file
-            files.map(transformFn);
+            files.map(toHTML);
           }
         }
       );
@@ -96,9 +92,9 @@ function toHTML(file) {
       }
 
       const output =
-        config.less.critical.output +
+        config.less.output +
         path.basename(file)
-          .replace('.less', '.html');
+          .replace('.less', '--styles.html');
 
       less
         .render(content, options)
@@ -120,8 +116,5 @@ function toHTML(file) {
   });
 }
 
-// process critical LESS files
-convertLESS('critical');
-
-// process noncritical LESS files
-convertLESS('noncritical');
+// process LESS files
+processLESS();

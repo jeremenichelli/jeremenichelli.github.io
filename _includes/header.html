@@ -1,13 +1,13 @@
 <header>
-  <div class="container">
-    <h1 class="header__title">{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
-
+  <div class="container header__container">
     {% if type == 'home' %}
-    <p class="header__subtitle">Curious mind, developer and writer.</p>
+    <p class="header__subtitle home__subtitle accent__text">Curious mind, developer and writer.</p>
     {% endif %}
 
+    <h1 class="header__title">{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+
     {% if type == 'post' %}
-    <p class="header__subtitle">
+    <p class="header__subtitle accent__text">
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %B, %Y'}}</time>
     </p>
     {% endif %}

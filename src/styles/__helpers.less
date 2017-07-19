@@ -1,6 +1,10 @@
 // layout variables
-@spacing: 40px;
-@spacing--mobile: 30px 20px;
+@spacing: 50px;
+@horizontal--spacing--mobile: 20px;
+@vertical--spacing--mobile: 35px;
+@spacing--mobile: @vertical--spacing--mobile @horizontal--spacing--mobile;
+
+@container--max-width: 43em;
 
 // color variables
 @background-color--light: #ffffff;
@@ -13,63 +17,9 @@
 @text-color--medium: #757575;
 @text-color--dark: #212121;
 
+// media query interpolations
+@desktop: ~'(min-width: 769px)';
+
 // other values
 @tab-size: 2;
 @code-hyphens: none;
-
-
-// mixins
-.secondary--text() {
-  & {
-    color: @accent;
-    font-size: .9em;
-    letter-spacing: .02em;
-    text-transform: uppercase;
-  }
-}
-
-.bloglist--component() {
-  .bloglist {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    li + li {
-      margin: 2.75em 0 0;
-    }
-  }
-
-  .bloglist_time {
-    .secondary--text();
-    margin: 0;
-  }
-
-  .bloglist__link {
-    display: block;
-    font-size: 1.35em;
-    font-weight: 700;
-  }
-}
-
-.highlight-links() {
-  & {
-
-    a {
-      color: @accent;
-      word-wrap: break-word;
-
-      &:visited {
-        color: @accent;
-      }
-    }
-  }
-}
-
-.mitigate-last-element-margin() {
-  & {
-
-    .container > *:last-child {
-      margin-bottom: 0;
-    }
-  }
-}

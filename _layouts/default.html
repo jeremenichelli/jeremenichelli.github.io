@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
   {% include head.html %}
-  <body>
+  <body class="{{ type }}">
     {% include nav.html %}
     {% include header.html %}
-    <main {% if type %}class="{{ type }}"{% endif %}>
+    <main>
+      <div class="container">
+        {% if page.resume %}
+        <p class="main__resume">{{ page.resume }}</p>
+        {% endif %}
 
-        <div class="container">
-          {% if page.resume %}
-          <p class="main__resume">{{ page.resume }}</p>
-          {% endif %}
-
-          {{ content }}
-        </div>
+        {{ content }}
+      </div>
     </main>
     {% include footer.html %}
   </body>
