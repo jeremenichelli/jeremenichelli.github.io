@@ -32,7 +32,7 @@ The first thing that you need to do is separate parts that are going to be in ev
 
 The most common parts are the head tag, the header and the footer of your site, but this depends on the design you're trying to achieve. You can have a side column, a **recent posts** section you can attach to every article or a badge with your information for example.
 
-> includes make maintainance much easier, something similar to what you have in php based generators
+> includes make maintainance much easier, something similar to what you have in php based&nbsp;generators
 
 Doing this will make maintainance much easier, something similar to what you have in php based generators like Wordpress. This time, they are just **.html** files and the only thing you're required to do is to include this parts inside the **_includes** folder and nothing more.
 

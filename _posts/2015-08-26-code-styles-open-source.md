@@ -12,7 +12,7 @@ To be brief, it's a group of rules that define how a code should look. One of th
 
 The immediate benefit is the readability of the code. Each of us have preferences over those rules, I prefer four spaces but some developers prefer two. Whatever your choices are, truth is that as you read a code that is properly formatted you get used to it, because it is **cohesive**, even if the styles of the code aren't your common choices.
 
-> What if someone wants to propose a change, fix a bug or add a feature to your open source code?
+> What if someone wants to propose a change, fix a bug or add a feature to your open source&nbsp;code?
 
 In a project, the code style to follow must be a team decision and is important because it will have a great impact at the moment of finding something wrong on the code or to refactor part of it. It's way easier to find an issue or to add a feature on a code which looks similar than doing it in one with style changes every ten lines.
 

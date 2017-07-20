@@ -73,6 +73,42 @@ a {
   padding-top: 4em;
 }
 
+blockquote {
+  font-style: italic;
+  letter-spacing: @low--letter-spacing;
+  margin: 2em 0;
+  padding: 0 1em 0 2.25em;
+  position: relative;
+  text-transform: uppercase;
+
+  @media @desktop {
+    margin: 3em 3em 3em 0;
+  }
+
+  p {
+    font-size: 1.2em;
+    margin: 0 0 .5em;
+
+    @media @desktop {
+      font-size: 1.25em;
+    }
+
+    &:before {
+      color: @accent;
+      content: '“';
+      font-size: 3em;
+      position: absolute;
+      top: .15em;
+      left: 0;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
 // nav and nav links
 nav {
   padding: @horizontal--spacing--mobile;

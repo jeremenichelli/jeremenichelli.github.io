@@ -9,7 +9,7 @@ There's a quote from Confucius that is pretty popular, *"Choose a job you love, 
 
 Most of the complaints are related to some basic and well received JavaScript methods and CSS properties that Internet Explorer didn't have out of the box, like **bind in IE8** and **inline-block in IE7**.
 
-> I had to support old versions of Internet Explorer and it began to feel like work again
+> I had to support old versions of Internet Explorer and it began to feel like work&nbsp;again
 
 Users were still using those versions, clients were still asking us to support them so hacks, polyfills and lots of *ifs* statements in our scripts begun to populate almost any project.
 
