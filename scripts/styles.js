@@ -47,7 +47,6 @@ function toCSS(file) {
   fs.readFile(file, 'UTF-8', (error, content) => {
     if (!error) {
       const options = {
-        compress: true,
         paths: [ path.dirname(file) ]
       }
 
@@ -72,7 +71,9 @@ function toCSS(file) {
               console.log(chalk.green(`${output} style file written\n`));
             });
         }, function(error) {
-          console.log(chalk.red(`${error}\n`));
+          const errorMessage = `Error processing ${file} - line: ${error.line} column: ${error.column}\n\n${error.extract.join('\n')}\n`;
+
+          console.log(chalk.red(errorMessage));
         });
       }
   });
@@ -110,7 +111,9 @@ function toHTML(file) {
               console.log(chalk.green(`${output} style file written\n`));
             });
         }, function(error) {
-          console.log(chalk.red(`${error}\n`));
+          const errorMessage = `Error processing ${file} - line: ${error.line} column: ${error.column}\n\n${error.extract.join('\n')}\n`;
+
+          console.log(chalk.red(errorMessage));
         });
       }
   });

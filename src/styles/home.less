@@ -3,14 +3,15 @@
 .home__title {
   text-transform: uppercase;
 
-  // mitigate letter spacing, thanks to https://meowni.ca/font-style-matcher/
-  letter-spacing: -1.35px;
-  .fonts-loaded & {
-    letter-spacing: @low--letter-spacing;
+  @media @small--phone {
+    font-size: 1.75em;
   }
 
-  @media @small {
-    font-size: 1.75em;
+  // mitigate letter spacing, thanks to https://meowni.ca/font-style-matcher/
+  letter-spacing: -1.35px;
+
+  .fonts-loaded & {
+    letter-spacing: @low--letter-spacing;
   }
 }
 
