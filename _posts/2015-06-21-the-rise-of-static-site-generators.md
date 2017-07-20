@@ -1,5 +1,5 @@
 ---
-title: The rise of the static site generators
+title: The rise of the static site&nbsp;generators
 resume: After several years of dynamic site generators, the second player is asking for a challenge. They are getting more powerful, easier to set and becoming more compelling tools to be the best solution for more web projects.
 ---
 

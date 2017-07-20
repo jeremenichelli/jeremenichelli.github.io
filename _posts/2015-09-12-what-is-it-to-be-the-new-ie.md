@@ -1,5 +1,5 @@
 ---
-title: What is it to be the new IE?
+title: What is it to be the new&nbsp;IE?
 resume: In the last couple of months some blog posts emerged complaining about Safari and Chrome, and for some reason not Firefox. The first one was Nolan Lawson's post about Safari's lag to implement some features present in modern browsers, saying that Safari is the new IE. Later, Benjamin De Cock said that Chrome was the new IE, but what does that exactly mean?
 ---
 

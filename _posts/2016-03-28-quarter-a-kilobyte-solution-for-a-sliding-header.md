@@ -1,5 +1,5 @@
 ---
-title: Quarter of a kilobyte solution for a sliding header
+title: Quarter of a kilobyte solution for a sliding&nbsp;header
 resume: In order to leave more room for content consumption, headers and navigation bars that hide when scrolling down and slide back when scrolling up became a common usability feature. Is there a zero dependencies light weight solution?
 ---
 

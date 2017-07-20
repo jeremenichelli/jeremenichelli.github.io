@@ -1,5 +1,5 @@
 ---
-title: Classes, constructors and inheritance in ES2015
+title: Classes, constructors and inheritance in&nbsp;ES2015
 resume: Understanding prototype inheritance was one of the pain points in JavaScript development. One of the main reasons was that the language didn't provide a nice syntax that translated this programming concept in a straight manner.
 ---
 

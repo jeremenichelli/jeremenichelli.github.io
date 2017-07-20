@@ -1,5 +1,5 @@
 ---
-title: I love the ampersand
+title: I love the&nbsp;ampersand
 resume: Small things can make a big difference. It costed me a lot to move from plain CSS to preprocessors languages, but somehow LESS convinced me and its little shorcuts are the way I enjoy the most and the ampersand is one of those small things.
 ---
 

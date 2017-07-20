@@ -1,5 +1,5 @@
 ---
-title: The power of using object literals
+title: The power of using object&nbsp;literals
 resume: For the last months I've found myself using this simple technic quite a lot. Here are some examples of what you can do with it and how I took advantage of its versatility.
 ---
 

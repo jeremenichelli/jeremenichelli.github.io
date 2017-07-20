@@ -1,5 +1,5 @@
 ---
-title: Props and state in React components
+title: Props and state in React&nbsp;components
 resume: React not only changed the way we build our interfaces but also put data in the spotlight. This is a short take around components internals, data and states.
 ---
 

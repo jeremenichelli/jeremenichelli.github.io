@@ -1,5 +1,5 @@
 ---
-title: Why code styles are important in your small open source library
+title: Why code styles in open&nbsp;source
 resume: Linting tools are trending right now. Big companies are using them in their projects and if you're working with other people in a same project with lots of lines of code and a build process there's a chance you're already using them too, but what about small open source projects?
 ---
 You might have heard that you're going to spend more time reading code than writing it. You investigate, use tools that other developers have created, fix issues in someone else's work which requires you to understand what's going on, which means you have to read that code.

@@ -1,5 +1,5 @@
 ---
-title: A South American bird and cross domain calls
+title: A South American bird and cross domain&nbsp;calls
 resume: Forget about the bird, for now. Accessing to data from an API that is located in a different domain is a common scenario in web development. The most used solution is JSONP and here is a way of implementing it.
 ---
 

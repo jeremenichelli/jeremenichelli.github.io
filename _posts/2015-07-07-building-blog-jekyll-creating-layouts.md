@@ -1,5 +1,5 @@
 ---
-title: Building a blog using Jekyll. Creating custom layouts
+title: Building a blog using Jekyll. Creating custom&nbsp;layouts
 resume: Using the versatility of Liquid language, you can practically build any layout you want in Jekyll. Here's a quick explanation on how to do it.
 ---
 
