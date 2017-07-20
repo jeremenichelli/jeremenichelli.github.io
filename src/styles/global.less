@@ -28,7 +28,7 @@ html {
 body {
   background-color: @background-color--light;
   color: @text-color--dark;
-  font-family: Arial, sans-serif;
+  font-family: Helvetica Neue, Arial, sans-serif;
   font-size: 15px;
   font-weight: 400;
   line-height: 1.65em;
@@ -44,6 +44,10 @@ body {
   @media @desktop {
     font-size: 17px;
   }
+}
+
+p {
+  margin: 1.5em 0;
 }
 
 a {
@@ -70,28 +74,17 @@ a {
 }
 
 .header__container {
-  padding-top: 4em;
+  padding-top: 3.5em;
 }
 
 blockquote {
   font-style: italic;
-  letter-spacing: @low--letter-spacing;
-  margin: 2em 0;
   padding: 0 1em 0 2.25em;
   position: relative;
-  text-transform: uppercase;
-
-  @media @desktop {
-    margin: 3em 3em 3em 0;
-  }
 
   p {
     font-size: 1.2em;
-    margin: 0 0 .5em;
-
-    @media @desktop {
-      font-size: 1.25em;
-    }
+    margin: 0;
 
     &:before {
       color: @accent;
@@ -105,6 +98,7 @@ blockquote {
 
   ul {
     list-style: none;
+    margin: .5em 0 0;
     padding: 0;
   }
 }
@@ -144,6 +138,31 @@ nav {
 .header__title {
   line-height: 1.25em;
   margin: 0;
+}
+
+main {
+
+  @media @desktop {
+    min-height: 300px;
+  }
+
+  // highlight links
+  a {
+    color: @accent;
+    word-wrap: break-word;
+
+    &:visited {
+      color: @accent;
+    }
+  }
+
+  /*
+   * eliminate the margin-bottom on
+   * the article's last element
+   */
+  .container > *:last-child {
+    margin-bottom: 0;
+  }
 }
 
 h2 {
