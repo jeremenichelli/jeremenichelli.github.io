@@ -15,7 +15,7 @@
   // conditionally load fonts or add class
   if (_win.FONTS_LOADED === null) {
     // load scripts
-    var scripts = [ '/assets/scripts/site.js' ]; // script for all users
+    var scripts = [ '/assets/js/site.js' ]; // script for all users
 
     var legacyBrowser = !('Promise' in window);
 
