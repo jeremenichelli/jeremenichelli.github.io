@@ -91,7 +91,7 @@ componentWillLeave(done) {
 
 Calling **done** we indicate that the lifecycle sequence should continue.
 
-Once we built our views and animations, how we make sure they will run smooth? We basically need to **hint** the browser which elements will require GPU acceleration, give it **time** so it can upgrade them, **animate** and when the animations are done, **remove hints** to free up resources since they are no longer needed.
+To make sure out animations will run smooth, we need to **hint** the browser which elements will require GPU acceleration, give it **time** so it can upgrade them, **animate** and when the animations are done, **remove hints** to free up resources since they are no longer needed.
 
 
 ## will-change
@@ -125,9 +125,11 @@ Still, this might not _just_ work. The browsers still needs to do some processin
 
 ## time
 
-There are to paths we can take here. One is delaying our animation enough time for the browsers to run optimizations but as little as possible so users don’t notice the delay.
+There are to paths we can take here.
 
-The second one is queuing a high priority task on the next available frame using `requestAnimationFrame`.
+We could delay our animation enough time for the browsers to run optimizations but as little as possible so users don’t notice the delay.
+
+The other option is queuing a high priority task using `requestAnimationFrame`.
 
 ```js
 componentWillAppear(done) {
@@ -191,7 +193,11 @@ componentWillAppear(done) {
 }
 ```
 
-Done! Transitioning between views will now be optimized, except when our application first loads. Why? When trying to figure out the reason, my best guess was that after parsing a big bundle there was a lot of scripting going on, the browser might be handling lots of DOM updates, because well… we use JavaScript to write HTML now and that comes at a cost.
+Done! Transitioning between views will now be optimized, except when our application first loads.
+
+When trying to figure out the reason, my best guess was that after parsing a big bundle there was a lot of scripting going on.
+
+The browser could be handling lots of DOM updates, paint and layout recalcs, because well… we use JavaScript to write HTML now and that comes at a cost.
 
 
 ### The load event
@@ -220,7 +226,7 @@ self.addEventListener('load', appResolve);
 
 If you want to understand better how this code works, I wrote an [article about it](/2016/04/patterns-for-a-promise-based-initialization/) a while ago.
 
-Notice I'm storing the `Promise` object under the `self` namespace so it can be accessed by any view and it will work for any component at any time.
+Notice I'm storing the `Promise` object under the `self` namespace so it can be accessed by any view and works for any component at any time.
 
 
 ### Come together
