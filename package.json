@@ -14,9 +14,9 @@
   "homepage": "https://github.com/jeremenichelli/jeremenichelli.github.io#readme",
   "main": "index.html",
   "scripts": {
-    "styles": "node ./scripts/styles.js",
-    "scripts": "node ./scripts/scripts.js",
-    "scripts:dev": "NODE_ENV='development' node ./scripts/scripts.js",
+    "less": "node ./scripts/less.js",
+    "js": "node ./scripts/concat.js",
+    "js:dev": "NODE_ENV='development' node ./scripts/concat.js",
     "favicons": "node ./scripts/favicons.js",
     "images": "node ./scripts/images.js"
   },

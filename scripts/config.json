@@ -1,15 +1,15 @@
 {
   "less": {
-    "files": "./src/styles/{global,about,blog,error,home,post}.less",
+    "files": "./src/less/{global,about,blog,error,home,post}.less",
     "output": "./_includes/"
   },
   "js": {
     "noncritical": {
-      "entry": "./src/scripts/noncritical/**/*.js",
-      "output": "./assets/scripts/site.js"
+      "entry": "./src/js/noncritical/**/*.js",
+      "output": "./assets/js/site.js"
     },
     "critical": {
-      "entry": "./src/scripts/critical/**/*.js",
+      "entry": "./src/js/critical/**/*.js",
       "output": "./_includes/critical--js.html"
     }
   },

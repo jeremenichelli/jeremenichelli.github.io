@@ -32,18 +32,18 @@ mkdirp(config.favicon.output, (error) => {
       } else {
         // output html tags
         fs.writeFile(config.favicon.html, response.html.join('\n'), 'UTF-8');
-        console.log(chalk.blue(`favicon: html partial created\n`);
+        console.log(chalk.blue(`favicon: html partial created\n`));
 
         // write favicon files
         response.files.map((file) => {
           fs.writeFile(config.favicon.output + file.name, file.contents, 'UTF-8');
-          console.log(chalk.blue(`favicon: ${file.name} created\n`);
+          console.log(chalk.blue(`favicon: ${file.name} created\n`));
         });
 
         // write favicon images
         response.images.map((image) => {
           fs.writeFile(config.favicon.output + image.name, image.contents, 'UTF-8');
-          console.log(chalk.green(`favicon: ${file.name} created\n`);
+          console.log(chalk.green(`favicon: ${image.name} created\n`));
         });
       }
     });

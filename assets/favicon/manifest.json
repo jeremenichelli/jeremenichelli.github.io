@@ -1,9 +1,13 @@
 {
   "name": null,
   "short_name": null,
+  "description": null,
+  "dir": "auto",
+  "lang": "en-US",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "any",
   "start_url": "/?homescreen=1",
+  "background_color": "#101010",
   "icons": [
     {
       "src": "/assets/favicon/android-chrome-36x36.png",
