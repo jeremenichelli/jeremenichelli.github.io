@@ -21,10 +21,8 @@
 }
 
 .home__subtitle {
-  color: @accent;
   font-style: italic;
-  letter-spacing: @low--letter-spacing;
-  margin: 0 0 .1em;
+  margin: 0;
 }
 
 blockquote {
@@ -51,4 +49,11 @@ blockquote {
       }
     }
   }
+}
+
+// hire email link styles
+a[href*="mailto"] {
+  letter-spacing: @low--letter-spacing;
+  position: relative;
+  top: -1em;
 }
