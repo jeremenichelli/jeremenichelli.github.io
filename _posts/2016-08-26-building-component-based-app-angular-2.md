@@ -1,6 +1,5 @@
 ---
-layout: default
-title: Building a component based app with Angular&nbsp;2
+title: Building a component based app with&nbsp;Angular&nbsp;2
 resume: Developers have been trying to find a solution to architecture on complex web applications. The most recent answer to that are components, divide the interface in smaller and autonomous blocks to conquer maintainability and scalability.
 ---
 

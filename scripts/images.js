@@ -6,30 +6,28 @@ var chalk = require('chalk');
 
 var jimp = require('jimp');
 var config = require('./config.json');
-var timestamps = require('./timestamps.js');
 
 // create base output directory
-mkdirp(config.images.output, function(error) {
+mkdirp(config.images.output, (error) => {
   if (!error) {
-    glob(config.images.entry,
-      function(error, files) {
+    glob(
+      config.images.entry,
+      (error, files) => {
         if (!error) {
-          files.map(function(file) {
+          files.map((file) => {
             jimp.read(file)
-              .then(function(image) {
+              .then((image) => {
                 image
-                  .resize(250, 250)
-                  .quality(80)
+                  .quality(90)
+                  .resize(240, 240)
                   .write(config.images.output + path.basename(file));
 
                 // log
-                console.log(chalk.green('>>> ') + chalk.magenta(config.images.output + path.basename(file)));
+                console.log(chalk.green(`${file} image processed\n`));
               });
           });
         }
-      });
+      }
+    );
   }
 });
-
-// update timestamps for styles
-timestamps.update('images');

@@ -1,0 +1,189 @@
+@import '__vars.less';
+@import '__normalize.less';
+
+// box sizing reset
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+
+  // disable tap color in Chrome mobile
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+// selection flavour
+::selection {
+  background-color: @accent;
+  color: @text-color--light;
+}
+
+::-moz-selection {
+  background-color: @accent;
+  color: @text-color--light;
+}
+
+// general styles
+body {
+  background-color: @background-color--light;
+  color: @text-color--dark;
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  .fonts-loaded & {
+    font-family: 'Fira Sans', sans-serif;
+  }
+
+  @media @desktop {
+    font-size: 17px;
+  }
+}
+
+p {
+  margin: 1.25em 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.container {
+  padding: @spacing--mobile;
+
+  @media @desktop {
+    margin: 0 auto;
+    max-width: @container--max-width;
+    padding: @spacing;
+  }
+}
+
+.header__container {
+  padding-top: 3.5em;
+}
+
+blockquote {
+  font-style: italic;
+  line-height: 1.5;
+  padding: 0 1em 0 2.25em;
+  position: relative;
+
+  @media @desktop {
+    padding: 0 2.5em;
+  }
+
+  p {
+    font-size: 1.17647em;
+    margin: 0;
+
+    &:before {
+      color: @accent;
+      content: '“';
+      font-size: 3em;
+      left: 0.05em;
+      line-height: 1;
+      position: absolute;
+      top: -0.05em;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: .5em 0 0;
+    padding: 0;
+  }
+}
+
+// nav and nav links
+nav {
+  padding: @horizontal--spacing--mobile;
+
+  @media @desktop {
+    padding: 2em 4em;
+    // leaving this here in case it is needed in the future
+    // padding-left: ~'calc((100vw - @{container--max-width})/2 + @{spacing})';
+    text-align: right;
+  }
+}
+
+.nav__link {
+  color: @accent;
+  font-size: @short--font-size;
+  letter-spacing: @low--letter-spacing;
+  text-transform: uppercase;
+
+  &:visited {
+    color: @accent;
+  }
+
+  + .nav__link {
+    margin: 0 0 0 3em;
+
+    @media @desktop {
+      margin: 0 0 0 4em;
+    }
+  }
+}
+
+// headings
+.header__title {
+  line-height: 1.25;
+  margin: 0;
+}
+
+.header__subtitle {
+  color: @accent;
+  letter-spacing: @low--letter-spacing;
+}
+
+main {
+
+  @media @desktop {
+    min-height: 300px;
+  }
+
+  // highlight links
+  a {
+    color: @accent;
+    word-wrap: break-word;
+
+    &:visited {
+      color: @accent;
+    }
+  }
+
+  /*
+   * eliminate the margin-bottom on
+   * the article's last element
+   */
+  .container > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h2 {
+  font-size: 1.4117647em;
+  line-height: 1.2em;
+  margin: 1.5em 0 .83195em;
+}
+
+// footer
+footer {
+  color: @accent;
+  text-align: center;
+}

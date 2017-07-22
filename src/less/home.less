@@ -1,0 +1,58 @@
+@import '__vars.less';
+
+.home__title {
+  text-transform: uppercase;
+
+  // mitigate size jump, thanks to https://meowni.ca/font-style-matcher/
+  @media @small--phone {
+    font-size: 1.5em;
+
+    .fonts-loaded & {
+      font-size: 1.75em;
+    }
+  }
+
+  // mitigate letter spacing, thanks to https://meowni.ca/font-style-matcher/
+  letter-spacing: -1.35px;
+
+  .fonts-loaded & {
+    letter-spacing: @low--letter-spacing;
+  }
+}
+
+.home__subtitle {
+  font-style: italic;
+  margin: 0;
+}
+
+blockquote {
+  margin: 0 0 3em;
+  padding: 0 1em 0 0;
+
+  p {
+
+    &:before {
+      display: none;
+    }
+  }
+
+  @media @desktop {
+    left: -2.25em;
+    margin: 0 0 4em;
+    padding: 0 1em 0 2.25em;
+
+    p {
+
+      &:before {
+        display: block;
+      }
+    }
+  }
+}
+
+// hire email link styles
+a[href*="mailto"] {
+  letter-spacing: @low--letter-spacing;
+  position: relative;
+  top: -1em;
+}

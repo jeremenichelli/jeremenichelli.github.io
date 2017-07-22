@@ -1,6 +1,5 @@
 ---
-layout: default
-title: What is it to be the new IE?
+title: What is it to be the new&nbsp;IE?
 resume: In the last couple of months some blog posts emerged complaining about Safari and Chrome, and for some reason not Firefox. The first one was Nolan Lawson's post about Safari's lag to implement some features present in modern browsers, saying that Safari is the new IE. Later, Benjamin De Cock said that Chrome was the new IE, but what does that exactly mean?
 ---
 
@@ -10,7 +9,7 @@ There's a quote from Confucius that is pretty popular, *"Choose a job you love, 
 
 Most of the complaints are related to some basic and well received JavaScript methods and CSS properties that Internet Explorer didn't have out of the box, like **bind in IE8** and **inline-block in IE7**.
 
-> I had to support old versions of Internet Explorer and it began to feel like work again
+> I had to support old versions of Internet Explorer and it began to feel like work&nbsp;again
 
 Users were still using those versions, clients were still asking us to support them so hacks, polyfills and lots of *ifs* statements in our scripts begun to populate almost any project.
 

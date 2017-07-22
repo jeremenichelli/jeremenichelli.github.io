@@ -1,6 +1,5 @@
 ---
-layout: default
-title: Props and state in React components
+title: Props and state in React&nbsp;components
 resume: React not only changed the way we build our interfaces but also put data in the spotlight. This is a short take around components internals, data and states.
 ---
 
@@ -17,7 +16,9 @@ By giving _props_ this role, you will favor a unique down data flow direction.
 
 The _state_ of a component is also a set of properties that affects the render function output, the difference is they live internally inside it.
 
-> “Simplicity is prerequisite for reliability.” - Edsger W. Dijkstra
+> Simplicity is a prerequisite for&nbsp;reliability.
+>
+> - Edsger W. Dijkstra
 
 States are necessary, specially to respond to user input and data fetching, but they also add complexity.
 

@@ -1,0 +1,96 @@
+@import '__vars.less';
+@import '_page.less';
+
+.header__subtitle {
+  font-size: @short--font-size;
+  margin: .2em 0 0;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.17647em;
+}
+
+h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin: 1.5em 0 .83195em;
+}
+
+h4, h5, h6 {
+  letter-spacing: @medium--letter-spacing;
+  text-transform: uppercase;
+}
+
+// blockquotes
+blockquote {
+  letter-spacing: @low--letter-spacing;
+  margin: 2em 0;
+  text-transform: uppercase;
+
+  @media @desktop {
+    margin: 3em 0;
+  }
+}
+
+a[href*="jsfiddle"],
+a[href*="plnkr"] {
+  color: @accent;
+  display: block;
+  font-style: italic;
+  text-align: center;
+}
+
+del, code {
+  display: inline-block;
+  font-family: Menlo, Consolas, Monaco, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 0 5px;
+}
+
+code {
+  background-color: @background-color--medium;
+  border-radius: 4px;
+  margin: 0 .05em;
+
+  -moz-tab-size: @tab-size;
+  -o-tab-size: @tab-size;
+  tab-size: @tab-size;
+
+  -webkit-hyphens: @code-hyphens;
+  -moz-hyphens: @code-hyphens;
+  -ms-hyphens: @code-hyphens;
+  hyphens: @code-hyphens;
+
+  @media @desktop {
+    font-size: 14px;
+  }
+}
+
+.c,
+.c1,
+.cm {
+  color: #909090;
+  font-style: italic;
+}
+
+.k,
+.kd,
+.nl {
+  font-weight: 700;
+}
+
+pre {
+  background-color: @background-color--medium;
+  border-radius: 4px;
+  line-height: 1.25;
+  overflow: auto;
+  margin: 2em 0;
+  padding: 0.75em 1em;
+
+  code {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+  }
+}

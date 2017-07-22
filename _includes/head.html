@@ -1,52 +1,45 @@
 <head>
-    {% if page.id %}{% capture type %}post{% endcapture %}{% endif %}
-    {% if page.type %}{% capture type %}{{ page.type }}{% endcapture %}{% endif %}
+  {% if page.type %}{% capture type %}{{ page.type }}{% endcapture %}{% endif %}
 
-    {% if page.title %}{% capture title %}{{ page.title }}{% endcapture %}
-    {% else %}{% capture title %}{{ site.title }}{% endcapture %}
-    {% endif %}
+  {% if page.title %}{% capture title %}{{ page.title }}{% endcapture %}
+  {% else %}{% capture title %}{{ site.title }}{% endcapture %}
+  {% endif %}
 
-    {% if page.resume %}{% capture description %}{{ page.resume }}{% endcapture %}
-    {% else %}{% capture description %}{{ site.description }}{% endcapture %}
-    {% endif %}
+  {% if page.resume %}{% capture description %}{{ page.resume }}{% endcapture %}
+  {% else %}{% capture description %}{{ site.description }}{% endcapture %}
+  {% endif %}
 
-    {% capture url %}{{ site.url }}{{ page.url | prepend: site.baseurl }}{% endcapture %}
+  {% capture url %}{{ site.url }}{{ page.url | prepend: site.baseurl }}{% endcapture %}
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>{{ title }}</title>
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="{{ url }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101010">
 
-    <meta name="description" content="{{ description }}">
+  <!-- favicons -->
+  {% include favicons.html %}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#212121">
+  <!-- twitter card meta -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@jeremenichelli">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:url" content="{{ url }}">
+  <meta name="twitter:image" content="{{ site.url | prepend: 'http://' }}/assets/images/avatar.jpg">
 
-    <link rel="canonical" href="{{ url }}">
+  <script>
+    window.PAGE = '{{ type }}';
+    window.FONTS_LOADED = sessionStorage.getItem('fonts-loaded');
+  </script>
 
-    <!-- favicons -->
-    {% include favicons.html %}
+  <style id="critical">
+  {% include global--styles.html %}
+  {% include {{ type }}--styles.html %}
+  </style>
 
-    <!-- twitter card meta -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@jeremenichelli">
-    <meta name="twitter:title" content="{{ title }}">
-    <meta name="twitter:description" content="{{ description }}">
-    <meta name="twitter:url" content="{{ url }}">
-    <meta name="twitter:image"
-      content="{{ site.url | prepend: 'http://' }}/assets/images/avatar.jpg?time={{ site.data.timestamps.images }}">
-
-    <script>
-      window.PAGE = '{{ type }}';
-      window.TIMESTAMPS = {{ site.data.timestamps | jsonify }};
-    </script>
-
-    <style id="critical">{% include critical--{{ type }}.html %}</style>
-
-    <script>{% include critical--js.html %}</script>
-
-    <noscript>
-        <link rel="stylesheet" property="stylesheet" type="text/css"
-            href="/assets/styles/{{ type }}.css?time={{ site.data.timestamps.styles }}">
-    </noscript>
+  <script>{% include critical--js.html %}</script>
 </head>

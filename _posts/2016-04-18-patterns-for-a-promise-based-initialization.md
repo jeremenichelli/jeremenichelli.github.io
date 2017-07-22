@@ -1,6 +1,5 @@
 ---
-layout: default
-title: Patterns for a Promises based initialization
+title: Patterns for a Promises based&nbsp;initialization
 resume: When is your web site or app ready for usage? It could depend on scripts and styles being loaded, it might need an external API to be accessible, or all of them together. Having control over this situation could generate a heavy reliance on callbacks and one of the best ways to fight this asynchronicity are Promises.
 ---
 

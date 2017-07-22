@@ -1,6 +1,5 @@
 ---
-layout: default
-title: Automating the critical CSS inlining with Gulp
+title: Automating the critical CSS inlining with&nbsp;Gulp
 resume: Stylesheets can block the rendering process of your site not allowing the user to see the content while all the resources are being loaded. The solution is well known and here is a way to automate it in your project.
 ---
 

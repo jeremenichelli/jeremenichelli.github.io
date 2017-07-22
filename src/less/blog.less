@@ -1,0 +1,36 @@
+@import '__vars.less';
+@import '_page.less';
+
+.bloglist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li + li {
+    margin: 3em 0 0;
+  }
+}
+
+.bloglist__info {
+  font-size: @short--font-size;
+  letter-spacing: @low--letter-spacing;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.bloglist__time,
+.bloglist__host {
+  color: @accent;
+}
+
+.bloglist__link {
+  color: @text-color--dark;
+  display: block;
+  font-size: 1.35294em;
+  font-weight: 700;
+  line-height: 1.25;
+
+  &:visited {
+    color: @text-color--dark;
+  }
+}

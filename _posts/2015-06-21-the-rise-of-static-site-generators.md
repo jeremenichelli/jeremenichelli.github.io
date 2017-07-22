@@ -1,5 +1,4 @@
 ---
-layout: default
 title: The rise of the static site generators
 resume: After several years of dynamic site generators, the second player is asking for a challenge. They are getting more powerful, easier to set and becoming more compelling tools to be the best solution for more web projects.
 ---
@@ -46,7 +45,7 @@ While it's undeniable that Wordpress rules a big part of the web proving that dy
 
 ## Wrap-up
 
-Dynamic site generators are a great option for end users to keep the content changing in their sites, but static ones offer similar features and they allow faster responses from the server if you can deal with their limitations. 
+Dynamic site generators are a great option for end users to keep the content changing in their sites, but static ones offer similar features and they allow faster responses from the server if you can deal with their limitations.
 
 Here's a list of all the static generator around in the community: <a href="https://staticsitegenerators.net/" target="_blank">https://staticsitegenerators.net/</a> in case you want to investigate what your options are inside this category or you can watch <a href="https://www.youtube.com/watch?v=vT7DhK5zbv0" target="_blank">Brian Rinaldi comparing the eight more popular static site generators in JekyllConf</a>.
 

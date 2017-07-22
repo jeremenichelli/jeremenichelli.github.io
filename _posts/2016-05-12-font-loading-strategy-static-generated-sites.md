@@ -1,6 +1,5 @@
 ---
-layout: default
-title: Font loading strategy for static generated sites
+title: Font loading strategy for static generated&nbsp;sites
 resume: The lack of a progressive approach on font loading and styles can hide your content for a critical amount of time causing a negative experience for the user.
 ---
 

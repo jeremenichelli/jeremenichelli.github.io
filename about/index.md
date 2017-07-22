@@ -2,28 +2,17 @@
 layout: default
 title: About
 type: about
-resume: I'm Jeremias Menichelli, a front end developer from Argentina. I love building beautiful things for the web, with a big eye on usability and performance.
+resume: A while ago I decided to quit my job and leave college to become a self taught front end developer... and it's been quite a ride so far!
 ---
 
-## Story and experience
+I'm currently focused on progressive web apps, tooling, tech writing and open&nbsp;source collaborations.
 
-After spending some time working on small sites for companies settled on my home town, I decided to make some changes, quit my job and leave university to become a self-taught front end developer.
+## Experience
 
-That same year, **Globant** hired me and I had the chance to work with clients like Microsoft, StateFarm and NYSE on great responsive projects.
+I was lucky enough to be part of great companies like **Globant**, **Razorfish**, **Velocity Partners** and&nbsp;**Jam3**.
 
-Later, I joined **OrderGroove** to build awesome scripts that power the subscription revolution with their team from New York.
+I worked with really smart and cool people in projects for **Google**, **Disney**, **Microsoft**, **StateFarm**, **Instagram** and&nbsp;**Facebook**.
 
-I'm currently living in Montevideo, Uruguay working with the **Jam3** team.
+If you think I might be a good addition to your team or just want to talk about the web, [contact me](mailto:jmenichelli@gmail.com) and let's make it happen!
 
-_I also write stuff on [Twitter][tw] and throw some code on [GitHub][gh]._
-
-## About this site
-
-Built with [Jekyll][1] and hosted by [GitHub Pages][2].
-
-[tw]: https://twitter.com/jeremenichelli
-[gh]: https://github.com/jeremenichelli
-
-[1]: https://www.jekyllrb.com
-[2]: https://pages.github.com
-[3]: https://heiswayi.github.io/the-plain/
+Find me on [medium](https://medium.com/@jeremenichelli), [twitter](https://twitter.com/jeremenichelli) or&nbsp;[github](https://github.com/jeremenichelli).
