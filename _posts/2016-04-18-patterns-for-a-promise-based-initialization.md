@@ -3,7 +3,7 @@ title: Patterns for a Promises based&nbsp;initialization
 resume: When is your web site or app ready for usage? It could depend on scripts and styles being loaded, it might need an external API to be accessible, or all of them together. Having control over this situation could generate a heavy reliance on callbacks and one of the best ways to fight this asynchronicity are Promises.
 ---
 
-*If you haven't checked Promises yet I recommend [Jake Archibald's post][1] about them.*
+*This article assumes you know how Promises work. If you don't I recommend checking [Jake Archibald's post][1] about them.*
 
 Say we have a method named **initApp** we need to call after some stuff is ready.
 
@@ -35,7 +35,7 @@ function loadScript(url, callback) {
 }
 ```
 
-We could pass our method as the second argument of this helper and call it the day, but if you have more than one script and also need something else to be ready, like the DOM for example, you will need to use a set of callbacks and probably some **setInterval** statements which sounds like a place called hell to me.
+We could pass our method as the second argument of this helper and call it the day, but if you have more than one script and also need something else to be ready, like the DOM for example, you will need to chain a lot of callbacks or probably use `setInterval` which sounds like a place called hell to me.
 
 Recalling one of the most used pattern we can wrap this in a Promise constructor and manage both loading and error events.
 
@@ -102,7 +102,7 @@ function loadStyles(url) {
 }
 ```
 
-The same **Promise.all** pattern can be used for different resources.
+The same `Promise.all` pattern can be used for different resources.
 
 ```js
 // create a Promise for each resource
