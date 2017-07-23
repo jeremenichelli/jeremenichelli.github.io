@@ -36,6 +36,8 @@
     window.FONTS_LOADED = sessionStorage.getItem('fonts-loaded');
   </script>
 
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700" as="style" crossorigin>
+
   <style id="critical">
   {% include global--styles.html %}
   {% include {{ type }}--styles.html %}
