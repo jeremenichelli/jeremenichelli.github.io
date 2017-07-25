@@ -204,7 +204,7 @@ The browser could be handling lots of DOM updates, paint and layout recalcs, bec
 
 In modern browsers when the `load` event is triggered, not only all main resources were fetched and parsed but busy tasks like building the render tree are also completed.
 
-Running animations after all of that already happened sounded reasonable to me.
+Running animations after all of that already happened sounded reasonable.
 
 Placing a listener inside the component could not work since after the `load` event occurred its callback is ignored, _racing condition_.
 
