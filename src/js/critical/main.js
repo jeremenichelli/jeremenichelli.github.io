@@ -6,13 +6,26 @@
     _win.store.verbose();
   }
 
-  // load font face styles
+  /*
+   * load image only on home page
+   */
+  var _win.IMAGE_LOADED;
+
+  if (_win.PAGE === 'home') {
+    _win.IMAGE_LOADED = Promise.resolve();
+  } else {
+    _win.IMAGE_LOADED = Promise.resolve();
+  }
+
+  /*
+   * load font face styles and add class to head,
+   * conditionally load font bundle detection
+   */
   _win.store.css('https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700', {
     storage: 'session',
     crossOrigin: 'anonymous'
   });
 
-  // conditionally load fonts or add class
   if (_win.FONTS_LOADED === null) {
     // load scripts
     var scripts = [ '/assets/js/site.js' ]; // script for all users
