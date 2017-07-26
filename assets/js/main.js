@@ -1,0 +1,1 @@
+!function(e,o){"use strict";if(!0===e.FONTS_CACHED&&(e.FONTS_LOADED=Promise.resolve()),"home"==e.PAGE)n=new Promise(function(e){var n=o.getElementsByClassName("home__image")[0];n.onload=function(){n.onload=null,e()},n.src=n.dataset.src});else var n=Promise.resolve();Promise.all([n,e.FONTS_LOADED]).then(function(){o.documentElement.classList.add("ready")})}(window,document);
