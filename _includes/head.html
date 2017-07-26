@@ -40,7 +40,7 @@
 
   <script>
     window.PAGE = '{{ type }}';
-    window.FONTS_LOADED = sessionStorage.getItem('fonts-loaded');
+    window.FONTS_CACHED = JSON.parse(sessionStorage.getItem('fonts-cached'));
     {% include critical--js.html %}
   </script>
 </head>

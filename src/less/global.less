@@ -47,7 +47,7 @@ body {
 }
 
 p {
-  margin: 1.25em 0;
+  margin: 1.5em 0;
 }
 
 a {
@@ -101,37 +101,6 @@ blockquote {
     list-style: none;
     margin: .5em 0 0;
     padding: 0;
-  }
-}
-
-// nav and nav links
-nav {
-  padding: @horizontal--spacing--mobile;
-
-  @media @desktop {
-    padding: 2em 4em;
-    // leaving this here in case it is needed in the future
-    // padding-left: ~'calc((100vw - @{container--max-width})/2 + @{spacing})';
-    text-align: right;
-  }
-}
-
-.nav__link {
-  color: @accent;
-  font-size: @short--font-size;
-  letter-spacing: @low--letter-spacing;
-  text-transform: uppercase;
-
-  &:visited {
-    color: @accent;
-  }
-
-  + .nav__link {
-    margin: 0 0 0 3em;
-
-    @media @desktop {
-      margin: 0 0 0 4em;
-    }
   }
 }
 
