@@ -10,9 +10,10 @@
     w400i,
     w700r
   ]).then(function() {
-    // add class to show webfonts on next available frame
-    requestAnimationFrame(function() {
-      _doc.documentElement.classList.add('fonts-loaded');
+    _doc.documentElement.classList.add('fonts-loaded');
+
+    _win.requestAnimationFrame(function() {
+      _doc.documentElement.classList.add('ready');
     });
 
     // put mark on web storage

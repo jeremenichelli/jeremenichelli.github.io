@@ -6,16 +6,19 @@
     _win.store.verbose();
   }
 
+  // remove no js class
+  _doc.documentElement.classList.remove('no-js');
+
   /*
    * load image only on home page
    */
-  var _win.IMAGE_LOADED;
-
-  if (_win.PAGE === 'home') {
-    _win.IMAGE_LOADED = Promise.resolve();
-  } else {
-    _win.IMAGE_LOADED = Promise.resolve();
-  }
+  // var _win.IMAGE_LOADED;
+  //
+  // if (_win.PAGE === 'home') {
+  //   _win.IMAGE_LOADED = Promise.resolve();
+  // } else {
+  //   _win.IMAGE_LOADED = Promise.resolve();
+  // }
 
   /*
    * load font face styles and add class to head,
@@ -44,6 +47,10 @@
     });
   } else {
     _doc.documentElement.classList.add('fonts-loaded');
+
+    _win.requestAnimationFrame(function() {
+      _doc.documentElement.classList.add('ready');
+    });
   }
 
   // analytics for production
