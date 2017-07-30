@@ -27,7 +27,7 @@
     scripts.push('https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.min.js');
   }
 
-  // include font bundle on first visit
+  // include font bundle on first visit, add class on repeated view
   if (_win.FONTS_CACHED === true) {
     _doc.documentElement.classList.add('fonts-loaded');
   } else {
@@ -37,12 +37,14 @@
   // add main script
   scripts.push('/assets/js/main.js');
 
-  // append all scripts
-  scripts.map(function(src) {
-    var scriptEl = _doc.createElement('script');
-    scriptEl.src = src;
-    scriptEl.async = false;
-    _doc.head.appendChild(scriptEl);
+  // append all scripts when dom parsing has finished
+  window.addEventListener('DOMContentLoaded', function() {
+    scripts.map(function(src) {
+      var scriptElement = _doc.createElement('script');
+      scriptElement.src = src;
+      scriptElement.async = false;
+      _doc.head.appendChild(scriptElement);
+    });
   });
 
   // analytics for production

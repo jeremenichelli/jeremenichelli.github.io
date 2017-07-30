@@ -9,9 +9,11 @@ I'm currently focused on progressive web apps, tooling, tech writing and open&nb
 
 ## Experience
 
-I was lucky enough to be part of great companies like **Globant**, **Razorfish**, **Velocity Partners** and&nbsp;**Jam3**.
+I was lucky enough to be part of great companies like **Globant**, **Razorfish**, **Velocity&nbsp;Partners** and&nbsp;**Jam3**.
 
 I worked with really smart and cool people in projects for **Google**, **Disney**, **Microsoft**, **StateFarm**, **Instagram** and&nbsp;**Facebook**.
+
+## Get in touch
 
 If you think I might be a good addition to your team or just want to talk about the web, [contact me](mailto:jmenichelli@gmail.com) and let's make it happen!
 

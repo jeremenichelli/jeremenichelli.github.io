@@ -16,7 +16,10 @@ title: Blog
     </p>
     <a
       class="bloglist__link"
-      href="{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.url }}{% endif %}">
+      {% if post.external_url %}href="{{ post.external_url }}" target="_blank" rel="noopener noreferrer"
+      {% else %}href="{{ post.url }}"
+      {% endif %}
+    >
       {{ post.title }}
     </a>
   </li>
