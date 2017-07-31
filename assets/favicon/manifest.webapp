@@ -1,14 +1,14 @@
 {
   "version": "1.0",
-  "name": null,
-  "description": null,
+  "name": "Jeremias Menichelli",
+  "description": "Personal site",
   "icons": {
     "60": "/assets/favicon/firefox_app_60x60.png",
     "128": "/assets/favicon/firefox_app_128x128.png",
     "512": "/assets/favicon/firefox_app_512x512.png"
   },
   "developer": {
-    "name": null,
+    "name": "Jeremias Menichelli",
     "url": null
   }
 }
