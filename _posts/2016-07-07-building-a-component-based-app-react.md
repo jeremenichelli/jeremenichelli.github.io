@@ -24,7 +24,7 @@ let Link = React.createElement(
     className: 'github-link'
   },
   'GitHub'
-  );
+);
 
 ReactDOM.render(Link, document.querySelector('#example'));
 ```
