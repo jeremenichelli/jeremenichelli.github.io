@@ -48,6 +48,10 @@
     for (var i = 0, len = headings.length; i < len; i++) {
       var h = headings[ i ];
       h.innerHTML = '<a href="#' + h.id + '">' + h.textContent + '</a>';
+
+      if (DEV === true) {
+        console.log('Link added to heading', '<' + h.tagName.toLowerCase() + '>', h.textContent);
+      }
     }
   }
 })(window, document);
