@@ -43,7 +43,7 @@
    * Wrap subheadings with anchors in posts
    */
   if (_win.PAGE === 'post') {
-    var headings = _doc.querySelectorAll('h2, h3, h4, h5, h6');
+    var headings = _doc.querySelectorAll('h2, h3');
 
     for (var i = 0, len = headings.length; i < len; i++) {
       var h = headings[ i ];

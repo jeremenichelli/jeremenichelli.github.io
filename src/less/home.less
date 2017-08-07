@@ -27,6 +27,7 @@ body {
   font-size: 1.75em;
   letter-spacing: @low--letter-spacing;
   text-transform: uppercase;
+  will-change: transform;
 
   @media @desktop {
     font-size: 2em;
@@ -36,6 +37,7 @@ body {
 .home__subtitle {
   font-style: italic;
   margin: 0;
+  will-change: transform;
 }
 
 .home__blockquote {
@@ -72,6 +74,7 @@ body {
 
   li {
     flex: 0 0 0;
+    will-change: transform;
 
     + li {
       margin: 0 0 0 2.5em;
@@ -87,7 +90,7 @@ body {
 .home__image {
   position: fixed;
   bottom: 0;
-  right: ~'calc(8em - 6vw)';
+  right: ~'calc(8vw - 6em)';
 }
 
 /*

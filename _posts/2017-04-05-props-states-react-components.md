@@ -38,7 +38,7 @@ If a piece of data doesn't pass these requirements then it should be treated as 
 
 #### Quick example
 
-Let's imagine a component which output changes depending on the type of device.
+Let's imagine a component which output changes depending on the device.
 
 ```js
 import { Component } from 'react';
