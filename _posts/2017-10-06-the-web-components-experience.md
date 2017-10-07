@@ -22,7 +22,7 @@ class MovieBox extends React.Component {
 export default MovieBox;
 ```
 
-**React** introduced a new paradigm to define objects to be rendered as many times as we needed in our projects. Web components declaration imposes something really similar.
+**React** introduced a new paradigm to define small units of funcitonality which can be imported and used in different parts of a project. Web components declaration imposes something really similar.
 
 ```js
 class MovieBox extends HTMLElement {
@@ -396,9 +396,13 @@ To achieve pretty basic mutations on small components, children references and d
 
 And it's a big deal, since developer experience is one of the reasons why React or Vue are widely used in production.
 
+Also, web components being included in a magical global store difficults declarative and deterministic views or any other concept which hangs on a visual map of dependencies like code splitting.
+
 > Unfortunately the developer experience of building an application with web components today is quite painful
 >
 > - Sam Saccone
+
+DOM manipulation and non-declarative operations have their cost.
 
 Though components are meant to act as minimal functional pieces in our applications, at some higher level our codebase will need a component to gather all of these together and make them interact.
 
