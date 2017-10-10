@@ -341,28 +341,27 @@ class MovieBox extends HTMLElement {
 
 The **name** of the attribute, its **old value** and the **new one** are provided.
 
-We can also use getters and setters to synchronize attributes with properties for any component instance, compute the data or do more complex mutations.
+
+### Reactivity and state updates
+
+We can also use getters and setters to synchronize attributes with properties, compute the data or do more complex mutations.
 
 ```js
-get hollow() {
-  return this.hasAttribute('hollow');
+get title() {
+  return this.getAttribute('title');
 }
 
-set hollow(value) {
-  // pass the value to boolean
-  const isHollow = Boolean(value);
-
-  if (isHollow === true) {
-    this.setAttribute('hollow', '');
-  } else {
-    this.removeAttribute('hollow');
-  }
+set title(value) {
+  this.setAttribute('title', value);
 }
 ```
 
-This behavior is not mandatory, but useful for styling or visual reference.
+In general, attributes are preferred only for initial state
 
-For example when you set the `disabled` property to `true` to a button you can see that reflected in the element, this doesn't happen with a video element and the `muted` attribute.
+Later we handle updates through properties and setters to keep template consistency, do logic with new data or apply DOM modifications.
+
+
+### Attribute based styling
 
 For styles based on **boolean attributes**, we can use the `:host([attribute])` notation to place specific styles.
 
@@ -379,11 +378,14 @@ For styles based on **boolean attributes**, we can use the `:host([attribute])` 
 </style>
 ```
 
+
+### Data reflection and observation
+
 If attributes are worth being listened to or being reflected to properties is something that will depend on the nature of it.
 
 For attributes that help build urls for XHR calls I wouldn't, because if somehow we accidentally modify them we will trigger unnecessary network calls.
 
-For properties that change constantly it wouldn't be optimal to be synced with an atribute, like the current time of a video element.
+For properties that change constantly it wouldn't be optimal to be synced with an attribute, like the current time of a video element.
 
 **Is data reactivy possible in web components?** Yes, though it will involve heavy coding around properties, attributes and a lot of careful DOM manipulation when necessary.
 
@@ -430,3 +432,5 @@ _These thoughs came from building an entire React app in web components, which i
  - [Web components: the long game](https://infrequently.org/2017/10/web-components-the-long-game/) by Alex Russell
  - Some of the techniques I showed here are also covered in Rob Dodson video on [how to build a toggle button](https://www.youtube.com/watch?v=16gvkPfPIx4&t=416s)
  - Great advices from Monica Dinculescu, [practical lessons from a year of building web components](https://www.youtube.com/watch?v=zfQoleQEa4w&t=1519s)
+
+ _Thanks to [Tim van der Lippe‏](https://twitter.com/TimvdLippe) for useful feedback on reactive data section._
