@@ -356,9 +356,9 @@ set title(value) {
 }
 ```
 
-In general, attributes are preferred only for initial state
+In general, attributes are preferred only for initial state.
 
-Later we handle updates through properties and setters to keep template consistency, do logic with new data or apply DOM modifications.
+Later we can handle updates through properties and setters to keep template consistency, do logic with new data or apply DOM modifications.
 
 
 ### Attribute based styling
