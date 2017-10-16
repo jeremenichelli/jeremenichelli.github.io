@@ -34,21 +34,23 @@ mkdirp(config.favicon.output, (error) => {
         console.log(error);
       } else {
         // output html tags
-        fs.writeFile(config.favicon.html, response.html.join('\n'), 'UTF-8');
-        console.log(chalk.magenta(`\nfavicon: html partial created\n`));
+        fs.writeFile(config.favicon.html, response.html.join('\n'), 'UTF-8', function() {
+          console.log(chalk.magenta(`\nfavicon: html partial created\n`));
+        });
 
         // write favicon files
         response.files.map((file) => {
-          fs.writeFile(config.favicon.output + file.name, file.contents, 'UTF-8');
-          console.log(chalk.blue(`favicon: ${file.name} created`));
+          fs.writeFile(config.favicon.output + file.name, file.contents, 'UTF-8', function() {
+            console.log(chalk.blue(`favicon: ${file.name} created`));
+          });
         });
 
         // write favicon images
         response.images.map((image) => {
-          fs.writeFile(config.favicon.output + image.name, image.contents, 'UTF-8');
+          fs.writeFile(config.favicon.output + image.name, image.contents, 'UTF-8', function() {
+            console.log(chalk.green(`favicon: ${image.name} created`));
+          });
         });
-
-        console.log(chalk.green(`\nfavicon: images created\n`));
       }
     });
   }

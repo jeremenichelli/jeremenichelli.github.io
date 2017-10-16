@@ -48,10 +48,9 @@ function concat(bundle) {
               return console.log(chalk.red(`${uglified.error}\n`));
             }
 
-            fs.writeFile(bundle.output, uglified.code, 'UTF-8');
-
-            // log
-            console.log(chalk.green(`${bundle.output} javascript file written\n`));
+            fs.writeFile(bundle.output, uglified.code, 'UTF-8', function() {
+              console.log(chalk.green(`${bundle.output} javascript file written\n`));
+            });
           }
         }
       );
