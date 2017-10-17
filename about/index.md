@@ -10,12 +10,14 @@ resume: Hi there! I am a front end developer. I build web applications and inter
 
 I was lucky enough to be part of great teams in **Globant**, **Razorfish**, **Velocity&nbsp;Partners** and&nbsp;**Jam3**.
 
-I've worked in projects with a heavy focused on design and animations for **ESPN**, **Google**, **Disney**, **Microsoft**, **StateFarm**, **Instagram** and&nbsp;**Facebook** and also built and maintained big code bases for companies like **OrderGroove**.
+I've built responsive sites for companies like **Microsoft**, **StateFarm** and the **NYSE** and have participated in projects with a heavy focus on design and animations for **ESPN**, **Google**, **Disney**, **Instagram** and **Facebook**.
+
+I've also worked on big code bases and web applications.
 
 On my free time I like to contribute to open source projects and write articles.
 
 ## Get in touch
 
-If you think I might be a good addition to your team or just want to talk about the web, [contact me](mailto:jmenichelli@gmail.com) and let's make it happen!
+Feel free to [contact me](mailto:jmenichelli@gmail.com) to discuss future projects or to talk about the web!
 
 You can find me on [medium](https://medium.com/@jeremenichelli), [twitter](https://twitter.com/jeremenichelli) or&nbsp;[github](https://github.com/jeremenichelli).

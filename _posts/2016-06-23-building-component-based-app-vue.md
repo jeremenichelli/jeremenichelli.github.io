@@ -3,7 +3,7 @@ title: Building a component based app with&nbsp;Vue
 resume: Developers have been trying to find a solution to architecture on complex web applications. The most recent answer to that are components, divide the interface in smaller and autonomous blocks to conquer maintainability and scalability.
 ---
 
-_This writing belongs to a serie of articles about using components with [React][react-article], [Polymer][polymer-article] and [Angular 2][angular-article]._
+_This writing belongs to a serie of articles about using components with Vue, [React][react-article], [Polymer][polymer-article] and [Angular 2][angular-article]._
 
 In this case I will go through my thoughts and feelings on developing components using [Vue][vue], a young library that has gained a lot popularity in the recent time.
 
