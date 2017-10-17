@@ -1,1 +1,119 @@
-!function(e,t){"use strict";"function"==typeof define&&define.amd?define(function(){return t()}):"object"==typeof exports?module.exports=t():e.store=t()}(this,function(){"use strict";function e(){o&&console&&console.log.apply(console,arguments)}function t(t){this.onload=null,this.media=t.media?t.media:"all",e(this.href,"stylesheet loaded asynchronously");try{for(var s=this.sheet?this.sheet.cssRules:this.styleSheet.rules,o=s.length,n="",i=0;i<o;i++)n+=s[i].cssText;t.media&&(n="@media "+t.media+"{"+n+"}"),t.storage&&window[t.storage+"Storage"].setItem(this.href,n)}catch(t){e("Stylesheet could not be saved for future visits",t)}}var s=document.getElementsByTagName("script")[0],o=!1;return{css:function(o,n){var i=document.createElement("link"),r=void 0===n?{}:n,a=r.ref?r.ref:s,c=null;if(i.rel="stylesheet",i.href=o,r.storage)try{c=window[r.storage+"Storage"].getItem(i.href)}catch(t){e("Stylesheet could not be retrieved from "+r.storage+"Storage",t)}if(c){i=null;var l=document.createElement("style");l.textContent=c,a.parentNode.insertBefore(l,a),e(o,"stylesheet loaded from "+r.storage+"Storage")}else i.media="only x",r.crossOrigin&&(i.crossOrigin=r.crossOrigin),i.onload=t.bind(i,r),a.parentNode.insertBefore(i,a)},verbose:function(){o=!0}}}),function(e,t){"use strict";t.documentElement.classList.remove("no-js"),e.store.css("https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700",{storage:"session",crossOrigin:"anonymous"});var s=[];"Promise"in window||s.push("https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.min.js"),!0===e.FONTS_CACHED?t.documentElement.classList.add("fonts-loaded"):s.push("/assets/js/font.js"),s.push("/assets/js/main.js"),window.addEventListener("DOMContentLoaded",function(){s.map(function(e){var s=t.createElement("script");s.src=e,s.async=!1,t.head.appendChild(s)})}),function(e,t,s,o,n,i,r){e.GoogleAnalyticsObject=n,e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},e[n].l=1*new Date,i=t.createElement(s),r=t.getElementsByTagName(s)[0],i.async=1,i.src="//www.google-analytics.com/analytics.js",r.parentNode.insertBefore(i,r)}(e,t,"script",0,"ga"),ga("create","UA-50290926-1","jeremenichelli.github.io"),ga("send","pageview")}(window,document);
+window.DEV = true;
+(function(root, factory) {
+    "use strict";
+    if (typeof define === "function" && define.amd) {
+        define(function() {
+            return factory();
+        });
+    } else if (typeof exports === "object") {
+        module.exports = factory();
+    } else {
+        root.store = factory();
+    }
+})(this, function() {
+    "use strict";
+    var script = document.getElementsByTagName("script")[0], verbose = false;
+    function _log() {
+        if (verbose && console) {
+            console.log.apply(console, arguments);
+        }
+    }
+    function _onload(config) {
+        this.onload = null;
+        this.media = config.media ? config.media : "all";
+        _log(this.href, "stylesheet loaded asynchronously");
+        try {
+            var rules = this.sheet ? this.sheet.cssRules : this.styleSheet.rules, len = rules.length, ssContent = "";
+            for (var i = 0; i < len; i++) {
+                ssContent += rules[i].cssText;
+            }
+            if (config.media) {
+                ssContent = "@media " + config.media + "{" + ssContent + "}";
+            }
+            if (config.storage) {
+                window[config.storage + "Storage"].setItem(this.href, ssContent);
+            }
+        } catch (e) {
+            _log("Stylesheet could not be saved for future visits", e);
+        }
+    }
+    function storeCSS(href, options) {
+        var l = document.createElement("link"), config = typeof options === "undefined" ? {} : options, ref = config.ref ? config.ref : script, stored = null;
+        l.rel = "stylesheet";
+        l.href = href;
+        if (config.storage) {
+            try {
+                stored = window[config.storage + "Storage"].getItem(l.href);
+            } catch (e) {
+                _log("Stylesheet could not be retrieved from " + config.storage + "Storage", e);
+            }
+        }
+        if (stored) {
+            l = null;
+            var s = document.createElement("style");
+            s.textContent = stored;
+            ref.parentNode.insertBefore(s, ref);
+            _log(href, "stylesheet loaded from " + config.storage + "Storage");
+        } else {
+            l.media = "only x";
+            if (config.crossOrigin) {
+                l.crossOrigin = config.crossOrigin;
+            }
+            l.onload = _onload.bind(l, config);
+            ref.parentNode.insertBefore(l, ref);
+        }
+    }
+    function enableVerbose() {
+        verbose = true;
+    }
+    return {
+        css: storeCSS,
+        verbose: enableVerbose
+    };
+});
+
+(function(_win, _doc) {
+    "use strict";
+    if (DEV === true) {
+        _win.store.verbose();
+    }
+    _doc.documentElement.classList.remove("no-js");
+    _win.store.css("https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700", {
+        storage: "session",
+        crossOrigin: "anonymous"
+    });
+    var scripts = [];
+    if (!("Promise" in window)) {
+        scripts.push("https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.min.js");
+    }
+    if (_win.FONTS_CACHED === true) {
+        _doc.documentElement.classList.add("fonts-loaded");
+    } else {
+        scripts.push("/assets/js/font.js");
+    }
+    scripts.push("/assets/js/main.js");
+    window.addEventListener("DOMContentLoaded", function() {
+        scripts.map(function(src) {
+            var scriptElement = _doc.createElement("script");
+            scriptElement.src = src;
+            scriptElement.async = false;
+            _doc.head.appendChild(scriptElement);
+        });
+    });
+    if (DEV === false) {
+        (function(i, s, o, g, r, a, m) {
+            i["GoogleAnalyticsObject"] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments);
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m);
+        })(_win, _doc, "script", "//www.google-analytics.com/analytics.js", "ga");
+        ga("create", "UA-50290926-1", "jeremenichelli.github.io");
+        ga("send", "pageview");
+    } else {
+        console.log("Serving locally. Google Analytics is not tracking.");
+    }
+})(window, document);

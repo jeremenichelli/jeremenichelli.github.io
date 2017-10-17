@@ -27,7 +27,6 @@ body {
   font-size: 1.75em;
   letter-spacing: @low--letter-spacing;
   text-transform: uppercase;
-  will-change: transform;
 
   @media @desktop {
     font-size: 2em;
@@ -37,7 +36,6 @@ body {
 .home__subtitle {
   font-style: italic;
   margin: 0;
-  will-change: transform;
 }
 
 .home__blockquote {
@@ -87,7 +85,7 @@ html {
   &:not(.no-js) {
     .home__image {
       opacity: 0;
-      transform: translate3d(0, 0, 0);
+      transform: translate(0, 0);
       transition-property: opacity;
       transition-duration: 0.6s;
       transition-timing-function: ease-in-out;
@@ -96,7 +94,7 @@ html {
     .home__title,
     .home__subtitle {
       opacity: 0;
-      transform: translate3d(0, 5px, 0);
+      transform: translate(0, 5px);
       transition-property: opacity, transform;
       transition-duration: 0.3s;
       transition-timing-function: ease-out;
@@ -120,7 +118,7 @@ html {
 
     .home__link {
       opacity: 0;
-      transform: translate3d(0, 5px, 0);
+      transform: translate(0, 5px);
       transition-property: opacity, transform;
       transition-duration: 0.25s;
       transition-timing-function: ease-in-out;
@@ -144,7 +142,7 @@ html {
     .home__blockquote,
     .home__link {
       opacity: 1;
-      transform: translate3d(0, 0, 0);
+      transform: translate(0, 0);
     }
   }
 }
