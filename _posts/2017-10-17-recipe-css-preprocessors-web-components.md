@@ -1,5 +1,5 @@
 ---
-title: A webpack recipe for CSS preprocessors and web&nbsp;components
+title: A recipe for CSS preprocessors and web&nbsp;components
 resume: While writing web components one of the biggest tradeoffs I've encounter was giving away the experience brought by CSS modules.
 ---
 
@@ -183,7 +183,9 @@ The last piece of improvement is adding source maps on development, this is supe
   use: [
     {
       loader: 'css-loader',
-      options: { sourceMap: process.env.NODE_ENV === 'development' }
+      options: {
+        sourceMap: process.env.NODE_ENV === 'development'
+      }
     },
     { loader: 'less-loader' },
   ]
