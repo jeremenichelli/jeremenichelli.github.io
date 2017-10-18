@@ -136,7 +136,7 @@ class MovieBox extends HTMLElement {
 }
 ```
 
-We are no paying the parsing cost only once, no matter how many instances of the element we put in the document.
+We are now paying the parsing cost only once, no matter how many instances of the element we put in the document.
 
 This improvement brings a new issue though, now we aren't able to take advantage of template strings to pour data into components.
 
