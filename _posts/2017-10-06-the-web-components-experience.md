@@ -177,7 +177,7 @@ The tree inside the component will be:
 </movie-box>
 ```
 
-Styles that were affecting the `.movie__box` selector can be moved to `:host` will apply the root tag of our component.
+Styles that were affecting the `.movie__box` selector can be moved to `:host` to be applied to the root tag of our component.
 
 ```js
 const template = document.createElement('template');
@@ -225,7 +225,7 @@ class MovieBox extends HTMLElement {
 If this was possible, it will simplify a lot data injection and mutations on components with a high complexity.
 
 
-### A homebaked solution fo refs
+### A homebaked solution for refs
 
 Bringing this feature to web components is possible by selecting all elements with a `ref` attribute and save them into an object.
 
@@ -265,7 +265,7 @@ For example, if we remove the `title` ref element in the previous code and then 
 
 On React components we use `{ this.props.children }` to render child nodes.
 
-Custom elements and shadow DOM contain a similar, and probably more powerful interface, to place content inside web components.
+Custom elements and shadow DOM contain a similar, and probably more powerful interface to place content inside web components.
 
 ```js
 const template = document.createElement('template');
