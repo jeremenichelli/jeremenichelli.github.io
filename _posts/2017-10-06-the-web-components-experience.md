@@ -63,7 +63,7 @@ class MovieBox extends HTMLElement {
 }
 ```
 
-Quick descroption of all these four methods if you are coming from **React** or similar libraries, `connectedCallback` equals to `componentDidMount` and `disconnectedCallback` equals to `componentWillUnmount`.
+Quick description of all these four methods if you are coming from **React** or similar libraries, `connectedCallback` equals to `componentDidMount` and `disconnectedCallback` equals to `componentWillUnmount`.
 
 `adoptedCallback` is fired when the component is moved to a new document, something that I can't imagine happening too often.
 
