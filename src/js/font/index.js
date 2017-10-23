@@ -7,27 +7,29 @@
 
   _win.FONTS_LOADED = new Promise(function(resolve) {
     // wait for all fonts to load
-    Promise.all([
-      w400r,
-      w400i,
-      w700r
-    ]).then(function() {
-      // resolve global fonts loaded promise
-      resolve();
+    Promise
+      .all([
+        w400r,
+        w400i,
+        w700r
+      ])
+      .then(function() {
+        // add fonts loaded class
+        _doc.documentElement.classList.add('fonts-loaded');
 
-      // add fonts loaded class
-      _doc.documentElement.classList.add('fonts-loaded');
+        // resolve global fonts loaded promise
+        resolve();
 
-      // put mark on web storage
-      try {
-        sessionStorage.setItem('fonts-cached', true);
+        // put mark on web storage
+        try {
+          sessionStorage.setItem('fonts-cached', true);
 
-      } catch (e) {
-        if (DEV === true) {
-          console.log(e);
+        } catch (e) {
+          if (DEV === true) {
+            console.log(e);
+          }
         }
-      }
-    });
+      });
   });
 
 })(window, document);

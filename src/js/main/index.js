@@ -28,16 +28,17 @@
   /*
    * add class when image and fonts are ready
    */
-  Promise.all([
-    IMAGE_LOADED,
-    _win.FONTS_LOADED
-  ])
-  .then(function() {
-    // add ready class on next available frame
-    requestAnimationFrame(function() {
-      _doc.documentElement.classList.add('ready');
+  Promise
+    .all([
+      IMAGE_LOADED,
+      _win.FONTS_LOADED
+    ])
+    .then(function() {
+      // add ready class on next available frame
+      requestAnimationFrame(function() {
+        _doc.documentElement.classList.add('ready');
+      });
     });
-  });
 
   /*
    * Wrap subheadings with anchors in posts

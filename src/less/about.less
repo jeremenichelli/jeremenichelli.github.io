@@ -1,2 +1,33 @@
 @import '__vars.less';
 @import '_page.less';
+
+.about__companies {
+  background-color: @accent;
+  margin: 0 -@horizontal--spacing--mobile;
+  text-align: center;
+
+  @media @desktop {
+    border-radius: 4px;
+    padding: 35px;
+    margin: 0 -@spacing;
+  }
+
+  svg {
+    display: inline-block;
+    height: 50px;
+    margin: 30px;
+    transform: scale(0.9);
+    vertical-align: middle;
+
+    @media @desktop {
+      transform: none;
+    }
+
+    path,
+    rect,
+    circle,
+    polygon {
+      fill: #ffffff;
+    }
+  }
+}
