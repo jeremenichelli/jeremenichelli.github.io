@@ -50,6 +50,10 @@ body {
 
   p {
 
+    @media @small {
+      font-size: 1em;
+    }
+
     &:before {
       display: none;
 
@@ -65,10 +69,6 @@ body {
   letter-spacing: @medium--letter-spacing;
   margin: 1em 0;
   text-transform: uppercase;
-
-  @media @desktop {
-    margin: 0;
-  }
 }
 
 .home__image {
@@ -108,13 +108,13 @@ html {
     }
 
     .home__title {
-      transition-delay: 0.85s;
+      transition-delay: 0.9s;
     }
 
     .home__blockquote {
       opacity: 0;
       transition-property: opacity;
-      transition-duration: 0.3s;
+      transition-duration: 0.5s;
       transition-timing-function: ease-out;
       transition-delay: 1.2s;
     }
@@ -125,10 +125,10 @@ html {
       transition-property: opacity, transform;
       transition-duration: 0.3s;
       transition-timing-function: ease-in-out;
-      transition-delay: 1.5s;
+      transition-delay: 1.65s;
 
       &:nth-child(2) {
-        transition-delay: 1.8s;
+        transition-delay: 2s;
       }
     }
   }
