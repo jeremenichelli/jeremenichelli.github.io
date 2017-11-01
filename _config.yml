@@ -25,3 +25,7 @@ defaults:
     values:
       layout: "default"
       type: "post"
+
+# generate sitemap
+plugins:
+  - jekyll-sitemap
