@@ -40,7 +40,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(_win,_doc,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-50290926-1', 'auto');
+    ga('create', 'UA-50290926-1', 'jeremenichelli.io');
     ga('send', 'pageview');
   } else {
     console.log('Serving locally. Google Analytics is not tracking.');
