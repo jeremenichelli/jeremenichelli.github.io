@@ -1,7 +1,9 @@
 ---
 title: You might not need a task&nbsp;runner
-resume: Most front end developers agree that tooling is something we as a community need to figure out this year. The fatigue around deciding and learning technologies to build big, and not so big, projects was a trend last year, so maybe it's time to slowly minimize dependencies and delete the middle men.
+resume: Most front end developers agree that tooling is something we, as a community, needed to figure out this year.
 ---
+
+The fatigue around deciding and learning technologies to build big, and not so big, projects was a trend last year, so maybe it's time to slowly minimize dependencies and delete the middle men.
 
 ## The middle man
 

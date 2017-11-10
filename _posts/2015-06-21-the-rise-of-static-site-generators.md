@@ -1,6 +1,6 @@
 ---
 title: The rise of the static site generators
-resume: After several years of dynamic site generators, the second player is asking for a challenge. They are getting more powerful, easier to set and becoming more compelling tools to be the best solution for more web projects.
+resume: After several years of dynamic site generators, the second player is asking for a challenge. They are getting more powerful, easier to set and becoming more compelling tools run most web projects.
 ---
 
 In the recent past years the more trending tools were dynamic site generators with Wordpress being the most popular. Truth is that both static and dynamic offer great solutions for different situations but they both have drawbacks and limitations too.

@@ -1,7 +1,9 @@
 ---
 title: Using web fonts? Be&nbsp;careful
-resume: Searching for better design and stronger identity, custom fonts have become something present in almost all modern sites. While the result is great, this feature also comes with one or more network requests and other compromises like FOUT and FOIT.
+resume: Searching for better design and stronger identity, custom fonts have become something present in almost all modern sites.
 ---
+
+While the result is great, this feature also comes with one or more network requests and other compromises like FOUT and FOIT.
 
 What are those weird acronyms? Well, you're going to see them in any post or article related to web fonts today so let's do a quick description of both.
 

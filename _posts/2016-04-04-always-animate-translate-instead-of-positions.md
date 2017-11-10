@@ -3,7 +3,7 @@ title: Always animate translate instead of&nbsp;positions
 resume: While visiting an article in WebKit's blog I noticed how badly an animation in a nested menu performed and decided to fix it.
 ---
 
-Not only it was slow which didn't help, you could see the browser pushing each pixel of the menu with their list of links so I inspected its styles and this was the output.
+Not only it was slow, you could actually see the browser pushing each pixel of the menu with their list of links so I inspected its styles and this was the output.
 
 ```css
 /*
