@@ -17,11 +17,11 @@ const setup = {
     android: true,
     appleIcon: true,
     appleStartup: true,
-    coast: false,
     favicons: true,
-    firefox: true,
     windows: true,
-    yandex: true
+    coast: false,
+    firefox: false,
+    yandex: false
   }
 };
 
