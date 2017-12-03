@@ -14,7 +14,7 @@ const dev = process.env.NODE_ENV === 'development';
  * @method concatJS
  * @param {String} type
  */
-function concat(bundle) {
+function bundle(bundle) {
   // create base output directory
   mkdirp(path.dirname(bundle.output), (error) => {
     if (!error) {
@@ -61,4 +61,4 @@ function concat(bundle) {
 }
 
 // process critical JS files
-config.bundles.map(concat);
+config.bundles.map(bundle);

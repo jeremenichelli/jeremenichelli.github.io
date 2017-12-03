@@ -23,8 +23,12 @@
     "path": "/assets/favicon/",
     "html": "./_includes/favicons.html"
   },
-  "images": {
-    "entry": "./src/images/*.{jpeg,jpg}",
-    "output": "./assets/images/"
-  }
+  "images": [
+    {
+      "entry": "./src/favicon/favicon.png",
+      "output": "./assets/images/twitter-card-image.jpeg",
+      "quality": 90,
+      "resize": [ 240, 240 ]
+    }
+  ]
 }

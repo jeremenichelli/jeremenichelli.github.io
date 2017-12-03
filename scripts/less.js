@@ -6,12 +6,9 @@ const chalk = require('chalk');
 
 const config = require('./config.json');
 const less = require('less');
-const cleanCSSPlugin = require('less-plugin-clean-css');
 const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-
-const cleanCSS = new cleanCSSPlugin({ advanced: true });
 
 /**
  * Creates output directory and transform LESS files
