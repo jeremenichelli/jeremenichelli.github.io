@@ -7,7 +7,7 @@ baseurl: ""
 
 # Build settings
 port: 4000
-exclude: [ "node_modules", "package.json", "*.log", "scripts", "src", "LICENSE" ]
+exclude: [ "node_modules", "package.json", "*.log", "scripts", "src", "README.md", "LICENSE" ]
 
 # Markdown
 markdown: kramdown
