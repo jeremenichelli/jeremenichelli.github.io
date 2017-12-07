@@ -78,7 +78,7 @@ function onChange(changes) {
 
     // thank you, we don't need you anymore
     observer.disconnect();
-  }
+  });
 }
 
 observer.observe(document.querySelector('.hidden'));
@@ -103,7 +103,7 @@ function onChange(changes) {
 
     // stop observing the current target
     observer.unobserve(change.target);
-  }
+  });
 }
 
 // convert node list to array
