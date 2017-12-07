@@ -20,7 +20,7 @@ function onChange(changes) {
   changes.forEach(change => {
     // add class to element
     change.target.classList.add('visible');
-  }
+  });
 }
 ```
 
@@ -37,14 +37,14 @@ We're still doing nothing, so let's actually observe something.
 ```js
 let observer = new IntersectionObserver(onChange);
 
-// start observing an element
-observer.observe(document.querySelector('.hidden'));
-
 function onChange(changes) {
   changes.forEach(change => {
     change.target.classList.remove('hidden');
-  }
+  });
 }
+
+// start observing an element
+observer.observe(document.querySelector('.hidden'));
 ```
 
 Passing a node to the **observe** method will add it to the Intersection Observer's list of interest.
@@ -54,24 +54,22 @@ You can stop watching an element using the **unobserve** method.
 ```js
 let observer = new IntersectionObserver(onChange);
 
-observer.observe(document.querySelector('.hidden'));
-
 function onChange(changes) {
   changes.forEach(change => {
     change.target.classList.remove('hidden');
 
     // stop observing the current target
     observer.unobserve(change.target);
-  }
+  });
 }
+
+observer.observe(document.querySelector('.hidden'));
 ```
 
 When you don't need the observer anymore you can **disconnect** it.
 
 ```js
 let observer = new IntersectionObserver(onChange);
-
-observer.observe(document.querySelector('.hidden'));
 
 function onChange(changes) {
   changes.forEach(change => {
@@ -82,6 +80,8 @@ function onChange(changes) {
     observer.disconnect();
   }
 }
+
+observer.observe(document.querySelector('.hidden'));
 ```
 
 
