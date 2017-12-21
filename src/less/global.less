@@ -75,10 +75,12 @@ a {
 
 blockquote {
   font-style: italic;
-  padding: 0 1em 0 2.25em;
+  margin: 2em 0;
+  padding: 0 1em 0 0;
   position: relative;
 
   @media @desktop {
+    margin: 3em 0;
     padding: 0 2.5em;
   }
 
@@ -89,11 +91,16 @@ blockquote {
     &:before {
       color: @accent;
       content: '“';
+      display: none;
       font-size: 3em;
       left: 0.05em;
       line-height: 1;
       position: absolute;
       top: -0.05em;
+
+      @media @desktop {
+        display: block;
+      }
     }
   }
 
