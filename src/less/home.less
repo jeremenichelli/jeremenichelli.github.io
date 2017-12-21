@@ -71,12 +71,6 @@ body {
   text-transform: uppercase;
 }
 
-.home__image {
-  position: fixed;
-  bottom: 0;
-  right: ~'calc(8vw - 6em)';
-}
-
 /*
  * JS ONLY ANIMATION PROPERTIES
  * FOR HOME PAGE
@@ -86,12 +80,6 @@ html {
   // apply transitions only when javascript is enabled
   &:not(.no-js) {
 
-    .home__image {
-      opacity: 0;
-      transform: translate(0, 0);
-      transition: opacity 0.5s ease-in-out 0.15s;
-    }
-
     .home__title,
     .home__subtitle {
       opacity: 0;
@@ -100,35 +88,31 @@ html {
     }
 
     .home__subtitle {
-      transition-delay: 0.6s;
+      transition-delay: 0.3s;
     }
 
     .home__title {
-      transition-delay: 0.9s;
+      transition-delay: 0.6s;
     }
 
     .home__blockquote {
       opacity: 0;
-      transition: opacity 0.5s ease-out 1.2s;
+      transition: opacity 0.5s ease-out 0.9s;
     }
 
     .home__link {
       opacity: 0;
       transform: translate(0, 5px);
-      transition: all 0.3s ease-in-out 1.65s;
+      transition: all 0.3s ease-in-out 1.25s;
 
       &:nth-child(2) {
-        transition-delay: 2s;
+        transition-delay: 1.5s;
       }
     }
   }
 
   // final animation state
   &.ready {
-
-    .home__image {
-      opacity: 1;
-    }
 
     .home__title,
     .home__subtitle,
