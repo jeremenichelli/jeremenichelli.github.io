@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 const mkdirp = require('mkdirp');
-const glob = require('glob');
 const chalk = require('chalk');
-
+const glob = require('glob');
 const uglify = require('uglify-js');
+
 const config = require('./config.json');
 
 const dev = process.env.NODE_ENV === 'development';
@@ -14,12 +14,12 @@ const dev = process.env.NODE_ENV === 'development';
  * @method concatJS
  * @param {String} type
  */
-function concatJS(type) {
+function bundle(bundle) {
   // create base output directory
-  mkdirp(path.dirname(config.js[ type ].output), (error) => {
+  mkdirp(path.dirname(bundle.output), (error) => {
     if (!error) {
       glob(
-        config.js[ type ].entry,
+        bundle.entry,
         (error, files) => {
           if (!error) {
             let content = '';
@@ -48,10 +48,9 @@ function concatJS(type) {
               return console.log(chalk.red(`${uglified.error}\n`));
             }
 
-            fs.writeFile(config.js[ type ].output, uglified.code, 'UTF-8');
-
-            // log
-            console.log(chalk.green(`${type} javascript files written\n`));
+            fs.writeFile(bundle.output, uglified.code, 'UTF-8', function() {
+              console.log(chalk.green(`${bundle.output} javascript file written\n`));
+            });
           }
         }
       );
@@ -62,7 +61,4 @@ function concatJS(type) {
 }
 
 // process critical JS files
-concatJS('critical');
-
-// process noncritical JS files
-concatJS('noncritical');
+config.bundles.map(bundle);

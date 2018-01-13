@@ -1,13 +1,11 @@
 ---
 title: About that time I tried to beat browser&nbsp;cache
-resume: After a redesign on my site to improve loading and rendering times, I started thinking what else I could do to give a faster experience to the user.
+resume: After a redesign on my site to improve loading and rendering times, I started thinking what else could done to provide a faster experience.
 ---
 
 Then I saw the Network tab on the developer tools and found it. *What if I save the stylesheets content in the local storage and use it on future visits?*
 
-Of course, this is similar to what <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching" target="_blank">browser caching</a> does, temporarily storing used resources.
-
-My inital goal was to improve that using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API" target="_blank">Web Storage API</a> and JavaScript, but first I needed to dive into the **link** element and how it works.
+Of course, this is similar to what <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching" target="_blank">browser caching</a> does, temporarily storing used resources. My inital goal was to improve that using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API" target="_blank">Web Storage API</a> and JavaScript, but first I needed to dive into the **link** element and how it works.
 
 
 ## About the link element

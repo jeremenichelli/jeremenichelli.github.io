@@ -15,10 +15,13 @@
   "main": "index.html",
   "scripts": {
     "less": "node ./scripts/less.js",
-    "js": "node ./scripts/concat.js",
-    "js:dev": "NODE_ENV='development' node ./scripts/concat.js",
+    "js": "node ./scripts/bundle.js",
+    "js:dev": "NODE_ENV=development node ./scripts/bundle.js",
     "favicons": "node ./scripts/favicons.js",
-    "images": "node ./scripts/images.js"
+    "images": "node ./scripts/images.js",
+    "start": "watch 'npm-run-all less js:dev' -- ./src",
+    "build": "npm-run-all less js",
+    "release": "npm-run-all favicons images less js"
   },
   "dependencies": {},
   "devDependencies": {
@@ -29,12 +32,19 @@
     "favicons": "^4.8.6",
     "jimp": "^0.2.28",
     "less": "^2.7.2",
-    "less-plugin-clean-css": "^1.5.1",
+    "npm-run-all": "^4.1.2",
     "postcss": "^6.0.6",
-    "uglify-js": "^3.0.24"
+    "rimraf": "^2.6.2",
+    "uglify-js": "^3.0.24",
+    "watch": "^1.0.2"
   },
   "browserlist": [
-    "last 2 versions",
-    "ios 9"
+    "Chrome 49",
+    "ChromeAndroid 49",
+    "Firefox 48",
+    "Edge 12",
+    "ie 10",
+    "Safari 9",
+    "iOS 9"
   ]
 }

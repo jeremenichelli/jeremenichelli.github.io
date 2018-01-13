@@ -1,9 +1,13 @@
 ---
 title: Writing your own CSS fluid&nbsp;grid
-resume: The structure and layout of a website or web app is one of the main decisions made over its design. There are a lot of grid systems already built and ready to use like the ones included in Bootstrap or Foundation, but I prefer to build my own and have more control over the layout of my project.
+resume: The structure and layout of a website or web app is one of the main decisions made over its design.
 ---
 
-One of the first things I discover when I started doing my own grids was that is not a big deal. It involves a little bit of testing but having a grid built by you with your preferences, with no legacy code from other developer is not hard to do. I'm not saying that other approaches are worse than mine, but my code will cover what I want and yours will cover what you want, in some cases there isn't a better way or a better code, sometimes your code cover your needs and nothing more and that's good. To me is perfect because no extra code means smaller files, faster loading times and less code to mantain.
+There are a lot of grid systems already built and ready to use like the ones included in Bootstrap or Foundation, but I prefer to build my own and have more control over the layout of my project.
+
+One of the first things I discover when I started doing my own grids was that is not a big deal. It involves a little bit of testing but having a grid built by you with your preferences, with no legacy code from other developer is not hard to do.
+
+I'm not saying that other approaches are worse than mine, but my code will cover what I want and yours will cover what you want, in some cases there isn't a better way or a better code, sometimes your code cover your needs and nothing more and that's good. To me is perfect because no extra code means smaller files, faster loading times and less code to mantain.
 
 A lot of developers told me they don't like doing their own grids because they hate maths. Well, maths is a big part of building a grid, probably the biggest. I love maths and I swear to you it's not that complicated.
 

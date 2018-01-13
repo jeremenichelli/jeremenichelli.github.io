@@ -1,6 +1,6 @@
 ---
 title: The web is still broken
-resume: Each year triggered by a different comment or experience, here is my annual take about the web being horrible, or not that great, to build stuff.
+resume: Each year triggered by a different comment or experience, here is my annual take about the web being horrible, or not that great, to build software nowadays.
 ---
 
 This time the cliffhanger came from [Ken Wheeler's talk](https://www.youtube.com/watch?v=WEQx3wz8QeY) at Chain React Conf, which you should check out. In fact, I suggest you go there and then come back to this article.

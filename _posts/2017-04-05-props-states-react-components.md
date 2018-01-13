@@ -5,9 +5,9 @@ resume: React not only changed the way we build our interfaces but also put data
 
 ## Props
 
-By definition _props_ are initial properties that affect how a component is rendered.
+By definition _props_ are initial data that affect how a component is rendered.
 
-**Props** must be first class citizen in your application code base, and you should try to achieve all possible _flavors_ or variants using them.
+**Props** must be first class citizen in your application code base, and you should try to achieve all possible _flavors_ or variants of your components with them whenever possible.
 
 By giving _props_ this role, you will favor a unique down data flow direction.
 
@@ -16,16 +16,16 @@ By giving _props_ this role, you will favor a unique down data flow direction.
 
 The _state_ of a component is also a set of properties that affects the render function output, the difference is they live internally inside it.
 
-> Simplicity is a prerequisite for&nbsp;reliability.
+> Simplicity is a prerequisite for&nbsp;reliability
 >
 > - Edsger W. Dijkstra
 
 States are necessary, specially to respond to user input and data fetching, but they also add complexity.
 
-That's why storing a value in a component's state should be a well thought decision.
+Storing a value in a component's state should be a well thought decision.
 
 
-### Should a property belong to the state?
+### Does a property belong to the state?
 
 These are three axioms I think a property should pass to be placed inside a state:
 
@@ -38,7 +38,7 @@ If a piece of data doesn't pass these requirements then it should be treated as 
 
 #### Quick example
 
-Let's imagine a component which output changes depending on the type of device.
+Let's imagine a component which output changes depending on the device.
 
 ```js
 import { Component } from 'react';

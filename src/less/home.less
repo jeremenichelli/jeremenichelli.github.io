@@ -1,22 +1,35 @@
 @import '__vars.less';
 
+html,
+body {
+
+  @media @desktop {
+    height: 100%;
+  }
+}
+
+.home {
+  background-color: @background-color--dark;
+  color: @text-color--light;
+}
+
+.home__section {
+  position: relative;
+  z-index: 1;
+
+  @media @desktop {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
 .home__title {
+  font-size: 1.75em;
+  letter-spacing: @low--letter-spacing;
   text-transform: uppercase;
 
-  // mitigate size jump, thanks to https://meowni.ca/font-style-matcher/
-  @media @small--phone {
-    font-size: 1.5em;
-
-    .fonts-loaded & {
-      font-size: 1.75em;
-    }
-  }
-
-  // mitigate letter spacing, thanks to https://meowni.ca/font-style-matcher/
-  letter-spacing: -1.35px;
-
-  .fonts-loaded & {
-    letter-spacing: @low--letter-spacing;
+  @media @desktop {
+    font-size: 2em;
   }
 }
 
@@ -25,34 +38,79 @@
   margin: 0;
 }
 
-blockquote {
+.home__blockquote {
   margin: 0 0 3em;
-  padding: 0 1em 0 0;
-
-  p {
-
-    &:before {
-      display: none;
-    }
-  }
 
   @media @desktop {
     left: -2.25em;
     margin: 0 0 4em;
-    padding: 0 1em 0 2.25em;
+    padding: 0 1.5em 0 2.25em;
+  }
 
-    p {
+  p {
 
-      &:before {
-        display: block;
-      }
+    @media @small {
+      font-size: 1em;
     }
   }
 }
 
-// hire email link styles
-a[href*="mailto"] {
-  letter-spacing: @low--letter-spacing;
-  position: relative;
-  top: -1em;
+.home__link {
+  font-style: italic;
+  letter-spacing: @medium--letter-spacing;
+  margin: 1em 0;
+  text-transform: uppercase;
+}
+
+/*
+ * JS ONLY ANIMATION PROPERTIES
+ * FOR HOME PAGE
+ */
+html {
+
+  // apply transitions only when javascript is enabled
+  &:not(.no-js) {
+
+    .home__title,
+    .home__subtitle {
+      opacity: 0;
+      transform: translate(0, 5px);
+      transition: all 0.3s ease-out;
+    }
+
+    .home__subtitle {
+      transition-delay: 0.3s;
+    }
+
+    .home__title {
+      transition-delay: 0.6s;
+    }
+
+    .home__blockquote {
+      opacity: 0;
+      transition: opacity 0.5s ease-out 0.9s;
+    }
+
+    .home__link {
+      opacity: 0;
+      transform: translate(0, 5px);
+      transition: all 0.3s ease-in-out 1.25s;
+
+      &:nth-child(2) {
+        transition-delay: 1.5s;
+      }
+    }
+  }
+
+  // final animation state
+  &.ready {
+
+    .home__title,
+    .home__subtitle,
+    .home__blockquote,
+    .home__link {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
 }

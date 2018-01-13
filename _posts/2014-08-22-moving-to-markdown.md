@@ -1,13 +1,15 @@
 ---
 title: Moving to&nbsp;Markdown
-resume: A few days ago I received an email from a developer asking for help with Markdown files on Jekyll. Giving him some assistance on this reminded me how good and agnostic this language is for writing, so from now on my posts will be Markdown files. Here is why I'm doing this and some tips about it.
+resume: A few days ago I received an email from a developer asking for help with Markdown files on Jekyll.
 ---
+
+Giving him some assistance on this reminded me how good and agnostic this language is for writing, so from now on my posts will be Markdown files. Here is why I'm doing this and some tips about it.
 
 Having to write all my posts in HTML wasn't bad but it made me lose a lot of time and it felt more like working, instead of just writing. So the main reason was to improve my writing experience.
 
 The other reason was writing code samples. Trying to find a good way to show and style them on HTML can be a not that pleasant task.
 
-## The &lt;code&gt; tag
+## The code tag
 
 The best way to achieve this while following the standards is to write a *&lt;pre&gt;* tag and a *&lt;code&gt;* one inside it. What happens here is that spaces, tabs and line breaks are interpreted, the opposite behaviour of a normal HTML document.
 

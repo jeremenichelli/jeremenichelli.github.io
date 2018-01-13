@@ -26,22 +26,20 @@
   <!-- twitter card meta -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@jeremenichelli">
+  <meta name="twitter:creator" content="@jeremenichelli" />
   <meta name="twitter:title" content="{{ title }}">
   <meta name="twitter:description" content="{{ description }}">
   <meta name="twitter:url" content="{{ url }}">
-  <meta name="twitter:image" content="{{ site.url }}/assets/images/avatar.jpg">
-
-  <script>
-    window.PAGE = '{{ type }}';
-    window.FONTS_LOADED = sessionStorage.getItem('fonts-loaded');
-  </script>
-
-  <link rel="preload" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700" as="style" crossorigin>
+  <meta name="twitter:image" content="{{ site.url | prepend: 'http://' }}/assets/images/twitter-card-image.jpeg">
 
   <style id="critical">
   {% include global--styles.html %}
   {% include {{ type }}--styles.html %}
   </style>
 
-  <script>{% include critical--js.html %}</script>
+  <script>
+    window.PAGE = '{{ type }}';
+    window.FONTS_CACHED = JSON.parse(sessionStorage.getItem('fonts-cached'));
+    {% include critical--js.html %}
+  </script>
 </head>

@@ -1,0 +1,1 @@
+!function(e,t){"use strict";if(!0===e.FONTS_CACHED&&(e.FONTS_LOADED=Promise.resolve()),e.FONTS_LOADED.then(function(){requestAnimationFrame(function(){t.documentElement.classList.add("ready")})}),"post"===e.PAGE)for(var n=t.querySelectorAll("h2, h3"),o=0,r=n.length;o<r;o++){var i=n[o];i.innerHTML='<a href="#'+i.id+'">'+i.textContent+"</a>"}}(window,document);

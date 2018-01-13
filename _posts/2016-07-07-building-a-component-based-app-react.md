@@ -1,12 +1,12 @@
 ---
 title: Building a component based app with&nbsp;React
-resume: Developers have been trying to find a solution to architecture on complex web applications. The most recent answer to that are components, divide the interface in smaller and autonomous blocks to conquer maintainability and scalability.
+resume: Developers have been trying to find a solution to architecture on complex web applications. The most recent answer to that are components, divide an interface in smaller and autonomous blocks to conquer maintainability and scalability.
 ---
 
-_This writing belongs to a serie of articles about using components with [Vue][vue-article], [Polymer][polymer-article] and [Angular 2][angular-article]._
+In this case I will go through my thoughts and feelings on developing a web application using [React][react], probably the most popular library to render views these days, created by Facebook developers.
 
-In this case I will go through my thoughts and feelings on developing components using [React][react], probably the most popular library to render views these days, created by Facebook developers.
 
+_This writing belongs to a serie of articles about using components with [Vue][vue-article], React,  [Polymer][polymer-article] and [Angular 2][angular-article]._
 
 ## Introduction to React
 
@@ -24,7 +24,7 @@ let Link = React.createElement(
     className: 'github-link'
   },
   'GitHub'
-  );
+);
 
 ReactDOM.render(Link, document.querySelector('#example'));
 ```

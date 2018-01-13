@@ -1,5 +1,51 @@
 @import '__vars.less';
 
+.header__container {
+  padding-top: 3.5em;
+}
+
 .main__resume {
-  margin-top: 0;
+  color: @text-color--medium;
+  font-size: 1.1em;
+  margin: 0 0 2em;
+}
+
+blockquote {
+  letter-spacing: @low--letter-spacing;
+  text-transform: uppercase;
+
+  ul {
+    color: @text-color--medium;
+  }
+}
+
+// nav and nav links
+nav {
+  padding: @horizontal--spacing--mobile;
+
+  @media @desktop {
+    padding: 2em 4em;
+    // leaving this here in case it is needed in the future
+    // padding-left: ~'calc((100vw - @{container--max-width})/2 + @{spacing})';
+    text-align: right;
+  }
+}
+
+.nav__link {
+  color: @accent;
+  font-size: @short--font-size;
+  letter-spacing: @low--letter-spacing;
+  text-transform: uppercase;
+
+  &:visited {
+    color: @accent;
+  }
+
+  + .nav__link {
+    margin: 0 0 0 3em;
+
+    @media @desktop {
+      margin: 0 0 0 4em;
+    }
+  }
 }

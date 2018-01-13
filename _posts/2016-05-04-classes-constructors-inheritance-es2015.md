@@ -1,7 +1,9 @@
 ---
 title: Classes, constructors and inheritance in&nbsp;ES2015
-resume: Understanding prototype inheritance was one of the pain points in JavaScript development. One of the main reasons was that the language didn't provide a nice syntax that translated this programming concept in a straight manner.
+resume: Understanding prototype inheritance is one of the pain points for JavaScript developers.
 ---
+
+I think one of the main reasons was that the language itself didn't provide a nice syntax that translated this programming concept in a straight-forward manner.
 
 Let's remember the way we are writing constructor functions today.
 
@@ -26,11 +28,15 @@ Object.defineProperty(Circle.prototype, 'diameter', {
 });
 ```
 
-As you might have noticed there are three independent statements to define different instance properties. This example shows a class with two properties and one method, but this decoupling on big objects can affect your code in a really bad way.
+As you might have noticed there are three independent statements to define different instance properties.
+
+On big codebases this fragmentation caused difficulties for new developers.
+
+Populating the prototype object isn't a problem itself but it was hard to read in constructors with lots of methods, on the other hand the `defineProperty` alternative is proven to be really slow.
 
 ## class
 
-In order to avoid this, the new standard defines a `class` reserved word which acts as a declaring block for prototyped methods and properties.
+To avoid all of this, the new standard defines a `class` reserved word which acts as a declaring block for prototyped methods and properties.
 
 ```js
 // ES2015
@@ -171,6 +177,8 @@ greg.salute(); // 'Hi! My name is Gregory and I am a Doctor!'
 All the code inside a class declaration is executed in *strict mode*, no way to get around that.
 
 Also, *hoisting* is not possible as it was with function expressions, you are obliged to declare a class before trying to create an instance of it.
+
+In my opinion, all these small things contribute to cleaner codebases.
 
 
 ## Wrap-up

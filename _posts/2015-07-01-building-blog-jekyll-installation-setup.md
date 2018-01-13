@@ -1,7 +1,9 @@
 ---
 title: Building a blog using Jekyll. Install and quick&nbsp;setup
-resume: This static site generator has become popular between developers because of its simplicity and the fact that runs in GitHub pages, a place in the web we the developers feel confortable working in. In this first post, I'm going to explain really quick what you need to install it and the essential commands to start using it.
+resume: This static site generator has become popular between developers because of its simplicity and the fact that runs in GitHub pages, a place in the web we the developers feel confortable working in.
 ---
+
+In this first post, I'm going to explain really quick what you need to install it and the essential commands to start using it.
 
 ## What's Jekyll?
 

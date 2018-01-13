@@ -86,7 +86,7 @@ Instead of comparing the whole object, check for a key or a combination of them 
 
 Another solution is to extend from [PureComponent](https://facebook.github.io/react/docs/react-api.html#react.purecomponent) class. This will run shallow compares on all props and states to know when a given component should update.
 
-I suggest only using this class when all the props are primitives, running shallow compares on objects and array might have a higher cost than the render function call itself.
+I suggest only using this class when all the props are primitives, running shallow compares on objects and arrays might have a higher cost than the render function call itself.
 
 
 ### No updates at all

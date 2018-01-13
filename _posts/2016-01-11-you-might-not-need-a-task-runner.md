@@ -1,11 +1,15 @@
 ---
 title: You might not need a task&nbsp;runner
-resume: Most front end developers agree that tooling is something we as a community need to figure out this year. The fatigue around deciding and learning technologies to build big, and not so big, projects was a trend last year, so maybe it's time to slowly minimize dependencies and delete the middle men.
+resume: Most front end developers agree that tooling is something we, as a community, needed to figure out this year.
 ---
 
-## The middle men
+The fatigue around deciding and learning technologies to build big, and not so big, projects was a trend last year, so maybe it's time to slowly minimize dependencies and delete the middle men.
 
-The last couple of years we saw the rise of task runners and it makes totally sense. Why? Well, because if you work on web projects you already have some JavaScript knowledge and being able to use the same language to run your build process is really cool. You learn it fast, it is familiar to you and when you're setting it up or making a modification you feel that you're still doing front end work. That's definitely cool.
+## The middle man
+
+The last couple of years we saw the rise of task runners. **Why?** If you work on web projects you already have some JavaScript knowledge and being able to use the same language to run your build process is really cool.
+
+You learn it fast, it is familiar to you and when you're setting it up or making a modification you feel that you're still doing front end work. That's definitely cool.
 
 <a href="https://gruntjs.com" target="_blank">Grunt</a> gained popularity fast and packages started emerging quickly, behind them a big community giving support, and that's a healthy sign when choosing a tool for your project. The problem with Grunt was the steep learning curve to understand the task configuration, myself included.
 

@@ -3,24 +3,32 @@
     "files": "./src/less/{global,about,blog,error,home,post}.less",
     "output": "./_includes/"
   },
-  "js": {
-    "noncritical": {
-      "entry": "./src/js/noncritical/**/*.js",
-      "output": "./assets/js/site.js"
-    },
-    "critical": {
+  "bundles": [
+    {
       "entry": "./src/js/critical/**/*.js",
       "output": "./_includes/critical--js.html"
+    },
+    {
+      "entry": "./src/js/main/**/*.js",
+      "output": "./assets/js/main.js"
+    },
+    {
+      "entry": "./src/js/font/**/*.js",
+      "output": "./assets/js/font.js"
     }
-  },
+  ],
   "favicon": {
     "entry": "./src/favicon/favicon.png",
     "output": "./assets/favicon/",
     "path": "/assets/favicon/",
     "html": "./_includes/favicons.html"
   },
-  "images": {
-    "entry": "./src/images/*.{jpeg,jpg}",
-    "output": "./assets/images/"
-  }
+  "images": [
+    {
+      "entry": "./src/favicon/favicon.png",
+      "output": "./assets/images/twitter-card-image.jpeg",
+      "quality": 90,
+      "resize": [ 240, 240 ]
+    }
+  ]
 }

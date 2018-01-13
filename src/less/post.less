@@ -21,14 +21,63 @@ h4, h5, h6 {
   text-transform: uppercase;
 }
 
-// blockquotes
-blockquote {
-  letter-spacing: @low--letter-spacing;
-  margin: 2em 0;
-  text-transform: uppercase;
+html {
 
-  @media @desktop {
-    margin: 3em 0;
+  // display hashes only when javascript is enabled
+  &:not(.no-js) {
+
+    h2, h3 {
+      position: relative;
+
+      @media @desktop {
+
+        &:hover {
+
+          &:before {
+            display: block;
+          }
+        }
+      }
+
+      &:before {
+        content: '#';
+        color: @text-color--medium;
+        display: none;
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1;
+        margin: 0 0.15em 0 0;
+        position: absolute;
+        right: 100%;
+
+        @media @desktop {
+          font-size: 1.45rem;
+          margin: 0 0.3em 0 0;
+        }
+      }
+
+      a {
+        color: inherit;
+
+        &:visited {
+          color: inherit;
+        }
+      }
+    }
+
+    h2 {
+
+      &:before {
+        top: 0;
+      }
+    }
+
+    h3 {
+
+      &:before {
+        top: -.1em;
+      }
+    }
   }
 }
 
@@ -44,7 +93,6 @@ del, code {
   display: inline-block;
   font-family: Menlo, Consolas, Monaco, monospace;
   font-size: 13px;
-  line-height: 1.5;
   padding: 0 5px;
 }
 
@@ -63,7 +111,7 @@ code {
   hyphens: @code-hyphens;
 
   @media @desktop {
-    font-size: 14px;
+    font-size: .80555556em;
   }
 }
 
@@ -76,7 +124,7 @@ code {
 
 .k,
 .kd,
-.nl {
+.kr {
   font-weight: 700;
 }
 
@@ -90,6 +138,7 @@ pre {
 
   code {
     background-color: transparent;
+    line-height: 1.5;
     margin: 0;
     padding: 0;
   }
