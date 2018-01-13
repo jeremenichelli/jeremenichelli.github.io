@@ -2,25 +2,15 @@
 
 html,
 body {
-
-  @media @desktop {
-    height: 100%;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
 }
 
 .home {
   background-color: @background-color--dark;
   color: @text-color--light;
-}
-
-.home__section {
-  position: relative;
-  z-index: 1;
-
-  @media @desktop {
-    top: 50%;
-    transform: translateY(-50%);
-  }
 }
 
 .home__title {
@@ -58,8 +48,12 @@ body {
 .home__link {
   font-style: italic;
   letter-spacing: @medium--letter-spacing;
-  margin: 1em 0;
+  margin: 0;
   text-transform: uppercase;
+
+  + .home__link {
+    margin: 1em 0 0;
+  }
 }
 
 /*
