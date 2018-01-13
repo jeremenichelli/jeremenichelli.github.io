@@ -457,7 +457,7 @@ Try to learn a new framework always brings a learning curve that, in my opinion,
 
 The first one is the **documentation**. I have to admit is really complete but unorganized, which is a big deal for begginers, probably a consequence of a fast evolution pace the repository experimented recently.
 
-> The official docs grew organically and need&nbsp;gardening.
+> The official docs grew organically and need&nbsp;gardening
 >
 > - Dan Abramov
 

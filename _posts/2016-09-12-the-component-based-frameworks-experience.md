@@ -81,8 +81,8 @@ It won't be hard to adopt if you are coming from **Angular 1.x**, but if you are
 
 This second version introduces interesting concepts and improvements under the hood, but they will be hard to sell if documentation and initial configuration aren't friendly for begginers.
 
-- [Complete article about Angular 2](/2016/08/building-component-based-app-angular-2/)
-- [Simple web app built with Angular 2](https://github.com/jeremenichelli/movies/tree/master/results/angular)
+- [Complete article about Angular&nbsp;2](/2016/08/building-component-based-app-angular-2/)
+- [Simple web app built with Angular&nbsp;2](https://github.com/jeremenichelli/movies/tree/master/results/angular)
 
 
 ## Wrap-up

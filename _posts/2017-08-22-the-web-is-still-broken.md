@@ -50,7 +50,7 @@ There is absolutely no way you can consume an iOS app outside the Apple ecosyste
 
 The bright side is that competition generally pushes improvement along the market, the bad thing is **fragmentation**. Users, developers and even companies suffer it because of the extra costs it generates.
 
-> Compatibility means deliberately repeating others&nbsp;mistakes.
+> Compatibility means deliberately repeating others&nbsp;mistakes
 >
 > - David Wheeler
 

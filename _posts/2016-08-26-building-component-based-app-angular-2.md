@@ -44,7 +44,7 @@ Don't freak out if this syntax looks a bit confusing, the reason is you're not l
 
 Angular 2 documentation encourages you to use [TypeScript](https://www.typescriptlang.org) and not JavaScript in your project, and when I say _encourages you_ I mean _forces you_ since its whole guide lacks of JavaScript documentation and only contains TypeScript examples.
 
-> First **strong** decision: TypeScript.
+> First **strong** decision: TypeScript
 
 Instead of being a class we can extend from, `Component` is a decorator used to modify the component's behavior and creation. [Decorators](decorators) are part of the ES2016 specification and they are already available in TypeScript.
 
@@ -65,7 +65,7 @@ Decorators and types are not part of ECMAScript specs and browsers can't interpr
 
 Components in Angular will use web component technologies behind the scene to encapsulate views and styles, which I think is a great decision by the team since it will improve performance as these features get supported natively on browsers.
 
-> Second **strong** decision: Web components behind the scenes.
+> Second **strong** decision: Web components behind the scenes
 
 That said, when views are appended inside a `shadowRoot` the content inside tags doesn't get rendered unless you specify so.
 
