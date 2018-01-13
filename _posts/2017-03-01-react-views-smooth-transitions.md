@@ -121,11 +121,11 @@ componentWillAppear(done) {
 }
 ```
 
-Still, this might not _just_ work. The browsers still needs to do some processing so animating right away will have no effect.
+Still, this might not _just_ work. Browsers still need time to _upgrade_ the elements affected so animating right away will have no effect.
 
 ## time
 
-There are to paths we can take here.
+There are two paths we can take here.
 
 We could delay our animation enough time for the browsers to run optimizations but as little as possible so users don’t notice the delay.
 
@@ -204,7 +204,7 @@ The browser could be handling lots of DOM updates, paint and layout recalcs, bec
 
 In modern browsers when the `load` event is triggered, not only all main resources were fetched and parsed but busy tasks like building the render tree are also completed.
 
-Running animations after all of that already happened sounded reasonable to me.
+Running animations after all of that already happened sounded reasonable.
 
 Placing a listener inside the component could not work since after the `load` event occurred its callback is ignored, _racing condition_.
 
