@@ -22,7 +22,7 @@ class MovieBox extends React.Component {
 export default MovieBox;
 ```
 
-**React** introduced a new paradigm to define small units of funcitonality which can be imported and used in different parts of a project. Web components declaration imposes something really similar.
+**React** introduced a new paradigm to define small units of functionality which can be imported and used in different parts of a project. Web components declaration imposes something really similar.
 
 ```js
 class MovieBox extends HTMLElement {
