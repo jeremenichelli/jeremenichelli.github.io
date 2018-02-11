@@ -1,5 +1,5 @@
 ---
-title: The web component experience
+title: The web components experience
 resume: After a lot of back and forth, web components are slowly making their way into browsers. But what do they really mean given the current state of development?
 ---
 
