@@ -135,4 +135,4 @@ Even when you're in control of your server environment, using resource hints it'
 
 This little trick is currently speeding up the experience in this site on desktop, so you can inspect the `head` element or check the network tab on developer tools while passing your pointer over internal links to see it in action.
 
-_Kudos to Rich Harris from whom I stole this approach [used in Sapper](https://sapper.svelte.technology/guide#prefetch-href-)._
+_Kudos to Rich Harris from whom I stole this approach he used in [Sapper](https://sapper.svelte.technology/guide#prefetch-href-)._
