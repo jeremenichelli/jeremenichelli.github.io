@@ -5,7 +5,7 @@ resume: I've heard a lot of times about the DOM being slow or a bad interface mo
 
 The DOM as a expression of what we want to be rendered in a screen is great, and by its initials you will notice that the whole deal of it is to provide a visual repesentation model.
 
-If it wasn't declarative enough, then **JSX** would have never existed and people would be happily nesting `React.createElement` calls. Truth is **JSX** is a big part of the React ecosystem helping express a component's internals.
+If it wasn't declarative enough, then **JSX** would have never existed and people would be happily nesting `createElement` calls, but truth is **JSX** is a big part of the React ecosystem helping express a component's internals.
 
 > Staying as a model, dying as an interface
 
