@@ -16,23 +16,18 @@
     });
 
   // Preload pages on anchor hover event
-  function preloadFromAnchor() {
+  function prefetchRoute() {
     var href = this.href;
-
-    // bail out if link already preloaded or external
-    if (linksPreloaded[ href ]) {
-      return;
-    }
 
     // preload!
     try {
-      linksPreloaded[ href ] = true;
-
       var link = document.createElement('link');
       link.href = href;
       link.rel = 'prefetch';
 
       document.head.appendChild(link);
+
+      this.removeEventListener('mouseover', prefetchRoute);
     } catch(e) {
       if (DEV === true) {
         console.log('preload not supported: ', e);
@@ -40,13 +35,11 @@
     }
   }
 
-  var linksPreloaded = {};
-
   // listen to hover on anchors
   [].slice.call(document.querySelectorAll('a')).map(function(a) {
-    // only attach event if link is not external
-    if (a.host === document.location.host) {
-      a.addEventListener('mouseover', preloadFromAnchor);
+    // attach when not hashed or external link
+    if (a.host === document.location.host && a.href[ 0 ] !== '#') {
+      a.addEventListener('mouseover', prefetchRoute);
     }
   });
 
