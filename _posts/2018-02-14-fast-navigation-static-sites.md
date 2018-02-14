@@ -1,5 +1,5 @@
 ---
-title: Fast inner navigation for static sites
+title: Fast inner navigation for static&nbsp;sites
 resume: When trying to improve a web product experience and performance we usually encounter limitations. Sometimes we are not be able to modify servers configuration, build scripts or even some parts of the code that don't belong to our scope.
 ---
 
@@ -12,7 +12,7 @@ In this context, I was trying to come up with something that would help navigati
 
 The first thing a browser receives when users open a website is an **html** file, so any type of information we can give to it about what resources are going to be needed without actually blocking document parsing will be a huge win.
 
-> Anything we can do as the document parses (without blocking it) will be a huge win
+> Anything we can do as the document parses (without blocking it) will be a huge&nbsp;win
 
 This is where **hints** become crucial, they allow us to start connecting or fetching a resource ahead of time, but how do we do that?
 
@@ -22,7 +22,6 @@ This is where **hints** become crucial, they allow us to start connecting or fet
 Apart from loading stylesheets, the `link` tag has another set of values for its `rel` attribute to indicate other network related actions over a file or URL.
 
 Browsers will take high or low priority actions when it detects these hints, in a similar way it starts to load an image file when it finds an `img` tag.
-
 
 For example, **dns-prefetch** will resolve the domain to get the resulting ip address, while **preconnect** does this plus the handshake and TLS negotiation.
 
@@ -117,14 +116,14 @@ const prefetchRoute = function() {
 This way we avoid injecting the same `link` element several times.
 
 
-### What about mobile?
+#### What about mobile?
 
 Since the `mouseover` event won't be dispatched in mobile devices we could also attach the `prefetchRoute` method to the `touchstart` action.
 
-I've personally bailed on doing it because there's a chance the device is not connected to WiFi while navigating and I prefer not to silently consume users' data plan, even when they are just some kilobytes.
+I've personally bailed on doing it because there's a chance the device is not connected to wifi while navigating and I prefer not to silently consume users' data plan, even when they are just some kilobytes.
 
 
-### What about actual single page applications?
+#### And single page applications?
 
 If you are code splitting your application and using a bundler that allows named chunks [like webpack does](https://webpack.js.org/guides/code-splitting/#dynamic-imports), you can prefetch that file to fasten dynamic routes.
 

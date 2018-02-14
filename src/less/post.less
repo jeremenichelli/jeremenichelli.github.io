@@ -9,16 +9,20 @@
 
 h3 {
   font-size: 1.17647em;
-}
-
-h3, h4, h5, h6 {
   line-height: 1.2;
   margin: 1.5em 0 .83195em;
 }
 
 h4, h5, h6 {
   letter-spacing: @medium--letter-spacing;
+  line-height: 1.35;
+  // bad negative margin bottom hack
+  margin: 2em 0 -0.5em;
   text-transform: uppercase;
+
+  @media @desktop {
+    font-size: 0.94117647em;
+  }
 }
 
 html {
