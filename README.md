@@ -1,6 +1,6 @@
 # jeremenichelli.io
 
-This is the repository that runs 👉 (jeremenichelli.io)
+This is the repository that runs 👉 [jeremenichelli.io](jeremenichelli.io)
 
 ## How it works
 
@@ -18,7 +18,9 @@ This setup allows the site to not block rendering with any resource, even web fo
 
 ### Production
 
-When all changes are in place, it is possible to run `yarn build` command to generate optimized styles and bundles ready for production. You can also run `yarn release`, this in addition to styles and bundles will generate new images and favicons.
+When all changes are in place, it is possible to run `yarn build` command to generate optimized styles and bundles ready for production.
+
+You can also run `yarn release`, this in addition to styles and bundles will generate new images and favicons.
 
 _Feel free to report any issue or suggestion._
 
