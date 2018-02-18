@@ -5,15 +5,15 @@
   },
   "bundles": [
     {
-      "entry": "./src/js/critical/**/*.js",
+      "input": "./src/js/critical.js",
       "output": "./_includes/critical--js.html"
     },
     {
-      "entry": "./src/js/main/**/*.js",
+      "input": "./src/js/main.js",
       "output": "./assets/js/main.js"
     },
     {
-      "entry": "./src/js/font/**/*.js",
+      "input": "./src/js/font.js",
       "output": "./assets/js/font.js"
     }
   ],

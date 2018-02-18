@@ -32,7 +32,7 @@
   <meta name="twitter:url" content="{{ url }}">
   <meta name="twitter:image" content="{{ site.url | prepend: 'http://' }}/assets/images/twitter-card-image.jpeg">
 
-  <!-- preconnect google fonts cdns -->
+  <!-- preconnect with google fonts cdns -->
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com/">
 
@@ -42,7 +42,7 @@
   </style>
 
   <script>
-    window.PAGE = '{{ type }}';
+    window.PAGE_TYPE = '{{ type }}';
     window.FONTS_CACHED = JSON.parse(sessionStorage.getItem('fonts-cached'));
     {% include critical--js.html %}
   </script>

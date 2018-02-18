@@ -1,64 +1,73 @@
-const fs = require('fs');
-const path = require('path');
 const mkdirp = require('mkdirp');
 const chalk = require('chalk');
-const glob = require('glob');
-const uglify = require('uglify-js');
 
+// rollup pacakges
+const rollup = require('rollup');
+const commonjs = require('rollup-plugin-commonjs');
+const replace = require('rollup-plugin-replace');
+const resolve = require('rollup-plugin-node-resolve');
+const uglify = require('rollup-plugin-uglify');
+
+// import config file
 const config = require('./config.json');
 
-const dev = process.env.NODE_ENV === 'development';
+const ENVIRONMENT = process.env.NODE_ENV || 'production';
 
-/**
- * Concats all JS files
- * @method concatJS
- * @param {String} type
- */
-function bundle(bundle) {
-  // create base output directory
-  mkdirp(path.dirname(bundle.output), (error) => {
-    if (!error) {
-      glob(
-        bundle.entry,
-        (error, files) => {
-          if (!error) {
-            let content = '';
+console.log(`generating bundles for ${chalk.blue(ENVIRONMENT)}\n`);
 
-            // concat files content
-            files.map((file) => {
-              content += fs.readFileSync(file).toString();
-            });
+// base input config for bundles
+const baseConfig = {
+  plugins: [
+    // replace environment
+    replace({
+      DEV: ENVIRONMENT === 'production' ? 'false' : 'true'
+    }),
+    // resolve node modules
+    resolve(),
+    // support commonjs
+    commonjs({
+      include: 'node_modules/**'
+    })
+  ]
+};
 
-            const uglified = uglify.minify(content, {
-              mangle: !dev,
-              compress: dev ? false : {
-                dead_code: true,
-                global_defs: {
-                  DEV: false
-                },
-                passes: 2
-              },
-              output: {
-                beautify: dev,
-                preamble: dev ? 'window.DEV = true;' : ''
-              }
-            });
-
-            if (uglified.error !== undefined) {
-              return console.log(chalk.red(`${uglified.error}\n`));
-            }
-
-            fs.writeFile(bundle.output, uglified.code, 'UTF-8', function() {
-              console.log(chalk.green(`${bundle.output} javascript file written\n`));
-            });
-          }
-        }
-      );
-    } else {
-      console.log(chalk.red(`${error}\n`));
-    }
-  });
+if (ENVIRONMENT === 'production') {
+  // uglify bundle for production
+  baseConfig.plugins.push(
+    uglify({
+      mangle: true,
+      compress: {
+        dead_code: true,
+        passes: 2
+      }
+    })
+  );
 }
 
-// process critical JS files
-config.bundles.map(bundle);
+async function build() {
+
+  const bundles = config.bundles.map(b => {
+    // rollup all bundles in config file
+    return rollup.rollup(Object.assign({}, { input: b.input }, baseConfig));
+  });
+
+  // write output bundles
+  Promise.all(bundles)
+    .then((results) => {
+
+      results.map((b, index) => {
+        const output = config.bundles[ index ].output;
+
+        b.write({
+          file: output,
+          format: 'iife',
+          sourcemap: ENVIRONMENT === 'development' ? 'inline' : false
+        });
+
+        console.log(`${chalk.green(output)} file written`);
+      });
+    });
+}
+
+// bundle files
+build();

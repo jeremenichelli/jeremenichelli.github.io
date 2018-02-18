@@ -4,18 +4,18 @@ const mkdirp = require('mkdirp');
 const glob = require('glob');
 const chalk = require('chalk');
 
-const config = require('./config.json');
+// style processing modules
 const less = require('less');
 const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
-/**
- * Creates output directory and transform LESS files
- * @method convertLESS
- * @param {String} type
- */
-function processLESS(type) {
+// import config file
+const config = require('./config.json');
+
+console.log(`processing ${chalk.blue('styles')}\n`);
+
+function processLESS() {
   // create base output directory
   mkdirp(config.less.output, (error) => {
     if (!error) {
@@ -34,11 +34,7 @@ function processLESS(type) {
   });
 }
 
-/**
- * Read, process a LESS file and write to HTML include file
- * @method toHTML
- * @param {String} file
- */
+// process with postcss and export as include files
 function toHTML(file) {
   // read less file
   fs.readFile(file, 'UTF-8', (error, content) => {
@@ -64,7 +60,7 @@ function toHTML(file) {
               });
 
               fs.writeFile(output, result.css, 'UTF-8', function() {
-                console.log(chalk.green(`${output} style file written\n`));
+                console.log(`${chalk.green(output)} file written`);
               });
             });
         }, function(error) {
