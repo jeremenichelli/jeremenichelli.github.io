@@ -3,9 +3,12 @@ const path = require('path');
 const mkdirp = require('mkdirp');
 const rimraf = require('rimraf');
 const chalk = require('chalk');
-
 const favicons = require('favicons');
+
+// import config file
 const config = require('./config.json');
+
+console.log(`running ${chalk.blue('favicon')} tasks\n`);
 
 const setup = {
   appName: 'Jeremias Menichelli',
@@ -38,22 +41,36 @@ rimraf(config.favicon.output, (error) => {
             console.log(error);
           } else {
             // output html tags
-            fs.writeFile(config.favicon.html, response.html.join('\n'), 'UTF-8', function() {
-              console.log(chalk.magenta(`\nfavicon: html partial created\n`));
-            });
+            fs.writeFile(
+              config.favicon.html,
+              response.html.join('\n'),
+              'UTF-8',
+              () => {
+                console.log(`favicon ${chalk.magenta('html partial')} created`);
+              }
+            );
 
             // write favicon files
             response.files.map((file) => {
-              fs.writeFile(config.favicon.output + file.name, file.contents, 'UTF-8', function() {
-                console.log(chalk.blue(`favicon: ${file.name} created`));
-              });
+              fs.writeFile(
+                config.favicon.output + file.name,
+                file.contents,
+                'UTF-8',
+                () => {
+                  console.log(`favicon ${chalk.magenta(file.name)} file created`);
+                });
             });
 
             // write favicon images
             response.images.map((image) => {
-              fs.writeFile(config.favicon.output + image.name, image.contents, 'UTF-8', function() {
-                console.log(chalk.green(`favicon: ${image.name} created`));
-              });
+              fs.writeFile(
+                config.favicon.output + image.name,
+                image.contents,
+                'UTF-8',
+                () => {
+                  console.log(`favicon ${chalk.green(image.name)} image created`);
+                }
+              );
             });
           }
         });
