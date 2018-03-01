@@ -34,7 +34,7 @@ class MovieBox extends HTMLElement {
 window.customElements.define('movie-box', MovieBox);
 ```
 
-_As JSX needs React components to be capitalized, custom element tag names need to contain a hypen._
+_As JSX needs React components to be capitalized, custom element tag names need to contain a hyphen._
 
 The big difference here is that the custom element becomes globally available.
 
