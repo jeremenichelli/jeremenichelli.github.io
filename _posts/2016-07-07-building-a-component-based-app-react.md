@@ -8,6 +8,7 @@ In this case I will go through my thoughts and feelings on developing a web appl
 
 _This writing belongs to a serie of articles about using components with [Vue][vue-article], React,  [Polymer][polymer-article] and [Angular 2][angular-article]._
 
+
 ## Introduction to React
 
 According to its authors, the mear existence of this framework is to compose large web applications through components instead of directives. Those components will only be updated if the data bound to them does.
@@ -25,8 +26,6 @@ let Link = React.createElement(
   },
   'GitHub'
 );
-
-ReactDOM.render(Link, document.querySelector('#example'));
 ```
 
 [See it in action](https://jsfiddle.net/jeremenichelli/kqLmfcq4)
@@ -38,24 +37,17 @@ It's necessary to express element's properties as their JavaScript equivalent, t
 
 ### JSX
 
-Not mandatory, but an optional way to describe render trees is **JSX** which basically let's you write HTML inside your script, with some gotchas.
-
-Our previous example using JSX syntax with React's **createClass** would become this.
+Not mandatory, but an optional way to describe render trees is **JSX** which basically let's you describe React elements in a syntax similar to HTML.
 
 ```js
-let GitHubLink = React.createClass({
-  render() {
-    return (
-      <a
-        href="https://github.com/jeremenichelli"
-        className="github-link">
-          GitHub
-      </a>
-    );
-  }
-});
-
-ReactDOM.render(<GitHubLink />, document.querySelector('#example'));
+const GitHubLink = (
+  <a
+    className="github-link"
+    href="https://github.com/jeremenichelli"
+  >
+    GitHub
+  </a>
+);
 ```
 
 Seeing tags inside your code might feel weird at first, however it becomes a better option when writing more complex elements with a bigger number of children that can be harder to read using React's method.
@@ -67,10 +59,10 @@ Of course this will need to be _transpiled_ to actually work, but more on that l
 
 As React promises, the best reason for using it is to improve the architecture of your application diving the views into reusable components.
 
-One of the many ways to achieve this is using the **createClass** method and is the one you will find in the official documentatio right now. I prefer extending the component class.
+One of the many ways to achieve this is extending the component class.
 
 ```js
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
 
 class GitHubLink extends Component {
@@ -91,9 +83,9 @@ render(
 );
 ```
 
-These components become custom tags you can put inside other components or pass it to the render function. _Component tags need to be capitalized so JSX can differenciate them from standard HTML ones._
+These components become custom tags you can put inside other components or pass it to the render function. Component tags need to be **capitalized** so JSX can differenciate them from standard HTML ones.
 
-The problem with this component here is that the url is hardcoded, an anchor always pointing to the same page won't be _that_ reusable.
+The problem with this component here is that the url is hardcoded, and an anchor always pointing to the same page won't be _that_ reusable.
 
 
 ### Props
@@ -101,7 +93,7 @@ The problem with this component here is that the url is hardcoded, an anchor alw
 To customize our components, data values can be passed to them as _props_.
 
 ```js
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
 
 const baseUrl = 'https://github.com/';
@@ -115,7 +107,7 @@ class GitHubLink extends Component {
       <a
         href={ baseUrl + this.props.user }
         className="github-link">
-          GitHub
+          { this.props.user } on github
       </a>
     );
   }
@@ -132,7 +124,7 @@ When declaring components with this pattern, _props_ need to be passed to the **
 As you see in the **href** value, JavaScript expressions can be used inside JSX when wrapped with curly braces to apply more dynamic and readable approaches.
 
 ```js
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
 
 const baseUrl = 'https://github.com/';
@@ -146,7 +138,7 @@ class GitHubLink extends Component {
       <a
         href={ baseUrl + this.props.user }
         className="github-link">
-          GitHub
+          { this.props.user } on github
       </a>
     );
   }
@@ -174,11 +166,13 @@ render(
 
 [See it in action](https://jsfiddle.net/jeremenichelli/oLL9j1bj/3)
 
-_The render function in React components always has to return a single root element, that's why the two GitHub links are placed inside a **div** tag._
+The render function in React components always has to return a single root element, that's why the two GitHub links are placed inside a **div** tag.
 
 Remember you can use JavaScript inside `render`, which is pretty neat when the number of children is unknown or too big.
 
 ```js
+import React, { Component } from 'react';
+
 const users = [
   'jeremenichelli',
   'iamdustan'
@@ -208,45 +202,21 @@ This is a better pattern since now the logic inside `render` doesn't need to be 
 Validation can be added to props, for example specifying type.
 
 ```js
-import { Component, PropTypes } from 'react';
-import { render } from 'react-dom';
-
-const baseUrl = 'https://github.com/';
-
-class GitHubLink extends Component {
-  constructor(props) {
-    super(props);
-  }
-  propTypes: {
-    user: PropTypes.string.isRequired
-  }
-  render() {
-    return (
-      <a
-        href={ baseUrl + this.props.user }
-        className="github-link">
-          GitHub
-      </a>
-    );
-  }
-}
+GitHubLink.propTypes = {
+  user: PropTypes.string.isRequired
+};
 ```
 
 After passing the type we can go further and use `isRequired` so the presence of it becomes mandatory for rendering the component.
 
-There are lots of possible validations, I suggest [React docs section][props] about it.
+_propTypes have been moved to [a standalone package](https://reactjs.org/docs/typechecking-with-proptypes.html)._
 
-### States
+### State
 
-When data values change over a component's life cycle they are called _states_.
-
-It's important to mention that not every single data used in a component should be a state. When the value of a state doesn't affect the render of the component is better to save it in a variable.
-
-When using **createClass** you get access to a **getInitialState** method to specify the initial states' values, but if you're doing in the the ES2015 way just define a _state_ object on the instance's constructor.
+When data values can change internally because a network request or a user interaction happened, we placed them on the component's _state_.
 
 ```js
-import { Component } from 'react';
-import { render } from 'react-dom';
+import React, { Component } from 'react';
 
 class AccordionElement extends Component {
   constructor(props) {
@@ -274,8 +244,7 @@ To reveal the content we need to toggle the _expanded_ value.
 To do it we use **setState** and React will update the components view.
 
 ```js
-import { Component } from 'react';
-import { render } from 'react-dom';
+import React, { Component } from 'react';
 
 class AccordionElement extends Component {
   constructor(props) {
@@ -313,7 +282,7 @@ As the library doesn't come with directives out of the box, when you need to tra
 It's not hard since React encapsulation itself comes handy for this.
 
 ```js
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 
 export default class SearchBox extends Component {
   constructor(props) {
