@@ -1,5 +1,5 @@
 ---
-title: A recipe for CSS preprocessors and web&nbsp;components
+title: A recipe for style preprocessors and Shadow&nbsp;DOM
 resume: While writing web components one of the biggest tradeoffs I've encounter was giving away the experience brought by CSS modules.
 ---
 
