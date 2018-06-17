@@ -10,7 +10,6 @@
   {% endif %}
 
   {% capture url %}{{ page.url | prepend: site.url }}{% endcapture %}
-  {% capture gh_pages_url %}{{ page.url | prepend: 'https://jeremenichelli.github.io' }}{% endcapture %}
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +17,6 @@
   <title>{{ title }}</title>
   <meta name="description" content="{{ description }}">
   <link rel="canonical" href="{{ url }}">
-  <link rel="canonical" href="{{ gh_pages_url }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101010">
 
