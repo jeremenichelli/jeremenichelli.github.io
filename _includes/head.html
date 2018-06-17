@@ -9,7 +9,8 @@
   {% else %}{% capture description %}{{ site.description }}{% endcapture %}
   {% endif %}
 
-  {% capture url %}{{ site.url }}{{ page.url | prepend: site.baseurl }}{% endcapture %}
+  {% capture url %}{{ page.url | prepend: site.url }}{% endcapture %}
+  {% capture gh_pages_url %}{{ page.url | prepend: 'https://jeremenichelli.github.io' }}{% endcapture %}
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +18,7 @@
   <title>{{ title }}</title>
   <meta name="description" content="{{ description }}">
   <link rel="canonical" href="{{ url }}">
+  <link rel="canonical" href="{{ gh_pages_url }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101010">
 
@@ -30,7 +32,7 @@
   <meta name="twitter:title" content="{{ title }}">
   <meta name="twitter:description" content="{{ description }}">
   <meta name="twitter:url" content="{{ url }}">
-  <meta name="twitter:image" content="{{ site.url | prepend: 'http://' }}/assets/images/twitter-card-image.jpeg">
+  <meta name="twitter:image" content="{{ site.url }}/assets/images/twitter-card-image.jpeg">
 
   <!-- preconnect with google fonts cdns -->
   <link rel="preconnect" href="https://fonts.googleapis.com/">
