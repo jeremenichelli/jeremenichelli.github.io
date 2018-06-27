@@ -24,7 +24,7 @@ window.FONTS_LOADED = new Promise(function(resolve) {
         sessionStorage.setItem('fonts-cached', true);
 
       } catch (e) {
-        if (DEV === true) {
+        if (__DEV__ === true) {
           console.log(e);
         }
       }

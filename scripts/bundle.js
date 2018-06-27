@@ -20,7 +20,7 @@ const baseConfig = {
   plugins: [
     // replace environment
     replace({
-      DEV: ENVIRONMENT === 'production' ? 'false' : 'true'
+      __DEV__: ENVIRONMENT === 'production' ? 'false' : 'true'
     }),
     // resolve node modules
     resolve(),

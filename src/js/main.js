@@ -26,7 +26,7 @@ function prefetchRoute() {
 
     this.removeEventListener('mouseover', prefetchRoute);
   } catch(e) {
-    if (DEV === true) {
+    if (__DEV__ === true) {
       console.log('preload not supported: ', e);
     }
   }
@@ -46,7 +46,7 @@ if (window.PAGE_TYPE === 'post') {
 
     h.innerHTML = '<a href="#' + h.id + '">' + h.textContent + '</a>';
 
-    if (DEV === true) {
+    if (__DEV__ === true) {
       console.log(
         'Link added to heading',
         '<' + h.tagName.toLowerCase() + '>',
