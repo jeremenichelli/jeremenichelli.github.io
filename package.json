@@ -16,10 +16,9 @@
   "scripts": {
     "less": "node ./scripts/less.js",
     "js": "node ./scripts/bundle.js",
-    "js:dev": "NODE_ENV=development node ./scripts/bundle.js",
     "favicons": "node ./scripts/favicons.js",
     "images": "node ./scripts/images.js",
-    "start": "watch 'npm-run-all less js:dev' -- ./src",
+    "start": "NODE_ENV=development watch 'npm-run-all less js' -- ./src",
     "build": "npm-run-all less js",
     "release": "npm-run-all favicons images less js"
   },
