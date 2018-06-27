@@ -9,10 +9,6 @@
       "output": "./_includes/critical--js.html"
     },
     {
-      "input": "./src/js/main.js",
-      "output": "./assets/js/main.js"
-    },
-    {
       "input": "./src/js/font.js",
       "output": "./assets/js/font.js"
     }

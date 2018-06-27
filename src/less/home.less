@@ -60,44 +60,40 @@ body {
  * JS ONLY ANIMATION PROPERTIES
  * FOR HOME PAGE
  */
-html {
+html:not(.no-js) {
 
-  // apply transitions only when javascript is enabled
-  &:not(.no-js) {
+  .home__title,
+  .home__subtitle {
+    opacity: 0;
+    transform: translate(0, 5px);
+    transition: all 0.3s ease-out;
+  }
 
-    .home__title,
-    .home__subtitle {
-      opacity: 0;
-      transform: translate(0, 5px);
-      transition: all 0.3s ease-out;
-    }
+  .home__subtitle {
+    transition-delay: 0.3s;
+  }
 
-    .home__subtitle {
-      transition-delay: 0.3s;
-    }
+  .home__title {
+    transition-delay: 0.6s;
+  }
 
-    .home__title {
-      transition-delay: 0.6s;
-    }
+  .home__blockquote {
+    opacity: 0;
+    transition: opacity 0.5s ease-out 0.9s;
+  }
 
-    .home__blockquote {
-      opacity: 0;
-      transition: opacity 0.5s ease-out 0.9s;
-    }
+  .home__link {
+    opacity: 0;
+    transform: translate(0, 5px);
+    transition: all 0.3s ease-in-out 1.25s;
 
-    .home__link {
-      opacity: 0;
-      transform: translate(0, 5px);
-      transition: all 0.3s ease-in-out 1.25s;
-
-      &:nth-child(2) {
-        transition-delay: 1.5s;
-      }
+    &:nth-child(2) {
+      transition-delay: 1.5s;
     }
   }
 
   // final animation state
-  &.ready {
+  &.fonts-loaded {
 
     .home__title,
     .home__subtitle,

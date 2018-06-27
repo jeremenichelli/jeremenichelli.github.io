@@ -5,31 +5,30 @@ if (__DEV__ === true) {
   store.verbose();
 }
 
-// remove no js class
-document.documentElement.classList.remove('no-js');
-
 // load font face styles
 store.css('https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700', {
   storage: 'session',
   crossOrigin: 'anonymous'
 });
 
+// remove no js class
+document.documentElement.classList.remove('no-js');
+
+// check for fonts cached flag
+var FONTS_CACHED = JSON.parse(sessionStorage.getItem('fonts-cached'));
+
+// enqueue scripts for deferred loading
 var scripts = [];
 
-// promise polyfill for legacy browsers
 if (!('Promise' in window)) {
   scripts.push('https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.min.js');
 }
 
-// font bundle only on first visit
-if (window.FONTS_CACHED === true) {
-  document.documentElement.classList.add('fonts-loaded');
-} else {
+if (!(FONTS_CACHED === true)) {
   scripts.push('/assets/js/font.js');
+} else {
+  document.documentElement.classList.add('fonts-loaded');
 }
-
-// include main script
-scripts.push('/assets/js/main.js');
 
 // append all scripts when dom parsing is finished
 window.addEventListener('DOMContentLoaded', function() {
