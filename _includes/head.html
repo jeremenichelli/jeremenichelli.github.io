@@ -42,8 +42,9 @@
   </style>
 
   <script>
+    // expose page type
     window.PAGE_TYPE = '{{ type }}';
-    window.FONTS_CACHED = JSON.parse(sessionStorage.getItem('fonts-cached'));
+    // critical scripts
     {% include critical--js.html %}
   </script>
 </head>
