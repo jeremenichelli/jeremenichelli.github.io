@@ -1,12 +1,12 @@
 {
   "less": {
-    "files": "./src/less/{global,about,blog,error,home,post}.less",
+    "files": "./src/less/{about,blog,error,home,post}.less",
     "output": "./_includes/"
   },
   "bundles": [
     {
       "input": "./src/js/critical.js",
-      "output": "./_includes/critical--js.html"
+      "output": "./_includes/_js-critical.html"
     },
     {
       "input": "./src/js/font.js",
