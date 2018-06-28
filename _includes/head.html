@@ -37,14 +37,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com/">
 
   <style id="critical">
-  {% include global--styles.html %}
-  {% include {{ type }}--styles.html %}
+  {% include _styles-{{ type }}.html %}
   </style>
 
   <script>
-    // expose page type
-    window.PAGE_TYPE = '{{ type }}';
     // critical scripts
-    {% include critical--js.html %}
+    {% include _js-critical.html %}
   </script>
 </head>

@@ -43,10 +43,8 @@ function toHTML(file) {
         paths: [ path.dirname(file) ]
       }
 
-      const output =
-        config.less.output +
-        path.basename(file)
-          .replace('.less', '--styles.html');
+      const filename = `_styles-${ path.basename(file).replace('.less', '.html') }`
+      const output = config.less.output + filename
 
       less
         .render(content, options)
