@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', function() {
     var scriptElement = document.createElement('script');
     scriptElement.src = src;
     scriptElement.async = false;
-    document.head.appendChild(scriptElement);
+    document.body.appendChild(scriptElement);
   });
 });
 
