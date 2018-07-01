@@ -200,7 +200,12 @@ class Movies extends Component {
 }
 ```
 
-[See it in action](https://jsfiddle.net/jeremenichelli/rt9tnk45/)
+<a
+  class="blocked__link blocked__link--centered"
+  href="https://jsfiddle.net/jeremenichelli/rt9tnk45/"
+  rel="noopener noreferrer">
+  See it in action
+</a>
 
 These optimizations are similar to the ones shown before, the final take is to place outside the render function everything that will remain constant.
 

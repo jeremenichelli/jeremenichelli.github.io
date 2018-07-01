@@ -106,7 +106,12 @@ Present in previous versions of Angular, directives are _hints_ that will modify
 </ul>
 ```
 
-[See it in action](http://embed.plnkr.co/eyMDXCRRIXPUo4YpxDHi/)
+<a
+  class="blocked__link blocked__link--centered"
+  href="http://embed.plnkr.co/eyMDXCRRIXPUo4YpxDHi/"
+  rel="noopener noreferrer">
+  See it in action
+</a>
 
 `*ngIf` will not render the element when its condition is false, useful to improve view times and prevent undefined errors when data is not available.
 
