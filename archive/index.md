@@ -1,7 +1,7 @@
 ---
 layout: default
 type: blog
-title: Blog
+title: Archive
 ---
 
 <ul class="bloglist">
@@ -11,7 +11,9 @@ title: Blog
       {% if post.external_url %}
       Hosted by <span class="bloglist__host">{{ post.host }}</span>
       {% else %}
-      <time class="bloglist__time" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y'}}</time>
+      <time class="bloglist__time" datetime="{{ post.date | date_to_xmlschema }}">
+        {{ post.date | date: '%b %-d, %Y'}}
+      </time>
       {% endif %}
     </p>
     <a

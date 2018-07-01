@@ -98,7 +98,13 @@ function shuffle(array) {
   return newArray;
 }
 ```
-[See it in action](http://jsfiddle.net/jeremenichelli/7qLbpr1b/6/)
+
+<a
+  class="blocked__link blocked__link--centered"
+  href="https://jsfiddle.net/jeremenichelli/7qLbpr1b/6/"
+  rel="noopener noreferrer">
+  See it in action
+</a>
 
 I've created a fiddle (link above) where you can see this working. It also contains an iteration that gets executed a thousand times with the results that shows the frequencies distribution in console.
 

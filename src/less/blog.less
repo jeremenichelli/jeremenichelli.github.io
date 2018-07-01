@@ -8,11 +8,12 @@
   padding: 0;
 
   li + li {
-    margin: 3em 0 0;
+    margin: 2.25em 0 0;
   }
 }
 
 .bloglist__info {
+  color: @text-color--medium;
   font-size: @short--font-size;
   letter-spacing: @low--letter-spacing;
   margin: 0;
@@ -27,11 +28,16 @@
 .bloglist__link {
   color: @text-color--dark;
   display: block;
-  font-size: 1.35294em;
+  font-size: 1.29411765em; // desktop font size 22px
   font-weight: 700;
   line-height: 1.25;
 
   &:visited {
     color: @text-color--dark;
   }
+}
+
+// expand level two headings margin
+h2 {
+  margin: 3em 0 2em;
 }

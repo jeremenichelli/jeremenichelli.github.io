@@ -58,7 +58,12 @@ class GitHubLink extends HTMLElement {
 document.registerElement('github-link', GitHubLink);
 ```
 
-[See it in action](https://jsfiddle.net/8Lrm8dzh/)
+<a
+  class="blocked__link blocked__link--centered"
+  href="https://jsfiddle.net/8Lrm8dzh/"
+  rel="noopener noreferrer">
+  See it in action
+</a>
 
 When extending native elements prototype, some life cycle functions become available like the **createdCallback** and **attachedCallback** to run some code at specific moments.
 
@@ -102,7 +107,12 @@ The one you're going to use more is the `<dom-module>` tag, inside of which we p
 </dom-module>
 ```
 
-[See it in action](https://jsfiddle.net/jeremenichelli/nvd4t92h/)
+<a
+  class="blocked__link blocked__link--centered"
+  href="https://jsfiddle.net/jeremenichelli/nvd4t92h/"
+  rel="noopener noreferrer">
+  See it in action
+</a>
 
 The element's name must match in the `<dom-module>` tag and the Polymer function call for the [is](https://www.w3.org/TR/custom-elements/#custom-elements-customized-builtin-example) attribute and property respectively.
 
@@ -171,7 +181,12 @@ When we create a new element with Polymer, properties are declared in its object
 </dom-module>
 ```
 
-[See it in action](https://jsfiddle.net/jeremenichelli/fdg4mwez/)
+<a
+  class="blocked__link blocked__link--centered"
+  href="https://jsfiddle.net/jeremenichelli/fdg4mwez/"
+  rel="noopener noreferrer">
+  See it in action
+</a>
 
 Properties are accessible in the view by enclosing them with square brackets.
 
@@ -250,7 +265,12 @@ In Polymer when using `[[ ]]`, single operators can be used and object propertie
 </dom-module>
 ```
 
-[See it in action](https://jsfiddle.net/jeremenichelli/kfz4pbqn/)
+<a
+  class="blocked__link blocked__link--centered"
+  href="https://jsfiddle.net/jeremenichelli/kfz4pbqn/"
+  rel="noopener noreferrer">
+  See it in action
+</a>
 
 To define a computed property, add it with a **computed** key referencing a method and including the properties that will trigger a value change in the arguments.
 

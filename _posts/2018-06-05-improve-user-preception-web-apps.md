@@ -90,7 +90,12 @@ const placeholderString = () => (
 )
 ```
 
-[See it in action](https://codepen.io/jeremenichelli/pen/LrGNZm/)
+<a
+  class="blocked__link blocked__link--centered"
+  href="https://codepen.io/jeremenichelli/pen/LrGNZm/"
+  rel="noopener noreferrer">
+  See it in action
+</a>
 
 _Play with different combinations of sizes to better match your case._
 
@@ -148,8 +153,12 @@ h2, p {
 }
 ```
 
-[See it in action](https://codepen.io/jeremenichelli/pen/mKVPMg)
-
+<a
+  class="blocked__link blocked__link--centered"
+  href="https://codepen.io/jeremenichelli/pen/mKVPMg"
+  rel="noopener noreferrer">
+  See it in action
+</a>
 
 ### The final result
 
@@ -158,7 +167,6 @@ As you can see in the link above, the footprint of the styles added is not big a
 If you want to see how it looks in real life [take a look at this pull request](https://github.com/webpack/webpack.js.org/pull/2121) where the behavior was added to our `rebuild` branch.
 
 The pull request contains two GIF sequences which expose how the user experience gets improved while waiting for dynamic content to reach the application.
-
 
 ## Warp-up
 
