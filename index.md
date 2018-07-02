@@ -13,7 +13,7 @@ type: home
   <main>
     <div class="container">
       <blockquote class="home__blockquote">
-        <p>Hi there! I am a front end developer. I build web applications and interfaces with a keen eye on scalability, performance and user experience.</p>
+        <p>Front end engineeer experienced in performance, scalability and best practices. Currently working on Design Systems at&nbsp;Typeform.</p>
       </blockquote>
 
     <div class="home__link__list">
