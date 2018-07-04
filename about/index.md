@@ -1,23 +1,30 @@
 ---
 layout: default
-title: About me
+title: About
 type: about
-resume: Hi there! My name is Jeremias Menichelli &mdash; I'm a front end developer currently working at Typeform in Barcelona.
+resume: Eternal curious mind and front end engineer. Currently working in Design Systems at Typeform. Member of webpack documentation team.
 ---
 
-<p>I have experience building different types of web products, from responsive fast sites to beautiful interactive web applications.</p>
+His interest for web development started back when he opened a website for the first time as a child and asked himself why it was so slow.
 
-<p>I also collaborate with open source projects and write technical articles.</p>
+> Cartoon Network website sucked back in the 90s
 
-<blockquote>
-  <p>His human qualities and professionalism make him an excelent team member</p>
-  <ul>
-    <li>Juan Peralta, Regional&nbsp;Manager at Velocity&nbsp;Partners</li>
-  </ul>
-</blockquote>
+He is now an adult, or pretending to be one, and a self-taught front end engineer with a varied experience in different types of projects and workflows for web based solutions.
 
-<p>My focus currently is on leading teams to create scalable applications and sites following the best practices and technologies in the industry.</p>
+## Experience
 
-<p>Some of my work went to <strong>Facebook</strong>, <strong>Google</strong>, <strong>ESPN</strong>, and <strong>Disney</strong> domains.</p>
+He initially worked in content based web and marketing sites for companies like Microsoft, State Farm, Razorfish, NYSE and others.
 
-<p>Feel free to <a href="mailto:jmenichelli@gmail.com">contact me</a> or find me on <a href="https://medium.com/@jeremenichelli">medium</a>, <a href="https://twitter.com/jeremenichelli">twitter</a> or&nbsp;<a href="https://github.com/jeremenichelli">github</a>.</p>
+Later, he helped build and maintain large applications for e-commerce companies and start ups based in the United States, with focus on test driven development and scalability.
+
+> I met bundlers
+
+Previous to his current position, he worked for [Jam3](https://jam3.com) agency building rich animated web experiences for clients like Pixar, Google, Oreo, Disney and Facebook, always _dangerously obsessed_ with performance and best practices.
+
+> I made cookies fly and cars move, it was really fun
+
+He is currently part of the Design System team at [Typeform](https://www.typeform.com) and he's a member of [webpack](https://webpack.js.org) team. He enjoys [writing articles](/blog) and giving talks to share his learnings along the way.
+
+## Contact
+
+Feel free to [reach out to him](mailto:jmenichelli@gmail.com) or find him on [medium](https://medium.com/@jeremenichelli), [twitter](https://twitter.com/jeremenichelli) or&nbsp;[github](https://github.com/jeremenichelli).
