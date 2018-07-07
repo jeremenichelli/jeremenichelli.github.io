@@ -13,12 +13,12 @@ title: Blog
         {{ post.date | date: '%b %-d, %Y'}}
       </time>
     </p>
-    <a class="bloglist__link" href="{{ post.url }}">{{ post.title }}</a>
+    <a class="bloglist__link" href="{{ post.url }}" alt="{{ post.title }}">{{ post.title }}</a>
   </li>
 {% endfor %}
 </ul>
 
-<a class="blocked__link" href="/archive">See all posts</a>
+<a class="blocked__link" href="/archive" alt="archive">See all posts</a>
 
 ## Guested articles
 
@@ -29,7 +29,7 @@ title: Blog
     <p class="bloglist__info">
       Hosted by <span class="bloglist__host">{{ post.host }}</span>
     </p>
-    <a class="bloglist__link" href="{{ post.external_url }}" target="_blank" rel="noopener noreferrer">
+    <a class="bloglist__link" href="{{ post.external_url }}" alt="{{ post.title }}" target="_blank" rel="noopener noreferrer">
       {{ post.title }}
     </a>
   </li>

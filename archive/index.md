@@ -18,6 +18,7 @@ title: Archive
     </p>
     <a
       class="bloglist__link"
+      alt="{{ post.title }}"
       {% if post.external_url %}href="{{ post.external_url }}" target="_blank" rel="noopener noreferrer"
       {% else %}href="{{ post.url }}"
       {% endif %}
