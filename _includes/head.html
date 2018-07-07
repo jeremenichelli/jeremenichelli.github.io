@@ -20,6 +20,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101010">
 
+  <!-- structured data -->
+  {% if type == 'home' %}{% include _data-home.html %}
+  {% elsif type == 'post' %}{% include _data-post.html %}
+  {% else %}{% include _data-page.html %}
+  {% endif %}
+
   <!-- favicons -->
   {% include favicons.html %}
 

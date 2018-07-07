@@ -18,11 +18,11 @@ type: home
 
     <div class="home__link__list">
       <p class="home__link">
-        CHECK OUT MY <a href="/blog">BLOG &rarr;</a>
+        CHECK OUT MY <a href="/blog" alt="blog">BLOG &rarr;</a>
       </p>
 
       <p class="home__link">
-        FIND OUT MORE <a href="/about">ABOUT ME &rarr;</a>
+        FIND OUT MORE <a href="/about" alt="about">ABOUT ME &rarr;</a>
       </p>
     </div>
     </div>

@@ -1,5 +1,5 @@
 <nav>
   {% for link in site.data.nav_links %}
-  <a href="{{ link.url }}" class="nav__link">{{ link.text }}</a>
+  <a href="{{ link.url }}" class="nav__link" alt="{{ link.text }}">{{ link.text }}</a>
   {% endfor %}
 </nav>
