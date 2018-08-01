@@ -25,6 +25,14 @@ Previous to his current position, he worked for [Jam3](https://jam3.com) agency 
 
 He is currently part of the Design System team at [Typeform](https://www.typeform.com) and he's a member of [webpack](https://webpack.js.org) team. He enjoys [writing articles](/blog) and giving talks to share his learnings along the way.
 
+## Upcoming talks
+
+_Speaking at [Byteconf&nbsp;2018](https://byteconf.com/), [Reactathon&nbsp;Special&nbsp;Edition](https://www.reactathon.com/) and [WebCamp&nbsp;Zagreb&nbsp;2018](https://2018.webcampzg.org/)._
+
+### Past talks
+
+_Spoke at [Barcelona Frontend meetup](https://www.meetup.com/Barcelona-Front-End-Development-Meetup/events/248467102/)._
+
 ## Contact
 
 Feel free to [reach out to him](mailto:jmenichelli@gmail.com) or find him on [medium](https://medium.com/@jeremenichelli), [twitter](https://twitter.com/jeremenichelli) or&nbsp;[github](https://github.com/jeremenichelli).

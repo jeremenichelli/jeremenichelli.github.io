@@ -6,7 +6,7 @@ title: Blog
 
 {% assign posts = site.posts | where_exp: "post", "post.external_url == null" %}
 <ul class="bloglist">
-{% for post in posts limit: 5 %}
+{% for post in posts limit: 3 %}
   <li>
     <p class="bloglist__info">
       <time class="bloglist__time" datetime="{{ post.date | date_to_xmlschema }}">
@@ -24,7 +24,7 @@ title: Blog
 
 {% assign hosted = site.posts | where_exp: "post", "post.external_url" %}
 <ul class="bloglist">
-  {% for post in hosted limit: 5 %}
+  {% for post in hosted limit: 3 %}
   <li>
     <p class="bloglist__info">
       Hosted by <span class="bloglist__host">{{ post.host }}</span>
@@ -35,3 +35,5 @@ title: Blog
   </li>
   {% endfor %}
 </ul>
+
+<a class="blocked__link" href="/archive" alt="archive">See all guest articles</a>
