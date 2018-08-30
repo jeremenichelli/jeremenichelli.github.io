@@ -498,11 +498,9 @@ Following this design rules, the project grows naturally without overthinking ar
 
 ## Wrap-up
 
-React has something that makes you like it, it does **one** thing. Short set of methods and patterns to learn and you're ready to go.
+React has something that makes you like it, it does **one** thing. Short set of methods and patterns to learn and you're ready to go, but it needs to improve documentation and tooling to help onboard new adopters without strong concepts around architecture and components.
 
-But it needs to improve documentation and tooling to help developers without strong concepts around architecture and components.
-
-It definitely could force you to change the develop and scale your app, but after you've done that letting React rule your project's architecture is a relief.
+It definitely forces you to change how you develop and scale an application, but after you passed the initial learning curve, letting React rule your project's architecture is a relief.
 
 Most of these thoughts came while building a [simple web app][react-movies] using tools and approaches mentioned in this article you can explore on GitHub.
 
