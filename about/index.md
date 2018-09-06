@@ -2,7 +2,7 @@
 layout: default
 title: About
 type: about
-resume: Eternal curious mind and front end engineer. Currently working in Design Systems at Typeform. Member of webpack documentation team.
+resume: Born and raised in Argentina, currently living in Barcelona and working as a front end engineer in Design Systems at Typeform.
 ---
 
 His interest for web development started back when he opened a website for the first time as a child and asked himself why it was so slow.
@@ -27,11 +27,11 @@ He is currently part of the Design System team at [Typeform](https://www.typefor
 
 ## Upcoming talks
 
-_Speaking at [Byteconf&nbsp;2018](https://byteconf.com/), [Reactathon&nbsp;Special&nbsp;Edition](https://www.reactathon.com/) and [WebCamp&nbsp;Zagreb&nbsp;2018](https://2018.webcampzg.org/)._
+_He will be speaking at [WebCamp&nbsp;Zagreb&nbsp;2018](https://2018.webcampzg.org/) and [React&nbsp;Day&nbsp;Berlin](https://react.day.berlin)._
 
 ### Past talks
 
-_Spoke at [Barcelona Frontend meetup](https://www.meetup.com/Barcelona-Front-End-Development-Meetup/events/248467102/)._
+_He spoke at [Barcelona Frontend meetup](https://www.meetup.com/Barcelona-Front-End-Development-Meetup/events/248467102/), [Byteconf&nbsp;2018](https://byteconf.com/) and [Reactathon&nbsp;Special&nbsp;Edition](https://www.reactathon.com/)._
 
 ## Contact
 
