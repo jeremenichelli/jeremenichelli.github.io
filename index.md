@@ -13,16 +13,16 @@ type: home
   <main>
     <div class="container">
       <blockquote class="home__blockquote">
-        <p>Front end engineeer experienced in performance, scalability and best practices. Currently working on Design Systems at&nbsp;Typeform.</p>
+        <p>Front end engineeer experienced in performance, scalability and best practices. Currently working in Design Systems at&nbsp;Typeform.</p>
       </blockquote>
 
     <div class="home__link__list">
       <p class="home__link">
-        CHECK OUT MY <a href="/blog" alt="blog">BLOG &rarr;</a>
+        CHECK OUT HIS <a href="/blog" alt="blog">BLOG &rarr;</a>
       </p>
 
       <p class="home__link">
-        FIND OUT MORE <a href="/about" alt="about">ABOUT ME &rarr;</a>
+        FIND OUT MORE <a href="/about" alt="about">ABOUT HIM &rarr;</a>
       </p>
     </div>
     </div>
