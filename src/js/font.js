@@ -11,15 +11,15 @@ window.FONTS_LOADED = new Promise(function(resolve) {
     .then(function() {
       // add fonts loaded class
       document.documentElement.classList.add('fonts-loaded');
+
       // resolve global fonts loaded promise
       resolve();
-      try {
-        // put mark on web storage
-        sessionStorage.setItem('fonts-cached', true);
-      } catch(e) {
-        if (__DEV__ === true) {
-          console.log(e);
-        }
-      }
+
+      // put mark on web storage
+      sessionStorage.setItem('fonts-cached', true);
+    })
+    .catch(function() {
+      // add fallback font class
+      document.documentElement.classList.add('fonts-failed');
     });
 });
