@@ -1,0 +1,42 @@
+@import '__vars.less';
+@import '_global.less';
+@import '_page.less';
+
+.archivelist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li + li {
+    margin: 2em 0 0;
+  }
+}
+
+.archivelist__year {
+  color: @text-color--medium;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.archivelist__link {
+  color: @text-color--dark;
+  display: block;
+  font-size: 1.17647059em; // desktop font size 20px
+  font-weight: 700;
+  line-height: 1.25;
+
+  @media @desktop {
+    padding: 0 0 0 1em;
+  }
+
+  &:visited {
+    color: @text-color--dark;
+  }
+}
+
+// expand level two headings margins
+h2 {
+  margin: 3em 0 2em;
+}

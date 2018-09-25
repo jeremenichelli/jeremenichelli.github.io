@@ -29,4 +29,4 @@ title: Blog
 {% endfor %}
 </ul>
 
-<a class="blocked__link" href="/archive" alt="archive">See all posts</a>
+<a class="blocked__link" href="/archive" alt="archive">See all the publications</a>

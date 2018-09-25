@@ -1,23 +1,19 @@
 ---
 layout: default
-type: blog
+type: archive
 title: Archive
 ---
 
-<ul class="bloglist">
+<ul class="archivelist">
 {% for post in site.posts %}
+  {% assign currentdate = post.date | date: "%Y" %}
+  {% if currentdate != date %}
+    <li class="archivelist__year"><h2>{{ currentdate }}</h2></li>
+    {% assign date = currentdate %} 
+  {% endif %}
   <li>
-    <p class="bloglist__info">
-      {% if post.external_url %}
-      Hosted by <span class="bloglist__host">{{ post.host }}</span>
-      {% else %}
-      <time class="bloglist__time" datetime="{{ post.date | date_to_xmlschema }}">
-        {{ post.date | date: '%b %-d, %Y'}}
-      </time>
-      {% endif %}
-    </p>
     <a
-      class="bloglist__link"
+      class="archivelist__link"
       alt="{{ post.title }}"
       {% if post.external_url %}href="{{ post.external_url }}" target="_blank" rel="noopener noreferrer"
       {% else %}href="{{ post.url }}"
