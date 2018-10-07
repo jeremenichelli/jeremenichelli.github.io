@@ -17,12 +17,16 @@ type: home
       </blockquote>
 
     <div class="home__link__list">
-      <p class="home__link">
-        CHECK OUT HIS <a href="/blog" alt="blog">BLOG &rarr;</a>
+      <p class="action__link">
+        Check out his <a href="/blog" alt="blog">blog</a>
       </p>
 
-      <p class="home__link">
-        FIND OUT MORE <a href="/about" alt="about">ABOUT HIM &rarr;</a>
+      <p class="action__link">
+        These are his <a href="/talks" alt="talks"> talks</a>
+      </p>
+
+      <p class="action__link">
+        Find out more <a href="/about" alt="about">about him</a>
       </p>
     </div>
     </div>

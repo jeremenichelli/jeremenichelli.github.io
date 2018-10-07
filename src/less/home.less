@@ -46,17 +46,6 @@ body {
   }
 }
 
-.home__link {
-  font-style: italic;
-  letter-spacing: @medium--letter-spacing;
-  margin: 0;
-  text-transform: uppercase;
-
-  + .home__link {
-    margin: 1em 0 0;
-  }
-}
-
 /*
  * JS ONLY ANIMATION PROPERTIES
  * FOR HOME PAGE
@@ -83,13 +72,17 @@ html:not(.no-js) {
     transition: opacity 0.5s ease-out 0.9s;
   }
 
-  .home__link {
+  .action__link {
     opacity: 0;
     transform: translate(0, 5px);
     transition: all 0.3s ease-in-out 1.25s;
 
     &:nth-child(2) {
       transition-delay: 1.5s;
+    }
+
+    &:nth-child(3) {
+      transition-delay: 1.75s;
     }
   }
 
@@ -100,7 +93,7 @@ html:not(.no-js) {
     .home__title,
     .home__subtitle,
     .home__blockquote,
-    .home__link {
+    .action__link {
       opacity: 1;
       transform: translate(0, 0);
     }

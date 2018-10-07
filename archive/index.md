@@ -6,10 +6,10 @@ title: Archive
 
 <ul class="archivelist">
 {% for post in site.posts %}
-  {% assign currentdate = post.date | date: "%Y" %}
-  {% if currentdate != date %}
-    <li class="archivelist__year"><h2>{{ currentdate }}</h2></li>
-    {% assign date = currentdate %} 
+  {% assign post_current_date = post.date | date: "%Y" %}
+  {% if post_current_date != date %}
+    <li class="archivelist__year"><h2>{{ post_current_date }}</h2></li>
+    {% assign date = post_current_date %} 
   {% endif %}
   <li>
     <a

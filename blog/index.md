@@ -5,7 +5,7 @@ title: Blog
 ---
 
 <ul class="bloglist">
-{% for post in site.posts limit: 6 %}
+{% for post in site.posts limit: 7 %}
   <li>
     <p class="bloglist__info">
       {% if post.external_url %}
@@ -29,4 +29,4 @@ title: Blog
 {% endfor %}
 </ul>
 
-<a class="blocked__link" href="/archive" alt="archive">See all the publications</a>
+<a class="blocked__link" href="/archive" alt="archive">See all publications</a>

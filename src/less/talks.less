@@ -1,0 +1,33 @@
+@import '__vars.less';
+@import '_global.less';
+@import '_page.less';
+
+.talklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.talklist__item {
+  font-style: italic;
+
+  @media @desktop {
+    padding: 0 0 0 1em;
+  }
+}
+
+.talklist__info {
+  color: @text-color--medium;
+
+  @media @desktop {
+    display: block;
+  }
+}
+
+.talklist__year {
+  color: @text-color--medium;
+
+  h2 {
+    margin: 2em 0 0;
+  }
+}

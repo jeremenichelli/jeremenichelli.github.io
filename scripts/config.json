@@ -1,6 +1,6 @@
 {
   "less": {
-    "files": "./src/less/{about,archive,blog,error,home,post}.less",
+    "files": "./src/less/{about,archive,blog,error,home,post,talks}.less",
     "output": "./_includes/"
   },
   "bundles": [
