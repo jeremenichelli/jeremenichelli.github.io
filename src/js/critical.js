@@ -24,7 +24,7 @@ if (!('Promise' in window)) {
   scripts.push('https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.min.js');
 }
 
-if (!(FONTS_CACHED === true)) {
+if (!FONTS_CACHED) {
   scripts.push('/assets/js/font.js');
 } else {
   document.documentElement.classList.add('fonts-loaded');

@@ -9,13 +9,13 @@ His interest for web development started back when he opened a website for the f
 
 > Cartoon Network website sucked back in the 90s
 
-He is now an adult, or pretending to be one, and a self-taught front end engineer with a varied experience in different types of projects and workflows for web based solutions.
+He is now an adult, or pretends to be one, and a self-taught front end engineer with experience in different types of projects and workflows for the web.
 
 ## Experience
 
-He initially worked in content based web and marketing sites for companies like Microsoft, State Farm, Razorfish, NYSE and others.
+He initially worked in content based web and marketing sites for companies like Microsoft, State Farm, Razorfish, NYSE and others, with a focus on responsive design and accessibility.
 
-Later, he helped build and maintain large applications for e-commerce companies and start ups based in the United States, with focus on test driven development and scalability.
+Later, he helped build and maintain large applications for start ups based in the United States, with focus on scalability and test driven development.
 
 > I met bundlers
 
@@ -23,15 +23,9 @@ Previous to his current position, he worked for [Jam3](https://jam3.com) agency 
 
 > I made cookies fly and cars move, it was really fun
 
-He is currently part of the Design System team at [Typeform](https://www.typeform.com) and he's a member of [webpack](https://webpack.js.org) team. He enjoys [writing articles](/blog) and giving talks to share his learnings along the way.
+He is currently part of the Design System team at [Typeform](https://www.typeform.com) and he's a member of [webpack](https://webpack.js.org) documentation team.
 
-## Upcoming talks
-
-_He will be speaking at [WebCamp&nbsp;Zagreb&nbsp;2018](https://2018.webcampzg.org/) and [React&nbsp;Day&nbsp;Berlin](https://react.day.berlin)._
-
-### Past talks
-
-_He spoke at [Barcelona Frontend meetup](https://www.meetup.com/Barcelona-Front-End-Development-Meetup/events/248467102/), [Byteconf&nbsp;2018](https://byteconf.com/) and [Reactathon&nbsp;Special&nbsp;Edition](https://www.reactathon.com/)._
+He enjoys [writing articles](/blog) and [giving talks](/talks) to share his learnings along the&nbsp;way.
 
 ## Contact
 

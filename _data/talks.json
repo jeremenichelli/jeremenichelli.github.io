@@ -1,0 +1,43 @@
+{
+  "upcoming": [
+    {
+      "title": "Insights from building rich animated experiences in React",
+      "event": "React Day Berlin",
+      "url": "https://react.day.berlin/",
+      "date": "2018-11-30"
+    }
+  ],
+  "past": [
+    {
+      "title": "A sleek view transitions recipe for web apps",
+      "event": "WebCamp&nbsp;Zagreb&nbsp;2018",
+      "url": "https://2018.webcampzg.org/",
+      "date": "2018-10-05"
+    },
+    {
+      "title": "A sleek view transitions recipe for web apps",
+      "event": "Reactathon&nbsp;Special&nbsp;Edition",
+      "url": "https://www.reactathon.com/",
+      "date": "2018-09-06"
+    },
+    {
+      "title": "Insights from building rich animated experiences in React",
+      "event": "Byteconf React",
+      "url": "https://byteconf.com/",
+      "date": "2018-08-31"
+    },
+    {
+      "title": "From API to HX: Conversation data collection for devs",
+      "event": "We are developers",
+      "url": "https://www.wearedevelopers.com/",
+      "date": "2018-05-16",
+      "workshop": true
+    },
+    {
+      "title": "Why you should and shouldn't use web components",
+      "event": "Barcelona front-end meetup",
+      "url": "https://www.meetup.com/Barcelona-Front-End-Development-Meetup/events/248467102/",
+      "date": "2018-03-28"
+    }
+  ]
+}
