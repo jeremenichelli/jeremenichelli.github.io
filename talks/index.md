@@ -2,7 +2,7 @@
 layout: default
 title: Talks & workshops
 type: talks
-resume: You are a conference organizer and you want to me to speak at your event? [Here's what you need](/conferences) to make it happen.
+resume: If you are a conference organizer and want to me to speak at your event [here's what you need to know](/conferences) before moving forward.
 ---
 
 {% if site.data.talks.upcoming.size != 0 %}
