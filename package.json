@@ -20,7 +20,8 @@
     "images": "node ./scripts/images.js",
     "start": "NODE_ENV=development watch 'npm-run-all less js' -- ./src",
     "build": "npm-run-all less js",
-    "release": "npm-run-all favicons images less js"
+    "release": "npm-run-all favicons images less js",
+    "deploy": "bash ./scripts/deploy.sh"
   },
   "dependencies": {
     "fontfaceobserver": "^2.0.13",
@@ -50,7 +51,7 @@
     "ChromeAndroid 49",
     "Firefox 48",
     "Edge 12",
-    "ie 10",
+    "ie 11",
     "Safari 9",
     "iOS 9"
   ]

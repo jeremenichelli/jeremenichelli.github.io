@@ -1,12 +1,12 @@
 {
   "less": {
     "files": "./src/less/{about,archive,blog,error,home,post,talks,conferences}.less",
-    "output": "./_includes/"
+    "output": "./_includes/inline-styles/"
   },
   "bundles": [
     {
       "input": "./src/js/critical.js",
-      "output": "./_includes/_js-critical.html"
+      "output": "./_includes/inline-scripts/critical.html"
     },
     {
       "input": "./src/js/font.js",
