@@ -21,9 +21,9 @@
   <meta name="theme-color" content="#101010">
 
   <!-- structured data -->
-  {% if type == 'home' %}{% include _data-home.html %}
-  {% elsif type == 'post' %}{% include _data-post.html %}
-  {% else %}{% include _data-page.html %}
+  {% if type == 'home' %}{% include structured-data/home.html %}
+  {% elsif type == 'post' %}{% include structured-data/post.html %}
+  {% else %}{% include structured-data/page.html %}
   {% endif %}
 
   <!-- favicons -->
@@ -42,12 +42,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com/">
 
-  <style id="critical">
-  {% include _styles-{{ type }}.html %}
-  </style>
+  <!-- inline css for page -->
+  <style>{% include inline-styles/{{ type }}.html %}</style>
 
-  <script>
-    // critical scripts
-    {% include _js-critical.html %}
-  </script>
+  <!-- inline critical scripts -->
+  <script>{% include inline-scripts/critical.html %}</script>
 </head>

@@ -70,4 +70,4 @@ async function build() {
 }
 
 // bundle files
-build();
+mkdirp('_includes/inline-scripts', build);
