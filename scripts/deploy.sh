@@ -1,7 +1,9 @@
 yarn release \
-&& git init \
 && echo "node_modules" > .gitignore \
+&& git config --global user.email "travis@travis-ci.org"
+&& git config --global user.name "Travis CI"
+&& git checkout -b gh-pages
 && git add . \
-&& git commit -m "Deploy site and assets to gh-pages" \
-&& git push --force https://${GH_TOKEN}@github.com/jeremenichelli/jeremenichelli.github.io.git HEAD:gh-pages \
-&& echo "Site and assets deployed correctly"
+&& git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
+&& git remote add origin-pages https://${GH_TOKEN}@github.com/jeremenichelli/jeremenichelli.github.io.git
+&& git push --quiet --set-upstream origin-pages gh-pages
