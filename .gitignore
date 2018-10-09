@@ -8,7 +8,7 @@ npm-debug.log
 
 .DS_Store
 
-// ignore assets and build files
+# ignore assets and build files
 _includes/inline-scripts/
 _includes/inline-styles/
 _includes/favicons.html

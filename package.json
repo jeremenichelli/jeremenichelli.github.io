@@ -14,6 +14,7 @@
   "homepage": "https://github.com/jeremenichelli/jeremenichelli.github.io#readme",
   "main": "index.html",
   "scripts": {
+    "test": "echo \"Error: no test written yet\" && exit 0",
     "less": "node ./scripts/less.js",
     "js": "node ./scripts/bundle.js",
     "favicons": "node ./scripts/favicons.js",
