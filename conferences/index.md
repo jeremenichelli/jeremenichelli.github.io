@@ -21,23 +21,19 @@ Need a high resolution picture of me? [Use this headshot][headshot] or [these on
 
 Front end engineer in Design Systems at **Typeform**.
 
-## Bio
+## Short bio
 
-### Short bio
+_Front end engineer with experience in performance, scalability and best practices. Currently working in Design Systems at&nbsp;Typeform._
 
-_Front end engineer experienced in performance, scalability and best practices. Currently working in Design Systems at&nbsp;Typeform._
-
-### Long bio
+## Long bio
 
 _Born and raised in Argentina, and currently living in Barcelona, his interest for web development started back when he opened a website for the first time as a child and asked himself why it was so slow._
 
-_He is now an adult, or pretends to be one, and a self-taught front end engineer with experience in different types of projects and workflows for the web._
-
 _He initially worked in content based web and marketing sites for companies like Microsoft, State Farm, Razorfish, NYSE and others, with a focus on responsive design and accessibility._
 
-_Later, he helped build and maintain large applications for start ups based in the United States, with focus on scalability and test driven development._
+_Later he helped build and maintain large applications for start ups based in the United States, with focus on scalability and test driven development._
 
-_Previous to his current position, he worked for Jam3 agency building rich animated web experiences for clients like Pixar, Google, Oreo, Disney and Facebook, always dangerously obsessed with performance and best practices._
+_Previous to his current position, he worked for Jam3 agency building rich animated web experiences for clients like Pixar, Google, Oreo, Disney and Facebook._
 
 _He is currently part of the Design System team at Typeform and he’s a member of webpack documentation team._
 
@@ -45,7 +41,7 @@ _He enjoys writing articles and giving talks to share his learnings along the wa
 
 ## Credits
 
-Page inspired by [Zach Leatherman][zach] and [Ethan Marcotte][ethan].
+Page inspired by [Zach Leatherman][zach] and&nbsp;[Ethan Marcotte][ethan].
 
 [headshot]: https://drive.google.com/file/d/1h6a6c1zy2P8H3fzzj-0e-MfUPhSmmb7o/view?usp=sharing
 [photos]: https://drive.google.com/drive/folders/1L4YIXpti6yPsO46DNDBENkJhTpmlBSjn?usp=sharing
