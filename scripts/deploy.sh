@@ -1,5 +1,4 @@
 yarn release \
-&& cd deploy \
 && git init \
 && git add . \
 && git commit -m "Deploy site and assets to gh-pages" \
