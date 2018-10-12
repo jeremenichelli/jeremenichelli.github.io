@@ -13,7 +13,7 @@ type: home
   <main>
     <div class="container">
       <blockquote class="home__blockquote">
-        <p>Front end engineer experienced in performance, scalability and best practices. Currently working in Design Systems at&nbsp;Typeform.</p>
+        <p>Front end engineer with experience in scalability, best practices and performance. Currently working in Design&nbsp;Systems at&nbsp;Typeform.</p>
       </blockquote>
 
     <div class="home__link__list">

@@ -2,24 +2,24 @@
 layout: default
 title: Public speaking
 type: conferences
-resume: Organizing a conference is a lot of work and time, thanks for thinking about making me part of it. 
+resume: Organizing a conference is a lot of effort and time, thanks for your work and for thinking about making me part of it. 
 ---
 
-Before contacting me, I want to make sure that your event and me are a good fit. I like taking part in conferences with:
+I want to make sure that your event and me are a good fit. I like taking part in conferences with:
 
 - a **code of conduct** that says somewhere that everybody should be treated equally and with respect, no matter what.
-- a **diverse speakers line up**, if you couldn't make it or it's not in your priorities then I prefer to pass and leave my spot for someone else.
+- a **diverse speakers line up**, if you couldn't make it or it's not in your priorities then I prefer to pass and leave my spot for somebody else.
 - all **travel expenses covered for each speakers** no matter their experiences or position in the industry, putting up a talk is a lot of effort and it's the least they deserve for that. 
 
 _You check all these boxes? Awesome, [send me an email](mailto:jmenichelli@gmail.com) and let's make it happen!_
 
 ## Picture
 
-Need a high resolution picture of me? [Use this headshot][headshot] or [these ones][photos] from events I've been.
+Need a high resolution picture of me? You can use [this headshot][headshot] or [these ones][photos] from events I've been.
 
 ## Position and company
 
-Front end engineer in Design Systems at **Typeform**.
+Front end engineer in Design Systems at&nbsp;**Typeform**.
 
 ## Short bio
 
@@ -33,7 +33,7 @@ _He initially worked in content based web and marketing sites for companies like
 
 _Later he helped build and maintain large applications for start ups based in the United States, with focus on scalability and test driven development._
 
-_Previous to his current position, he worked for Jam3 agency building rich animated web experiences for clients like Pixar, Google, Oreo, Disney and Facebook._
+_Previous to his current position, he worked for Jam3 agency building rich animated web experiences for clients like Pixar, Google, Oreo, Doritos and Facebook._
 
 _He is currently part of the Design System team at Typeform and he’s a member of webpack documentation team._
 
