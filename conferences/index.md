@@ -2,10 +2,10 @@
 layout: default
 title: Public speaking
 type: conferences
-resume: Organizing a conference is a lot of effort and time, thanks for your work and for thinking about making me part of it. 
+resume: Organizing a conference is a lot of effort and time, thanks for your hard work and for taking me in consideration.
 ---
 
-I want to make sure that your event and me are a good fit. I like taking part in conferences with:
+I want to make sure that your event and me are a good fit. I like taking part in conferences and events with:
 
 - a **code of conduct** that says somewhere that everybody should be treated equally and with respect, no matter what.
 - a **diverse speakers line up**, if you couldn't make it or it's not in your priorities then I prefer to pass and leave my spot for somebody else.
@@ -15,7 +15,9 @@ _You check all these boxes? Awesome, [send me an email](mailto:jmenichelli@gmail
 
 ## Picture
 
-Need a high resolution picture of me? You can use [this headshot][headshot] or [these ones][photos] from events I've been.
+Need a high resolution picture of me?
+
+You can use [this headshot][headshot] or [these ones][photos] from events I've been.
 
 ## Position and company
 
