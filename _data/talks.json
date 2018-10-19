@@ -5,6 +5,12 @@
       "event": "React Day Berlin",
       "url": "https://react.day.berlin/",
       "date": "2018-11-30"
+    },
+    {
+      "title": "Gimme your content punk! Font loading strategies",
+      "event": "dotJS 2018",
+      "url": "https://dotjs.io/",
+      "date": "2018-11-09"
     }
   ],
   "past": [
