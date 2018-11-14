@@ -21,11 +21,9 @@ Later he helped build and maintain large applications for start ups based in the
 
 Previous to his current position, he worked for Jam3 agency building rich animated web experiences for clients like Pixar, Google, Oreo, Doritos and Facebook.
 
-> I made cookies fly and cars move, it was really fun
+> I made cookies fly and cars move, it was fun
 
-He is currently part of the Design System team at [Typeform](https://www.typeform.com) and he's a member of [webpack](https://webpack.js.org) documentation team.
-
-He enjoys [writing articles](/blog) and [giving talks](/talks) to share his learnings along the&nbsp;way.
+He is currently part of the Design System team at [Typeform](https://www.typeform.com) and he's a member of [webpack](https://webpack.js.org) documentation team. He also enjoys [writing articles](/blog) and [giving talks](/talks) to share his learnings along the&nbsp;way.
 
 ## Contact
 

@@ -8,10 +8,17 @@
   text-transform: uppercase;
 }
 
+main {
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
 h3 {
-  font-size: 1.17647em;
-  line-height: 1.2;
-  margin: 1.5em 0 .83195em;
+  font-size: 1.17647059em; // desktop 20px
+  line-height: 1.25;
+  margin: 1.5em 0 0.82352941em; // desktop 14px
 }
 
 h4, h5, h6 {
@@ -22,14 +29,14 @@ h4, h5, h6 {
   text-transform: uppercase;
 
   @media @desktop {
-    font-size: 0.94117647em;
+    font-size: 0.94117647em; // desktop 16px
   }
 }
 
 del, code {
   display: inline-block;
   font-family: Menlo, Consolas, Monaco, monospace;
-  font-size: 13px;
+  font-size: 13px; // keeping code in px for readability
   padding: 0 5px;
 }
 
@@ -48,7 +55,7 @@ code {
   hyphens: @code-hyphens;
 
   @media @desktop {
-    font-size: .80555556em;
+    font-size: 14px; // keeping code in px for readability
   }
 }
 
