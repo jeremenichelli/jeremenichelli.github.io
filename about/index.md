@@ -13,17 +13,15 @@ He is now an adult, or pretending to be one, and a self-taught front end enginee
 
 ## Experience
 
-He initially worked in content based web and marketing sites for companies like Microsoft, State Farm, Razorfish, NYSE and others, with a focus on responsive design and accessibility.
-
-Later he helped build and maintain large applications for start ups based in the United States, with focus on scalability and test driven development.
+He initially worked in content based web and marketing sites for companies like Microsoft and State Farm, and later helped build and maintain large applications for start ups based in the United States with a focus on testing and scalability.
 
 > I met bundlers
 
-Previous to his current position, he worked for Jam3 agency building rich animated web experiences for clients like Pixar, Google, Oreo, Doritos and Facebook.
+Previous to his current position, he worked for [Jam3](https://jam3.com) agency building rich animated web experiences for clients like Pixar, Google, Oreo and Facebook.
 
 > I made cookies fly and cars move, it was fun
 
-He is currently part of the Design System team at [Typeform](https://www.typeform.com) and he's a member of [webpack](https://webpack.js.org) documentation team. He also enjoys [writing articles](/blog) and [giving talks](/talks) to share his learnings along the&nbsp;way.
+He is currently part of the Design System team at [Typeform](https://www.typeform.com) and member of [webpack](https://webpack.js.org) documentation team. He also enjoys [writing articles](/blog) and [giving talks](/talks) to share his learnings along the&nbsp;way.
 
 ## Contact
 
