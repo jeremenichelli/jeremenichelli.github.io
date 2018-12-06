@@ -1,13 +1,12 @@
 {
-  "upcoming": [
+  "upcoming": [ ],
+  "past": [
     {
       "title": "Insights from building rich animated experiences in React",
       "event": "React Day Berlin",
       "url": "https://react.day.berlin/",
       "date": "2018-11-30"
-    }
-  ],
-  "past": [
+    },
     {
       "title": "Gimme your content punk! Font loading strategies",
       "event": "dotJS 2018",

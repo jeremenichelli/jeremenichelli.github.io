@@ -5,9 +5,9 @@ type: talks
 resume: If you are a conference organizer and want to me to speak at your event, here's [what you need to know](/conferences) before moving forward.
 ---
 
-{% if site.data.talks.upcoming.size != 0 %}
-  <h2>Upcoming talks</h2>
+<h2>Upcoming talks</h2>
 
+{% if site.data.talks.upcoming.size != 0 %}
   <ul class="talklist">
   {% for talk in site.data.talks.upcoming %}
     <li class="talklist__item">
@@ -26,6 +26,10 @@ resume: If you are a conference organizer and want to me to speak at your event,
       </span>
     </li>
     {% endfor %}
+  </ul>
+{% else %}
+  <ul class="talklist">
+    <li class="talklist__item">Information coming soon...</li>
   </ul>
 {% endif %}
 

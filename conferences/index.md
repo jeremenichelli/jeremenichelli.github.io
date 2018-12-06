@@ -15,9 +15,7 @@ _You check all these boxes? [Send me an email](mailto:jmenichelli@gmail.com) and
 
 ## Picture
 
-Need a high resolution picture of me?
-
-You can use [this headshot][headshot] or [these ones][photos] from events I've been.
+Need a high resolution picture of me? You can use [this headshot][headshot] or pick among [these photos][photos] from events I've spoken at.
 
 ## Position and company
 
@@ -25,7 +23,7 @@ Front end engineer in Design Systems at&nbsp;**Typeform**.
 
 ## Short bio
 
-_Front end engineer with experience in performance, scalability and best practices. Currently working in Design Systems at Typeform and member of webpack documentation team._
+_His interest for web development started back when he opened a website for the first time as a child and asked himself why it was so slow. He's currently working in Design Systems at Typeform and member of webpack documentation team._
 
 ## Long bio
 
@@ -39,7 +37,7 @@ _He is currently part of the Design System team at Typeform and member of webpac
 
 ## Credits
 
-Page inspired by [Zach Leatherman][zach] and&nbsp;[Ethan Marcotte][ethan].
+Page inspired similars by [Zach Leatherman][zach] and&nbsp;[Ethan Marcotte][ethan].
 
 [headshot]: https://drive.google.com/file/d/1h6a6c1zy2P8H3fzzj-0e-MfUPhSmmb7o/view?usp=sharing
 [photos]: https://drive.google.com/drive/folders/1L4YIXpti6yPsO46DNDBENkJhTpmlBSjn?usp=sharing
