@@ -2,7 +2,7 @@
 layout: default
 title: About
 type: about
-resume: Born and raised in Argentina, and currently living in Barcelona and working as a front end engineer in Design Systems at Typeform.
+resume: Born and raised in Argentina, currently living in Barcelona and working as a front end engineer in Design Systems at Typeform.
 ---
 
 His interest for web development started back when he opened a website for the first time as a child and asked himself why it was so slow.
