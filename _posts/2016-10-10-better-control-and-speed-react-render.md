@@ -36,7 +36,7 @@ class LoadingBar extends Component {
 import { Component } from 'react';
 
 class LoadingBar extends Component {
-  shouldComponentUpdate(nextProps, nextStates) {
+  shouldComponentUpdate(nextProps, nextState) {
     return this.props.hidden !== nextProps.hidden;
   }
   render() {
