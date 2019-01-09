@@ -5,7 +5,7 @@ resume: If you use it regularly or play around with React to build stuff for the
 
 OK, maybe you are already tired of hearing about them. But the hype is justified, hooks though not in their final form yet are already proving to be a nice pattern to extend capabilities for functional components.
 
-_This article doesn't serve the purposes of an introduction to hooks, if you you don't about them I suggest [watching Dan Abramov presenting them](https://www.youtube.com/watch?v=dpw9EHDh2bM) or [read the documentation available](https://reactjs.org/docs/hooks-overview.html) for it and come back later._
+_This article doesn't serve the purposes of an introduction to hooks, if you don't know about them I suggest [watching Dan Abramov presenting them](https://www.youtube.com/watch?v=dpw9EHDh2bM) or [read the documentation available](https://reactjs.org/docs/hooks-overview.html) for it and come back later._
 
 As someone who has been working in design systems over the past year and using React for it, I can already detect a lot of golden opportunities to simplify and unify the logic these codebases need to handle.
 
@@ -116,7 +116,7 @@ Every time our `Dialog` instance changes the `useEffect` hook will be called. In
 
 We are returning a function that will be executed in case the component gets unmounted, to make sure we clean the body styles.
 
-Finally, as a second argument, we are passing an array with `isOpen` indicating we only want the effect to run if that property has a different value.
+Finally, as a second argument, we are passing an array with `isOpen` indicating we only want the effect to run if that property has been modified.
 
 This way we avoid a whole rewrite of the component to a class.
 
@@ -128,7 +128,7 @@ It happens a lot that these small details get repeated over and over again in a 
 
 There's a huge chance you will need this for a lot of other elements like overlays, drawers or modals. You can't share lifecycle methods between class components, but we can isolate hooks into their own files and import them wherever necessary.
 
-This how the hook showed before would look like isolates in its own file.
+This how the hook from the example above would look like isolated in its own file.
 
 ```js
 import { useEffect } from 'react'
@@ -137,7 +137,7 @@ function useLockBodyScroll(toggle) {
   useEffect(
     () => {
       document.body.style.overflow = toggle ? 'hidden' : 'visible'
-    return () => (document.body.style.overflow = 'visible')
+      return () => (document.body.style.overflow = 'visible')
     },
     [toggle]
   );
@@ -146,7 +146,7 @@ function useLockBodyScroll(toggle) {
 export default useLockBodyScroll
 ```
 
-Later in the component you add the hook and pass the property is going to toggle the style.
+Later in the component you add the hook and pass the property that will toggle the style.
 
 ```js
 import React from 'react'
@@ -170,9 +170,7 @@ _Check out this example on [Code Sandbox](https://codesandbox.io/s/pl8ollk70)._
 
 Now, the behavior can be shared across the components of the system. This also has an impact in other parts of the repositories like the unit tests suite.
 
-I need to make sure all components with lifecycles altering the body styles work properly, I've find myself writing the same unit tests over and over again.
-
-With this pattern, we would only need to test the behavior once at the hook's level.
+I need to make sure all components with lifecycles altering the body styles work properly, which means writing the same unit tests over and over again. With this pattern, we would only need to test the behavior once at the hook's level.
 
 _Read about building custom hooks [here](https://reactjs.org/docs/hooks-custom)._
 
@@ -214,9 +212,9 @@ class Menu extends React.Component {
 }
 ```
 
-The only reason this component is a class in the code above is the need for a `state` to show or hide the options.
+The only reason this component is a class in the code above is the need of a _state_ to show or hide the options, but this can easily become a functional component with the `useState` hook.
 
-But, this can easily become a functional component with the `useState` hook. You will notice how we deconstruct the return value of it into _the state_ itself and _the method_ to toggle its value.
+You will notice how we deconstruct the return value of it into _the state_ itself and _the method_ to toggle its value.
 
 ```js
 import React, { useState } from 'react'
@@ -247,11 +245,9 @@ _Read about the useState hook [here](https://reactjs.org/docs/hooks-state)._
 
 ## Wrap up
 
-As you see, most of the hooks equivalents of each example shared some advantages over their counterparts.
+Hooks enable new patterns by empowering functional components and removing the need of lifecycles and states for simple use cases.
 
- - **Less code**, hooks help minimalize a lot by empowering functional components and removing the need of lifecycles and states for simple use cases.
-
- - The behavior inside **hooks can be shared** now within your design system. Even less code to maintain could potentially translate into fewer bugs and avoid redundant unit tests.
+The behavior inside **hooks can be shared** now within your design system, and less code to maintain could potentially translate into fewer bugs and avoid redundant unit tests.
 
 Building our own hooks and distributing them across the project will help us concentrate more on what it is happening around the interface itself and less on the logic and little quirks needed for components to behave as expected out of the box.
 
