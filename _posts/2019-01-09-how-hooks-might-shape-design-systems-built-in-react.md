@@ -255,4 +255,4 @@ I can't wait to see how they reshape design systems.
 
 Remember that **hooks are not production ready**, and there could be serious performance regressions and behavior changes in the future so keep their use as experimental.
 
-_Thanks [Sara Vieira](https://iamsaravieira.com/) for proof reading this piece._
+_Thanks [Sara Vieira](https://iamsaravieira.com/) for proofreading this piece._
