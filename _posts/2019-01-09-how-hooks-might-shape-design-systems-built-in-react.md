@@ -11,7 +11,7 @@ As someone who has been working in design systems over the past year and using R
 
 Let's go over some of these potential wins.
 
-## Stoping the class switcheroo
+## Stopping the class switcheroo
 
 In the context of a design system repository, you won't (and shouldn't) find a lot of logic around components, as the purpose of it is to serve the view part for engineers.
 
