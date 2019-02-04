@@ -165,4 +165,4 @@ const DeleteModal = (props) => (
 
 If the _action_ doesn't depend on a higher prop to define its configuration, then turning it into a static element piece will avoid reconciliation around it.
 
-For further reading I recommend the [short mention the pattern receives](https://reactjs.org/docs/composition-vs-inheritance.html) in the official React docs.
+For further reading, I recommend the _Composition vs. Inheritance_ section of the official React docs where [this approach receives a short mention](https://reactjs.org/docs/composition-vs-inheritance.html) at the beginning.
