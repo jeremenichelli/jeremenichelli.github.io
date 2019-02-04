@@ -1,25 +1,25 @@
 ---
 title: The benefits of props as component slots in React
-resume: Composing components with other more granular and simpler ones already present in the codebase is a pretty standard situation inside both a web application and, as in my case, a design system repository.
+resume: Composing components with more granular and simpler ones already present in the codebase is a pretty standard situation inside both a web application and, as in my case, a design system repository.
 ---
 
 Imagine for example a _button_ component that you can use anywhere, but also a _modal_ component that consumes it as part of its basic interface.
 
-You might already have sen lots of different approaches and techniques for composition in React, like [render props](https://reactjs.org/docs/render-props.html) or [child functions](https://medium.com/merrickchristensen/function-as-child-components-5f3920a9ace9). In this case, I'm going to show you _props as component slots_ or _children prop_.
+You might already have seen lots of different approaches and techniques for composition in React, like [render props](https://reactjs.org/docs/render-props.html) or [child functions](https://medium.com/merrickchristensen/function-as-child-components-5f3920a9ace9). In this case, I'm going to show you _props as component slots_ or _children prop_.
 
 _And if you have a better name for this please reach out._
 
-The best way to explain how this pattern shines, is to present the issues and code smells it solved for me.
+The best way to explain this pattern, and where it shines, is to present the issues and code smells it solved for me.
 
-## Prop "drilling"
+## Things to solve
 
-let's go back to the example I mentioned with a _button_ component available for use and also consumed by a _modal_ and imagine its possible prop signature.
+### Prop "drilling"
 
-The button's content can be the _children_ prop, a _kind_ prop that can be _primary_ or _secondary_, an _icon_ one in case we want an SVG image prepend inside its content and an _onClick_ event.
+Let's go back to the example I mentioned with a _button_ component available for use and also consumed by a _modal_ and think about its possible prop signature.
 
-How modal should handle the customization of its _button_?
+The button's content could be the _children_ prop, a _kind_ prop to indicate whether it is a _primary_ or _secondary_ action, an _icon_ prop in case we want an SVG image prepend inside its content and an _onClick_ prop for the click event.
 
-The immediate thing we do is match its props at a new component level.
+How modal should handle the customization of its _button_? The immediate thing we do is to match all the props at the component level.
 
 ```js
 import React from 'react'
@@ -40,13 +40,13 @@ const Modal = (props) => (
 )
 ```
 
-Of course there's nothing particularly wrong in the example above, and you are going to be just fine with this, specially if these two components are unlikely to change with time.
+Of course there's nothing particularly wrong with the code above and you are going to be just fine with this, specially if these two components are unlikely to change with time.
 
 But if they do then maintenance might become a little pain, even more if you use this pattern for _button_ a lot across your codebase.
 
-It can get even worse if for some reason you have one more component level between `Modal` and `Button`.
+It can get even worse if for some reason you have one more component layer between `Modal` and `Button`.
 
-## Duplicated type definitions
+### Duplicated type definitions
 
 Whether you are using _prop types_ or any language superset to define types, you will have duplicated and unnecessary definitions all over the place, matching exactly the button props definition.
 
@@ -61,7 +61,7 @@ Modal.propTypes = {
 }
 ```
 
-If the interface of the component expands, it will translate into even more maintenance work for something that might be trivial.
+If the signature of the component expands, it will translate into even more work and duplicated definitions, and for something that might be trivial.
 
 ## Props as component slots
 
@@ -79,7 +79,7 @@ const Modal = (props) => (
 )
 ```
 
-Now whenever we use `Modal`, we just need to pass an instance of `Button` to _action_.
+Whenever we use `Modal`, we just pass an instance of `Button` to _action_.
 
 ```js
 import React from 'react'
@@ -97,7 +97,7 @@ const DeleteModal = (props) => (
 )
 ```
 
-I haven't experience any inconvenience by doing this. The result is cleaner and more extensible code.
+I haven't experience any inconvenience by doing this. The result is cleaner and more extensible code as we pass the props to `Button`directly to the element.
 
 Other stuff you can do is to force certain configuration of the component, for example let's force any _button_ passed to be _secondary_.
 
@@ -164,3 +164,5 @@ const DeleteModal = (props) => (
 ```
 
 If the _action_ doesn't depend on a higher prop to define its configuration, then turning it into a static element piece will avoid reconciliation around it.
+
+For further reading I recommend the [short mention the pattern receives](https://reactjs.org/docs/composition-vs-inheritance.html) in the official React docs.
