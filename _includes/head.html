@@ -20,6 +20,16 @@
   <link rel="canonical" href="{{ url }}">
   <meta name="theme-color" content="#101010">
 
+  <script>
+    var path = window.location.pathname;
+
+    if (path === '/site/' || path === '/site') {
+      path = '';
+    }
+
+    window.location = 'https://jeremenichelli.io' + path;
+  </script>
+
   <!-- structured data -->
   {% if type == 'home' %}{% include structured-data/home.html %}
   {% elsif type == 'post' %}{% include structured-data/post.html %}
